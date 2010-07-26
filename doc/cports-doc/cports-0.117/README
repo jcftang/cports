@@ -1,0 +1,13 @@
+hi. I haven't written this yet. See the FAQ for some info.
+
+But just to give credit where credit is due... This ports system is a
+fork of the (currently unmaintained) mpkg:
+
+   http://staff.e.kth.se/mpkg/
+
+I have mirrored that web site and put it in docs/mpkg-html.tar.gz. Please
+see that for information on creating new ports, customizing and general
+information.
+
+Thanks,
+Greg

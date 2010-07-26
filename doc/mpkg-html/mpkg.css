@@ -1,0 +1,29 @@
+body {
+	font-family:		sans-serif;
+	background-color:	white;
+}
+.rcs {
+	font-family:	monospace;
+	font-size:	smaller;
+}
+/* funkar inte av nån anledning (jo, fast bara i WinIE, inte LinNN...) */
+dl.variables dt, dl.targets dt {
+	font-family:	monospace;
+}
+tt {
+	font-family:	monospace;
+}
+
+a.selected {
+	font-weight:	bolder;
+	text-decoration:	none;
+}
+
+h1 {
+	text-align:	center;
+}
+
+p.menu {
+	text-align:	center;
+}
+

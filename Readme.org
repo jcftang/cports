@@ -1,0 +1,16 @@
+#+TITLE: cports - TCHPC fork
+
+* Why fork cports
+ - Needed more than just one version of gcc, intel, pgi builds of
+   software
+ - Needed more control with being able to add packages
+ - Needed more variables put into the modulefiles
+
+* What cports doesn't do 
+ - It doesn't generate portable binaries
+ - Provide good documentation on the modifications TCHPC has made
+ - Support for people who use is :)
+ - Dependancy and conflict checking of the packages, the admin who is
+   writing the package will need to do this
+ - Work with non-gnu based tools (it's a fork and the original authors
+   used and based everything on gnu make etc...)

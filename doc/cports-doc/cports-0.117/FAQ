@@ -1,0 +1,64 @@
+hi. Since I know you will ask...
+
+
+Why have a ports system in an RPM based distro?
+
+   While, we have no questions about the suitability of RPM to maintain the
+   main operating system and 99.9% of the packages, we have seen that there
+   is also a need for installing multiple versions of a package, while
+   keeping the PATH's clean, and also doing custom builds if desired.
+
+I don't see it... RPM can do this:
+
+   Yes, RPM can do it, but it is less elegant. RPM is not meant for having
+   many versions installed at once, nor allowing system admins to do custom
+   builds of a particular package. Let me give an example...
+
+   On a single high performance cluster, each user may need different compilers
+   or versions of the message passing interface (MPI), built in a particular
+   manner. We also may need to update the MPI and/or test functionality
+   without affecting the other users. We could do this with RPM, but it is
+   not what RPM was directly designed for. We could also do this with manual
+   building of source tarballs, and then adjusting each users enviornment
+   specifically for what they need. This is ugly, and is made elegant by this
+   ports solution.
+
+How do the users then select what package/version they want to use?
+
+   Using the 'module's package. Forinstance:
+
+      $ mpirun
+      -bash: mpirun: command not found
+      $ module load lam
+      $ which mpirun
+      /usr/ports/lam/7.1/bin/mpirun
+      $ module switch lam lam/7.2beta10
+      $ which mpirun
+      /usr/ports/lam/7.2beta10/bin/mpirun
+      $ module unload lam
+      $ mpirun
+      -bash: mpirun: command not found
+
+What packages are going to be available in the ports tree?
+
+   We are not going to include any of the main system packages (at this time).
+   The goal is to put packages in the ports tree that are commonly compiled
+   from source by admins and users. This is a tool to make source building
+   easier... It is not a tool for packaging the entire OS. RPM is the system
+   package manager for a reason. ;)
+
+This is interesting, so how do I build a package?
+
+   # cd /usr/src/ports/programs/[program name]/[version (optional)]/
+   # make install
+
+I just did the make install, but the program is not found!
+
+   Read about enviornment modules, and see the above example (read: aren't you
+   paying attention!).
+
+The program that I want is not there...
+
+   I (Greg Kurtzer) brought this ports system into caos for proof of concept,
+   and I need someone to volunteer to mainain this package. If you want to
+   maintain the package, or just lend a hand, let me know (gmk@caosity.org).

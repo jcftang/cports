@@ -1,0 +1,42 @@
+include ../../../mk/gnu.pre.mk
+
+DISTNAME=	ParMetis
+VERSION=	3.1.1
+CATEGORIES=     paralleltools	
+HOMEPAGE=	http://glaros.dtc.umn.edu/gkhome/metis/parmetis/overview
+MASTER_SITES=	http://glaros.dtc.umn.edu/gkhome/fetch/sw/parmetis
+MAINTAINER=	darach@tchpc.tcd.ie
+HAS_CONFIGURE = no
+DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
+
+EXTRAVERSION=
+
+#TDEPEND="gcc/4.5.0 --build-env gcc/4.5.0 --run-env openmpi/1.4.2 --build-env openmpi/1.4.2 --run-env" 
+TDEPEND="openmpi/1.4.2 --build-env openmpi/1.4.2 --run-env" 
+DEPENDS+=$(TDEPEND)
+
+DESCRIPTION=	"ParMETIS is an MPI-based parallel library that implements a variety of algorithms for partitioning unstructured graphs, meshes, and for computing fill-reducing orderings of sparse matrices."
+
+#CONFIGURE_ARGS +=
+
+do-configure:
+	@
+do-build:
+	$(MODULE_ADD) $(BUILD_DEPENDS);   \
+	cd $(WRKSRC);  \
+	make OPTFLAGS=-O2 ; \
+	cd Graphs; \
+	mpirun -np 4 ptest rotor.graph; \
+	mpirun -np 4 mtest bricks.hex3d 2
+
+do-install:
+	mkdir -p $(PROGRAM_PREFIX)/lib;
+	mkdir -p $(PROGRAM_PREFIX)/include;
+	cp $(WRKSRC)/*.a  $(PROGRAM_PREFIX)/lib;
+	cp $(WRKSRC)/parmetis.h  $(PROGRAM_PREFIX)/include
+	cp $(WRKSRC)/METISLib/metis.h  $(PROGRAM_PREFIX)/include
+	
+
+include ../../../mk/gnu.post.mk
+
+

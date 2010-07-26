@@ -1,0 +1,6 @@
+#%Module1.0#######################################################################
+## default modulefile
+##
+module-whatis   "adds cports modules"
+module use --append $HOME/cports/rhel-5.x86_64/modulefiles
+
