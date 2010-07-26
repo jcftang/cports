@@ -1,0 +1,25 @@
+
+
+* Features and Bugs
+** do-test/do-check automation (pre & post install)
+** fix --libs in DEPENDS
+** unistall target (maybe echo commands OR mv rather than delete)
+** Python --> perl module model??
+** R packages (e.g., Rmpi/snow/snowfall  )
+
+* Possible new packages
+** Libraries/interfaces (numerical)
+*** petsc: (debug/nodebug; c/c++)
+    - also i think there should be ~ petsc-basic,
+      petsc-medium. petsc-large (supersize me!)
+*** scotch
+*** mumps
+*** libmesh
+
+** Libraries/interfaces (GUI's)
+*** OpenMotif/lesstif/...
+*** Qt
+*** VTK!
+** Applications/Devel
+*** paraview
+*** cmake
