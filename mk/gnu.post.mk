@@ -812,6 +812,24 @@ uncurrent:
 	$(UNLINK) $(MODULEDIR)/$(DISTNAME)/current ; \
 	$(UNLINK) $(PREFIX)/$(COMPILERS)/$(DISTNAME)/current;
 
+uninstall:
+	$(QUIET) $(ECHO_MSG)
+	$(QUIET) $(ECHO_MSG) "Helper to uninstall, please remove these directories and files manually..."
+	$(QUIET) $(ECHO_MSG)
+	$(QUIET) if [ -d $(MODULEDIR)/$(DISTNAME)/$(VERSION)$(EXTRAVERSION)$(COMPILER_TAG) ]; then \
+		$(ECHO_MSG) "$(RM_RI) $(MODULEDIR)/$(DISTNAME)/$(VERSION)$(EXTRAVERSION)$(COMPILER_TAG)" ; \
+	fi
+	$(QUIET) if [ -d $(PROGRAM_PREFIX) ]; then \
+		$(ECHO_MSG) "$(RM_RI) $(PROGRAM_PREFIX)" ; \
+	fi
+	$(QUIET) if [ -f $(MENUDEFSDIR)/$(DISTNAME)/$(VERSION)/menu.conf ] ; then \
+		$(ECHO_MSG) "$(RM_RI) $(MENUDEFSDIR)/$(DISTNAME)/$(VERSION)/menu.conf"; \
+	fi
+	$(QUIET) if [ -f $(PREFIX)/information/$(DISTNAME)/$(VERSION)/information.mk ] ; then \
+		$(ECHO_MSG) "$(RM_RI) $(PREFIX)/information/$(DISTNAME)/$(VERSION)/information.mk " ;\
+	fi
+	$(QUIET) $(ECHO_MSG)
+
 #
 # Will be used if your package don't have a target do-extract.
 #
