@@ -490,7 +490,7 @@ ifdef DEPENDS
 		    fi \
 		else \
 		    shortname=`$(ECHO) $$dep | $(SED) "s,/.*,,"`; \
-		    $(ECHO) >>$(MPKG_DEPENDS) PREFIX_$$shortname=$$found_prefix/$$found_dir; \
+		    $(ECHO) >>$(MPKG_DEPENDS) PREFIX_$$shortname=$$found_prefix; \
 		    if [ "X$$opt_lib" = "Xyes" ]; then \
 			$(ECHO) >>$(MPKG_DEPENDS) LINK_DEPENDS+=$$found_module; \
 			$(ECHO) >>$(MPKG_DEPENDS) LINK_PATHS+=$$found_prefix/$$found_dir/lib; \
