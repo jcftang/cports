@@ -11,6 +11,9 @@ DISTFILES=      $(DISTNAME)-$(VERSION).tar.gz
 
 EXTRAVERSION=
 
+DEPENDS+=	"openmpi/1.4.2 --lib --run-env --build-env"
+DEPENDS+=	"Python/2.6.5 --lib --run-env --build-env"
+
 CONFIGURE_ARGS+= CFLAGS="-O3" CXXFLAGS="-O3"
 
 DESCRIPTION=    "Distributed Parallel Programming for Python"
