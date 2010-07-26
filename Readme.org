@@ -1,5 +1,3 @@
-
-
 #+TITLE: cports - TCHPC fork
 
 * Why fork cports
@@ -8,6 +6,9 @@
  - Needed more control with being able to add packages
  - Needed more variables put into the modulefiles
 
+* The upstream authors
+  - mpkg - http://staff.e.kth.se/mpkg/index.html
+  - cports - http://www.caoslinux.org/
 * What cports doesn't do 
  - It doesn't generate portable binaries
  - Provide good documentation on the modifications TCHPC has made
