@@ -816,7 +816,7 @@ uninstall:
 	$(QUIET) $(ECHO_MSG)
 	$(QUIET) $(ECHO_MSG) "Helper to uninstall, please remove these directories and files manually..."
 	$(QUIET) $(ECHO_MSG)
-	$(QUIET) if [ -d $(MODULEDIR)/$(DISTNAME)/$(VERSION)$(EXTRAVERSION)$(COMPILER_TAG) ]; then \
+	$(QUIET) if [ -f $(MODULEDIR)/$(DISTNAME)/$(VERSION)$(EXTRAVERSION)$(COMPILER_TAG) ]; then \
 		$(ECHO_MSG) "$(RM_RI) $(MODULEDIR)/$(DISTNAME)/$(VERSION)$(EXTRAVERSION)$(COMPILER_TAG)" ; \
 	fi
 	$(QUIET) if [ -d $(PROGRAM_PREFIX) ]; then \
