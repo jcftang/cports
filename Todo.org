@@ -1,7 +1,6 @@
 * Features and Bugs
 ** do-test/do-check automation (pre & post install)
 ** fix --libs in DEPENDS
-** unistall target (maybe echo commands OR mv rather than delete)
 ** Python --> perl module model??
 ** R packages (e.g., Rmpi/snow/snowfall  )
 ** put conflicts into module files with same top level names (e.g. atlas/3.8.2 should clash with atlas/3.8.3)

@@ -97,6 +97,7 @@ UNZIP?=			unzip
 
 RM?=			rm
 RM_RF?=			rm -rf
+RM_RI?=			rm -ri
 PATCH?=			patch
 # XXX Should be installbsd on DUX.
 INSTALL?=		install
