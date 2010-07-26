@@ -9,7 +9,8 @@ MAINTAINER=     mpkg@e.kth.se
 GNU_CONFIGURE=  yes
 
 DEPENDS=        "texinfo/4.13 --build-env"
-DEPENDS+=       "libiconv/1.13 --lib"
+DEPENDS+=       "libiconv --lib"
+DEPENDS+=	"gawk --build-env"
 
 CONFIGURE_ARGS= --with-pic
 CONFIGURE_ARGS+=--with-included-gettext # :-)

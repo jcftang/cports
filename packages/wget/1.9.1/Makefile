@@ -14,7 +14,9 @@ else
 USE_LIBTOOL=	yes
 
 DEPENDS+=	"gettext/0.17 --build-env"
+DEPENDS+=	"gettext/0.17 --lib"
 DEPENDS+=	"openssl/1.0.0a --build-env"
+DEPENDS+=	"openssl/1.0.0a --lib"
 DEPENDS+=	"perl/5.12.1 --build-env"
 DEPENDS+=	"libtool/2.2.10 --build-env"
 #CONFIGURE_ARGS+= --with-ssl=$(PREFIX_openssl)
