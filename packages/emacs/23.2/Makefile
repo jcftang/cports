@@ -24,7 +24,7 @@ MODULELINES+=	"prepend-path MANPATH	$(PROGRAM_PREFIX)/man"
 MODULELINES+=	"prepend-path INFOPATH	$(PROGRAM_PREFIX)/info"
 
 #EMACS_MODULES=	auctex w3 lyskom gnus mailcrypt
-MODULELINES+=	"module use		$(PROGRAM_PREFIX)/modulefiles"
+#MODULELINES+=	"module use		$(PROGRAM_PREFIX)/modulefiles"
 
 
 DEPENDS+=	"binutils/2.20 --build-env"

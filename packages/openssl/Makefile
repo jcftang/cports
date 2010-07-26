@@ -1,4 +1,3 @@
-
-CURRENT=3.2.06
-
+CURRENT=1.0.0a
 include ../../mk/gnu.subdir.mk
+

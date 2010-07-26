@@ -1,4 +1,4 @@
-
-CURRENT=3.2.06
+CURRENT=R39c
 
 include ../../mk/gnu.subdir.mk
+
