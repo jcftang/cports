@@ -805,11 +805,11 @@ current:
 	$(LN) -f $(PROGRAM_PREFIX) $(PREFIX)/$(COMPILERS)/$(DISTNAME)/current;	\
 	$(MKDIR) $(PREFIX)/modulefiles/$(DISTNAME);			\
 	$(ECHO) "#%Module"> $(PREFIX)/modulefiles/$(DISTNAME)/.version;	\
-	$(ECHO) "set ModulesVersion \"$(VERSION)\"" >> $(PREFIX)/modulefiles/$(DISTNAME)/.version ; \
-	$(LN) -f $(MODULEDIR)/$(DISTNAME)/$(VERSION)$(EXTRAVERSION)$(COMPILER_TAG) $(MODULEDIR)/$(DISTNAME)/current
+	$(ECHO) "set ModulesVersion \"$(VERSION)\"" >> $(PREFIX)/modulefiles/$(DISTNAME)/.version 
+#	$(LN) -f $(MODULEDIR)/$(DISTNAME)/$(VERSION)$(EXTRAVERSION)$(COMPILER_TAG) $(MODULEDIR)/$(DISTNAME)/current
 
 uncurrent:
-	$(UNLINK) $(MODULEDIR)/$(DISTNAME)/current ; \
+#	$(UNLINK) $(MODULEDIR)/$(DISTNAME)/current 
 	$(UNLINK) $(PREFIX)/$(COMPILERS)/$(DISTNAME)/current;
 
 uninstall:
