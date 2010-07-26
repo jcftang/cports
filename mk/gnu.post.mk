@@ -490,7 +490,7 @@ ifdef DEPENDS
 		    fi \
 		else \
 		    shortname=`$(ECHO) $$dep | $(SED) "s,/.*,,"`; \
-		    $(ECHO) >>$(MPKG_DEPENDS) PREFIX_$$shortname=$$found_prefix; \
+		    $(ECHO) >>$(MPKG_DEPENDS) PREFIX_$$shortname=$$found_prefix/$$found_dir; \
 		    if [ "X$$opt_lib" = "Xyes" ]; then \
 			$(ECHO) >>$(MPKG_DEPENDS) LINK_DEPENDS+=$$found_module; \
 			$(ECHO) >>$(MPKG_DEPENDS) LINK_PATHS+=$$found_prefix/$$found_dir/lib; \
@@ -1059,7 +1059,7 @@ ifdef HAS_CONFIGURE
 	$(QUIET) $(MODULE_ADD) $(BUILD_DEPENDS);			\
 	cd $(WRKSRC) && $(CONFIGURE_ENV) $(CONFIGURE_SCRIPT) $(CONFIGURE_ARGS)
 ifdef USE_LIBTOOL
-	$(QUIET) $(CP) -f $(PREFIX_libtool)/bin/libtool $(WRKSRC)/libtool
+	#$(QUIET) $(CP) -f $(PREFIX_libtool)/bin/libtool $(WRKSRC)/libtool
 endif
 endif
 	$(QUIET) : # no-op
