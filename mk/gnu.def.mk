@@ -220,14 +220,14 @@ LATEST_VERSION=	\
 		   (echo $$version | grep >/dev/null beta); \
 			then : ; \
 		else \
-			echo $$version | awk -F. '{ printf "%20s\.%20s\.%20s\.%20s          ---'"$$version"'\n", $$1, $$2, $$3, $$4; } '; \
+			echo $$version | awk '{ FS="." }{ printf "%20s\.%20s\.%20s\.%20s          ---'"$$version"'\n", $$1, $$2, $$3, $$4; } '; \
 		fi; \
 	done) | sort -r; \
 	(for version in $(1); do \
 		if (echo $$version | grep >/dev/null pre) || \
 		   (echo $$version | grep >/dev/null beta); \
 		then \
-			echo $$version | awk -F. '{ printf "%20s\.%20s\.%20s\.%20s          ---'"$$version"'\n", $$1, $$2, $$3, $$4; } '; \
+			echo $$version | awk '{ FS="." }{ printf "%20s\.%20s\.%20s\.%20s          ---'"$$version"'\n", $$1, $$2, $$3, $$4; } '; \
 		fi; \
 	done;) | sort -r) \
 	| head -1 | sed "s,.*---,,"
@@ -238,14 +238,14 @@ LATEST_VERSION_CODE=	\
 		   (echo $$version | grep >/dev/null beta); \
 			then : ; \
 		else \
-			echo $$version | awk -F. '{ printf "%20s\.%20s\.%20s\.%20s          ---'"$$version"'\n", $$1, $$2, $$3, $$4; } '; \
+			echo $$version | awk '{ FS="." }{ printf "%20s\.%20s\.%20s\.%20s          ---'"$$version"'\n", $$1, $$2, $$3, $$4; } '; \
 		fi; \
 	done) | sort -r; \
 	(for version in $$versions; do \
 		if (echo $$version | grep >/dev/null pre) || \
 		   (echo $$version | grep >/dev/null beta); \
 		then \
-			echo $$version | awk -F. '{ printf "%20s\.%20s\.%20s\.%20s          ---'"$$version"'\n", $$1, $$2, $$3, $$4; } '; \
+			echo $$version | awk '{ FS="." }{ printf "%20s\.%20s\.%20s\.%20s          ---'"$$version"'\n", $$1, $$2, $$3, $$4; } '; \
 		fi; \
 	done;) | sort -r) \
 	| head -1 | sed "s,.*---,,"
@@ -254,7 +254,7 @@ LATEST_VERSION_CODE=	\
 FIND_LATEST_VERSION= \
 	(while read version; do \
 		echo $$version | \
-		awk -F. '{ printf "%-20s\.%-20s\.%-20s\.%-20s", $$1, $$2, $$3, $$4; } ' | \
+		awk '{ FS="." }{ printf "%-20s\.%-20s\.%-20s\.%-20s", $$1, $$2, $$3, $$4; } ' | \
 		sed 's, ,z,g' | \
 		sed 's,\(\\.[0-9]*\)\([a-zA-Z][a-zA-Z]*\),\\1.\\2,g' | \
 		sed "s,.*,&        ---$$version,"; \
