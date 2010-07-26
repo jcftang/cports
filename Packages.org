@@ -1,0 +1,17 @@
+#+TITLE: Erratas and Notes
+
+* MPI
+** OpenMPI
+ - Preferred MPI Implementation
+
+* GCC (and friends)
+ - Generally prefer the system version of GCC unless it is absolutely
+   required to use a newer version.
+ - Should consistently use the same toolchain or you will have issues
+   with fortran based apps and libs
+  
+* Bio Packages
+** BioPerl
+ - Works only with perl 5.12.1
+ - Has build issues with 5.8.9
+

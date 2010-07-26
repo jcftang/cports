@@ -15,7 +15,7 @@ DONT_CREATE_METAINFO = yes
 HAS_CONFIGURE=  YES
 CONFIGURE_SCRIPT= $(SRCDIR)/configure
 
-BUILD_DEPENDS += "aspell"
+DEPENDS += "aspell/current --build-env"
 
 include ../../../mk/gnu.post.mk
 

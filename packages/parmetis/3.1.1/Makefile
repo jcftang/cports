@@ -11,7 +11,6 @@ DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
 
 EXTRAVERSION=
 
-#TDEPEND="gcc/4.5.0 --build-env gcc/4.5.0 --run-env openmpi/1.4.2 --build-env openmpi/1.4.2 --run-env" 
 TDEPEND="openmpi/1.4.2 --build-env openmpi/1.4.2 --run-env" 
 DEPENDS+=$(TDEPEND)
 

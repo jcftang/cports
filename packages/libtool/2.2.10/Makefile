@@ -13,6 +13,17 @@ DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
 
 EXTRAVERSION=
 
-DESCRIPTION=	"Libxml2 is the XML C parser and toolkit developed for the Gnome project (but usable outside of the Gnome platform), it is free software available under the MIT License."
+DEPENDS+=       "m4/1.4.14 --build-env"
+DEPENDS+=       "gawk/3.1.8 --build-env"
+DEPENDS+=       "automake/1.9.6 --build-env"
+
+ENVIRONMENT+=   AUTOMAKE=$(PREFIX_automake)/bin/automake
+
+MODULEFILE_CMD_ENV=     $(ECHO) "prepend-path   ACLOCAL_PATH    $(PROGRAM_PREFIX)/share/aclocal";
+MODULEFILE_LINES+=      ENV
+
+DESCRIPTION=    "GNU libtool is a generic library support script."
+DESCRIPTION+=   "Libtool hides the complexity of using shared libraries"
+DESCRIPTION+=   "behind a consistent, portable interface."
 
 include ../../../mk/gnu.post.mk

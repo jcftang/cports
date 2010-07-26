@@ -1,3 +1,3 @@
-# $Id: Makefile,v 1.2 2002/01/29 15:06:23 abo Exp $
+CURRENT=5.8.9
 
 include ../../mk/gnu.subdir.mk

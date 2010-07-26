@@ -1,3 +1,5 @@
+
+
 #+TITLE: cports - TCHPC fork
 
 * Why fork cports
@@ -14,3 +16,10 @@
    writing the package will need to do this
  - Work with non-gnu based tools (it's a fork and the original authors
    used and based everything on gnu make etc...)
+* Requirements
+ - gnu make
+ - gcc (and basic devel, compile tools etc...)
+ - wget
+ - environment-modules
+* Systems tested on
+ - ScientificLinux 5.x 
