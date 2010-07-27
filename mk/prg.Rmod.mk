@@ -1,4 +1,6 @@
-# $Id: prg.rmod.mk,v 1.10 2001/11/29 15:19:32 eskil Exp $
+# R version of prg.perlmod.mk
+
+# $Id: prg.Rmod.mk,v 1.10 2001/11/29 15:19:32 eskil Exp $
 
 # This file should be included in the makefile for R modules. It
 # defines a do-configure that that refuses to build the module unless

@@ -1,7 +1,7 @@
 include ../../../mk/gnu.pre.mk
 
 DISTNAME=	R
-VERSION=	2.11.1
+VERSION=	2.10.1
 CATEGORIES=	numerical
 HOMEPAGE=	http://www.r-project.org/
 MASTER_SITES=	http://ftp.heanet.ie/mirrors/cran.r-project.org/src/base/R-2

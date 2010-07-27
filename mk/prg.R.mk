@@ -1,3 +1,5 @@
+# R version of prg.perl.mk 
+
 # $Id: prg.r.mk,v 1.4 2001/10/23 13:09:52 abo Exp $
 
 # This file should be included in the makefile for R
