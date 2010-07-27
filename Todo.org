@@ -3,6 +3,8 @@
 ** fix --libs in DEPENDS
 ** Python --> perl module model??
 ** R packages (e.g., Rmpi/snow/snowfall  )
+ - made a start on porting the prg.perl*mk files to support R modules,
+   needs more test.
 ** put conflicts into module files with same top level names (e.g. atlas/3.8.2 should clash with atlas/3.8.3)
 ** use install rather than cp in do-install 
 
