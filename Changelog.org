@@ -1,6 +1,7 @@
 * Fork of cports from caoslinux, which in turn is a fork of mpkg
 * Fix up modulefile naming convention
-* Fix up current target to add symlink to modulefile as well
+* Fix up current target to add symlink to modulefile as well 
+** reverted the linking to modulefile, it breaks things
 ** also added uncurrent target
 * Added open64 COMPILERS option
 * Added F90 variables, to make sure a fortran90 compiler is selected when needed
@@ -14,3 +15,4 @@
  - PKG_CONFIG_PATH
  - PYTHONPATH
 * New packages that TCHPC finds useful
+* Added R modules in the same style the perl modules for convenience
