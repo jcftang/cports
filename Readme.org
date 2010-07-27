@@ -38,6 +38,13 @@ requirements.
     correspond to the MODULEDIR variable in /etc/mpkg.mk or
     ${HOME}.mpkg.mk. Look in cports/mk/gnu.def.mk for some default
     options that you can override and or set.
+** proxies
+   - many people have a http_proxy variable set in their shell config.
+     However make installs often fail on ftp download attempts. So you
+     should set an ftp_proxy variable as well.  For example,
+     ftp_proxy=http://proxy.yourdomain.ie:80.  This works in our
+     setup. Yours may be different
+
 * Usage
  - load up your cports module so that cports can see its own generated
    module files. 
