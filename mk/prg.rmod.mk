@@ -101,8 +101,7 @@ endif
 
 do-build:
 # no-op
-	@
-	:
+	@:
 
 do-install:
 	$(QUIET) \
