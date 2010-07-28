@@ -11,6 +11,11 @@
 * The upstream authors
   - mpkg - http://staff.e.kth.se/mpkg/index.html
   - cports - http://www.caoslinux.org/
+* The current authors
+ - Mainly staff from TCHPC
+   - The time is paid for by eINIS, HPCE2, OIP and maybe one or two
+     other projects that may be benefitting from the results of this
+     build/package system.
 * What cports doesn't do 
  - It doesn't generate portable binaries
  - Provide good documentation on the modifications TCHPC has made
