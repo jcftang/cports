@@ -26,4 +26,6 @@ DESCRIPTION=    "GNU libtool is a generic library support script."
 DESCRIPTION+=   "Libtool hides the complexity of using shared libraries"
 DESCRIPTION+=   "behind a consistent, portable interface."
 
+do-configure:   do-autoreconf do-configur%
+
 include ../../../mk/gnu.post.mk
