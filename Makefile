@@ -22,7 +22,7 @@ whatchanged:
 
 # Bootstrapping it all on machines without some basic software.
 
-all: check-environment
+all: bootstrap
 
 dummy:
 	@echo ""
@@ -77,7 +77,7 @@ wget: check-environment
 	INSTALL_INFO="echo BOOTSTRAP: Ignoring install-info: " \
 	BOOTSTRAP=yes install clean; \
 	cd $(PREFIX)/bootstrap/gnu/wget; \
-	ln -s 1.7 current; \
+	ln -s 1.9.1 current; \
 	fi
 
 gcc: wget check-environment
@@ -129,7 +129,7 @@ patch:
 	CC=$(BOOTSTRAP_GCC) \
 	BOOTSTRAP=yes install clean; \
 	cd $(PREFIX)/bootstrap/gnu/patch; \
-	ln -s 2.5.4 current; \
+	ln -s 2.6.1 current; \
 	fi
 
 texinfo: patch gcc wget check-environment
@@ -148,7 +148,7 @@ texinfo: patch gcc wget check-environment
 	$(MAKE) CC=$(BOOTSTRAP_GCC) PREFIX=$(PREFIX)/bootstrap \
 	install clean; \
 	cd $(PREFIX)/bootstrap/gnu/texinfo; \
-	ln -s 4.0 current; \
+	ln -s 4.13 current; \
 	fi; \
 	fi
 
