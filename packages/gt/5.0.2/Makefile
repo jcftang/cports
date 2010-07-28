@@ -9,6 +9,17 @@ DISTFILES=	$(DISTNAME)$(VERSION)-all-source-installer.tar.bz2
 MAINTAINER=	jtang@tchpc.tcd.ie
 GNU_CONFIGURE=	yes
 
+# if you just want to install *ONLY* gridftp, then set the following to
+# yes only gridftp and sufficient libraries will be installed.
+
+GRIDFTP=no
+
+ifeq ($(GRIDFTP),yes)
+EXTRAVERSION=_gridftp
+ALL_TARGET=gridftp
+INSTALL_TARGET=gridftp
+endif
+
 PKGNAME=	$(DISTNAME)$(VERSION)-all-source-installer
 
 DEPENDS+=	"openssl/1.0.0a --build-env"
@@ -34,7 +45,7 @@ GLOBUS_LOCATION=	$(PROGRAM_PREFIX)
 MODULELINES+=		"setenv		GLOBUS_LOCATION		$(PROGRAM_PREFIX)"
 
 do-buila:
-	$(MAKE) 2>&1 | tee build.log
+	$(MAKE) $(ALL_TARGET) 2>&1 | tee build.log
 	$(MAKE) do-buil%
 
 include ../../../mk/gnu.post.mk
