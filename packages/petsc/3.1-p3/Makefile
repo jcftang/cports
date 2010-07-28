@@ -13,10 +13,10 @@ DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
 CPRT_PETSC_DEBUG ?= debug
 ifeq ("$(CPRT_PETSC_DEBUG)","nodebug")
 CPRT_PETSC_OPTS+= --with-debugging=no
-CPRT_PETSC_DBG_STR="opt"
+CPRT_PETSC_DBG_STR=opt
 else
 CPRT_PETSC_OPTS+= --with-debugging=yes
-CPRT_PETSC_DBG_STR="debug"
+CPRT_PETSC_DBG_STR=debug
 endif
 
 CPRT_PETSC_SCALAR ?= real
