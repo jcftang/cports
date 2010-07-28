@@ -15,6 +15,10 @@ $(DISTNAME).tar:
 clean:
 	#@-rm $(DISTFILE).tar
 
+whatchanged:
+	(git whatchanged  `git tag -l | tail -1`..HEAD  | git shortlog)
+
+.PHONY: whatchanged
 
 # Bootstrapping it all on machines without some basic software.
 
