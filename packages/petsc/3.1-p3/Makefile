@@ -37,18 +37,18 @@ MODULEFILE_CMD_PETSC?= \
 do-build:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
 	cd $(WRKSRC); \
-	echo $(PETSC_ARCH); \
-	make PETSC_DIR=$(WRKSRC) PETSC_ARCH=$(PETSC_ARCH) all
+	$(ECHO) $(PETSC_ARCH); \
+	$(MAKE) PETSC_DIR=$(WRKSRC) PETSC_ARCH=$(PETSC_ARCH) all
 
 do-test:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
 	cd $(WRKSRC); \
-	make PETSC_DIR=$(PROGRAM_PREFIX) test
+	$(MAKE) PETSC_DIR=$(PROGRAM_PREFIX) test 2>&1 | tee cportstestlog
 
 do-install:
 	$(MODULE_ADD) $(BUILD_DEPENDS);  \
 	cd $(WRKSRC); \
-	make  PETSC_DIR=$(WRKSRC) PETSC_ARCH=$(PETSC_ARCH) install
+	$(MAKE) PETSC_DIR=$(WRKSRC) PETSC_ARCH=$(PETSC_ARCH) install
 
 
 include ../../../mk/gnu.post.mk
