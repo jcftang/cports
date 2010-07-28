@@ -15,7 +15,7 @@ DEBUG := debug
 
 EXTRAVERSION=
 
-DEPENDS+="atlas/3.8.3 --build-env atlas/3.8.3 --run-env"
+DEPENDS+="atlas/3.8.3 --build-env"
 DEPENDS+="openmpi/1.4.2 --build-env openmpi/1.4.2 --run-env"
 DEPENDS+="ParMetis/3.1.1 --build-env "
 
