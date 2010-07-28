@@ -15,7 +15,7 @@ DEBUG := debug
 
 EXTRAVERSION=
 
-DEPENDS+="atlas/3.8.3 --build-env atlas/3.8.3 --run-env"
+DEPENDS+="atlas/3.8.3 --build-env"
 DEPENDS+="openmpi/1.4.2 --build-env openmpi/1.4.2 --run-env"
 DEPENDS+="ParMetis/3.1.1 --build-env "
 
@@ -38,7 +38,7 @@ do-build:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
 	cd $(WRKSRC); \
 	$(ECHO) $(PETSC_ARCH); \
-	$(MAKE) PETSC_DIR=$(WRKSRC) PETSC_ARCH=$(PETSC_ARCH) all
+	$(MAKE) PETSC_DIR=$(WRKSRC) PETSC_ARCH=$(PETSC_ARCH) all 2>&1 | tee cportsmakelog
 
 do-test:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
@@ -48,8 +48,7 @@ do-test:
 do-install:
 	$(MODULE_ADD) $(BUILD_DEPENDS);  \
 	cd $(WRKSRC); \
-	$(MAKE) PETSC_DIR=$(WRKSRC) PETSC_ARCH=$(PETSC_ARCH) install
-
+	$(MAKE) PETSC_DIR=$(WRKSRC) PETSC_ARCH=$(PETSC_ARCH) install 2>&1 | tee cportsintsalllog
 
 include ../../../mk/gnu.post.mk
 

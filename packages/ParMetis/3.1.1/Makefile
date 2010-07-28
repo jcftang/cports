@@ -9,7 +9,7 @@ MAINTAINER=	darach@tchpc.tcd.ie
 HAS_CONFIGURE = no
 DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
 
-EXTRAVERSION=
+EXTRAVERSION= 
 
 TDEPEND="openmpi/1.4.2 --build-env openmpi/1.4.2 --run-env" 
 DEPENDS+=$(TDEPEND)
@@ -23,17 +23,17 @@ do-configure:
 do-build:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
 	cd $(WRKSRC);  \
-	make OPTFLAGS=-O2 ; \
+	$(MAKE) OPTFLAGS="-O2 -fPIC " ; \
 	cd Graphs; \
 	mpirun -np 4 ptest rotor.graph; \
 	mpirun -np 4 mtest bricks.hex3d 2
 
 do-install:
-	mkdir -p $(PROGRAM_PREFIX)/lib;
-	mkdir -p $(PROGRAM_PREFIX)/include;
-	cp $(WRKSRC)/*.a  $(PROGRAM_PREFIX)/lib;
-	cp $(WRKSRC)/parmetis.h  $(PROGRAM_PREFIX)/include
-	cp $(WRKSRC)/METISLib/metis.h  $(PROGRAM_PREFIX)/include
+	$(MKDIR) $(PROGRAM_PREFIX)/lib;
+	$(MKDIR) $(PROGRAM_PREFIX)/include;
+	$(INSTALL) -m 644 $(WRKSRC)/*.a  $(PROGRAM_PREFIX)/lib;
+	$(INSTALL) -m 644 $(WRKSRC)/parmetis.h  $(PROGRAM_PREFIX)/include
+	$(INSTALL) -m 644 $(WRKSRC)/METISLib/metis.h  $(PROGRAM_PREFIX)/include
 	
 
 include ../../../mk/gnu.post.mk
