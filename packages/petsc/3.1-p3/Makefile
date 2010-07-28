@@ -3,17 +3,43 @@ include ../../../mk/gnu.pre.mk
 DISTNAME=	petsc
 VERSION=	3.1-p3
 CATEGORIES=	numerical
+MAINTAINER=     darach@tchpc.tcd.ie
 HOMEPAGE=	http://www.mcs.anl.gov/petsc/petsc-as/
 MASTER_SITES=	http://ftp.mcs.anl.gov/pub/petsc/release-snapshots
 HAS_CONFIGURE = yes
 CONFIGURE_SCRIPT = ./configure
 DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
 
-DEBUG := debug
+CPRT_PETSC_DEBUG ?= debug
+ifeq ("$(CPRT_PETSC_DEBUG)","nodebug")
+CPRT_PETSC_OPTS+= --with-debugging=no
+CPRT_PETSC_DBG_STR="opt"
+else
+CPRT_PETSC_OPTS+= --with-debugging=yes
+CPRT_PETSC_DBG_STR="debug"
+endif
 
-#$(warning compilersl is $(findstring gnu,$(COMPILERS)))
+CPRT_PETSC_SCALAR ?= real
+ifeq ("$(CPRT_PETSC_SCALAR)","complex")
+CPRT_PETSC_OPTS+= --with-scalar-type=complex
+else
+CPRT_PETSC_OPTS+= --with-scalar-type=real
+endif
 
-EXTRAVERSION=
+CPRT_PETSC_CCOMP ?= c
+ifeq ("$(CPRT_PETSC_CCOMP)","cxx")
+CPRT_PETSC_OPTS+=  --with-clanguage=C++
+else
+CPRT_PETSC_OPTS+= --with-clanguage=C
+endif
+
+$(warning debug: $(CPRT_PETSC_DEBUG))
+$(warning scalar: $(CPRT_PETSC_SCALAR))
+$(warning petsc arch: $(CPRT_PETSC_DBG_STR))
+$(warning petsc c comp: $(CPRT_PETSC_CCOMP))
+
+EXTRAVERSION= -$(CPRT_PETSC_DEBUG)-$(CPRT_PETSC_SCALAR)-$(CPRT_PETSC_CCOMP)
+WORKDIRSUFFIX= $(CPRT_PETSC_DEBUG)-$(CPRT_PETSC_SCALAR)-$(CPRT_PETSC_CCOMP)
 
 DEPENDS+="atlas/3.8.3 --build-env"
 DEPENDS+="openmpi/1.4.2 --build-env openmpi/1.4.2 --run-env"
@@ -21,6 +47,7 @@ DEPENDS+="ParMetis/3.1.1 --build-env "
 
 DESCRIPTION=  "PETSc, pronounced PET-see (the S is silent), is a suite of data structures and routines for the scalable (parallel) solution of scientific applications modeled by partial differential equations "
 
+CONFIGURE_ARGS +=   $(CPRT_PETSC_OPTS)
 CONFIGURE_ARGS +=   --prefix=$(PROGRAM_PREFIX)
 CONFIGURE_ARGS +=   --with-shared=1
 CONFIGURE_ARGS +=  --with-blas-lapack-dir=$(PREFIX_atlas)
@@ -55,6 +82,6 @@ include ../../../mk/gnu.post.mk
 ## If I put this here, it seems to work -- no (real) idea what is
 ## going on
 ifeq "$(COMPILERS)" "gnu"
-  PETSC_ARCH=linux-gnu-c-$(DEBUG)
+  PETSC_ARCH=linux-gnu-c-$(CPRT_PETSC_DBG_STR)
 endif
 
