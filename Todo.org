@@ -17,7 +17,8 @@
 *** mumps
 *** libmesh
 *** trilinos?
-
+*** netcdf
+*** hdf5
 ** Libraries/interfaces (GUI's)
 *** OpenMotif/lesstif/...
 *** Qt
