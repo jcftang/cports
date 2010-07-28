@@ -15,3 +15,6 @@
  - Works only with perl 5.12.1
  - Has build issues with 5.8.9
 
+* Libraries
+** netcdf
+** hdf5
