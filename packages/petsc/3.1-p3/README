@@ -25,3 +25,4 @@ which will do the above
 Similarly there could be a test script/build script...
 
 And of course the scripts could be made cleverer by looping, blah blah blah
+ - done, see  generate_make_commands.sh
