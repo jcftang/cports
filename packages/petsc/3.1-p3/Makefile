@@ -38,7 +38,7 @@ do-build:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
 	cd $(WRKSRC); \
 	$(ECHO) $(PETSC_ARCH); \
-	$(MAKE) PETSC_DIR=$(WRKSRC) PETSC_ARCH=$(PETSC_ARCH) all
+	$(MAKE) PETSC_DIR=$(WRKSRC) PETSC_ARCH=$(PETSC_ARCH) all 2>&1 | tee cportsmakelog
 
 do-test:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
@@ -48,8 +48,7 @@ do-test:
 do-install:
 	$(MODULE_ADD) $(BUILD_DEPENDS);  \
 	cd $(WRKSRC); \
-	$(MAKE) PETSC_DIR=$(WRKSRC) PETSC_ARCH=$(PETSC_ARCH) install
-
+	$(MAKE) PETSC_DIR=$(WRKSRC) PETSC_ARCH=$(PETSC_ARCH) install 2>&1 | tee cportsintsalllog
 
 include ../../../mk/gnu.post.mk
 
