@@ -30,6 +30,7 @@ DESCRIPTION+=   "products."
 
 CONFIGURE_ARGS+= 	--with-buildopts="-verbose"
 GLOBUS_LOCATION=	$(PROGRAM_PREFIX)
+
 MODULELINES+=		"setenv		GLOBUS_LOCATION		$(PROGRAM_PREFIX)"
 
 do-buila:
