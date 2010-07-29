@@ -1,0 +1,8 @@
+Title: do-test/do-check automation
+UID: lonsdale01.1280411203.P8627M538072
+Added: Thu Jul 29 14:46:43 2010
+Status: open
+
+
+Create pre and post installation tests, should hook into gnu.post.pre
+for this functionality

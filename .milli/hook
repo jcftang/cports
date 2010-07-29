@@ -1,0 +1,4 @@
+#!/bin/sh
+if [ "$1" = "add" ]; then
+   hg add "$2"
+fi
