@@ -33,7 +33,8 @@ do-test:
 #	cd $(WRKSRC); \
 #       make install
 
-R_MODULES+=	outliers rbugs Rmpi
+#R_MODULES+=	outliers rbugs Rmpi 
+R_MODULES+=	outliers rbugs Rmpi snow
 
 include ../../../mk/prg.R.mk
 include ../../../mk/gnu.post.mk
