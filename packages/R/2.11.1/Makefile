@@ -1,7 +1,5 @@
 include ../../../mk/gnu.pre.mk
 
-## R CMD REMOVE <package> removes a package
-
 DISTNAME=	R
 VERSION=	2.11.1
 CATEGORIES=	numerical
