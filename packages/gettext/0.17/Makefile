@@ -8,8 +8,8 @@ MASTER_SITES=   $(MASTER_SITE_GNU:=$(DISTNAME)/)
 MAINTAINER=     mpkg@e.kth.se
 GNU_CONFIGURE=  yes
 
-DEPENDS=        "texinfo/4.13 --build-env"
 ifndef BOOTSTRAP
+DEPENDS+=        "texinfo/4.13 --build-env"
 DEPENDS+=       "libiconv --lib"
 DEPENDS+=	"gawk --build-env"
 endif

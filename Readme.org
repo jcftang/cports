@@ -5,9 +5,15 @@
    software
  - Needed more control with being able to add packages
  - Needed more variables put into the modulefiles
+ - Needed repeatable and documented methods of installing libraries
+   and applications
  - Didn't care too much about generating portable objects, and since
    it's dervived from a derived piece of work it just makes life
    easier.
+ - Why not use Gentoo, NetBSD ports, packaging system XYZ?
+   - most of the other systems are not as easily hackable as just
+     makefiles
+   - don't allow multiple verisons of software installed
 * The upstream authors
   - mpkg - http://staff.e.kth.se/mpkg/index.html
   - cports - http://www.caoslinux.org/
@@ -95,4 +101,4 @@ This method of tagging things isn't straightforward to understand but
 it at least provides a way of systematically creating installations.
 
 * Systems tested on
- - ScientificLinux 5.x 
+ - ScientificLinux 5.x (64bit)
