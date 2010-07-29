@@ -108,6 +108,6 @@ do-build:
 do-install:
 	$(QUIET) \
 	$(MODULE_ADD) $(BUILD_DEPENDS); \
-        cd $(WRKSRC) && $(SETENV) $(R_BINARY) CMD INSTALL $(WRKSRC)  && \
+        cd $(WRKSRC) && $(SETENV) $(R_BINARY) CMD INSTALL $(CPRT_R_INSTARGS) $(WRKSRC)  && \
 	echo "$(DISTNAME)/$(VERSION)/" >> $(R_PREFIX)/.installed_modules
 

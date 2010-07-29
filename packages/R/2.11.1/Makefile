@@ -11,6 +11,7 @@ DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
 EXTRAVERSION=
 
 DEPENDS+="atlas/3.8.3 --build-env atlas/3.8.3 --run-env"
+#DEPENDS+="openmpi/1.4.2 --build-env openmpi/1.4.2 --run-env" 
 
 DESCRIPTION=  "R is a free software environment for statistical computing and graphics."
 
@@ -32,7 +33,7 @@ do-test:
 #	cd $(WRKSRC); \
 #       make install
 
-R_MODULES+=	outliers rbugs
+R_MODULES+=	outliers rbugs Rmpi
 
 include ../../../mk/prg.R.mk
 include ../../../mk/gnu.post.mk
