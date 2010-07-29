@@ -1,4 +1,6 @@
 #+TITLE: cports - TCHPC fork
+#+EMAIL: jtang@tchpc.tcd.ie,darach@tchpc.tcd.ie
+#+AUTHOR: Jimmy Tang, Darach Golden
 
 * Why fork cports
  - Needed more than just one version of gcc, intel, pgi builds of
@@ -14,7 +16,8 @@
    - most of the other systems are not as easily hackable as just
      makefiles
    - don't allow multiple verisons of software installed
- - Wanted to extend the modulefile generation targets to include these variables
+ - Wanted to extend the modulefile generation targets to include these
+   variables
   - INCLUDE_PATH 
   - CPLUS_INCLUDE_PATH 
   - C_INCLUDE_PATH 
