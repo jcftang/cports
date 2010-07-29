@@ -34,7 +34,7 @@ do-test:
 #       make install
 
 #R_MODULES+=	outliers rbugs Rmpi 
-R_MODULES+=	outliers rbugs Rmpi snow snowfall
+R_MODULES+=	outliers rbugs rlecuyer Rmpi snow snowfall
 
 include ../../../mk/prg.R.mk
 include ../../../mk/gnu.post.mk
