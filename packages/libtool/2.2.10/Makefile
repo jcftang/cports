@@ -15,7 +15,7 @@ EXTRAVERSION=
 
 DEPENDS+=       "m4/1.4.14 --build-env"
 DEPENDS+=       "gawk/3.1.8 --build-env"
-DEPENDS+=       "automake/1.9.6 --build-env"
+DEPENDS+=       "automake/1.11 --build-env"
 
 ENVIRONMENT+=   AUTOMAKE=$(PREFIX_automake)/bin/automake
 
@@ -25,5 +25,7 @@ MODULEFILE_LINES+=      ENV
 DESCRIPTION=    "GNU libtool is a generic library support script."
 DESCRIPTION+=   "Libtool hides the complexity of using shared libraries"
 DESCRIPTION+=   "behind a consistent, portable interface."
+
+do-configure:   do-autoreconf do-configur%
 
 include ../../../mk/gnu.post.mk

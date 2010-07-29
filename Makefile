@@ -22,7 +22,7 @@ whatchanged:
 
 # Bootstrapping it all on machines without some basic software.
 
-all: check-environment
+all: bootstrap
 
 dummy:
 	@echo ""
@@ -65,23 +65,23 @@ check-environment:
 	fi
 
 wget: check-environment
-	@if type wget || test -f $(PREFIX)/bootstrap/wget/current/bin/wget; then \
+	@if type wget || test -f $(PREFIX)/bootstrap/gnu/wget/current/bin/wget; then \
 	: no-op; \
 	else \
 	echo "--- Making wget."; \
-	cd packages/wget/1.7; \
+	cd packages/wget/1.9.1; \
 	mkdir $(PREFIX)/bootstrap; \
 	$(MAKE) \
 	PREFIX=$(PREFIX)/bootstrap \
 	PATCH="echo BOOTSTRAP: Ignoring patch: " \
 	INSTALL_INFO="echo BOOTSTRAP: Ignoring install-info: " \
 	BOOTSTRAP=yes install clean; \
-	cd $(PREFIX)/bootstrap/wget; \
-	ln -s 1.7 current; \
+	cd $(PREFIX)/bootstrap/gnu/wget; \
+	ln -s 1.9.1 current; \
 	fi
 
 gcc: wget check-environment
-	@if type gcc || test -f $(PREFIX)/bootstrap/gcc/current/bin/gcc; then \
+	@if type gcc || test -f $(PREFIX)/bootstrap/gnu/gcc/current/bin/gcc; then \
 	: no-op; \
 	else \
 	echo "--- Making gcc."; \
@@ -93,7 +93,7 @@ gcc: wget check-environment
 	PATCH="echo BOOTSTRAP: Ignoring patch: " \
 	INSTALL_INFO="echo BOOTSTRAP: Ignoring install-info: " \
 	BOOTSTRAP=yes install clean; \
-	cd $(PREFIX)/bootstrap/gcc; \
+	cd $(PREFIX)/bootstrap/gnu/gcc; \
 	ln -s 2.95.3 current; \
 	fi
 
@@ -103,8 +103,8 @@ patch:
 	if type patch; then \
 	patch=patch; \
 	fi; \
-	if test -f $(PREFIX)/bootstrap/patch/current/bin/patch; then \
-	patch=$(PREFIX)/bootstrap/patch/current/bin/patch; \
+	if test -f $(PREFIX)/bootstrap/gnu/patch/current/bin/patch; then \
+	patch=$(PREFIX)/bootstrap/gnu/patch/current/bin/patch; \
 	else \
 	if test -f $(PREFIX)/patch/current/bin/patch; then \
 	patch=$(PREFIX)/patch/current/bin/patch; \
@@ -121,15 +121,15 @@ patch:
 	fi; \
 	if test "X$$patch" = "Xno"; then \
 	echo "--- Making patch."; \
-	cd packages/patch/2.5.4; \
+	cd packages/patch/2.6.1; \
 	mkdir $(PREFIX)/bootstrap; \
 	$(MAKE) \
 	PREFIX=$(PREFIX)/bootstrap \
 	INSTALL_INFO="echo BOOTSTRAP: Ignoring install-info: " \
 	CC=$(BOOTSTRAP_GCC) \
 	BOOTSTRAP=yes install clean; \
-	cd $(PREFIX)/bootstrap/patch; \
-	ln -s 2.5.4 current; \
+	cd $(PREFIX)/bootstrap/gnu/patch; \
+	ln -s 2.6.1 current; \
 	fi
 
 texinfo: patch gcc wget check-environment
@@ -139,16 +139,16 @@ texinfo: patch gcc wget check-environment
 	    install-info --version | grep " 1."); then \
 	: no-op; \
 	else \
-	if test -f $(PREFIX)/bootstrap/texinfo/current/bin/install-info; then \
+	if test -f $(PREFIX)/bootstrap/gnu/texinfo/current/bin/install-info; then \
 	: no-op; \
 	else \
 	echo "--- Making texinfo."; \
-	cd packages/texinfo/4.0; \
+	cd packages/texinfo/4.13; \
 	mkdir $(PREFIX)/bootstrap; \
 	$(MAKE) CC=$(BOOTSTRAP_GCC) PREFIX=$(PREFIX)/bootstrap \
 	install clean; \
-	cd $(PREFIX)/bootstrap/texinfo; \
-	ln -s 4.0 current; \
+	cd $(PREFIX)/bootstrap/gnu/texinfo; \
+	ln -s 4.13 current; \
 	fi; \
 	fi
 
@@ -159,11 +159,11 @@ gtar: texinfo patch gcc wget check-environment
 	if type gtar; then \
 	: no-op; \
 	else \
-	if test -f $(PREFIX)/bootstrap/gtar/current/bin/gtar; then \
+	if test -f $(PREFIX)/bootstrap/gnu/gtar/current/bin/gtar; then \
 	: no-op; \
 	else \
 	echo "--- Making gtar."; \
-	cd packages/gtar/1.13; \
+	cd packages/gtar/1.23; \
 	$(MAKE) install; \
 	fi; \
 	fi; \

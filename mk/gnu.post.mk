@@ -1027,7 +1027,7 @@ endif
 # Use autoconf to rebuild configure-script
 #
 do-autoreconf:
-	$(QUIET) $(MODULE_ADD) $(BUILD_DEPENDS) autoconf; \
+	$(QUIET) $(MODULE_ADD) $(BUILD_DEPENDS) autoconf/2.66$(COMPILER_TAG); \
 	cd $(WRKSRC) && autoreconf
 
 #
@@ -1059,7 +1059,7 @@ ifdef HAS_CONFIGURE
 	$(QUIET) $(MODULE_ADD) $(BUILD_DEPENDS);			\
 	cd $(WRKSRC) && $(CONFIGURE_ENV) $(CONFIGURE_SCRIPT) $(CONFIGURE_ARGS)
 ifdef USE_LIBTOOL
-	#$(QUIET) $(CP) -f $(PREFIX_libtool)/bin/libtool $(WRKSRC)/libtool
+	$(QUIET) $(CP) -f $(PREFIX_libtool)/bin/libtool $(WRKSRC)/libtool
 endif
 endif
 	$(QUIET) : # no-op
