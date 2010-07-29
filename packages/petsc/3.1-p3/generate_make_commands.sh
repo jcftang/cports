@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for l in " " install clean;
+for l in build install clean;
 do
     for k in c cxx;
     do
