@@ -1,0 +1,9 @@
+Title: fix --libs in DEPENDS
+UID: lonsdale01.1280411733.P10254M10493
+Added: Thu Jul 29 14:55:33 2010
+Status: open
+
+
+Currently --run-env, --build-env and --cond is working when defining
+dependacies, --libs is broken, probably due to the way that the modulefile
+and directory generation is working.
