@@ -14,6 +14,15 @@
    - most of the other systems are not as easily hackable as just
      makefiles
    - don't allow multiple verisons of software installed
+ - Wanted to extend the modulefile generation targets to include these variables
+  - INCLUDE_PATH 
+  - CPLUS_INCLUDE_PATH 
+  - C_INCLUDE_PATH 
+  - LD_LIBRARY_PATH
+  - LIBRARY_PATH
+  - LD_RUN_PATH
+  - PKG_CONFIG_PATH
+  - PYTHONPATH
 * The upstream authors
   - mpkg - http://staff.e.kth.se/mpkg/index.html
   - cports - http://www.caoslinux.org/
