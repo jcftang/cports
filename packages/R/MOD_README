@@ -1,0 +1,3 @@
+Example
+ make  R_VERSION=2.11.1 R_PREFIX=/home/darach/install_home/cports/rhel-5.x86_64/gnu/R/2.11.1 install
+ make  R_VERSION=2.11.1 R_PREFIX=/home/darach/install_home/cports/rhel-5.x86_64/gnu/R/2.11.1 clean
