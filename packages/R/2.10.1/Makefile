@@ -25,7 +25,7 @@ CONFIGURE_ARGS +=  --with-lapack="-L$(PREFIX_atlas)/lib -llapack -lcblas"
 do-test:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
 	cd $(WRKSRC); \
-	make check 2>&1 | tee testlog;                                                                                                                                  
+	make check 2>&1 | tee testlog;
 
 #do-install:
 #	$(MODULE_ADD) $(BUILD_DEPENDS);  \
