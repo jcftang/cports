@@ -12,12 +12,12 @@ MAINTAINER=     jtang@tchpc.tcd.ie
 DISTFILES=	$(DISTNAME)-$(VERSION).tar.bz2
 GNU_CONFIGURE=  yes
 
-DEPENDS+= "openssl/1.0.0a --build-env --run-env"
-DEPENDS+= "zlib/1.2.5 --build-env --run-env"
-DEPENDS+= "libiconv/1.13 --build-env --run-env"
+DEPENDS+= "openssl/1.0.0a --lib"
+DEPENDS+= "zlib/1.2.5 --lib"
+DEPENDS+= "libiconv/1.13 --lib"
 DEPENDS+= "tcl/8.5.8 --build-env"
 DEPENDS+= "tk/8.5.8 --build-env"
-DEPENDS+= "curl/7.21.0 --build-env --run-env"
+DEPENDS+= "curl/7.21.0 --lib"
 
 CONFIGURE_ARGS+= --with-iconv=$(PREFIX_libiconv)
 
