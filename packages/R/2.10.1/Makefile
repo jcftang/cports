@@ -10,7 +10,7 @@ DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
 
 EXTRAVERSION=
 
-DEPENDS+="atlas/3.8.3 --build-env atlas/3.8.3 --run-env"
+DEPENDS+="atlas/3.8.3 --lib"
 
 DESCRIPTION=  "R is a free software environment for statistical computing and graphics."
 
