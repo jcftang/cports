@@ -13,7 +13,7 @@ PKGSUBDIR?=	$(DISTNAME)$(VERSION)/unix
 INSTALL_SOURCE= yes
 GNU_CONFIGURE=	yes
 
-DEPENDS=	"zlib/1.2.5 --build-env"
+DEPENDS=	"zlib/1.2.5 --lib"
 DEPENDS+=	"binutils/2.20 --build-env"
 BUILD_STATIC=	yes
 
