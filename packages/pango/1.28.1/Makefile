@@ -13,7 +13,7 @@ DEPENDS+="glib/2.24.1 --build-env"
 DEPENDS+="fontconfig/2.8.0 --build-env"
 DEPENDS+="cairo/1.8.10 --build-env"
 
-DESCRIPTION=	"pango"
+DESCRIPTION=	"Pango is a library for laying out and rendering of text, with an emphasis on internationalization."
 
 CONFIGURE_ARGS+=
 
