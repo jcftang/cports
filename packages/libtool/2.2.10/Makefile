@@ -13,9 +13,10 @@ DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
 
 EXTRAVERSION=
 
-DEPENDS+=       "m4/1.4.14 --build-env"
-DEPENDS+=       "gawk/3.1.8 --build-env"
-DEPENDS+=       "automake/1.11 --build-env"
+DEPENDS+=       "m4 --build-env"
+DEPENDS+=       "gawk --build-env"
+DEPENDS+=       "automake --build-env"
+#DEPENDS+=       "autoconf --build-env"
 
 ENVIRONMENT+=   AUTOMAKE=$(PREFIX_automake)/bin/automake
 
