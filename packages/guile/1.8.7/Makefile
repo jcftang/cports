@@ -9,16 +9,16 @@ MAINTAINER=	jtang@tchpc.tcd.ie
 GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes
 
-DEPENDS=	"gawk --build-env"
-DEPENDS+=	"gettext --build-env"
-DEPENDS+=	"libiconv --build-env"
+DEPENDS=	"gawk/3.1.8 --build-env"
+DEPENDS+=	"gettext/0.17 --lib --build-env"
+DEPENDS+=	"libiconv/1.13 --lib --build-env"
 #DEPENDS+=	"glib --lib --build-env"
 #DEPENDS+=	"gtk --lib --build-env"
 #DEPENDS+=	"gnome-libs --lib --build-env"
-DEPENDS+=	"texinfo --build-env"
-DEPENDS+=	"ncurses --build-env"
-DEPENDS+=	"readline --build-env"
-DEPENDS+=	"libtool --build-env"
+DEPENDS+=	"texinfo/4.13 --build-env"
+DEPENDS+=	"ncurses/5.7 --lib --build-env"
+DEPENDS+=	"readline/6.1 --lib --build-env"
+DEPENDS+=	"libtool/2.2.10 --build-env"
 
 #CONFIGURE_ARGS=	--with-glib-prefix=$(PREFIX_glib)
 #CONFIGURE_ARGS+=--with-gnome=$(PREFIX_gnome-libs)
