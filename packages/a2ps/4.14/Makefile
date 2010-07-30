@@ -26,7 +26,7 @@ DEPENDS+=	"gzip/1.4 --build-env"
 DEPENDS+=	"flex/2.5.35 --lib --build-env"
 DEPENDS+=	"gperf/3.0.4 --build-env"
 DEPENDS+=	"libtool/2.2.10 --build-env"
-DEPENDS+=	"libiconv/1.13 --build-env"
+DEPENDS+=	"libiconv/1.13 --lib --build-env"
 
 CONFIGURE_ARGS=	--enable-shared=yes --enable-paths
 CONFIGURE_ARGS+=--with-medium=A4 --with-encoding=latin1

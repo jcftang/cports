@@ -9,7 +9,7 @@ MAINTAINER=	jtang@tchpc.tcd.ie
 GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes
 
-DEPENDS=	"guile --build-env"
+DEPENDS=	"guile --build-env --lib"
 DEPENDS+=	"texinfo --build-env"
 #DEPENDS+=	"libxml2 --build-env"
 DEPENDS+=	"coreutils --build-env"

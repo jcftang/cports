@@ -9,10 +9,10 @@ GNU_CONFIGURE=	yes
 
 #Commented out, because it will try to use the db-1.85-compat mode of db,
 #which wont work if you have /usr/lib/libdb1.*
-DEPENDS+="glib/2.24.1 --build-env"
-DEPENDS+="atk/1.30.0 --build-env"
-DEPENDS+="pango/1.28.1 --build-env"
-DEPENDS+="cairo/1.8.10 --build-env"
+DEPENDS+="glib/2.24.1 --build-env --lib"
+DEPENDS+="atk/1.30.0 --build-env --lib"
+DEPENDS+="pango/1.28.1 --build-env --lib"
+DEPENDS+="cairo/1.8.10 --build-env --lib"
 
 DESCRIPTION=	"gtk+"
 
