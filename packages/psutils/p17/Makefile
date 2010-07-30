@@ -11,7 +11,7 @@ PKGNAME=	psutils
 MAINTAINER=	mpkg@e.kth.se
 
 DEPENDS+=	"coreutils/8.5 --build-env"
-DEPENDS+=	"perl/5.12.1 --build-env --run-env"
+#DEPENDS+=	"perl/5.12.1 --build-env --run-env"
 
 PRECREATE_DIRS=	man/man1 bin
 
