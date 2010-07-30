@@ -41,9 +41,9 @@ $(warning petsc c comp: $(CPRT_PETSC_CCOMP))
 EXTRAVERSION= _$(CPRT_PETSC_DEBUG)-$(CPRT_PETSC_SCALAR)-$(CPRT_PETSC_CCOMP)
 WORKDIRSUFFIX= $(CPRT_PETSC_DEBUG)-$(CPRT_PETSC_SCALAR)-$(CPRT_PETSC_CCOMP)
 
-DEPENDS+="atlas/3.8.3 --build-env"
+DEPENDS+="atlas/3.8.3 --lib --build-env"
 DEPENDS+="openmpi/1.4.2 --build-env openmpi/1.4.2 --run-env"
-DEPENDS+="ParMetis/3.1.1 --build-env "
+DEPENDS+="ParMetis/3.1.1 --lib --build-env"
 
 DESCRIPTION=  "PETSc, pronounced PET-see (the S is silent), is a suite of data structures and routines for the scalable (parallel) solution of scientific applications modeled by partial differential equations "
 
