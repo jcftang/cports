@@ -11,9 +11,9 @@ GNU_CONFIGURE=	yes
 
 #DEPENDS+=	"krb4 --lib"
 #DEPENDS+=	"heimdal --lib"
-DEPENDS+=	"openssl/1.0.0a --build-env"
-DEPENDS+=	"cyrus-sasl/2.1.23 --build-env"
-DEPENDS+=	"db/4.8.26 --build-env"
+DEPENDS+=	"openssl/1.0.0a --lib"
+DEPENDS+=	"cyrus-sasl/2.1.23 --lib"
+DEPENDS+=	"db/4.8.26 --lib"
 
 DESCRIPTION=	"OpenLDAP Software is an open source implementation of the"
 DESCRIPTION+=	"Lightweight Directory Access Protocol."
