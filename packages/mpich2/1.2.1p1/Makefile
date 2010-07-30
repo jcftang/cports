@@ -13,8 +13,7 @@ EXTRAVERSION=
 
 CONFIGURE_ARGS+= 
 
-DEPENDS+="openpa/1.0.2 --build-env"
-DEPENDS+="openpa/1.0.2 --run-env"
+DEPENDS+="openpa/1.0.2 --lib"
 
 DESCRIPTION=	"MPICH2 is a high-performance and widely portable implementation of the Message Passing Interface (MPI) standard (both MPI-1 and MPI-2)."
 

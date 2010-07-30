@@ -11,7 +11,7 @@ DISTFILES = $(DISTNAME)-amalgamation-$(VERSION).tar.gz
 
 EXTRAVERSION=
 
-DEPENDS+="gcc/4.5.0 --build-env gcc/4.5.0 --run-env"
+#DEPENDS+="gcc/4.5.0 --build-env gcc/4.5.0 --run-env"
 DESCRIPTION=	"SQLite is a in-process library that implements a self-contained, serverless, zero-configuration, transactional SQL database engine."
 
 include ../../../mk/gnu.post.mk

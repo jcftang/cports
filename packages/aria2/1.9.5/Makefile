@@ -11,6 +11,10 @@ DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
 
 EXTRAVERSION=
 
+DEPENDS+="sqlite/3.6.23.1 --lib"
+DEPENDS+="libxml2/2.7.7 --lib"
+DEPENDS+="c-ares/1.7.3 --lib"
+
 DESCRIPTION=	"aria2 is a multi-protocol & multi-source, cross platform download utility."
 
 include ../../../mk/gnu.post.mk
