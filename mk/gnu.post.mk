@@ -1081,8 +1081,13 @@ do-buil%:
 #  XXX Maybe move this out to all those packages instead.
 #
 
+ifdef BOOTSTRAP 
 do-install-info:
-	$(QUIET) if [ -d "$(PROGRAM_PREFIX)/info" ]; then \
+	echo "bootstrap phase"
+else
+do-install-info:
+	$(QUIET) $(MODULE_ADD) $(BUILD_DEPENDS); \ 
+	if [ -d "$(PROGRAM_PREFIX)/info" ]; then \
 	    if [ ! -f "$(PROGRAM_PREFIX)/info/dir" ]; then \
 		cd $(PROGRAM_PREFIX)/info; \
 		if [ "`$(ECHO) *.info`" != "*.info" ]; then \
@@ -1096,7 +1101,7 @@ do-install-info:
 		fi; \
 	    fi; \
 	fi;
-
+endif
 
 #
 # Do anything post error
