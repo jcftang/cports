@@ -26,9 +26,13 @@ else
 CPRT_PETSC_OPTS+= --with-scalar-type=real
 endif
 
+CPRT_PETSC_C_STR ?= c
 CPRT_PETSC_CCOMP ?= c
 ifeq ("$(CPRT_PETSC_CCOMP)","cxx")
-CPRT_PETSC_OPTS+=  --with-clanguage=C++
+DEPENDS+="boost/1_43_0_openmpi_1.4.2 --lib --build-env"
+CPRT_PETSC_OPTS+=  --with-clanguage=C++ 
+CPRT_PETSC_OPTS+= --with-boost=1 --with-boost-dir=$(PREFIX_boost)
+CPRT_PETSC_C_STR=cxx
 else
 CPRT_PETSC_OPTS+= --with-clanguage=C
 endif
@@ -36,14 +40,19 @@ endif
 $(warning debug: $(CPRT_PETSC_DEBUG))
 $(warning scalar: $(CPRT_PETSC_SCALAR))
 $(warning petsc arch: $(CPRT_PETSC_DBG_STR))
+$(warning petsc arch: $(CPRT_PETSC_C_STR))
 $(warning petsc c comp: $(CPRT_PETSC_CCOMP))
+$(warning scalapack prefix: $(PREFIX_scalapack))
 
 EXTRAVERSION= _$(CPRT_PETSC_DEBUG)-$(CPRT_PETSC_SCALAR)-$(CPRT_PETSC_CCOMP)
 WORKDIRSUFFIX= $(CPRT_PETSC_DEBUG)-$(CPRT_PETSC_SCALAR)-$(CPRT_PETSC_CCOMP)
 
 DEPENDS+="atlas/3.8.3 --lib --build-env"
-DEPENDS+="openmpi/1.4.2 --build-env openmpi/1.4.2 --run-env"
+DEPENDS+="openmpi/1.4.2 --lib --build-env"
+DEPENDS+="openmpi/1.4.2 --run-env"
 DEPENDS+="ParMetis/3.1.1 --lib --build-env"
+#DEPENDS+="scalapack/1.8.0_openmpi_1.4.2 --lib --build-env"
+#DEPENDS+="scotch/5.1.9_esmumps --lib --build-env"
 
 DESCRIPTION=  "PETSc, pronounced PET-see (the S is silent), is a suite of data structures and routines for the scalable (parallel) solution of scientific applications modeled by partial differential equations "
 
@@ -54,6 +63,9 @@ CONFIGURE_ARGS +=  --with-blas-lapack-dir=$(PREFIX_atlas)
 CONFIGURE_ARGS +=  --with-parmetis=1 --with-parmetis-include=$(PREFIX_ParMetis)/include 
 CONFIGURE_ARGS +=   --with-parmetis-lib="[$(PREFIX_ParMetis)/lib/libparmetis.a,$(PREFIX_ParMetis)/lib/libmetis.a]"
 CONFIGURE_ARGS +=   --with-mpi=1 --with-mpi-dir=$(PREFIX_openmpi)
+#CONFIGURE_ARGS +=   --with-scotch=1 --with-scotch-dir=$(PREFIX_scotch)
+#CONFIGURE_ARGS +=   --with-blacs=1 --with-blacs-dir=$(PREFIX_scalapack)
+#CONFIGURE_ARGS +=   --with-scalapack=1 --with-scalapack-dir=$(PREFIX_scalapack)
 
 MODULEFILE_LINES+=      PETSC
 MODULEFILE_CMD_PETSC?= \
@@ -82,6 +94,6 @@ include ../../../mk/gnu.post.mk
 ## If I put this here, it seems to work -- no (real) idea what is
 ## going on
 ifeq "$(COMPILERS)" "gnu"
-  PETSC_ARCH=linux-gnu-c-$(CPRT_PETSC_DBG_STR)
+  PETSC_ARCH=linux-gnu-$(CPRT_PETSC_C_STR)-$(CPRT_PETSC_DBG_STR)
 endif
 
