@@ -1086,7 +1086,8 @@ do-install-info:
 	echo "bootstrap phase"
 else
 do-install-info:
-	$(QUIET) $(MODULE_ADD) $(BUILD_DEPENDS); \ 
+	echo "do-install-info";
+	$(MODULE_ADD) $(BUILD_DEPENDS); \
 	if [ -d "$(PROGRAM_PREFIX)/info" ]; then \
 	    if [ ! -f "$(PROGRAM_PREFIX)/info/dir" ]; then \
 		cd $(PROGRAM_PREFIX)/info; \
