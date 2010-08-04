@@ -13,6 +13,7 @@ GNU_CONFIGURE=	yes
 
 DEPENDS=	"bison/2.4.2 --build-env"
 DEPENDS+=	"coreutils/8.5 --build-env"
+DEPENDS+=	"texinfo/4.13 --build-env"
 
 DESCRIPTION=	"Flex is a fast lexical analyser generator. It is a tool for"
 DESCRIPTION+=	"generating programs that perform pattern-matching on text."
