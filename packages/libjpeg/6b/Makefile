@@ -23,7 +23,7 @@ CONFIGURE_ARGS=	--enable-shared --enable-static
 ifneq (,$(findstring osf,$(SYSTEM_TYPE_OS)))
 CONFIGURE_ENV+=	CC="cc -std1 -w1"
 else
-DEPENDS+=	"gcc --build-env"
+#DEPENDS+=	"gcc --build-env"
 endif
 
 DESCRIPTION=	"This package contains C software to implement JPEG image"
