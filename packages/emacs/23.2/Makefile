@@ -52,6 +52,7 @@ ENVIRONMENT+=	LD_LIBRARY_PATH="${PREFIX_ncurses}"
 #CONFIGURE_ARGS+=--with-png=${PREFIX_libpng}
 #CONFIGURE_ARGS+=--with-tiff=${PREFIX_libtiff}
 #CONFIGURE_ARGS+=--with-xpm=${PREFIX_libxpm}
+CONFIGURE_ARGS+= --with-x-toolkit=gtk
 
 DESCRIPTION=	"Emacs is an extensible, customizable real-time display editor"
 DESCRIPTION+=	"and computing environment. It offers true Lisp, smoothly"
