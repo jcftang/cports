@@ -9,7 +9,7 @@ GNU_CONFIGURE=	yes
 
 #Commented out, because it will try to use the db-1.85-compat mode of db,
 #which wont work if you have /usr/lib/libdb1.*
-DEPENDS+=
+DEPENDS+=	"freetype/2.4.2 --lib --build-env"
 
 DESCRIPTION=	"Fontconfig is a library for font customization and configuration."
 

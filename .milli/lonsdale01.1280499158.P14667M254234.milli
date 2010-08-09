@@ -5,3 +5,8 @@ Status: open
 
 
 not sure why pango wont detect cairo, this causes gtk+ to fail
+
+Modified: Mon Aug  9 17:02:27 2010
+Status: closed
+
+pango fails to build with cairo because pixman wasn't in the dep list
