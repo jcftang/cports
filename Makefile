@@ -5,7 +5,7 @@ DISTFILE=$(DISTNAME)-$(VERSION)
 
 default: check-environment
 
-dist: $(DISTNAME).tar
+dist: $(DISTNAME).tar $(DISTFILE).tar.bz2.sha1sum
 
 $(DISTNAME).tar:
 	@mkdir -p releases
@@ -17,6 +17,9 @@ clean:
 
 whatchanged:
 	(git whatchanged  `git tag -l | tail -1`..HEAD  | git shortlog)
+
+$(DISTFILE).tar.bz2.sha1sum:
+	@cd releases && openssl sha1 $(DISTFILE).tar.bz2 > $(DISTFILE).tar.bz2.sha1sum
 
 .PHONY: whatchanged
 
