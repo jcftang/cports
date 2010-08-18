@@ -1,0 +1,10 @@
+Title: PYTHONPATH - needs to be checked
+UID: lonsdale01.1282119631.P11157M315156
+Added: Wed Aug 18 09:20:31 2010
+Status: open
+
+not all the python packages do the expect thing, the VERSION variable
+is 2.6 and not 2.6.3 as we would expect, so the macros in gnu.post.mk
+dont really work too well
+
+
