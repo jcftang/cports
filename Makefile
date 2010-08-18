@@ -5,21 +5,27 @@ DISTFILE=$(DISTNAME)-$(VERSION)
 
 default: check-environment
 
-dist: $(DISTNAME).tar $(DISTFILE).tar.bz2.sha1sum
+dist: do-dist
 
-$(DISTNAME).tar:
+do-dist: $(DISTFILE).tar.bz2.sha1sum
+	@mv $(DISTFILE).tar.bz2.sha1sum releases
+	@mv $(DISTFILE).tar.bz2 releases
+
+$(DISTFILE).tar:
 	@mkdir -p releases
-	@git archive --format tar --prefix $(DISTFILE)/ -o releases/$(DISTFILE).tar $(VERSION)
-	@bzip2 releases/$(DISTFILE).tar
+	@git archive --format tar --prefix $(DISTFILE)/ -o $(DISTFILE).tar $(VERSION)
+
+$(DISTFILE).tar.bz2: $(DISTFILE).tar
+	@bzip2 -f $(DISTFILE).tar
+
+$(DISTFILE).tar.bz2.sha1sum: $(DISTFILE).tar.bz2
+	@openssl sha1 $(DISTFILE).tar.bz2 > $(DISTFILE).tar.bz2.sha1sum
 
 clean:
 	#@-rm $(DISTFILE).tar
 
 whatchanged:
 	(git whatchanged  `git tag -l | tail -1`..HEAD  | git shortlog)
-
-$(DISTFILE).tar.bz2.sha1sum:
-	@cd releases && openssl sha1 $(DISTFILE).tar.bz2 > $(DISTFILE).tar.bz2.sha1sum
 
 .PHONY: whatchanged
 
