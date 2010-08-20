@@ -3,6 +3,20 @@
 #
 # Define Compiler suite profiles
 #
+ifeq (gnu4.5.1,$(COMPILERS))
+ENVIRONMENT+= CC=gcc
+ENVIRONMENT+= CXX=g++
+ENVIRONMENT+= F77=gfortran
+ENVIRONMENT+= F90=gfortran
+ENVIRONMENT+= FC=gfortran
+COMPILER_VERSION?= $(shell gcc -dumpversion)
+COMPILER_TAG?=-gnu${COMPILER_VERSION}
+ifneq (-gnu4.5.1,$(COMPILER_TAG))
+COMPILER_TAG= echo "Error compiler that is loaded up is wrong"
+endif
+endif
+
+
 ifeq (gnu4.5.0,$(COMPILERS))
 ENVIRONMENT+= CC=gcc
 ENVIRONMENT+= CXX=g++
