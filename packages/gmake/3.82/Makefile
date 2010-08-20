@@ -22,7 +22,7 @@ ifneq (,$(findstring osf,$(SYSTEM_TYPE_OS)))
 CONFIGURE_ENV+=	CC="cc -std1 -w1 -fast"
 endif
 
-INFO_FILE=	$(PROGRAM_PREFIX)/info/make.info
+INFO_FILE=	$(PROGRAM_PREFIX)/share/info/make.info
 
 DESCRIPTION=	"Make is a tool which controls the generation of executables"
 DESCRIPTION+=	"and other non-source files of a program from the program's"
@@ -35,6 +35,6 @@ DESCRIPTION+=	"program."
 
 do-install:	do-instal%
 	$(LN) -f make $(PROGRAM_PREFIX)/bin/gmake
-	$(ECHO) ".so man1/make.1" > $(PROGRAM_PREFIX)/man/man1/gmake.1
+	$(ECHO) ".so man1/make.1" > $(PROGRAM_PREFIX)/share/man/man1/gmake.1
 
 include ../../../mk/gnu.post.mk
