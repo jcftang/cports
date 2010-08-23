@@ -10,7 +10,7 @@ CATEGORIES=	utilities
 HOMEPAGE=	http://emboss.sourceforge.net
 MASTER_SITES=	ftp://emboss.open-bio.org/pub/EMBOSS/
 MAINTAINER=	jtang@tchpc.tcd.ie
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
 
 EXTRAVERSION=
