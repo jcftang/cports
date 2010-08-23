@@ -13,14 +13,12 @@ MAINTAINER=	jtang@tchpc.tcd.ie
 HAS_CONFIGURE=	yes
 DISTFILES = $(DISTNAME)-$(VERSION)-src.tar.gz
 
-PKGSUBDIR=$(DISTNAME)-$(VERSION)-src
+PKGSUBDIR=$(DISTNAME)-$(VERSION)-src/c++
 
 EXTRAVERSION=
 
-CONFIGURE_SCRIPT=	c++/configure
-MAKEFILE=		c++/Makefile
-
-CONFIGURE_ARGS+=	--without-debug --with-mt --with-build-root=ReleaseMT
+CONFIGURE_SCRIPT=	./configure
+CONFIGURE_ARGS+=	--without-debug --with-mt --with-build-root=ReleaseMT --prefix=$(PROGRAM_PREFIX)
 
 DESCRIPTION=	"BLAST Basic Local Alignment Search Tool"
 
