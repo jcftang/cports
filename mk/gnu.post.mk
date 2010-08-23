@@ -494,6 +494,7 @@ ifdef DEPENDS
 		    if [ "X$$opt_lib" = "Xyes" ]; then \
 			$(ECHO) >>$(MPKG_DEPENDS) LINK_DEPENDS+=$$found_module; \
 			$(ECHO) >>$(MPKG_DEPENDS) LINK_PATHS+=$$found_prefix/$$found_dir/lib; \
+			$(ECHO) >>$(MPKG_DEPENDS) LINK_PATHS+=$$found_prefix/$$found_dir/lib64; \
 			if [ -f "$$found_prefix"/"$$found_dir"/.mpkg_depends ] ; then \
 			    if [ "`grep '^LINK_PATHS+=.*PREFIX_' $$found_prefix/$$found_dir/.mpkg_depends `" ] ; then \
 				: Obsolete LINK_PATH format, rebuild ; \
