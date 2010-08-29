@@ -1,7 +1,7 @@
 include ../../../mk/gnu.pre.mk
 
 DISTNAME=	aria2
-VERSION=	1.10.0
+VERSION=	1.10.1
 CATEGORIES=	utilities
 HOMEPAGE=	http://aria2.sourceforge.net/
 MASTER_SITES=	http://downloads.sourceforge.net/project/aria2/stable/aria2-$(VERSION)/
