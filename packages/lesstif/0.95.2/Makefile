@@ -3,7 +3,7 @@ include ../../../mk/gnu.pre.mk
 DISTNAME=	lesstif
 VERSION=	0.95.2
 CATEGORIES=	utilities
-HOMEPAGE=	http://www.gnuplot.info/
+HOMEPAGE=	http://lesstif.sourceforge.net
 MASTER_SITES=	https://downloads.sourceforge.net/project/lesstif/lesstif/$(VERSION)
 MAINTAINER=	jtang@tchpc.tcd.ie
 GNU_CONFIGURE=	yes
