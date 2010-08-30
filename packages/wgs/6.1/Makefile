@@ -10,7 +10,7 @@ MAINTAINER=	jtang@tchpc.tcd.ie
 HAS_CONFIGURE=	no
 DISTFILES = $(DISTNAME)-$(VERSION).tar.bz2
 
-DESCRIPTION=	"wgs assembler - Whole Genome Shotgun Assembler"
+DESCRIPTION=	"Celera Assembler (CA) is a whole-genome shotgun (WGS) assembler for the reconstruction of genomic DNA sequence from WGS sequencing data."
 
 DEPENDS+=	""
 
