@@ -28,7 +28,7 @@ whatchanged:
 	(git whatchanged  `git tag -l | tail -1`..HEAD  | git shortlog)
 
 changelog:
-	(git log --pretty --summary --numstat | ./scripts/git2cl)
+	(git log --pretty --summary --numstat | ./scripts/git2cl > changelog)
 
 .PHONY: whatchanged
 
