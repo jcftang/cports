@@ -27,6 +27,9 @@ clean:
 whatchanged:
 	(git whatchanged  `git tag -l | tail -1`..HEAD  | git shortlog)
 
+changelog:
+	(git log --pretty --summary --numstat | ./scripts/git2cl)
+
 .PHONY: whatchanged
 
 # Bootstrapping it all on machines without some basic software.
