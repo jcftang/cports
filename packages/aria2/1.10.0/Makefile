@@ -16,7 +16,7 @@ DEPENDS+="libxml2/2.7.7 --lib --build-env"
 DEPENDS+="c-ares/1.7.3 --lib --build-env"
 DEPENDS+="openssl/1.0.0a --lib --build-env"
 
-CONFIGURE_ARGS+= 
+CONFIGURE_ARGS+=         --with-openssl --without-gnutls
 
 DESCRIPTION=	"aria2 is a multi-protocol & multi-source, cross platform download utility."
 
