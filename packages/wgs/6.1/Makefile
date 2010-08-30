@@ -12,7 +12,10 @@ DISTFILES = $(DISTNAME)-$(VERSION).tar.bz2
 
 DESCRIPTION=	"Celera Assembler (CA) is a whole-genome shotgun (WGS) assembler for the reconstruction of genomic DNA sequence from WGS sequencing data."
 
-DEPENDS+=	""
+DEPENDS+=	"amos/2.0.8 --run-env"
+DEPENDS+=	"lucy/1.19p --run-env"
+DEPENDS+=	"perl/5.12.1 --run-env"
+# also need ftp://ftp.cbcb.umd.edu/pub/software/CAutils.tar.gz
 
 do-configure:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
