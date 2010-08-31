@@ -30,7 +30,7 @@ whatchanged:
 changelog:
 	(git log --pretty --summary --numstat | ./scripts/git2cl > changelog)
 
-.PHONY: whatchanged
+.PHONY: whatchanged changelog
 
 # Bootstrapping it all on machines without some basic software.
 
