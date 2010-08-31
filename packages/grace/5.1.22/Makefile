@@ -21,7 +21,7 @@ DEPENDS+=	"poppler/0.14.1 --lib --build-env"
 DEPENDS+=	"xbitmaps/1.1.0 --lib"
 DEPENDS+=	"zlib/1.2.5 --lib --build-env"
 
-CONFIGURE_ARGS += 
+CONFIGURE_ARGS += --enable-grace-home=$(PROGRAM_PREFIX)
 
 include ../../../mk/gnu.post.mk
 
