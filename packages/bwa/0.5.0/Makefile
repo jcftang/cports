@@ -12,6 +12,8 @@ DISTFILES = $(DISTNAME)-$(VERSION).tar.bz2
 
 DESCRIPTION=	"bwa - Burrows-Wheeler Alignment Tool"
 
+DEPENDS=	"samtools/0.1.8 --run-env"
+
 do-build:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
 	cd $(WRKSRC); \
