@@ -17,9 +17,9 @@ DESCRIPTION=	"The ATLAS (Automatically Tuned Linear Algebra Software) project is
 
 #CONFIGURE_ARGS +=
 
-do-configure:
-	@
 do-build:
+# gcc/gfortran, default is the gnu compiler
+ifeq ("$(COMPILERS)","gnu")
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
 	gcc --version;                    \
 	./preconfig.sh;                   \
@@ -33,6 +33,26 @@ do-build:
 	make check 2>&1 | tee checklog;  \
 	make ptcheck 2>&1 | tee ptchecklog;  \
 	make time 2>&1 | tee timelog
+endif
+
+# icc/ifort specific
+	
+ifeq ("$(COMPILERS)","intel11.0")
+	$(MODULE_ADD) $(BUILD_DEPENDS) ;\
+	icc --version;                    \
+	./preconfig.$(COMPILERS).sh;                   \
+	./lapackconfig.$(COMPILERS).sh;                
+	$(MODULE_ADD) $(BUILD_DEPENDS);   \
+	cd work; mkdir -p build;cd build;    \
+	../ATLAS/configure --prefix=$(PROGRAM_PREFIX) --with-netlib-lapack=../lapackdir/lapackinst/lapack_LINUX.a -C if ifort -F if '-O2' -C ic icc -F ic '-O2' -Fa al -fPIC ;\
+	cd build;  \
+	make 2>&1 | tee makelog; \
+	cd lib; make shared; cd .. \
+	make check 2>&1 | tee checklog;  \
+	make ptcheck 2>&1 | tee ptchecklog;  \
+	make time 2>&1 | tee timelog
+
+endif
 
 do-install:
 	cd work/build; \
