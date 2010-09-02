@@ -13,9 +13,9 @@ GNU_CONFIGURE=	yes
 DISTFILES = $(DISTNAME)_installer.tgz $(DISTNAME)-$(VERSION).tgz 
 
 EXTRAVERSION=_openmpi_1.4.2
-DEPENDS+="openmpi/1.4.2 --build-env"
+DEPENDS+="openmpi/1.4.2 --build-env --run-env"
 #DEPENDS+="gcc/4.5.0 --build-env gcc/4.5.0 --run-env"
-DEPENDS+="atlas/3.8.3 --build-env atlas/3.8.3 --run-env"
+DEPENDS+="atlas/3.8.3 --build-env --run-env --lib"
 
 CONFIGURE_ARGS+= 
 
