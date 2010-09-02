@@ -26,22 +26,44 @@ do-configure:
 	@
 
 do-build:
+# gcc/gfortran, default is the gnu compiler
+ifeq ("$(COMPILERS)","gnu")
 	mkdir -p $(PROGRAM_PREFIX);
 	$(QUIET) $(MODULE_ADD) $(BUILD_DEPENDS);                        \
 	cd $(WORKDIR); \
 	cd scalapack_installer_0.96 ; \
 	python ./setup.py \
-	--fcflags="-O3 -fPIC" \
+	--fcflags=" -O3 -fPIC" \
+	--ccflags="-O3 -fPIC" \
+	--downblacs \
+	--blaslib="-lcblas -lf77blas -latlas" \
+	--lapacklib="$(PREFIX_atlas)/lib/liblapack.so" \
+	--prefix=$(PROGRAM_PREFIX)
+	
+	# rely on atlas for this
+	#--downlapack \
+	#--f90 mpif90 \
+	#--downblas \
+
+endif
+
+# icc/ifort specific
+ifeq ("$(COMPILERS)","intel11.0")
+	mkdir -p $(PROGRAM_PREFIX);
+	$(QUIET) $(MODULE_ADD) $(BUILD_DEPENDS);                        \
+	cd $(WORKDIR); \
+	cd scalapack_installer_0.96 ; \
+	python ./setup.py \
+	--ldflags_c="-nofor-main" \
+	--fcflags=" -O3 -fPIC" \
 	--ccflags="-O3 -fPIC" \
 	--downblacs \
 	--blaslib="-lcblas -lf77blas -latlas" \
 	--lapacklib="$(PREFIX_atlas)/lib/liblapack.so" \
 	--prefix=$(PROGRAM_PREFIX)
 
-	# rely on atlas for this
-	#--downlapack \
-	#--f90 mpif90 \
-	#--downblas \
+endif
+
 
 do-install:
 	@
