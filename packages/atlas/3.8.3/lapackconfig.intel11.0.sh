@@ -2,10 +2,10 @@
 
 cd work
 optflags=$(cat compflags)
-rm compflags
+#rm compflags
 mkdir lapackdir
 cd lapackdir
-wget http://www.netlib.org/lapack/lapack.tgz
+wget -c http://www.netlib.org/lapack/lapack.tgz
 tar zxvf lapack.tgz
 lapv=$(find . -maxdepth 1 -type d -printf '%f\n' | grep lapack | sed -e 's/^lapack-//')
 if [[ $lapv ]]
@@ -17,7 +17,7 @@ fi
 cd lapackinst
 cp INSTALL/make.inc.ifort ./make.inc.tmp
 cat make.inc.tmp | sed -e "s/^OPTS[ \t]*=.*/OPTS    = $optflags/" | sed -e 's/^NOOPT[ \t]*=.*/NOOPT    = -O0 -fPIC /' > make.inc
-rm make.inc.tmp
+#rm make.inc.tmp
 make lib
 
 
