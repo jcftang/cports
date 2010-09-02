@@ -2,7 +2,7 @@
 cd work;
 mkdir build;
 cd build;
-../ATLAS/configure -C if ifort -F if '-O2' -C ic icc -F ic '-O2' -Fa al -fPIC --prefix=$HOME/tmp/thisthat;
+../ATLAS/configure -C if ifort -F if '-O2 -fPIC' -C ic icc -F ic '-O2 -fPIC' -Fa alg -fPIC --prefix=$HOME/tmp/thisthat;
 rch=$(grep 'ARCH = ' Make.inc  | sed -e 's/.*=[ \t]*//'); echo $rch;
 if [[ $rch =~ 'AMD64K10h64SSE3' ]]
 then 
@@ -19,7 +19,7 @@ then
     echo "gfortran compiler -- fine"
 else 
     echo "Should be using gfortran";
-    exit 1;
+#    exit 1;
 fi
 
 compflags=$(grep 'F77FLAGS =' Make.inc  | sed -e 's/.* =[ \t]*//'); echo $compflags

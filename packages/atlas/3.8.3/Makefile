@@ -44,14 +44,13 @@ ifeq ("$(COMPILERS)","intel11.0")
 	./lapackconfig.$(COMPILERS).sh;                
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
 	cd work; mkdir -p build;cd build;    \
-	../ATLAS/configure --prefix=$(PROGRAM_PREFIX) --with-netlib-lapack=../lapackdir/lapackinst/lapack_LINUX.a -C if ifort -F if '-O2' -C ic icc -F ic '-O2' -Fa al -fPIC ;\
+	../ATLAS/configure --prefix=$(PROGRAM_PREFIX) --with-netlib-lapack=../lapackdir/lapackinst/lapack_LINUX.a --cc=icc -C if ifort -F if '-O2 -fPIC' -C ic icc -F ic '-O2 -fPIC' -Fa alg -fPIC ;\
 	cd build;  \
 	make 2>&1 | tee makelog; \
 	cd lib; make shared; cd .. \
 	make check 2>&1 | tee checklog;  \
 	make ptcheck 2>&1 | tee ptchecklog;  \
 	make time 2>&1 | tee timelog
-
 endif
 
 do-install:
@@ -61,5 +60,3 @@ do-install:
 	cp *.so  $(PROGRAM_PREFIX)/lib
 
 include ../../../mk/gnu.post.mk
-
-
