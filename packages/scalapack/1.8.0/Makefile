@@ -33,7 +33,7 @@ ifeq ("$(COMPILERS)","gnu")
 	cd $(WORKDIR); \
 	cd scalapack_installer_0.96 ; \
 	python ./setup.py \
-	--fcflags=" -O3 -fPIC" \
+	--fcflags="-O3 -fPIC" \
 	--ccflags="-O3 -fPIC" \
 	--downblacs \
 	--blaslib="-lcblas -lf77blas -latlas" \
@@ -55,7 +55,7 @@ ifeq ("$(COMPILERS)","intel11.0")
 	cd scalapack_installer_0.96 ; \
 	python ./setup.py \
 	--ldflags_c="-nofor-main" \
-	--fcflags=" -O3 -fPIC" \
+	--fcflags="-O3 -fPIC" \
 	--ccflags="-O3 -fPIC" \
 	--downblacs \
 	--blaslib="-lcblas -lf77blas -latlas" \
