@@ -82,7 +82,7 @@ COMPILER_TAG= echo "Error compiler that is loaded up is wrong"
 endif
 endif
 
-ifeq (intel10.0,$(COMPILERS))
+ifeq (intel10.1,$(COMPILERS))
 ENVIRONMENT+= CC=icc
 ENVIRONMENT+= CXX=icpc
 ENVIRONMENT+= F77=ifort
@@ -90,7 +90,7 @@ ENVIRONMENT+= F90=ifort
 ENVIRONMENT+= FC=ifort
 COMPILER_VERSION?= $(shell icc -dumpversion)
 COMPILER_TAG?=-intel${COMPILER_VERSION}
-ifneq (-intel10.0,$(COMPILER_TAG))
+ifneq (-intel10.1,$(COMPILER_TAG))
 COMPILER_TAG= echo "Error compiler that is loaded up is wrong"
 endif
 endif
