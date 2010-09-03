@@ -10,12 +10,12 @@ DISTFILES=	$(DISTNAME)-$(VERSION).tar.bz2
 
 DEPENDS=	"boost/1_44_0_openmpi_1.4.2 --lib --build-env"
 DEPENDS+=	"openmpi/1.4.2	--lib --build-env --run-env"
+DEPENDS+=	"google-perftools/1.6 --lib --build-env"
+DEPENDS+=       "expat/2.0.1 --lib --build-env"
 
 DESCRIPTION=	"MIRA - Sequence assembler for whole genome shotgun and EST sequencing data. Can use Sanger, 454, Solexa (Illumina) and PacBio reads"
 
-
-
-CONFIGURE_ARGS+= 
+CONFIGURE_ARGS+= "--with-boost-libdir=$(PREFIX_boost)/lib"
 
 
 include ../../../mk/gnu.post.mk
