@@ -86,6 +86,24 @@ ifneq	(,$(SUBDIRS))
 endif
 	@:
 
+html:
+ifneq	(,$(SUBDIRS))
+	$(QUIET) foo=`echo $(SUBDIR) | sed s,programs/,, | sed s,programs$$,.,`; \
+	$(MKDIR) $(PREFIX)/html/$$foo; \
+	(echo SUBDIRS=$(SUBDIRS); \
+	echo INSTALL_SUBDIRS=$(INSTALL_SUBDIRS); \
+	echo LATEST=$(LATEST); \
+	) > $(PREFIX)/html/$$foo/html.mk
+	$(QUIET) SUBDIRS='$(SUBDIRS)'; \
+	for i in $$SUBDIRS; do \
+	(cd $$i && \
+	 echo "++++++++++++++++ Make html in $$i" && \
+	 $(MAKE) $(MFLAGS) $@ || \
+	 echo "--------------------- FAILED:" `pwd` \
+	) || exit 1; done
+endif
+	@:
+
 show-latest:
 	@echo latest: $(LATEST)
 

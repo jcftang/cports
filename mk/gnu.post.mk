@@ -33,6 +33,7 @@ MPKGDIR=	$(shell while [ ! -f mk/gnu.post.mk ]; do cd ..; done; pwd)
 
 include $(MPKGDIR)/mk/gnu.def.mk
 include $(MPKGDIR)/mk/gnu.pre.mk
+include $(MPKGDIR)/mk/gnu.information.mk
 
 
 # What file to download and how to find the files in the archive.
@@ -87,6 +88,7 @@ PACKAGE_COOKIE=		$(WORKDIR)/.package_done
 MODULE_COOKIE=		$(WORKDIR)/.module_done
 MENUDEFS_COOKIE=	$(WORKDIR)/.menudefs_done
 INFORMATION_COOKIE=	$(WORKDIR)/.information_done
+HTML_COOKIE=		$(WORKDIR)/.html_cookie_done
 INSTALL_DEPENDS_COOKIE=	$(WORKDIR)/.install_depends_done
 
 
@@ -760,6 +762,9 @@ $(INFORMATION_COOKIE):
 	$(QUIET) $(MKDIR) $(WORKDIR)
 	$(QUIET) $(MAKE) do-information
 
+$(HTML_COOKIE):
+	$(QUIET) $(MKDIR) $(WORKDIR)
+	$(QUIET) $(MAKE) do-html
 
 #
 # Show help message
@@ -793,6 +798,7 @@ install-program: build $(INSTALL_COOKIE)
 	$(QUIET) $(MAKE) module
 	$(QUIET) $(MAKE) information
 information: depends $(INFORMATION_COOKIE)
+html: depends $(HTML_COOKIE)
 package: $(PACKAGE_COOKIE)
 install-depends: $(INSTALL_DEPENDS_COOKIE)
 
@@ -1320,6 +1326,14 @@ ifdef CATEGORIES
 endif
 endif
 	@:
+
+do-html:
+	$(QUIET) \
+	test -d $(PROGRAM_PREFIX) || (echo "-1- Program not installed"; exit 1)
+	$(QUIET) \
+	test -f $(PROGRAM_PREFIX)/.mpkg_depends || (echo "-3- Program not installed"; exit 1)
+	$(QUIET) $(MKDIR) $(PREFIX)/html/$(DISTNAME)/$(VERSION)
+	$(QUIET) ($(PACKAGE_HTML)) > $(PREFIX)/html/$(DISTNAME)/$(VERSION)/index.html
 
 #
 # PVP-making
