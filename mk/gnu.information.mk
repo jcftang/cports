@@ -31,7 +31,9 @@ PACKAGE_HTML=	echo "<html>" \
 UPLINKS_HTML=	echo "<p>[ <a href=\"../../index.html\">Packages</a>: Versions of package <a href=\"../index.html\">$(DISTNAME)</a>: Version $(VERSION)$(EXTRAVERSION)$(COMPILER_TAG) ]</p>";
 
 ifdef DESCRIPTION
-DESCRIPTION_HTML=echo "<h2>Description</h2><p>$(DESCRIPTION)</p>";
+DESCRIPTION_HTML=echo "<h2>Description</h2><p>" ;\
+		echo $(DESCRIPTION) | $(HTML_ESCAPE_COMMAND) ;\
+		echo "</p>";
 endif
 
 REFERENCES_HTML=echo "<h2>More information</h2><ul>" \
