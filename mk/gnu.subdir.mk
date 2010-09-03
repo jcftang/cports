@@ -97,7 +97,6 @@ endif
 	@:
 
 html:
-	($(PACKAGE_BASE_HTML)) > $(PREFIX)/$(DISTROTYPE)/html/$(PACKAGE_BASE)/index.html
 ifneq	(,$(SUBDIRS))
 	$(QUIET) foo=`echo $(SUBDIR) | sed s,packages/,, | sed s,packages$$,.,`; \
 	$(MKDIR) $(PREFIX)/html/$$foo; \
@@ -113,6 +112,7 @@ ifneq	(,$(SUBDIRS))
 	 echo "--------------------- FAILED:" `pwd` \
 	) || exit 1; done
 endif
+	$(QUIET) ($(PACKAGE_BASE_HTML)) > $(PREFIX)/$(DISTROTYPE)/html/$(PACKAGE_BASE)/index.html
 
 show-latest:
 	@echo latest: $(LATEST)
