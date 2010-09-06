@@ -22,4 +22,8 @@ elif [ -f "/etc/redhat-release" ]; then
    release=`cat /etc/redhat-release  | sed "s,.*Release \(.\).*,\\1,i"`
    echo "rhel-$release.$machine"
 fi
-      
+
+if [ -f "/etc/debian_version" ]; then
+	release=`cat /etc/debian_version | awk -F"." '{print $1}'`
+	echo "debian-$release.$machine"
+fi
