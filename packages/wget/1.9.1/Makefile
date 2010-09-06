@@ -10,7 +10,7 @@ GNU_CONFIGURE=	yes
 
 ifdef BOOTSTRAP
 CONFIGURE_ARGS=	--disable-nls
-DEPENDS+=	"texinfo/4.13 --build-env"
+#DEPENDS+=	"texinfo/4.13 --build-env"
 else
 USE_LIBTOOL=	yes
 DEPENDS+=	"gettext/0.17 --build-env"

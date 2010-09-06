@@ -15,6 +15,7 @@ DEPENDS+=	"ncurses/5.7 --lib --build-env"
 DEPENDS+=	"libevent/1.4.14b --lib --build-env"
 
 DESCRIPTION=	"tmux is a terminal multiplexer"
+ENVIRONMENT+=	CPPFLAGS=-I$(PREFIX_libevent)/include
 
 do-build:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
