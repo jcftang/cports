@@ -1,0 +1,8 @@
+Title: bootstrap/1.0 doesn't work
+UID: x00.tchpc.tcd.ie.1283783693.P58135M866190
+Added: Mon Sep  6 15:34:53 2010
+Status: open
+
+
+wget depends on texinfo, this fails. maybe use a shell script instead
+so that the modules environment gets refreshed as things are installed
