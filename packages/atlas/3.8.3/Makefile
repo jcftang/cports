@@ -17,9 +17,13 @@ DESCRIPTION=	"The ATLAS (Automatically Tuned Linear Algebra Software) project is
 
 #CONFIGURE_ARGS +=
 
+ifndef COMPILERS
+COMPILERS?=gnu
+endif
+
 do-build:
 # gcc/gfortran, default is the gnu compiler
-ifeq ("$(COMPILERS)","gnu")
+ifeq ($(COMPILERS),gnu)
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
 	gcc --version;                    \
 	./preconfig.sh;                   \

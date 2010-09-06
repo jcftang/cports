@@ -19,6 +19,9 @@ DEPENDS+="atlas/3.8.3 --build-env --run-env --lib"
 
 CONFIGURE_ARGS+= 
 
+ifndef COMPILERS
+COMPILERS?=gnu
+endif
 
 DESCRIPTION=	"The ScaLAPACK (or Scalable LAPACK) library includes a subset of LAPACK routines redesigned for distributed memory MIMD parallel computers."
 
