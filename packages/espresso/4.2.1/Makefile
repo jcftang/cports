@@ -17,7 +17,7 @@ DEPENDS+=	"atlas/3.8.3 --lib --build-env"
 DESCRIPTION=    "ESPRESSO: opEn-Source Package for Research in Electronic Structure, Simulation, and Optimization"
 
 CONFIGURE_ENV+=	BLAS_LIBS="-lf77blas -lcblas -latlas" LAPACK_LIBS="-llapack"
-MAKE_FLAGS+= 	DFLAGS="-D__GFORTRAN -D__STD_F95 -D__FFTW3 -D__MPI -D__PARA -DEXX"
+#MAKE_FLAGS+= 	DFLAGS="-D__GFORTRAN -D__STD_F95 -D__FFTW3 -D__MPI -D__PARA -DEXX"
 
 do-install:
 	$(INSTALL) -d $(PROGRAM_PREFIX)/bin

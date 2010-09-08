@@ -25,6 +25,16 @@ endif
 
 INSTALL_SUBDIRS?=	$(LATEST)
 
+DISTRO_TYPE=	$(shell $(MPKGDIR)/scripts/distro.guess)
+PACKAGE_BASE=	$(shell basename `pwd`)
+PACKAGE_BASE_HTML= echo "<html>" \
+	"<head><title>"$(PACKAGE_BASE)"</title></head>" \
+	"<body>"; \
+	echo "<p>[ <a href=\"../index.html\">Packages</a> ]</p>"; \
+	echo "<h1>Package $(PACKAGE_BASE)</h1>"; \
+	echo "TODO, generate list of build packages" ; \
+	echo "</body></html>";
+
 all: help
 
 help:
@@ -70,7 +80,7 @@ endif
 
 information:
 ifneq	(,$(SUBDIRS))
-	$(QUIET) foo=`echo $(SUBDIR) | sed s,programs/,, | sed s,programs$$,.,`; \
+	$(QUIET) foo=`echo $(SUBDIR) | sed s,packages/,, | sed s,packages$$,.,`; \
 	$(MKDIR) $(PREFIX)/information/$$foo; \
 	(echo SUBDIRS=$(SUBDIRS); \
 	echo INSTALL_SUBDIRS=$(INSTALL_SUBDIRS); \
@@ -85,6 +95,24 @@ ifneq	(,$(SUBDIRS))
 	) || exit 1; done
 endif
 	@:
+
+html:
+ifneq	(,$(SUBDIRS))
+	$(QUIET) foo=`echo $(SUBDIR) | sed s,packages/,, | sed s,packages$$,.,`; \
+	$(MKDIR) $(PREFIX)/html/$$foo; \
+	(echo SUBDIRS=$(SUBDIRS); \
+	echo INSTALL_SUBDIRS=$(INSTALL_SUBDIRS); \
+	echo LATEST=$(LATEST); \
+	) > $(PREFIX)/html/$$foo/html.mk
+	$(QUIET) SUBDIRS='$(SUBDIRS)'; \
+	for i in $$SUBDIRS; do \
+	(cd $$i && \
+	 echo "++++++++++++++++ Make html in $$i" && \
+	 $(MAKE) $(MFLAGS) $@ || \
+	 echo "--------------------- FAILED:" `pwd` \
+	) || exit 1; done
+endif
+	$(QUIET) ($(PACKAGE_BASE_HTML)) > $(PREFIX)/$(DISTROTYPE)/html/$(PACKAGE_BASE)/index.html
 
 show-latest:
 	@echo latest: $(LATEST)
