@@ -49,6 +49,46 @@ ifeq ("$(COMPILERS)","gnu")
 	#--downblas \
 
 endif
+ifeq ("$(COMPILERS)","gnu4.5.0")
+	mkdir -p $(PROGRAM_PREFIX);
+	$(QUIET) $(MODULE_ADD) $(BUILD_DEPENDS);                        \
+	cd $(WORKDIR); \
+	cd scalapack_installer_0.96 ; \
+	python ./setup.py \
+	--fcflags="-O3 -fPIC" \
+	--ccflags="-O3 -fPIC" \
+	--downblacs \
+	--blaslib="-lcblas -lf77blas -latlas" \
+	--lapacklib="$(PREFIX_atlas)/lib/liblapack.so" \
+	--prefix=$(PROGRAM_PREFIX)
+	
+	# rely on atlas for this
+	#--downlapack \
+	#--f90 mpif90 \
+	#--downblas \
+
+endif
+ifeq ("$(COMPILERS)","gnu4.5.1")
+	mkdir -p $(PROGRAM_PREFIX);
+	$(QUIET) $(MODULE_ADD) $(BUILD_DEPENDS);                        \
+	cd $(WORKDIR); \
+	cd scalapack_installer_0.96 ; \
+	python ./setup.py \
+	--fcflags="-O3 -fPIC" \
+	--ccflags="-O3 -fPIC" \
+	--downblacs \
+	--blaslib="-lcblas -lf77blas -latlas" \
+	--lapacklib="$(PREFIX_atlas)/lib/liblapack.so" \
+	--prefix=$(PROGRAM_PREFIX)
+	
+	# rely on atlas for this
+	#--downlapack \
+	#--f90 mpif90 \
+	#--downblas \
+
+endif
+
+
 
 # icc/ifort specific
 ifeq ("$(COMPILERS)","intel11.0")
