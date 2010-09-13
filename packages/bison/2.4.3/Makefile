@@ -9,7 +9,7 @@ MAINTAINER=     jtang@tchpc.tcd.ie
 GNU_CONFIGURE=  yes
 
 ifndef BOOTSTRAP
-DEPENDS=        "gettext/0.17 --lib --build-env"
+DEPENDS=        "gettext/0.18.1.1 --lib --build-env"
 CONFIGURE_ENV+= LIBS=-lintl
 else
 CONFIGURE_ARGS= --with-included-gettext

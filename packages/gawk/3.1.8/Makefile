@@ -11,7 +11,7 @@ GNU_CONFIGURE=  yes
 DEPENDS=        "texinfo/4.13 --build-env"
 ifndef BOOTSTRAP
 DEPENDS+=       "bison/2.4.2 --build-env"
-DEPENDS+=       "gettext/0.17 --lib --build-env"
+DEPENDS+=       "gettext/0.18.1.1 --lib --build-env"
 else
 CONFIGURE_ARGS= --with-included-gettext
 endif
