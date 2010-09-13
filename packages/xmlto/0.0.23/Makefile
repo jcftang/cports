@@ -11,6 +11,8 @@ GNU_CONFIGURE=	yes
 #DEPENDS+=	"openmpi/1.4.2	--lib --build-env --run-env"
 #DEPENDS+=	"google-perftools/1.6 --lib --build-env"
 #DEPENDS+=       "expat/2.0.1 --lib --build-env"
+DEPENDS+=	"libxslt/1.1.26 --lib --build-env"
+DEPENDS+=	"zlib/1.2.5 --lib --build-env"
 
 DESCRIPTION=	"xmlto is a shell-script tool for converting XML files to various formats."
 

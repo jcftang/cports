@@ -12,8 +12,8 @@ GNU_CONFIGURE=	yes
 DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
 
 EXTRAVERSION=
-DEPENDS+=	"libxml2/2.7.7 --build-env "
-DEPENDS+=	"zlib --build-env"
+DEPENDS+=	"libxml2/2.7.7 --build-env --lib"
+DEPENDS+=	"zlib --build-env --lib"
 DEPENDS+=	"Python/2.6.5 --build-env "
 
 DESCRIPTION=	"libxslt"
