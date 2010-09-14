@@ -13,6 +13,7 @@ DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
 
 EXTRAVERSION=
 
+ifndef BOOTSTRAP
 DEPENDS+=       "m4/1.4.14 --build-env"
 DEPENDS+=       "gawk/3.1.8 --build-env"
 DEPENDS+=       "automake/1.11 --build-env"
@@ -21,11 +22,15 @@ ENVIRONMENT+=   AUTOMAKE=$(PREFIX_automake)/bin/automake
 
 MODULEFILE_CMD_ENV=     $(ECHO) "prepend-path   ACLOCAL_PATH    $(PROGRAM_PREFIX)/share/aclocal";
 MODULEFILE_LINES+=      ENV
+endif
 
 DESCRIPTION=    "GNU libtool is a generic library support script."
 DESCRIPTION+=   "Libtool hides the complexity of using shared libraries"
 DESCRIPTION+=   "behind a consistent, portable interface."
 
+
+ifndef BOOTSTRAP
 do-configure:   do-autoreconf do-configur%
+endif
 
 include ../../../mk/gnu.post.mk
