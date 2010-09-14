@@ -9,10 +9,6 @@ DISTFILES=
 
 DONT_CREATE_METAINFO=yes
 
-#DEPENDS=	"gmake --build-env"
-#DEPENDS+=	"wget --build-env"
-#DEPENDS+=	"gtar --build-env"
-
 DEPENDS+=	"texinfo/4.13 --build-env"
 DEPENDS+=	"gmake/3.81 --build-env"
 DEPENDS+=	"wget/1.9.1 --build-env"
@@ -20,6 +16,8 @@ DEPENDS+=	"libiconv/1.13 --lib --build-env"
 DEPENDS+=	"gettext/0.18.1.1 --lib --build-env"
 DEPENDS+=	"libtool/2.2.10 --build-env"
 DEPENDS+=	"gawk/3.1.8 --build-env"
+DEPENDS+=	"m4/1.4.14 --build-env"
+DEPENDS+=	"automake/1.11 --build-env"
 
 do-build:
 	(cd ../../texinfo/4.13/ && make build)
@@ -44,8 +42,5 @@ do-cleaz:
 	(cd ../../libiconv/1.13/ && make clean)
 	(cd ../../gettext/0.18.1.1/ && make clean)
 	(cd ../../libtool/2.2.10/ && make clean)
-
-
-	
 
 include ../../../mk/gnu.post.mk
