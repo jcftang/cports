@@ -37,7 +37,7 @@
 * What cports doesn't do 
  - It doesn't generate portable binaries
  - Provide good documentation on the modifications TCHPC has made
- - Support for people who use is :)
+ - Support for people who use this :)
  - Dependancy and conflict checking of the packages, the admin who is
    writing the package will need to do this
  - Work with non-gnu based tools (it's a fork and the original authors
@@ -52,7 +52,7 @@
 you can do a "make check-environment" to see if you meet the basic
 requirements.
 * Installation and configuration
-  - Unpack cports-?.tar.bz2 to somewhere
+  - Unpack cports-?.tar.bz2 to somewhere (I usually put it into ${HOME}/develop/cports)
   - Configure cports by creating either /etc/mpkg.mk or
     ${HOME}/.mpkg.mk see the example in doc/examples/dot.mpkg.mk
   - Configure environment modules either at the system level or in
