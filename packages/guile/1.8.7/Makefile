@@ -10,7 +10,7 @@ GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes
 
 DEPENDS=	"gawk/3.1.8 --build-env"
-DEPENDS+=	"gettext/0.17 --lib --build-env"
+DEPENDS+=	"gettext/0.18.1.1 --lib --build-env"
 DEPENDS+=	"libiconv/1.13 --lib --build-env"
 #DEPENDS+=	"glib --lib --build-env"
 #DEPENDS+=	"gtk --lib --build-env"

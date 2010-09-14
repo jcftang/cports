@@ -38,6 +38,38 @@ ifeq ($(COMPILERS),gnu)
 	make ptcheck 2>&1 | tee ptchecklog;  \
 	make time 2>&1 | tee timelog
 endif
+ifeq ($(COMPILERS),gnu4.5.0)
+	$(MODULE_ADD) $(BUILD_DEPENDS);   \
+	gcc --version;                    \
+	./preconfig.sh;                   \
+	./lapackconfig.sh;                
+	$(MODULE_ADD) $(BUILD_DEPENDS);   \
+	cd work; mkdir -p build;cd build;    \
+	../ATLAS/configure --prefix=$(PROGRAM_PREFIX) -Fa alg -fPIC --with-netlib-lapack=../lapackdir/lapackinst/lapack_LINUX.a; \
+	cd build;  \
+	make 2>&1 | tee makelog; \
+	cd lib; make shared; cd .. \
+	make check 2>&1 | tee checklog;  \
+	make ptcheck 2>&1 | tee ptchecklog;  \
+	make time 2>&1 | tee timelog
+endif
+ifeq ($(COMPILERS),gnu4.5.1)
+	$(MODULE_ADD) $(BUILD_DEPENDS);   \
+	gcc --version;                    \
+	./preconfig.sh;                   \
+	./lapackconfig.sh;                
+	$(MODULE_ADD) $(BUILD_DEPENDS);   \
+	cd work; mkdir -p build;cd build;    \
+	../ATLAS/configure --prefix=$(PROGRAM_PREFIX) -Fa alg -fPIC --with-netlib-lapack=../lapackdir/lapackinst/lapack_LINUX.a; \
+	cd build;  \
+	make 2>&1 | tee makelog; \
+	cd lib; make shared; cd .. \
+	make check 2>&1 | tee checklog;  \
+	make ptcheck 2>&1 | tee ptchecklog;  \
+	make time 2>&1 | tee timelog
+endif
+
+
 
 # icc/ifort specific
 	

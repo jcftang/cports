@@ -10,7 +10,7 @@ GNU_CONFIGURE=	yes
 
 # Gettext depend on this packet.
 CONFIGURE_ARGS=	--with-included-gettext
-DEPENDS=	"gettext/0.17 --build-env --cond"
+DEPENDS=	"gettext/0.18.1.1 --build-env --cond"
 
 INFO_FILE=	$(PROGRAM_PREFIX)/info/$(DISTNAME)
 

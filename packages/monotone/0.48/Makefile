@@ -11,7 +11,7 @@ DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
 
 DEPENDS+=	"boost/1_44_0_openmpi_1.4.2 --build-env --lib"
 DEPENDS+=	"Botan/1.8.9 --build-env --lib"
-DEPENDS+=	"gettext/0.17 --build-env --lib"
+DEPENDS+=	"gettext/0.18.1.1 --build-env --lib"
 DEPENDS+=	"libiconv/1.13 --build-env --lib"
 DEPENDS+=	"lua/5.1.4 --build-env --lib"
 DEPENDS+=	"mpc/0.8.2 --lib --build-env"
