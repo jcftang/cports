@@ -29,4 +29,13 @@ do-install:
 	(cd ../../gettext/0.18.1.1/ && make BOOTSTRAP=yes install)
 	(cd ../../libtool/2.2.10/ && make BOOTSTRAP=yes install)
 
+do-cleaz:
+	(cd ../../texinfo/4.13/ && make clean)
+	(cd ../../gmake/3.81/ && make clean)
+	(cd ../../wget/1.9.1/ && make clean)
+	(cd ../../libiconv/1.13/ && make clean)
+	(cd ../../gettext/0.18.1.1/ && make clean)
+	(cd ../../libtool/2.2.10/ && make clean)
+
+
 include ../../../mk/gnu.post.mk
