@@ -26,6 +26,7 @@ CONFIGURE_ARGS += --enable-shared --enable-static
 CONFIGURE_ARGS += --with-blas=$(PREFIX_atlas)/lib/libf77blas.a --with-lapack=$(PREFIX_atlas)/lib/liblapack.a
 CONFIGURE_ARGS += --with-atlas=yes
 
+CPPFLAGS+= -I$(PREFIX_SuiteSparse)/include/suitesparse 
 LDFLAGS += -lmetis 
 
 do-test:
