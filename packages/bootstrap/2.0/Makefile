@@ -18,6 +18,7 @@ DEPENDS+=	"libtool/2.2.10 --build-env"
 DEPENDS+=	"gawk/3.1.8 --build-env"
 DEPENDS+=	"m4/1.4.14 --build-env"
 DEPENDS+=	"automake/1.11 --build-env"
+DEPENDS+=	"openssl/1.0.0a --build-env"
 
 do-build:
 	(cd ../../texinfo/4.13/ && make build)
