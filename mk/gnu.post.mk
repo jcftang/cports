@@ -1,4 +1,4 @@
-# Copyright (c) 2000 Kungliga Tekniska Högskolan
+#; \ Copyright (c) 2000 Kungliga Tekniska Högskolan
 # (Royal Institute of Technology, Stockholm, Sweden).
 # All rights reserved.
 # 
@@ -79,6 +79,7 @@ MPKG_DEPENDS?=		$(WORKDIR)/.mpkg_depends
 CHECK_COOKIE?=		$(WORKDIR)/.check_done
 DEPENDS_COOKIE?=	$(WORKDIR)/.depends_done
 BUILD_COOKIE=		$(WORKDIR)/.build_done
+TEST_COOKIE=		$(WORKDIR)/.test_done
 CONFIGURE_COOKIE=	$(WORKDIR)/.configure_done
 FETCH_COOKIE=		$(WORKDIR)/.fetch_done
 EXTRACT_COOKIE=		$(WORKDIR)/.extract_done
@@ -107,6 +108,9 @@ endif
 endif
 
 
+# run tests?
+DO_RUN_TESTS?=    no
+
 # Which downloaded files are archives?
 
 EXTRACT_ONLY?=		$(DISTFILES)
@@ -127,6 +131,7 @@ PREFIX_PATH?=	$(PREFIX)/$(COMPILERS)/
 
 ALL_TARGET?=		all
 INSTALL_TARGET?=	install
+TEST_TARGET?=          check
 MAKEFILE?=		Makefile
 
 
@@ -688,6 +693,17 @@ $(CHECK_COOKIE):
 	$(QUIET) touch $(CHECK_COOKIE)
 
 
+# 
+# test stage:
+#
+
+$(TEST_COOKIE):
+	 if [ "X$(DO_RUN_TESTS)" = "Xyes" ]; then  \
+	           $(MAKE) do-test; \
+	fi
+	touch $(TEST_COOKIE)
+
+
 #
 # fetch stage
 #
@@ -782,6 +798,7 @@ install:
 	$(MAKE) extract && \
 	$(MAKE) install-depends && \
 	$(MAKE) build && \
+	$(MAKE) test && \
 	$(MAKE) install-program
 	$(MAKE) install-post
 
@@ -792,6 +809,7 @@ depends: $(DEPENDS_COOKIE)
 patch: extract depends $(PATCH_COOKIE)
 configure: patch $(CONFIGURE_COOKIE)
 build: configure $(BUILD_COOKIE)
+test: configure build $(TEST_COOKIE)
 menudefs: $(MENUDEFS_COOKIE)
 module: menudefs $(MODULE_COOKIE)
 install-program: build $(INSTALL_COOKIE)
@@ -842,7 +860,6 @@ uninstall:
 #
 
 do-extrac%:
-#	$(QUIET) $(RM_RF) $(SOURCEDIR)
 	$(QUIET) $(MKDIR) $(SOURCEDIR)
 	$(QUIET) $(ECHO_MSG) "Extracting file(s) for $(DISTNAME)-$(VERSION)";	\
 	umask 022 &&								\
@@ -1081,6 +1098,11 @@ do-buil%:
 	$(ECHO_MSG) "Building for package $(DISTNAME)-$(VERSION)";			\
 	cd $(WRKSRC) && $(SETENV) $(MAKE_ENV) $(MAKE_PROGRAM) $(MAKE_FLAGS) -f $(MAKEFILE) $(ALL_TARGET)
 
+
+do-tes%:
+	$(MODULE_ADD) $(BUILD_DEPENDS);			\
+	$(ECHO_MSG) "Testing for package $(DISTNAME)-$(VERSION)";			\
+	cd $(WRKSRC) && $(SETENV) $(MAKE_ENV) $(MAKE_PROGRAM) $(MAKE_FLAGS) -f $(MAKEFILE) $(TEST_TARGET) 2>&1 | tee $(CURDIR)/testlog
 
 #
 # Many packages don't use install-info to build a dir file.
@@ -1386,6 +1408,7 @@ clean: do-clean
 do-clea%:
 	$(QUIET) $(RM_RF) $(WORKDIR)
 	$(QUIET) $(RM) *~
+	if [ -e testlog ]; then $(RM) testlog; fi
 
 remove-distribution-files:
 	$(QUIET) $(MAKE) clean
