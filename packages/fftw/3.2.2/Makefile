@@ -32,6 +32,6 @@ EXTRAVERSION=_$(FFTW_PRECISION)
 endif
 
 
-CONFIGURE_ARGS += --enable-threads $(FFTW_CONF_OPTS)
+CONFIGURE_ARGS += --with-pic --enable-threads $(FFTW_CONF_OPTS)
 
 include ../../../mk/gnu.post.mk
