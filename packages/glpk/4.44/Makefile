@@ -40,10 +40,6 @@ do-install:
 	$(MKDIR) $(PROGRAM_PREFIX)/include/glpk; \
 	ln -s $(PROGRAM_PREFIX)/include/glpk.h $(PROGRAM_PREFIX)/include/glpk/glpk.h
 
-do-test:
-	$(MODULE_ADD) $(BUILD_DEPENDS);   \
-	cd $(WRKSRC); \
-	make check 2>&1 | tee testlog;                                                                                                                                  
 
 include ../../../mk/gnu.post.mk
 

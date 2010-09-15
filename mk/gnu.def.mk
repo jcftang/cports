@@ -31,7 +31,7 @@
 #
 
 -include /etc/mpkg.mk
-#-include ${HOME}/.mpkg.mk
+-include ${HOME}/.mpkg.mk
 
 #
 # Working with different systems in one tree.
