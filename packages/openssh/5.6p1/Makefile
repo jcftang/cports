@@ -10,6 +10,7 @@ GNU_CONFIGURE=	yes
 DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
 
 EXTRAVERSION=
+PATCH_STRIP= -p1
 
 ifneq (,$(findstring osf,$(SYSTEM_TYPE_OS)))
 CONFIGURE_ENV+=	
