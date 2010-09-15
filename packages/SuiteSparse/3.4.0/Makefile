@@ -65,6 +65,8 @@ do-install:
 	pwd; \
 	install -m 755 -t $(PROGRAM_PREFIX)/lib $(shell cd $(WRKSRC);find . -name '*.a'); \
 	install -m 755 $(METISDIR)/libmetis.a $(PROGRAM_PREFIX)/lib; \
+ 	install -m 755 ./UFconfig/UFconfig.h $(PROGRAM_PREFIX)/include/suitesparse; \
+ 	install -m 755 ./UFconfig/xerbla/xerbla.h $(PROGRAM_PREFIX)/include/suitesparse; \
 	install -m 755 -t $(PROGRAM_PREFIX)/include/suitesparse $(shell cd $(WRKSRC);find . -name '*.h'|grep -v '/cs.h' | grep Include); \
  	install -m 755 ./CXSparse/Include/cs.h $(PROGRAM_PREFIX)/include/suitesparse;
 
