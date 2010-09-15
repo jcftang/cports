@@ -8,7 +8,7 @@ do
 	do
 	    for i in debug nodebug;
 	    do
-		echo make CPRT_PETSC_DEBUG=$i CPRT_PETSC_SCALAR=$j CPRT_PETSC_CCOMP=$k $l
+		echo make CPRT_PETSC_DEBUG=$i CPRT_PETSC_SCALAR=$j CPRT_PETSC_CCOMP=$k $l $@
 	    done
 	done
     done
