@@ -8,7 +8,9 @@ else
 OPT= --without-libintl-prefix
 endif
 
-$(warning OPT $(OPT))
+#$(warning OPT $(OPT))
+
+DO_RUN_TESTS = yes
 
 DISTNAME=       hello
 EXTRAVERSION=   
