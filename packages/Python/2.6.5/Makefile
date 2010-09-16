@@ -15,7 +15,8 @@ DISTFILES =     $(DISTNAME)-$(VERSION).tgz
 
 EXTRAVERSION=
 
-TEST_TARGET?=          test
+DO_RUN_TESTS=yes
+TEST_TARGET=          test
 
 DESCRIPTION=	"Python is a remarkably powerful dynamic programming language that is used in a wide variety of application domains. "
 
