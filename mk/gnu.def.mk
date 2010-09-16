@@ -30,7 +30,7 @@
 # $Id: gnu.def.mk,v 1.63 2001/11/28 11:36:49 eskil Exp $
 #
 
--include /etc/mpkg.mk
+#-include /etc/mpkg.mk
 -include ${HOME}/.mpkg.mk
 
 #
