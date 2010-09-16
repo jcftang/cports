@@ -30,11 +30,6 @@ CONFIGURE_ARGS += --with-atlas=yes
 CPPFLAGS+= -I$(PREFIX_SuiteSparse)/include/suitesparse 
 LDFLAGS += -lmetis 
 
-do-test:
-	$(MODULE_ADD) $(BUILD_DEPENDS);   \
-	cd $(WRKSRC); \
-	make check 2>&1 | tee testlog;                                                                                                                                  
-
 include ../../../mk/gnu.post.mk
 
 
