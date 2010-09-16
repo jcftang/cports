@@ -1,8 +1,25 @@
 Title: do-test/do-check automation
 UID: lonsdale01.1280411203.P8627M538072
 Added: Thu Jul 29 14:46:43 2010
-Status: open
+Status: closed
 
 
 Create pre and post installation tests, should hook into gnu.post.pre
 for this functionality
+
+
+No hook as above, but do-test target added and run by default
+
+make install (or make build, or make test) will not run the tests by default,
+but 
+
+make DO_RUN_TESTS=yes install (or build, or test) will run  the tests.
+
+On that note,  the default test is a "make check", however different targets can be set on  a per makefile basis
+using TEST_TARGET
+
+e.g., 
+
+TEST_TARGET = test
+
+if make test is your packages test target of choice
