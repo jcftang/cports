@@ -20,8 +20,8 @@ CONFIGURE_ARGS += --with-boost-lib=$(PREFIX_boost)/lib
 do-build:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
 	cd $(WRKSRC); \
-	make; \
-	make check 2>&1 | tee testlog; 
+	make; 
+#	make check 2>&1 | tee testlog; 
 
 do-install:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
