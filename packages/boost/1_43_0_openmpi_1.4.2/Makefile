@@ -25,12 +25,19 @@ do-build:
 	./bootstrap.sh --with-libraries=all --prefix=$(PROGRAM_PREFIX); \
 	echo 'using mpi ;' >> ./tools/build/v2/user-config.jam; \
 	./bjam;
-	
+
 do-install:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
         cd work/$(DISTNAME)_$(VERSION); \
         ./bjam install;
-	
+
+do-test:
+	$(MODULE_ADD) $(BUILD_DEPENDS);			\
+	$(ECHO_MSG) "Tzesting for package $(DISTNAME)-$(VERSION)";			\
+	$(ECHO_MSG) "Haven't figured out how to run boost tests..." 2>&1 | tee  $(CURDIR)/testlog
+#	cd work/$(DISTNAME)_$(VERSION) && $(SETENV) $(MAKE_ENV) $(MAKE_PROGRAM) $(MAKE_FLAGS) -f $(MAKEFILE) $(TEST_TARGET) 2>&1 | tee $(CURDIR)/testlog
+
 include ../../../mk/gnu.post.mk
+
 
 
