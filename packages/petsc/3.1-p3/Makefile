@@ -93,8 +93,10 @@ do-build:
 
 do-test:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
+	$(ECHO_MSG) "Testing for package $(DISTNAME)-$(VERSION)";			\
+	$(ECHO_MSG) "testlogs go into workdirs for $(DISTNAME), since there are multiple workdirs" >> $(CURDIR)/testlog; \
 	cd $(WRKSRC); \
-	$(MAKE) PETSC_DIR=$(PROGRAM_PREFIX) test 2>&1 | tee $(CURDIR)/testlog
+	$(MAKE) PETSC_DIR=$(PROGRAM_PREFIX) test 2>&1 | tee ../testlog
 
 do-install:
 	$(MODULE_ADD) $(BUILD_DEPENDS);  \
