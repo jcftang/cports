@@ -61,10 +61,5 @@ do-install:
 	make prefix=$(PROGRAM_PREFIX) install;
 	$(INSTALL) -m 755 $(SOURCEDIR)/$(DISTNAME)_$(VERSION)/lib/lib*.* $(PROGRAM_PREFIX)/lib
 
-#do-build: do-buil%
-#	(cd $(WRKSRC)/lisp && $(MAKE) recompile)
-
-# haven't included any modules yet
-#include ../../../mk/prg.emacs.mk
 include ../../../mk/gnu.post.mk
 
