@@ -11,6 +11,8 @@ DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
 
 EXTRAVERSION=
 
+DO_RUN_TESTS=yes
+
 DEPENDS+="atlas/3.8.3 --lib"
 DEPENDS+="SuiteSparse/3.4.0 --build-env --lib"
 #DEPENDS+="glpk/4.44 --build-env --lib"
