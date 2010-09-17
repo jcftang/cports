@@ -35,7 +35,10 @@ CPRT_PETSC_OPTS+= --with-boost=1 --with-boost-dir=$(PREFIX_boost)
 CPRT_PETSC_C_STR=cxx
 else
 CPRT_PETSC_OPTS+= --with-clanguage=C
-CPRT_PETSC_OPTS+= --with-scotch=1 --with-scotch-dir=$(PREFIX_scotch) --LDFLAGS="$(PREFIX_scalapack)/lib/blacs.a -lz"
+CPRT_PETSC_OPTS+= --with-scotch=1
+CPRT_PETSC_OPTS+= --with-scotch-include=$(PREFIX_scotch)/include
+CPRT_PETSC_OPTS+= --with-scotch-lib="[$(PREFIX_scotch)/lib/libptesmumps.so,$(PREFIX_scotch)/lib/libptscotch.so,$(PREFIX_scotch)/lib/libptscotcherr.so]"
+CPRT_PETSC_OPTS+= --LDFLAGS="-L$(PREFIX_scotch)/lib -lptesmumps -lptscotch -lptscotcherr $(PREFIX_scalapack)/lib/blacs.a -lz"
 endif
 
 $(warning debug: $(CPRT_PETSC_DEBUG))
@@ -88,7 +91,7 @@ do-build:
 do-test:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
 	cd $(WRKSRC); \
-	$(MAKE) PETSC_DIR=$(PROGRAM_PREFIX) test 2>&1 | tee cportstestlog
+	$(MAKE) PETSC_DIR=$(PROGRAM_PREFIX) test 2>&1 | tee $(CURDIR)/testlog
 
 do-install:
 	$(MODULE_ADD) $(BUILD_DEPENDS);  \

@@ -1,4 +1,8 @@
-## NOTE hack where  blacs.a is called twice in SCALAP variable below (ffs)
+ ## NOTE hack where  blacs.a is called twice in SCALAP variable below (ffs)
+
+## For the do-configure target there is a lot of sed'ing.  It would be
+## worth making sure that it does what you think it does, especially
+## for new versions of mumps
 
 include ../../../mk/gnu.pre.mk
 
@@ -14,7 +18,8 @@ DISTFILES+=	$(DISTNAME)_$(VERSION).tar.gz
 DEPENDS+=	"openmpi/1.4.2 --build-env openmpi/1.4.2 --lib --run-env"
 DEPENDS+=	"atlas/3.8.3 --build-env atlas/3.8.3 --lib"
 DEPENDS+=	"scalapack/1.8.0_openmpi_1.4.2 --build-env --lib"
-#DEPENDS+=	"scotch/5.1.9_esmumps --build-env"
+DEPENDS+=	"scotch/5.1.9_esmumps --build-env"
+DEPENDS+=	"zlib/1.2.5 --build-env --lib"
 
 HAS_CONFIGURE=	no
 
@@ -39,7 +44,12 @@ do-fetch:
 #endif
 #
 
-## Note -DAdd_ for gfortran -- will vary with compiler
+## Note -DAdd_ for gfortran -- will vary with compiler ORDERINGSF =
+## -Dscotch -Dmetis -Dpord -Dptscotch -Dparmetis is the most general
+## form -- no link to metis yet
+
+## Also, the sed'ing here is more than a bit hairy -- check this out
+## when compiling a new version
 do-configure:
 	echo "configuring (workdir: $(WRKSRC))";
 	cd $(SOURCEDIR)/$(DISTNAME)_$(VERSION)/Make.inc; \
@@ -52,7 +62,12 @@ do-configure:
 	$(SED) -e 's|^LIBBLAS.*=.*|LIBBLAS = -L$(PREFIX_atlas)/lib -lcblas -lf77blas  -latlas -llapack|' | \
 	$(SED) -e 's|^CDEFS.*=.*|CDEFS   = -DAdd_|' | \
 	$(SED) -e 's|^INCPAR.*=.*|INCPAR = -I$(PREFIX_scalapack)/include -I$(PREFIX_openmpi)/include|' | \
-	$(SED) -e 's|^LIBPAR.*=.*|LIBPAR = $$(SCALAP) -L$(PREFIX_openmpi)/lib -lmpi|'  \
+	$(SED) -e 's|^LIBPAR.*=.*|LIBPAR = $$(SCALAP) -L$(PREFIX_openmpi)/lib -lmpi|' | \
+	$(SED) -e 's|^#SCOTCHDIR.*=.*|SCOTCHDIR = $(PREFIX_scotch)|' | \
+	$(SED) -e 's|^#ISCOTCH.*=.*|ISCOTCH = -I$$(SCOTCHDIR)/include|' | \
+	$(SED) -e 's|^#LSCOTCH.*=.*ptesmumps.*|LSCOTCH = -L$$(SCOTCHDIR)/lib -lptesmumps -lptscotch -lptscotcherr -lz|' | \
+	$(SED) -e 's|^ORDERINGSF.*=.*|#ORDERINGSF =   -Dpord  |' | \
+	$(SED) -e 's|^#ORDERINGSF.*=.*Dptscotch.*|ORDERINGSF = -Dscotch  -Dpord -Dptscotch |'  \
 	> ../Makefile.inc
 
 do-build:
