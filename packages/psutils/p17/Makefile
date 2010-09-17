@@ -6,6 +6,7 @@ CATEGORIES=	printing
 HOMEPAGE=	http://www.tardis.ed.ac.uk/~ajcd/psutils/
 MASTER_SITES=	ftp://ftp.tardis.ed.ac.uk/users/ajcd/
 MASTER_SITES+=	ftp://ftp.knackered.org/pub/psutils
+MASTER_SITES+=	http://tx-us.lunar-linux.org/lunar/mirrors
 DISTFILES=	$(DISTNAME)-$(VERSION)$(EXTRACT_SUFX)
 PKGNAME=	psutils
 MAINTAINER=	mpkg@e.kth.se
