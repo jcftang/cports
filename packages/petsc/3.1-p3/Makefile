@@ -35,6 +35,7 @@ CPRT_PETSC_OPTS+= --with-boost=1 --with-boost-dir=$(PREFIX_boost)
 CPRT_PETSC_C_STR=cxx
 else
 CPRT_PETSC_OPTS+= --with-clanguage=C
+CPRT_PETSC_OPTS+= --with-scotch=1 --with-scotch-dir=$(PREFIX_scotch) --LDFLAGS="$(PREFIX_scalapack)/lib/blacs.a -lz"
 endif
 
 $(warning debug: $(CPRT_PETSC_DEBUG))
@@ -42,7 +43,6 @@ $(warning scalar: $(CPRT_PETSC_SCALAR))
 $(warning petsc arch: $(CPRT_PETSC_DBG_STR))
 $(warning petsc arch: $(CPRT_PETSC_C_STR))
 $(warning petsc c comp: $(CPRT_PETSC_CCOMP))
-$(warning scalapack prefix: $(PREFIX_scalapack))
 
 EXTRAVERSION= _$(CPRT_PETSC_DEBUG)-$(CPRT_PETSC_SCALAR)-$(CPRT_PETSC_CCOMP)
 WORKDIRSUFFIX= $(CPRT_PETSC_DEBUG)-$(CPRT_PETSC_SCALAR)-$(CPRT_PETSC_CCOMP)
@@ -51,21 +51,26 @@ DEPENDS+="atlas/3.8.3 --lib --build-env"
 DEPENDS+="openmpi/1.4.2 --lib --build-env"
 DEPENDS+="openmpi/1.4.2 --run-env"
 DEPENDS+="ParMetis/3.1.1 --lib --build-env"
-#DEPENDS+="scalapack/1.8.0_openmpi_1.4.2 --lib --build-env"
-#DEPENDS+="scotch/5.1.9_esmumps --lib --build-env"
+DEPENDS+="scalapack/1.8.0_openmpi_1.4.2 --lib --build-env"
+DEPENDS+="MUMPS/4.9.2  --build-env --lib"
+DEPENDS+="scotch/5.1.9_esmumps  --build-env --lib"
+DEPENDS+="zlib/1.2.5  --build-env --lib"
 
 DESCRIPTION=  "PETSc, pronounced PET-see (the S is silent), is a suite of data structures and routines for the scalable (parallel) solution of scientific applications modeled by partial differential equations "
 
 CONFIGURE_ARGS +=   $(CPRT_PETSC_OPTS)
 CONFIGURE_ARGS +=   --prefix=$(PROGRAM_PREFIX)
 CONFIGURE_ARGS +=   --with-shared=1
+CONFIGURE_ARGS +=   --with-precision=double
 CONFIGURE_ARGS +=  --with-blas-lapack-dir=$(PREFIX_atlas)
 CONFIGURE_ARGS +=  --with-parmetis=1 --with-parmetis-include=$(PREFIX_ParMetis)/include 
 CONFIGURE_ARGS +=   --with-parmetis-lib="[$(PREFIX_ParMetis)/lib/libparmetis.a,$(PREFIX_ParMetis)/lib/libmetis.a]"
 CONFIGURE_ARGS +=   --with-mpi=1 --with-mpi-dir=$(PREFIX_openmpi)
-#CONFIGURE_ARGS +=   --with-scotch=1 --with-scotch-dir=$(PREFIX_scotch)
-#CONFIGURE_ARGS +=   --with-blacs=1 --with-blacs-dir=$(PREFIX_scalapack)
-#CONFIGURE_ARGS +=   --with-scalapack=1 --with-scalapack-dir=$(PREFIX_scalapack)
+CONFIGURE_ARGS +=   --with-mumps=1 --with-mumps-dir=$(PREFIX_MUMPS)
+
+CONFIGURE_ARGS +=   --with-blacs=1 --with-blacs-include=$(PREFIX_scalapack)
+CONFIGURE_ARGS +=   --with-blacs-lib="[$(PREFIX_scalapack)/lib/blacs.a,$(PREFIX_scalapack)/lib/blacsC.a,$(PREFIX_scalapack)/lib/blacsF77.a,$(PREFIX_scalapack)/lib/blacs.a]"
+CONFIGURE_ARGS +=   --with-scalapack=1 --with-scalapack-dir=$(PREFIX_scalapack) 
 
 MODULEFILE_LINES+=      PETSC
 MODULEFILE_CMD_PETSC?= \
@@ -77,6 +82,7 @@ do-build:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
 	cd $(WRKSRC); \
 	$(ECHO) $(PETSC_ARCH); \
+	$(ECHO) $(PREFIX_scotch); \
 	$(MAKE) PETSC_DIR=$(WRKSRC) PETSC_ARCH=$(PETSC_ARCH) all 2>&1 | tee cportsmakelog
 
 do-test:
