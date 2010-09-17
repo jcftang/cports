@@ -44,7 +44,7 @@ do-configure:
 	$(SED) -e 's|^PARMETISLIB.*=.*|PARMETISLIB = -L$(PREFIX_ParMetis)/lib -lparmetis |' |  \
 	$(SED) -e 's|^FLIBS.*=.*|FLIBS = -lgfortran -lgfortranbegin |'  | \
 	$(SED) -e 's|^CC.*=.*|CC = mpicc |' |  \
-	$(SED) -e 's|^CFLAGS.*=.*|CFLAGS = -DDEBUGlevel=0 -DPRNTlevel=1 #-D_LONGINT |' |  \
+	$(SED) -e 's|^CFLAGS.*=.*|CFLAGS = -fPIC -DDEBUGlevel=0 -DPRNTlevel=1 #-D_LONGINT |' |  \
 	$(SED) -e 's|^NOOPTS.*=.*|NOOPTS = -O0 -fPIC |' |  \
 	$(SED) -e 's|^FORTRAN.*=.*|FORTRAN = mpif90 |' |  \
 	$(SED) -e 's|^FFLAGS.*=.*|FFLAGS =  |' |  \
