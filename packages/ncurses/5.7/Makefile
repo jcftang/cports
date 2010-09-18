@@ -22,4 +22,10 @@ DESCRIPTION+=	"reasonable optimization. This implementation is 'new curses'"
 DESCRIPTION+=	"(ncurses) and is the approved replacement for 4.4BSD classic"
 DESCRIPTION+=	"curses, which has been discontinued."
 
+do-install:
+	$(MODULE_ADD) $(BUILD_DEPENDS);   \
+	cd $(WRKSRC); \
+	$(MAKE) install ; \
+	ln -sf $(PROGRAM_PREFIX)/include/ncurses/*.h $(PROGRAM_PREFIX)/include/
+
 include ../../../mk/gnu.post.mk
