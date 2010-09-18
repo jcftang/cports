@@ -1408,7 +1408,7 @@ clean: do-clean
 do-clea%:
 	$(QUIET) $(RM_RF) $(WORKDIR)
 	$(QUIET) $(RM) *~
-	if [ -e testlog ]; then $(RM) testlog; fi
+	$(QUIET) if [ -e testlog ]; then $(RM) testlog; fi
 
 remove-distribution-files:
 	$(QUIET) $(MAKE) clean
