@@ -24,6 +24,7 @@ DEPENDS+="pcre/8.10 --build-env --lib"
 DEPENDS+="gnuplot/4.4.0 --build-env --run-env"
 DEPENDS+="ncurses/5.7 --build-env --lib"
 DEPENDS+="readline/6.1 --build-env --lib"
+DEPENDS+="texinfo/4.13 --build-env"
 
 DESCRIPTION=  "GNU Octave is a high-level language, primarily intended for numerical computations."
 
