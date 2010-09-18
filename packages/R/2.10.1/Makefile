@@ -11,6 +11,7 @@ DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
 EXTRAVERSION=
 
 DEPENDS+="atlas/3.8.3 --lib"
+DEPENDS+="readline/6.1 --lib --build-env"
 
 DESCRIPTION=  "R is a free software environment for statistical computing and graphics."
 

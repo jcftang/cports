@@ -12,6 +12,7 @@ EXTRAVERSION=
 
 DEPENDS+="atlas/3.8.3 --lib"
 DEPENDS+="openmpi/1.4.2 --build-env openmpi/1.4.2 --run-env" 
+DEPENDS+="readline/6.1 --lib --build-env"
 
 DESCRIPTION=  "R is a free software environment for statistical computing and graphics."
 
