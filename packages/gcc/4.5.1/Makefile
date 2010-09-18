@@ -14,19 +14,12 @@ WRKSRC=$(WORKDIR)/$(PKGSUBDIR)-tmp/
 
 EXTRAVERSION=
 
-DEPENDS += "gmp/4.3.2 --build-env"
-DEPENDS += "mpfr/3.0.0 --build-env"
-DEPENDS += "mpc/0.8.2 --build-env"
-DEPENDS += "libelf/0.8.13 --build-env"
-DEPENDS += "polylib/5.22.5 --build-env"
-DEPENDS += "cloog/0.14.1 --build-env" 
-
-DEPENDS += "gmp/4.3.2 --run-env"
-DEPENDS += "mpfr/3.0.0 --run-env"
-DEPENDS += "mpc/0.8.2 --run-env"
-DEPENDS += "libelf/0.8.13 --run-env"
-DEPENDS += "polylib/5.22.5 --run-env"
-DEPENDS += "cloog/0.14.1 --run-env" 
+DEPENDS += "gmp/4.3.2 --build-env --lib"
+DEPENDS += "mpfr/3.0.0 --build-env --lib"
+DEPENDS += "mpc/0.8.2 --build-env --lib"
+DEPENDS += "libelf/0.8.13 --build-env --lib"
+DEPENDS += "polylib/5.22.5 --build-env --lib"
+DEPENDS += "cloog/0.14.1 --build-env --lib" 
 
 CONFIGURE_ARGS += --enable-shared --enable-threads=posix --with-system-zlib
 CONFIGURE_ARGS += --enable-__cxa_atexit --disable-libunwind-exceptions
@@ -37,12 +30,13 @@ CONFIGURE_ARGS += --with-mpfr=$(PREFIX_mpfr)
 CONFIGURE_ARGS += --with-mpc=$(PREFIX_mpc)
 CONFIGURE_ARGS += --with-cloog=$(PREFIX_cloog)
 CONFIGURE_ARGS += --with-libelf=$(PREFIX_libelf)
+CONFIGURE_ARGS += --disable-multilib
 
 
 ALL_TARGET= bootstrap
 
 
-DESCRIPTION=    "gcc 4.5.0 enviornment"
+DESCRIPTION=    "gcc 4.5.1 enviornment"
 
 include ../../../mk/gnu.post.mk
 
