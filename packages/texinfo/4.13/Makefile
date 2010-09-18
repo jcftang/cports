@@ -10,7 +10,7 @@ GNU_CONFIGURE=	yes
 
 # Gettext depend on this packet.
 CONFIGURE_ARGS=	--with-included-gettext
-DEPENDS=	"gettext/0.18.1.1 --build-env --cond"
+DEPENDS=	"gettext/0.18.1.1 --build-env --lib --cond"
 DEPENDS+=	"ncurses/5.7 --build-env --lib"
 
 INFO_FILE=	$(PROGRAM_PREFIX)/info/$(DISTNAME)
