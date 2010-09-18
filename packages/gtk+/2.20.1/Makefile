@@ -14,6 +14,11 @@ DEPENDS+="atk/1.30.0 --build-env --lib"
 DEPENDS+="cairo/1.8.10 --build-env --lib"
 DEPENDS+="pango/1.28.1 --build-env --lib"
 DEPENDS+="pixman/0.18.2 --build-env --lib"
+DEPENDS+="fontconfig/2.8.0 --build-env --lib"
+DEPENDS+="freetype/2.4.2 --build-env --lib"
+DEPENDS+="libpng/1.4.3 --build-env --lib"
+DEPENDS+="libtiff/3.9.4 --build-env --lib"
+DEPENDS+="libjpeg/8b --build-env --lib"
 
 DESCRIPTION=	"gtk+"
 

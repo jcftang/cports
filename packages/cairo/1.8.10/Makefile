@@ -7,11 +7,11 @@ MASTER_SITES=	http://cairographics.org/releases
 MAINTAINER=	darach@tchpc.tcd.ie
 GNU_CONFIGURE=	yes
 
-#Commented out, because it will try to use the db-1.85-compat mode of db,
-#which wont work if you have /usr/lib/libdb1.*
 DEPENDS+="pixman/0.18.2 --build-env --lib"
 DEPENDS+="fontconfig/2.8.0 --build-env --lib"
 DEPENDS+="poppler/0.14.1 --build-env --lib"
+DEPENDS+="libpng/1.4.3 --build-env --lib"
+DEPENDS+="freetype/2.4.2 --build-env --lib"
 
 DESCRIPTION=	"cairo"
 

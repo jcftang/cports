@@ -10,6 +10,7 @@ GNU_CONFIGURE=	yes
 #Commented out, because it will try to use the db-1.85-compat mode of db,
 #which wont work if you have /usr/lib/libdb1.*
 #DEPENDS+="pixman/0.18.2 --build-env"
+DEPENDS+=	"glib/2.24.1 --lib --build-env"
 
 DESCRIPTION=	"ATK provides the set of accessibility interfaces that are implemented by other toolkits and applications. Using the ATK interfaces, accessibility tools have full access to view and control running applications."
 
