@@ -13,6 +13,8 @@ DEPENDS += "boost/1_44_0_openmpi_1.4.2 --lib --build-env"
 DEPENDS += "zlib/1.2.5 --lib --build-env"
 DEPENDS += "mpc/0.8.2 --lib --build-env"
 DEPENDS += "openssl/1.0.0a --lib --build-env"
+DEPENDS += "bzip2/1.0.5 --lib --build-env"
+DEPENDS += "gmp/4.3.2 --lib --build-env"
 
 EXTRAVERSION=
 

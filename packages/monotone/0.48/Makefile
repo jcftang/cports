@@ -21,6 +21,7 @@ DEPENDS+=	"zlib/1.2.5 --build-env --lib"
 DEPENDS+=	"sqlite/3.6.23.1 --build-env --lib"
 DEPENDS+=	"libidn/1.19 --build-env --lib"
 DEPENDS+=	"texinfo/4.13 --build-env"
+DEPENDS+=	"bzip2/1.0.5 --lib --build-env"
 
 EXTRAVERSION=
 
