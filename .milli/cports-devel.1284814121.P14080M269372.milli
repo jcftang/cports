@@ -1,0 +1,8 @@
+Title: need Xlib pre-installed
+UID: cports-devel.1284814121.P14080M269372
+Added: Sat Sep 18 13:48:41 2010
+Status: open
+
+
+currently minimal x11 libs are included, we should rely on system x11
+implementations as much as possible

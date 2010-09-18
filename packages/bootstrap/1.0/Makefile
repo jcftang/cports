@@ -14,6 +14,7 @@ DONT_CREATE_METAINFO=yes
 #DEPENDS+=	"gtar --build-env"
 
 do-build:
+	(cd ../../ncurses/5.7/ && make install)
 	(cd ../../texinfo/4.13/ && make BOOTSTRAP=yes build)
 	(cd ../../gmake/3.81/ && make BOOTSTRAP=yes build)
 	(cd ../../wget/1.9.1/ && make BOOTSTRAP=yes build)

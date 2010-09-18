@@ -51,6 +51,26 @@
 
 you can do a "make check-environment" to see if you meet the basic
 requirements.
+
+** Required devel packages/software if you wish to build X11 programs
+
+This list was compiled from a SL55 machine
+
+libICE-devel
+libSM-devel
+libX11-devel
+libXau-devel
+libXdmcp-devel
+libXext-devel
+libXft-devel
+libXmu-devel
+libXp-devel
+libXpm-devel
+libXrender-devel
+libXt-devel
+mesa-libGL-devel
+xorg-x11-proto-devel
+
 * Installation and configuration
   - Unpack cports-?.tar.bz2 to somewhere (I usually put it into ${HOME}/develop/cports)
   - Configure cports by creating either /etc/mpkg.mk or

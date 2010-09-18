@@ -12,7 +12,7 @@ GNU_CONFIGURE=	yes
 DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
 
 EXTRAVERSION=
-DEPENDS+=	"zlib --build-env"
+DEPENDS+=	"zlib --build-env --lib"
 
 DESCRIPTION=	"Libxml2 is the XML C parser and toolkit developed for the Gnome project (but usable outside of the Gnome platform), it is free software available under the MIT License."
 

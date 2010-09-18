@@ -12,6 +12,7 @@ GNU_CONFIGURE=	yes
 DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
 
 EXTRAVERSION=
+DEPENDS+=	"gmp/4.3.2 --build-env --lib"
 
 DESCRIPTION=	"The MPFR library is a C library for multiple-precision floating-point computations with correct rounding. "
 
