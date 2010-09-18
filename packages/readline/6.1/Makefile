@@ -20,5 +20,11 @@ DESCRIPTION+=	"to maintain a list of previously-entered command lines,"
 DESCRIPTION+=	"to recall and perhaps reedit those lines, and perform csh-"
 DESCRIPTION+=	"like history expansion on previous commands."
 
+do-install:
+	$(MODULE_ADD) $(BUILD_DEPENDS);   \
+	cd $(WRKSRC); \
+	$(MAKE) install ; \
+	ln -sf $(PROGRAM_PREFIX)/include/readline/*.h $(PROGRAM_PREFIX)/include/
+
 include ../../../mk/gnu.post.mk
 
