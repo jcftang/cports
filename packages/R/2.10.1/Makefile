@@ -11,7 +11,17 @@ DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
 EXTRAVERSION=
 
 DEPENDS+="atlas/3.8.3 --lib"
+DEPENDS+="openmpi/1.4.2 --build-env openmpi/1.4.2 --run-env"
+DEPENDS+="ncurses/5.7 --lib --build-env"
 DEPENDS+="readline/6.1 --lib --build-env"
+DEPENDS+="pcre/8.10 --lib --build-env"
+DEPENDS+="zlib/1.2.5 --lib --build-env"
+DEPENDS+="bzip2/1.0.5 --lib --build-env"
+DEPENDS+="libpng/1.4.3 --lib --build-env"
+DEPENDS+="libjpeg/8b --lib --build-env"
+DEPENDS+="libtiff/3.9.4 --lib --build-env"
+DEPENDS+="libiconv/1.13 --lib --build-env"
+DEPENDS+="gettext/0.18.1.1 --lib --build-env"
 
 DESCRIPTION=  "R is a free software environment for statistical computing and graphics."
 
