@@ -22,6 +22,8 @@ DEPENDS+="fftw/3.2.2_float --build-env --lib"
 DEPENDS+="pcre/8.10 --build-env --lib"
 #DEPENDS+="openmpi/1.4.2 --build-env openmpi/1.4.2 --run-env" 
 DEPENDS+="gnuplot/4.4.0 --build-env --run-env"
+DEPENDS+="ncurses/5.7 --build-env --lib"
+DEPENDS+="readline/6.1 --build-env --lib"
 
 DESCRIPTION=  "GNU Octave is a high-level language, primarily intended for numerical computations."
 
