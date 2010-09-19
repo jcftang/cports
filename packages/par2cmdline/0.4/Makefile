@@ -11,6 +11,9 @@ DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
 
 EXTRAVERSION=
 
+DEPENDS=	"autoconf/2.67 --build-env"
+DEPENDS+=	"automake/1.8.5 --build-env"
+
 PATCH_STRIP=-p1
 
 DESCRIPTION=	"parchive - Providing a tool to apply the data-recovery capability concepts of RAID-like systems to the posting & recovery of multi-part archives on Usenet."
