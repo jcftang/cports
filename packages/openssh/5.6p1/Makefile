@@ -12,6 +12,9 @@ DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
 EXTRAVERSION=
 PATCH_STRIP= -p1
 
+DEPENDS=	"zlib/1.2.5 --build-env --lib"
+DEPENDS+=	"openssl/1.0.0a --build-env --lib"
+
 ifneq (,$(findstring osf,$(SYSTEM_TYPE_OS)))
 CONFIGURE_ENV+=	
 endif
