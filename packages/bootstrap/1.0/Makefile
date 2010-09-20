@@ -31,6 +31,7 @@ do-install:
 	(cd ../../libtool/2.2.10/ && make BOOTSTRAP=yes install)
 
 do-cleaz:
+	(cd ../../ncurses/5.7/ && make clean)
 	(cd ../../texinfo/4.13/ && make clean)
 	(cd ../../gmake/3.81/ && make clean)
 	(cd ../../wget/1.9.1/ && make clean)
