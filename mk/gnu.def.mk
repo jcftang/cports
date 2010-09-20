@@ -125,6 +125,8 @@ $(warn "Need modules to function properly!")
 MODULE_ADD?=		echo "No modules support, skipping:"; exit 1; 
 endif
 
+INSERT_MODULEFILE_CONFLICTS?= yes
+
 #
 # Define Compiler suite profiles
 #
