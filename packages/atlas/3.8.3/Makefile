@@ -33,10 +33,10 @@ ifeq ($(COMPILERS),gnu)
 	../ATLAS/configure --prefix=$(PROGRAM_PREFIX) -Fa alg -fPIC --with-netlib-lapack=../lapackdir/lapackinst/lapack_LINUX.a; \
 	cd build;  \
 	make 2>&1 | tee makelog; \
-	cd lib; make shared; cd .. \
-	make check 2>&1 | tee checklog;  \
-	make ptcheck 2>&1 | tee ptchecklog;  \
-	make time 2>&1 | tee timelog
+	cd lib; make shared; cd ..; \
+	make check 2>&1 | tee $(WORKDIR)/checklog;  \
+	make ptcheck 2>&1 | tee $(WORKDIR)/ptchecklog;  \
+	make time 2>&1 | tee $(WORKDIR)/timelog
 endif
 ifeq ($(COMPILERS),gnu4.5.0)
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
@@ -48,7 +48,7 @@ ifeq ($(COMPILERS),gnu4.5.0)
 	../ATLAS/configure --prefix=$(PROGRAM_PREFIX) -Fa alg -fPIC --with-netlib-lapack=../lapackdir/lapackinst/lapack_LINUX.a; \
 	cd build;  \
 	make 2>&1 | tee makelog; \
-	cd lib; make shared; cd .. \
+	cd lib; make shared; cd ..; \
 	make check 2>&1 | tee checklog;  \
 	make ptcheck 2>&1 | tee ptchecklog;  \
 	make time 2>&1 | tee timelog
@@ -63,7 +63,7 @@ ifeq ($(COMPILERS),gnu4.5.1)
 	../ATLAS/configure --prefix=$(PROGRAM_PREFIX) -Fa alg -fPIC --with-netlib-lapack=../lapackdir/lapackinst/lapack_LINUX.a; \
 	cd build;  \
 	make 2>&1 | tee makelog; \
-	cd lib; make shared; cd .. \
+	cd lib; make shared; cd ..; \
 	make check 2>&1 | tee checklog;  \
 	make ptcheck 2>&1 | tee ptchecklog;  \
 	make time 2>&1 | tee timelog
@@ -83,7 +83,7 @@ ifeq ("$(COMPILERS)","intel11.0")
 	../ATLAS/configure --prefix=$(PROGRAM_PREFIX) --with-netlib-lapack=../lapackdir/lapackinst/lapack_LINUX.a --cc=icc -C if ifort -F if '-O2 -fPIC' -C ic icc -F ic '-O2 -fPIC' -Fa alg -fPIC ;\
 	cd build;  \
 	make 2>&1 | tee makelog; \
-	cd lib; make shared; cd .. \
+	cd lib; make shared; cd ..; \
 	make check 2>&1 | tee checklog;  \
 	make ptcheck 2>&1 | tee ptchecklog;  \
 	make time 2>&1 | tee timelog
