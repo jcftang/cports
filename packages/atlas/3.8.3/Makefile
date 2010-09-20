@@ -4,10 +4,10 @@ DISTNAME=	atlas
 VERSION=	3.8.3
 CATEGORIES=	numerical
 HOMEPAGE=	http://math-atlas.sourceforge.net/
-MASTER_SITES=	http://heanet.dl.sourceforge.net/project/math-atlas/Stable/3.8.3/   http://www.netlib.org/lapack/
+MASTER_SITES=	http://heanet.dl.sourceforge.net/project/math-atlas/Stable/3.8.3/
 MAINTAINER=	darach@tchpc.tcd.ie
 HAS_CONFIGURE = no
-DISTFILES = $(DISTNAME)$(VERSION).tar.bz2 lapack.tgz
+DISTFILES = $(DISTNAME)$(VERSION).tar.bz2
 
 EXTRAVERSION=
 
@@ -27,23 +27,7 @@ ifeq ($(COMPILERS),gnu)
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
 	gcc --version;                    \
 	./preconfig.sh;                   \
-	cd $(WORKDIR);                    \
-	optflags=`cat compflags`; rm compflags; \
-	mkdir lapackdir;  \
-	cd lapackdir; \
-	cp $(_DISTDIR)/lapack.tgz .; \
-	tar zxvf lapack.tgz; \
-	lapv=`find . -maxdepth 1 -type d -printf '%f\n' | grep lapack | sed -e 's/^lapack-//'`; \
-	if [[ $$lapv ]]; \
-	then \
-	mv lapack-$$lapv lapackinst; \
-	else  \
-	    exit 1; \
-	fi;  \
-	cd lapackinst; \
-	cp INSTALL/make.inc.gfortran ./make.inc.tmp; \
-	cat make.inc.tmp | sed -e "s/^OPTS[ \t]*=.*/OPTS    = $$optflags/" | sed -e 's/^NOOPT[ \t]*=.*/NOOPT    = -O0 -fPIC /' > make.inc; \
-	make lib;
+	./lapackconfig.sh;                
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
 	cd work; mkdir -p build;cd build;    \
 	../ATLAS/configure --prefix=$(PROGRAM_PREFIX) -Fa alg -fPIC --with-netlib-lapack=../lapackdir/lapackinst/lapack_LINUX.a; \
