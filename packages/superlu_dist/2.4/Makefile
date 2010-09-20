@@ -6,14 +6,14 @@
 
 include ../../../mk/gnu.pre.mk
 
-DISTNAME=	SuperLU_DIST
+DISTNAME=	superlu_dist
 VERSION=	2.4
+PKGFILENAME=    superlu_dist_$(VERSION)
+PKGSUBDIR=      SuperLU_DIST_$(VERSION)
 CATEGORIES=	parallel
 MAINTAINER=	darach@tchpc.tcd.ie
 HOMEPAGE=	http://crd.lbl.gov/~xiaoye/SuperLU/index.html#superlu_dist
 MASTER_SITES=	http://crd.lbl.gov/~xiaoye/SuperLU/
-DISTFILES+=	$(shell echo $(DISTNAME) | tr '[:upper:]' '[:lower:]')_$(VERSION).tar.gz
-#DISTFILES+=	$(DISTNAME)_$(VERSION).tar.gz
 
 DEPENDS+=	"openmpi/1.4.2 --build-env openmpi/1.4.2 --lib --run-env"
 DEPENDS+=	"atlas/3.8.3 --build-env atlas/3.8.3 --lib"
@@ -34,7 +34,7 @@ DESCRIPTION=	"SuperLU_DIST : a parallel sparse direct solver"
 ## when compiling a new version
 do-configure:
 	echo "configuring (workdir: $(WRKSRC))";
-	cd $(SOURCEDIR)/$(DISTNAME)_$(VERSION); \
+	cd $(WRKSRC); \
 	mv make.inc make.inc.tmp; \
 	cat make.inc.tmp | \
 	$(SED) -e 's|^PLAT.*=.*|PLAT = cports|'  | \
