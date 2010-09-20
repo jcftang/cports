@@ -47,7 +47,7 @@ do-configure:
 	$(SED) -e 's|^CFLAGS.*=.*|CFLAGS = -fPIC -DDEBUGlevel=0 -DPRNTlevel=1 #-D_LONGINT |' |  \
 	$(SED) -e 's|^NOOPTS.*=.*|NOOPTS = -O0 -fPIC |' |  \
 	$(SED) -e 's|^FORTRAN.*=.*|FORTRAN = mpif90 |' |  \
-	$(SED) -e 's|^FFLAGS.*=.*|FFLAGS =  |' |  \
+	$(SED) -e 's|^FFLAGS.*=.*|FFLAGS = -fPIC |' |  \
 	$(SED) -e 's|^LOADER.*=.*|LOADER = $$(CC)  |' |  \
 	$(SED) -e 's|^CDEFS.*=.*|CDEFS =  -DAdd_ |' \
 	> make.inc; \
