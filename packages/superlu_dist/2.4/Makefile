@@ -38,7 +38,7 @@ do-configure:
 	mv make.inc make.inc.tmp; \
 	cat make.inc.tmp | \
 	$(SED) -e 's|^PLAT.*=.*|PLAT = cports|'  | \
-	$(SED) -e 's|^DSuperLUroot.*=.*|DSuperLUroot = $(SOURCEDIR)/$(DISTNAME)_$(VERSION)|'  | \
+	$(SED) -e 's|^DSuperLUroot.*=.*|DSuperLUroot = $(WRKSRC)|'  | \
 	$(SED) -e 's|^BLASLIB.*=.*|BLASLIB = -L$(PREFIX_atlas)/lib -lcblas -lf77blas  -latlas |' |  \
 	$(SED) -e 's|^METISLIB.*=.*|METISLIB = -L$(PREFIX_ParMetis)/lib -lmetis |' |  \
 	$(SED) -e 's|^PARMETISLIB.*=.*|PARMETISLIB = -L$(PREFIX_ParMetis)/lib -lparmetis |' |  \
@@ -55,14 +55,14 @@ do-configure:
 
 do-build:
 	$(MODULE_ADD) $(BUILD_DEPENDS); \
-	cd $(SOURCEDIR)/$(DISTNAME)_$(VERSION); \
+	cd $(WRKSRC); \
 	make 
 
 do-install:
 	$(MODULE_ADD) $(BUILD_DEPENDS); \
 	$(MKDIR) $(PROGRAM_PREFIX)/lib; \
 	$(MKDIR) $(PROGRAM_PREFIX)/include; \
-	cd $(SOURCEDIR)/$(DISTNAME)_$(VERSION); \
+	cd $(WRKSRC); \
 	$(INSTALL) -m 755 ./lib/*.a  $(PROGRAM_PREFIX)/lib; \
 	$(INSTALL) -m 755 ./SRC/*.h  $(PROGRAM_PREFIX)/include; \
 	cp -r EXAMPLE  $(PROGRAM_PREFIX); chmod -R 755 $(PROGRAM_PREFIX)/EXAMPLE
@@ -70,7 +70,7 @@ do-install:
 do-test:
 	$(MODULE_ADD) $(BUILD_DEPENDS);			\
 	$(ECHO_MSG) "Testing for package $(DISTNAME)_$(VERSION) (double precision real and complex only)";			\
-	cd $(SOURCEDIR)/$(DISTNAME)_$(VERSION)/EXAMPLE; \
+	cd $(WRKSRC)/EXAMPLE; \
 	echo "----- test description -----" >> $(CURDIR)/testlog; \
 	cat README >> $(CURDIR)/testlog; \
 	echo "----- RESULTS -----" >> $(CURDIR)/testlog; \
