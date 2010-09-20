@@ -122,7 +122,7 @@ MODULE_ADD?=		. $$MODULESHOME/init/sh; \
 			module add
 else
 $(warn "Need modules to function properly!")
-MODULE_ADD?=		echo "No modules support, skipping:"
+MODULE_ADD?=		echo "No modules support, skipping:"; exit 1; 
 endif
 
 #
