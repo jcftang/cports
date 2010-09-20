@@ -10,7 +10,9 @@ HOMEPAGE=	http://www.mcs.anl.gov/petsc/petsc-as/
 MASTER_SITES=	http://ftp.mcs.anl.gov/pub/petsc/release-snapshots
 HAS_CONFIGURE = yes
 CONFIGURE_SCRIPT = ./configure
-DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
+##DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
+
+MODULEFILE_CONFLICTS += petsc-basic
 
 DEPENDS+="atlas/3.8.3 --lib --build-env"
 DEPENDS+="openmpi/1.4.2 --lib --build-env"

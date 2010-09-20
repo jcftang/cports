@@ -13,6 +13,8 @@ DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
 
 DESCRIPTION=	"fftw: Discrete Fourier Transform in one or more dimensions"
 
+INSERT_MODULEFILE_CONFLICTS= no
+
 
 #default version of fftw should be generating doubl precision libraries
 FFTW_PRECISION?=double

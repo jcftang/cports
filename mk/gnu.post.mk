@@ -1274,11 +1274,17 @@ endif
 
 MODULEFILE_CMDS+=	$(foreach line,$(MODULEFILE_LINES),$(MODULEFILE_CMD_$(line)))
 
+MODULEFILE_CONFLICTS += $(DISTNAME)
+
 do-modul%:
 ifndef DONT_CREATE_METAINFO
 	$(QUIET) $(MKDIR) $(MODULEDIR)/$(DISTNAME)
 	$(QUIET) (								\
-	$(ECHO) "#%Module2.0";							\
+	$(ECHO) "#%Module1.0";							\
+	$(ECHO) "module-whatis \"$(DISTNAME) version $(VERSION)\"";		\
+	if [ "X$(INSERT_MODULEFILE_CONFLICTS)" == "Xyes" ]; then                \
+	 $(ECHO) "conflict $(MODULEFILE_CONFLICTS)";                            \
+	fi; \
 	$(MODULEFILE_CMDS)							\
 	) >$(MODULEDIR)/$(DISTNAME)/$(VERSION)$(EXTRAVERSION)$(COMPILER_TAG)
 endif

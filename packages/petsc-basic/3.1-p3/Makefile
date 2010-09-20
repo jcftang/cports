@@ -17,6 +17,8 @@ of scientific applications modeled by partial differential equations "
 
 ##DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
 
+MODULEFILE_CONFLICTS += petsc-directsolve
+
 DEPENDS+="atlas/3.8.3 --lib --build-env"
 DEPENDS+="openmpi/1.4.2 --lib --build-env"
 DEPENDS+="openmpi/1.4.2 --run-env"
