@@ -19,7 +19,7 @@ DEPENDS+="openmpi/1.4.2 --lib --build-env"
 DEPENDS+="openmpi/1.4.2 --run-env"
 DEPENDS+="ParMetis/3.1.1 --lib --build-env"
 DEPENDS+="scalapack/1.8.0_openmpi_1.4.2 --lib --build-env"
-DEPENDS+="SuperLU_DIST/2.4 --build-env --lib"
+DEPENDS+="superlu_dist/2.4 --build-env --lib"
 DEPENDS+="zlib/1.2.5  --build-env --lib"
 
 CPRT_PETSC_LDFLAGS = 
@@ -81,8 +81,8 @@ CONFIGURE_ARGS +=  --with-blas-lapack-dir=$(PREFIX_atlas)
 CONFIGURE_ARGS +=  --with-parmetis=1 --with-parmetis-include=$(PREFIX_ParMetis)/include 
 CONFIGURE_ARGS +=   --with-parmetis-lib="[$(PREFIX_ParMetis)/lib/libparmetis.a,$(PREFIX_ParMetis)/lib/libmetis.a]"
 CONFIGURE_ARGS +=   --with-mpi=1 --with-mpi-dir=$(PREFIX_openmpi)
-CONFIGURE_ARGS +=   --with-superlu_dist=1 --with-superlu_dist-include=$(PREFIX_SuperLU_DIST)/include
-CONFIGURE_ARGS +=   --with-superlu_dist-lib=$(PREFIX_SuperLU_DIST)/lib/libsuperlu_dist_2.4.a
+CONFIGURE_ARGS +=   --with-superlu_dist=1 --with-superlu_dist-include=$(PREFIX_superlu_dist)/include
+CONFIGURE_ARGS +=   --with-superlu_dist-lib=$(PREFIX_superlu_dist)/lib/libsuperlu_dist_2.4.a
 CONFIGURE_ARGS +=   --with-mumps=1 --with-mumps-dir=$(PREFIX_MUMPS)
 
 CONFIGURE_ARGS +=   --with-blacs=1 --with-blacs-include=$(PREFIX_scalapack)
