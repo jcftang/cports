@@ -25,10 +25,13 @@
   - LIBRARY_PATH
   - LD_RUN_PATH
   - PKG_CONFIG_PATH
-  - PYTHONPATH
+  - PYTHONPATH (this needs tweaking)
+  - INSERT_MODULEFILE_CONFLICTS (conflict or not?)
+  - MODULEFILE_CONFLICTS (conflict package with itself)
+  - DO_RUN_TESTS (testing of packages)
 * The upstream authors
   - mpkg - http://staff.e.kth.se/mpkg/index.html
-  - cports - http://www.caoslinux.org/
+  - cports - http://www.caoslinux.org/ and http://caoswiki.infiscale.org/
 * The current authors
  - Mainly staff from TCHPC
    - The time is paid for by eINIS, HPCE2, OIP and maybe one or two
@@ -134,7 +137,7 @@ it at least provides a way of systematically creating installations.
 
 * Systems tested on
  - ScientificLinux 5.x (64bit)
-
+ - ScientificLinux 5.x (32bit)
 
 * Changelog - OLD
 ** Fork of cports from caoslinux, which in turn is a fork of mpkg
