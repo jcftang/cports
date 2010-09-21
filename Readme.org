@@ -139,6 +139,7 @@ it at least provides a way of systematically creating installations.
 * Systems tested on
  - ScientificLinux 5.x (64bit)
  - ScientificLinux 5.x (32bit)
+ - ScientificLinux 4.x (32bit)
 
 * Changelog - OLD
 ** Fork of cports from caoslinux, which in turn is a fork of mpkg
