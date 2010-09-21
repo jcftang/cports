@@ -10,9 +10,10 @@ MASTER_SITES=   $(MASTER_SITE_GNU:=$(DISTNAME)/)
 MAINTAINER=     jtang@tchpc.tcd.ie
 GNU_CONFIGURE=  yes
 
+ifndef BOOTSTRAP
 DEPENDS=        "gawk/3.1.8 --build-env"
-
 CONFIGURE_ENV+= AWK=$(PREFIX_gawk)/bin/gawk
+endif
 
 DESCRIPTION=    "M4 is an implementation of the traditional UNIX macro"
 DESCRIPTION+=   "processor. It is mostly SVR4 compatible, although it has"
