@@ -59,6 +59,7 @@ requirements.
 
 This list was compiled from a SL55 machine
 
+freeglut-devel
 libICE-devel
 libSM-devel
 libX11-devel
