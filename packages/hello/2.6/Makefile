@@ -23,6 +23,13 @@ GNU_CONFIGURE=  yes
 CONFIGURE_ARGS +=  $(OPT)
 DESCRIPTION=    "The GNU Hello program produces a familiar, friendly greeting."
 
+do-blah:
+	$(if $(findstring gnu, $(COMPILERS)), \
+	@echo "gnu compiler",)
+	$(if $(findstring intel, $(COMPILERS)), \
+	@echo " intel compiler",)
+
+
 include ../../../mk/gnu.post.mk
 
 
