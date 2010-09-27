@@ -12,6 +12,9 @@ DISTFILES = 	$(DISTNAME)_$(VERSION).tgz
 PKGSUBDIR=	$(DISTNAME)_$(VERSION)
 EXTRAVERSION=
 
+#
+# need gcc43 or newer to build
+#
 DEPENDS=	"cmake/2.8.2 --build-env"
 DEPENDS+=	"Python/2.6.5 --build-env --lib --run-env"
 DEPENDS+=	"sqlite/3.6.23.1 --build-env --lib"
