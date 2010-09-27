@@ -40,5 +40,10 @@ do-build:
 	cd BUILD ;\
 	$(MAKE)
 
+do-install:
+	$(MODULE_ADD) $(BUILD_DEPENDS);   \
+	cd $(WRKSRC); \
+	cd BUILD ;\
+	$(MAKE) install
 
 include ../../../mk/gnu.post.mk
