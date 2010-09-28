@@ -30,6 +30,6 @@ TEST_TARGET=          test
 
 DESCRIPTION=	"Python is a remarkably powerful dynamic programming language that is used in a wide variety of application domains. "
 
-CONFIGURE_ARGS +=
+CONFIGURE_ARGS += --enable-shared
 
 include ../../../mk/gnu.post.mk

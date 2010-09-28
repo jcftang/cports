@@ -10,6 +10,10 @@ DISTFILES=      tar-$(VERSION).tar.gz
 MAINTAINER=     jtang@tchpc.tcd.ie
 GNU_CONFIGURE=  yes
 
+ifndef BOOTSTRAP
+DEPENDS+=	"xz/4.999.9beta-180-ge23e --build-env --lib --run-env"
+endif
+
 CONFIGURE_ARGS+=--program-prefix="g"
 CONFIGURE_ARGS+=--with-included-gettext
 
