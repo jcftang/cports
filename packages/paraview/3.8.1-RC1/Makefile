@@ -1,22 +1,22 @@
 include ../../../mk/gnu.pre.mk
 
 DISTNAME=	paraview
-VERSION=	3.6.2
+VERSION=	3.8.1-RC1
 CATEGORIES=	graphics
 HOMEPAGE=	http://www.paraview.org/
-MASTER_SITES=	http://www.paraview.org/files/v3.6
+MASTER_SITES=	http://www.paraview.org/files/v3.8
 MAINTAINER=	jtang@tchpc.tcd.ie
 HAS_CONFIGURE=	no
-DISTFILES = 	$(DISTNAME)-$(VERSION).tar.gz
+DISTFILES = 	ParaView-$(VERSION).tar.gz
 
-PKGSUBDIR=	ParaView3
+PKGSUBDIR=	ParaView-$(VERSION)
 EXTRAVERSION=
 
 DEPENDS=	"cmake/2.8.2 --build-env"
 DEPENDS+=	"Python/2.6.5 --build-env --lib --run-env"
 DEPENDS+=	"tcl/8.5.8 --build-env --lib --run-env"
 DEPENDS+=	"tk/8.5.8 --build-env --lib --run-env"
-DEPENDS+=	"qt/4.3.5 --build-env --lib"
+DEPENDS+=	"qt/4.6.3 --build-env --lib"
 
 DESCRIPTION=	"ParaView is an open-source, multi-platform data analysis and visualization application. ParaView users can quickly build visualizations to analyze their data using qualitative and quantitative techniques."
 
