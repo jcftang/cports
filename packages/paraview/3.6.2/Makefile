@@ -39,6 +39,29 @@ MODULEFILE_LINES+=      PYTHONPATH
 MODULEFILE_CMD_PYTHONPATH?= \
         $(ECHO) "prepend-path   PYTHONPATH $(PROGRAM_PREFIX)/lib/python2.6/site-packages";
 
+MODULEFILE_CMD_LIBPATH= \
+        if $(TEST) -d $(PROGRAM_PREFIX)/lib/paraview-3.6; then \
+                $(ECHO) "prepend-path LD_LIBRARY_PATH $(PROGRAM_PREFIX)/lib/paraview-3.6"; \
+        fi; \
+        if $(TEST) -d $(PROGRAM_PREFIX)/lib/paraview-3.6; then \
+                $(ECHO) "prepend-path LD_RUN_PATH $(PROGRAM_PREFIX)/lib/paraview-3.6"; \
+        fi; \
+        if $(TEST) -d $(PROGRAM_PREFIX)/lib/paraview-3.6; then \
+                $(ECHO) "prepend-path LIBRARY_PATH $(PROGRAM_PREFIX)/lib/paraview-3.6"; \
+        fi; \
+        if $(TEST) -d $(PROGRAM_PREFIX)/lib/paraview-3.6; then \
+                $(ECHO) "prepend-path LD_RUN_PATH $(PROGRAM_PREFIX)/lib/paraview-3.6"; \
+        fi;
+MODULEFILE_CMD_INCLUDEPATH= \
+        if $(TEST) -d $(PROGRAM_PREFIX)/include/paraview-3.6; then \
+                $(ECHO) "prepend-path INCLUDE_PATH $(PROGRAM_PREFIX)/include/paraview-3.6"; \
+        fi; \
+        if $(TEST) -d $(PROGRAM_PREFIX)/include/paraview-3.6; then \
+                $(ECHO) "prepend-path CPLUS_INCLUDE_PATH $(PROGRAM_PREFIX)/include/paraview-3.6"; \
+        fi; \
+        if $(TEST) -d $(PROGRAM_PREFIX)/include/paraview-3.6; then \
+                $(ECHO) "prepend-path C_INCLUDE_PATH $(PROGRAM_PREFIX)/include/paraview-3.6"; \
+        fi;
 
 do-configure:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
