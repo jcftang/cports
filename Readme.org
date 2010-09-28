@@ -147,7 +147,7 @@ it at least provides a way of systematically creating installations.
    - need to redefine F77 to use g77 instead if you need numerical packages to work
  - Debian 5.x (64bit)
 
-* Table apps that require specific compilers 
+* Table of apps that require specific compilers 
 The reference compiler is gcc 4.1.2, we assume all apps compile with
 gcc 4.1.2 unless otherwise stated
 
