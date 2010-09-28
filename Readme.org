@@ -85,6 +85,10 @@ xorg-x11-proto-devel
     correspond to the MODULEDIR variable in /etc/mpkg.mk or
     ${HOME}.mpkg.mk. Look in cports/mk/gnu.def.mk for some default
     options that you can override and or set.
+  - cd into *cports/scripts* and run the *distro.guess* script, if it
+    outputs 'unknown.*' then add a new check for your distro. This
+    step isn't strictly needed, but it does provide your installed
+    target with some useful information.
   - cd into *cports/packages/bootstrap/1.0* and type make install,
     this will try and install the basic packages needed to build the
     rest of the system
