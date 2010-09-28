@@ -1,15 +1,15 @@
 include ../../../mk/gnu.pre.mk
 
 DISTNAME=	qt
-VERSION=	4.7.0
+VERSION=	4.3.5
 CATEGORIES=	graphics
 HOMEPAGE=	http://qt.nokia.com/
 MASTER_SITES=	ftp://ftp.qt.nokia.com/qt/source/
 MAINTAINER=	jtang@tchpc.tcd.ie
 HAS_CONFIGURE=	no
-DISTFILES = $(DISTNAME)-everywhere-opensource-src-$(VERSION).tar.gz
+DISTFILES = $(DISTNAME)-all-opensource-src-$(VERSION).tar.gz
 
-PKGSUBDIR= $(DISTNAME)-everywhere-opensource-src-$(VERSION)
+PKGSUBDIR= $(DISTNAME)-all-opensource-src-$(VERSION)
 
 EXTRAVERSION=
 
@@ -32,7 +32,7 @@ DEPENDS+=	"glib/2.24.1 --build-env --lib"
 do-configure:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
 	cd $(WRKSRC); \
-	(echo y) | ./configure -opensource \
+	echo yes | ./configure \
 		-prefix $(PROGRAM_PREFIX) \
 		-system-sqlite \
 		-system-zlib \
