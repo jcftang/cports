@@ -16,7 +16,7 @@ DEPENDS=	"cmake/2.8.2 --build-env"
 DEPENDS+=	"Python/2.6.5 --build-env --lib --run-env"
 DEPENDS+=	"tcl/8.5.8 --build-env --lib --run-env"
 DEPENDS+=	"tk/8.5.8 --build-env --lib --run-env"
-DEPENDS+=	"qt/4.3.5 --build-env --lib"
+DEPENDS+=	"qt/4.3.5 --build-env --lib --run-env"
 
 DEPENDS+=       "fontconfig/2.8.0 --lib --build-env"
 DEPENDS+=       "libjpeg/8b --lib --build-env"
