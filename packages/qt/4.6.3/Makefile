@@ -17,7 +17,7 @@ DESCRIPTION=	"Qt is a cross-platform application and UI framework."
 
 DEPENDS+=       "fontconfig/2.8.0 --lib --build-env"
 DEPENDS+=       "libjpeg/8b --lib --build-env"
-DEPENDS+=       "libpng/1.4.3 --lib --build-env"
+DEPENDS+=       "libpng/1.2.39 --lib --build-env"
 DEPENDS+=       "libtiff/3.9.4 --lib --build-env"
 DEPENDS+=       "pango/1.28.1 --build-env --lib"
 DEPENDS+=       "cairo/1.8.10 --build-env --lib"

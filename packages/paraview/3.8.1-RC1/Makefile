@@ -20,7 +20,7 @@ DEPENDS+=	"qt/4.6.3 --build-env --lib"
 
 DEPENDS+=       "fontconfig/2.8.0 --lib --build-env"
 DEPENDS+=       "libjpeg/8b --lib --build-env"
-DEPENDS+=       "libpng/1.4.3 --lib --build-env"
+DEPENDS+=       "libpng/1.2.39 --lib --build-env"
 DEPENDS+=       "libtiff/3.9.4 --lib --build-env"
 DEPENDS+=       "pango/1.28.1 --build-env --lib"
 DEPENDS+=       "cairo/1.8.10 --build-env --lib"
@@ -39,27 +39,27 @@ MODULEFILE_CMD_PYTHONPATH?= \
         $(ECHO) "prepend-path   PYTHONPATH $(PROGRAM_PREFIX)/lib/python2.6/site-packages";
 
 MODULEFILE_CMD_LIBPATH= \
-        if $(TEST) -d $(PROGRAM_PREFIX)/lib/paraview-3.6; then \
-                $(ECHO) "prepend-path LD_LIBRARY_PATH $(PROGRAM_PREFIX)/lib/paraview-3.6"; \
+        if $(TEST) -d $(PROGRAM_PREFIX)/lib/paraview-3.8; then \
+                $(ECHO) "prepend-path LD_LIBRARY_PATH $(PROGRAM_PREFIX)/lib/paraview-3.8"; \
         fi; \
-        if $(TEST) -d $(PROGRAM_PREFIX)/lib/paraview-3.6; then \
-                $(ECHO) "prepend-path LD_RUN_PATH $(PROGRAM_PREFIX)/lib/paraview-3.6"; \
+        if $(TEST) -d $(PROGRAM_PREFIX)/lib/paraview-3.8; then \
+                $(ECHO) "prepend-path LD_RUN_PATH $(PROGRAM_PREFIX)/lib/paraview-3.8"; \
         fi; \
-        if $(TEST) -d $(PROGRAM_PREFIX)/lib/paraview-3.6; then \
-                $(ECHO) "prepend-path LIBRARY_PATH $(PROGRAM_PREFIX)/lib/paraview-3.6"; \
+        if $(TEST) -d $(PROGRAM_PREFIX)/lib/paraview-3.8; then \
+                $(ECHO) "prepend-path LIBRARY_PATH $(PROGRAM_PREFIX)/lib/paraview-3.8"; \
         fi; \
-        if $(TEST) -d $(PROGRAM_PREFIX)/lib/paraview-3.6; then \
-                $(ECHO) "prepend-path LD_RUN_PATH $(PROGRAM_PREFIX)/lib/paraview-3.6"; \
+        if $(TEST) -d $(PROGRAM_PREFIX)/lib/paraview-3.8; then \
+                $(ECHO) "prepend-path LD_RUN_PATH $(PROGRAM_PREFIX)/lib/paraview-3.8"; \
         fi;
 MODULEFILE_CMD_INCLUDEPATH= \
-        if $(TEST) -d $(PROGRAM_PREFIX)/include/paraview-3.6; then \
-                $(ECHO) "prepend-path INCLUDE_PATH $(PROGRAM_PREFIX)/include/paraview-3.6"; \
+        if $(TEST) -d $(PROGRAM_PREFIX)/include/paraview-3.8; then \
+                $(ECHO) "prepend-path INCLUDE_PATH $(PROGRAM_PREFIX)/include/paraview-3.8"; \
         fi; \
-        if $(TEST) -d $(PROGRAM_PREFIX)/include/paraview-3.6; then \
-                $(ECHO) "prepend-path CPLUS_INCLUDE_PATH $(PROGRAM_PREFIX)/include/paraview-3.6"; \
+        if $(TEST) -d $(PROGRAM_PREFIX)/include/paraview-3.8; then \
+                $(ECHO) "prepend-path CPLUS_INCLUDE_PATH $(PROGRAM_PREFIX)/include/paraview-3.8"; \
         fi; \
-        if $(TEST) -d $(PROGRAM_PREFIX)/include/paraview-3.6; then \
-                $(ECHO) "prepend-path C_INCLUDE_PATH $(PROGRAM_PREFIX)/include/paraview-3.6"; \
+        if $(TEST) -d $(PROGRAM_PREFIX)/include/paraview-3.8; then \
+                $(ECHO) "prepend-path C_INCLUDE_PATH $(PROGRAM_PREFIX)/include/paraview-3.8"; \
         fi;
 
 
