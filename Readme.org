@@ -48,7 +48,7 @@
 * Requirements
 ** Required software
  - gnu make
- - gcc (and basic devel, compile tools etc...)
+ - gcc, gfortran (and basic devel, compile tools etc...)
  - wget
  - environment-modules
 

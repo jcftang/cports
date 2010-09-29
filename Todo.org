@@ -1,13 +1,5 @@
 * Features and Bugs
-** do-test/do-check automation (pre & post install)
-** fix --libs in DEPENDS
 ** Python --> perl module model??
-** R packages (e.g., Rmpi/snow/snowfall  )
- - made a start on porting the prg.perl*mk files to support R modules,
-   needs more test.
-** put conflicts into module files with same top level names (e.g. atlas/3.8.2 should clash with atlas/3.8.3)
-** use install rather than cp in do-install 
-
 * Possible new packages
 ** Libraries/interfaces (numerical)
 *** petsc: (debug/nodebug; c/c++)
@@ -18,19 +10,6 @@
 *** libmesh
 *** trilinos?
 *** netcdf
-*** hdf5
 ** Libraries/interfaces (GUI's)
-*** OpenMotif/lesstif/...
-*** Qt
-*** VTK!
 ** Applications/Devel
-*** paraview
-*** cmake
-
 * Existing Packages
-** Parmetis
-   -L/usr/lib necessary?
-
-** Python tests?
-** Boost
-*** does boost need an explicit blas?   
