@@ -13,6 +13,11 @@ EXTRAVERSION=
 
 CONFIGURE_ARGS+= CFLAGS="-O2" CXXFLAGS="-O2" --without-mpi-profile
 
+ifeq ($(COMPILERS),intel10.1)
+CONFIGURE_ARGS+=--with-wrapper-cflags=-shared-intel
+CONFIGURE_ARGS+=--with-wrapper-cxxflags=-shared-intel
+endif
+
 ifdef ROMIO
 DEPENDS += "pvfs2/2.6.3 --build-env"
 CONFIGURE_ARGS+= LDFLAGS="-L$(PREFIX_pvfs)/lib"

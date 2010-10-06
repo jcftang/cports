@@ -48,8 +48,14 @@ DEPENDS+="boost/1_43_0_openmpi_1.4.2 --lib --build-env"
 CPRT_PETSC_OPTS+=  --with-clanguage=C++ 
 CPRT_PETSC_OPTS+= --with-boost=1 --with-boost-dir=$(PREFIX_boost)
 CPRT_PETSC_C_STR=cxx
+ifeq ("$(COMPILERS)","intel10.1")
+CPRT_PETSC_OPTS+= --CXXFLAGS=-shared-intel
+endif
 else
 CPRT_PETSC_OPTS+= --with-clanguage=C
+ifeq ("$(COMPILERS)","intel10.1")
+CPRT_PETSC_OPTS+= --CFLAGS=-shared-intel
+endif
 endif
 
 $(warning debug: $(CPRT_PETSC_DEBUG))
@@ -60,7 +66,6 @@ $(warning petsc c comp: $(CPRT_PETSC_CCOMP))
 
 EXTRAVERSION= _$(CPRT_PETSC_DEBUG)-$(CPRT_PETSC_SCALAR)-$(CPRT_PETSC_CCOMP)
 WORKDIRSUFFIX= $(CPRT_PETSC_DEBUG)-$(CPRT_PETSC_SCALAR)-$(CPRT_PETSC_CCOMP)
-
 
 
 CONFIGURE_ARGS +=   $(CPRT_PETSC_OPTS) --LDFLAGS="$(CPRT_PETSC_LDFLAGS)"
