@@ -20,8 +20,7 @@ of scientific applications modeled by partial differential equations "
 MODULEFILE_CONFLICTS += petsc-directsolve
 
 DEPENDS+="atlas/3.8.3 --lib --build-env"
-DEPENDS+="openmpi/1.4.2 --lib --build-env"
-DEPENDS+="openmpi/1.4.2 --run-env"
+DEPENDS+="openmpi/1.4.2 --lib --build-env --run-env"
 DEPENDS+="ParMetis/3.1.1 --lib --build-env"
 
 CPRT_PETSC_LDFLAGS = 
