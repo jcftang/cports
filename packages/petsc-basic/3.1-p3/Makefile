@@ -68,7 +68,7 @@ EXTRAVERSION= _$(CPRT_PETSC_DEBUG)-$(CPRT_PETSC_SCALAR)-$(CPRT_PETSC_CCOMP)
 WORKDIRSUFFIX= $(CPRT_PETSC_DEBUG)-$(CPRT_PETSC_SCALAR)-$(CPRT_PETSC_CCOMP)
 
 
-CONFIGURE_ARGS +=   $(CPRT_PETSC_OPTS) --LDFLAGS="$(CPRT_PETSC_LDFLAGS)" --with-batch
+CONFIGURE_ARGS +=   $(CPRT_PETSC_OPTS) --LDFLAGS="$(CPRT_PETSC_LDFLAGS)" 
 CONFIGURE_ARGS +=   --prefix=$(PROGRAM_PREFIX)
 CONFIGURE_ARGS +=   --with-shared=1
 CONFIGURE_ARGS +=   --with-precision=double
@@ -76,6 +76,7 @@ CONFIGURE_ARGS +=  --with-blas-lapack-dir=$(PREFIX_atlas)
 CONFIGURE_ARGS +=  --with-parmetis=1 --with-parmetis-include=$(PREFIX_ParMetis)/include 
 CONFIGURE_ARGS +=   --with-parmetis-lib="[$(PREFIX_ParMetis)/lib/libparmetis.a,$(PREFIX_ParMetis)/lib/libmetis.a]"
 CONFIGURE_ARGS +=   --with-mpi=1 --with-mpi-dir=$(PREFIX_openmpi)
+
 MODULEFILE_LINES+=      PETSC
 MODULEFILE_CMD_PETSC?= \
 	$(ECHO) "setenv  PETSC_DIR $(PROGRAM_PREFIX)";
