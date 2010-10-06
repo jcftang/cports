@@ -23,7 +23,7 @@ DEPENDS+="atlas/3.8.3 --lib --build-env"
 DEPENDS+="openmpi/1.4.2 --lib --build-env --run-env"
 DEPENDS+="ParMetis/3.1.1 --lib --build-env"
 
-CPRT_PETSC_LDFLAGS = 
+CPRT_PETSC_LDFLAGS =  
 
 CPRT_PETSC_DEBUG ?= debug
 ifeq ("$(CPRT_PETSC_DEBUG)","nodebug")
@@ -49,12 +49,12 @@ CPRT_PETSC_OPTS+=  --with-clanguage=C++
 CPRT_PETSC_OPTS+= --with-boost=1 --with-boost-dir=$(PREFIX_boost)
 CPRT_PETSC_C_STR=cxx
 ifeq ("$(COMPILERS)","intel10.1")
-CPRT_PETSC_OPTS+= --CXXFLAGS=-shared-intel
+CPRT_PETSC_OPTS+= --CXXFLAGS=" -shared-intel "
 endif
 else
 CPRT_PETSC_OPTS+= --with-clanguage=C
 ifeq ("$(COMPILERS)","intel10.1")
-CPRT_PETSC_OPTS+= --CFLAGS=-shared-intel
+CPRT_PETSC_OPTS+= --CFLAGS=" -shared-intel "
 endif
 endif
 
@@ -68,7 +68,7 @@ EXTRAVERSION= _$(CPRT_PETSC_DEBUG)-$(CPRT_PETSC_SCALAR)-$(CPRT_PETSC_CCOMP)
 WORKDIRSUFFIX= $(CPRT_PETSC_DEBUG)-$(CPRT_PETSC_SCALAR)-$(CPRT_PETSC_CCOMP)
 
 
-CONFIGURE_ARGS +=   $(CPRT_PETSC_OPTS) --LDFLAGS="$(CPRT_PETSC_LDFLAGS)"
+CONFIGURE_ARGS +=   $(CPRT_PETSC_OPTS) --LDFLAGS="$(CPRT_PETSC_LDFLAGS)" --with-batch
 CONFIGURE_ARGS +=   --prefix=$(PROGRAM_PREFIX)
 CONFIGURE_ARGS +=   --with-shared=1
 CONFIGURE_ARGS +=   --with-precision=double
