@@ -60,8 +60,9 @@ endif
 
 $(warning debug: $(CPRT_PETSC_DEBUG))
 $(warning scalar: $(CPRT_PETSC_SCALAR))
-$(warning petsc arch: $(CPRT_PETSC_DBG_STR))
-$(warning petsc arch: $(CPRT_PETSC_C_STR))
+$(warning petsc dbgstr: $(CPRT_PETSC_DBG_STR))
+$(warning petsc arch: $(PETSC_ARCH))
+$(warning petsc c str: $(CPRT_PETSC_C_STR))
 $(warning petsc c comp: $(CPRT_PETSC_CCOMP))
 
 EXTRAVERSION= _$(CPRT_PETSC_DEBUG)-$(CPRT_PETSC_SCALAR)-$(CPRT_PETSC_CCOMP)
@@ -81,15 +82,29 @@ MODULEFILE_LINES+=      PETSC
 MODULEFILE_CMD_PETSC?= \
 	$(ECHO) "setenv  PETSC_DIR $(PROGRAM_PREFIX)";
 
+## Yes, petsc seems to assign linux-gnu-... to an intel compiler
+## compile too -- of course this may change at some point
+PETSC_ARCH=$(strip \
+	$(if \
+	$(or \
+	$(findstring gnu, $(COMPILERS)), \
+	$(findstring intel, $(COMPILERS)) \
+	), \
+	linux-gnu-$(CPRT_PETSC_C_STR)-$(CPRT_PETSC_DBG_STR), \
+	unknown-petsc-arch))
+
 do-configure:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
 	cd $(WRKSRC); \
+	echo "PETSC_RCH"; \
+	$(ECHO) $(PETSC_ARCH); \
 	env ;\
 	$(CONFIGURE_SCRIPT) $(CONFIGURE_ARGS)
 
 do-build:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
 	cd $(WRKSRC); \
+	echo "PETSC_ARCH"; \
 	$(ECHO) $(PETSC_ARCH); \
 	$(MAKE) PETSC_DIR=$(WRKSRC) PETSC_ARCH=$(PETSC_ARCH) all 2>&1 | tee $(WORKDIR)/cportsbuildlog
 
@@ -107,9 +122,5 @@ do-install:
 
 include ../../../mk/gnu.post.mk
 
-## If I put this here, it seems to work -- have no (real) idea what is
-## going on -- should really get one...
-ifeq "$(COMPILERS)" "gnu"
-  PETSC_ARCH=linux-gnu-$(CPRT_PETSC_C_STR)-$(CPRT_PETSC_DBG_STR)
-endif
+
 
