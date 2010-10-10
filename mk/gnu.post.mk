@@ -1248,14 +1248,48 @@ MODULEFILE_CMD_MODULEDEPS?=	if [ ! -z "$(RUN_DEPENDS)" ]; then	\
 				fi;
 endif
 
+# ifdef DESCRIPTION
+# MODULEFILE_CMD_HELP?=	$(strip $(if $(HAS_CONFIGURE),\
+# 	$(ECHO) "proc ModulesHelp { } {";					\
+# 	for line in "" $(DESCRIPTION); do					\
+# 		if [ "X$$line" = "X" ]; then continue; fi;			\
+# 		$(ECHO) puts stderr "\"$$line\"";				\
+# 	done;									\
+# 	$(ECHO) puts stderr "\"\n\"";                                            \
+# 	$(ECHO) puts stderr "\"configured with $(CONFIGURE_SCRIPT) $(CONFIGURE_ARGS)\""	\
+# 	"}";,                                                          \
+# 	$(ECHO) "proc ModulesHelp { } {";					\
+# 	for line in "" $(DESCRIPTION); do					\
+# 		if [ "X$$line" = "X" ]; then continue; fi;			\
+# 		$(ECHO) puts stderr "\"$$line\"";				\
+# 	done;									\
+# 	"}";))
+
+# endif
+
 ifdef DESCRIPTION
-MODULEFILE_CMD_HELP?=	\
-	$(ECHO) "proc ModulesHelp { } {";					\
-	for line in "" $(DESCRIPTION); do					\
-		if [ "X$$line" = "X" ]; then continue; fi;			\
-		$(ECHO) puts stderr "\"$$line\"";				\
-	done;									\
-	$(ECHO) "}";
+MODULEFILE_CMD_HELP?= $(if \
+		$(or \
+		   $(strip $(shell /bin/bash -c \
+		"if [[ $(HAS_CONFIGURE) =~ [yY]es ]]; then echo 1;fi;")),  \
+		   $(strip $(shell /bin/bash -c \
+		"if [[ $(GNU_CONFIGURE) =~ [yY]es ]]; then echo 1;fi;")) \
+		), \
+		$(ECHO) "proc ModulesHelp { } {";					\
+		for line in "" $(DESCRIPTION); do					\
+			if [ "X$$line" = "X" ]; then continue; fi;			\
+			$(ECHO) puts stderr "\"$$line\"";				\
+		done;									\
+		$(ECHO) puts stderr "\"\n\"";                                            \
+		$(ECHO) puts stderr "\"configured with: \n\n $(CONFIGURE_SCRIPT) $(CONFIGURE_ARGS)\"";	\
+		$(ECHO) "}";,                                                        \
+		$(ECHO) "proc ModulesHelp { } {";					\
+		for line in "" $(DESCRIPTION); do					\
+			if [ "X$$line" = "X" ]; then continue; fi;			\
+			$(ECHO) puts stderr "\"$$line\"";				\
+		done;									\
+		$(ECHO) "}";    \
+	)
 endif
 
 ifdef MENU_CATEGORY
@@ -1281,7 +1315,7 @@ ifndef DONT_CREATE_METAINFO
 	$(QUIET) $(MKDIR) $(MODULEDIR)/$(DISTNAME)
 	$(QUIET) (								\
 	$(ECHO) "#%Module1.0";							\
-	$(ECHO) "module-whatis \"$(DISTNAME) version $(VERSION)\"";		\
+	$(ECHO) "module-whatis \"$(DISTNAME) version $(VERSION) (compiled with a $(COMPILERS) compiler)\""; \
 	if [ "X$(INSERT_MODULEFILE_CONFLICTS)" == "Xyes" ]; then                \
 	 $(ECHO) "conflict $(MODULEFILE_CONFLICTS)";                            \
 	fi; \
