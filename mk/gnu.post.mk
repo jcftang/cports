@@ -1281,7 +1281,7 @@ MODULEFILE_CMD_HELP?= $(if \
 			$(ECHO) puts stderr "\"$$line\"";				\
 		done;									\
 		$(ECHO) puts stderr "\"\n\"";                                            \
-		$(ECHO) puts stderr "\"configured with: \n\n $(CONFIGURE_SCRIPT) $(CONFIGURE_ARGS)\"";	\
+		$(ECHO) puts stderr "{configured with: $(CONFIGURE_SCRIPT) $(CONFIGURE_ARGS)}";	\
 		$(ECHO) "}";,                                                        \
 		$(ECHO) "proc ModulesHelp { } {";					\
 		for line in "" $(DESCRIPTION); do					\
