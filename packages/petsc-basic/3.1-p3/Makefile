@@ -19,7 +19,18 @@ of scientific applications modeled by partial differential equations "
 
 MODULEFILE_CONFLICTS += petsc-directsolve
 
+## I want to make things more complicated so: BLAS configuration!!
+CPRT_PETSC_BLAS?= atlas
+
+ifeq ("$(CPRT_PETSC_BLAS)","atlas")
 DEPENDS+="atlas/3.8.3 --lib --build-env"
+endif
+ifeq ("$(CPRT_PETSC_BLAS)","mkl")
+DEPENDS+="mkl/11111 --lib --build-env"
+endif
+
+$(info BLAS: CPRT_PETSC_BLAS: $(CPRT_PETSC_BLAS); DEPEND: $(DEPENDS))
+
 DEPENDS+="openmpi/1.4.2 --lib --build-env --run-env"
 DEPENDS+="ParMetis/3.1.1 --lib --build-env"
 
@@ -65,8 +76,8 @@ $(warning petsc arch: $(PETSC_ARCH))
 $(warning petsc c str: $(CPRT_PETSC_C_STR))
 $(warning petsc c comp: $(CPRT_PETSC_CCOMP))
 
-EXTRAVERSION= _$(CPRT_PETSC_DEBUG)-$(CPRT_PETSC_SCALAR)-$(CPRT_PETSC_CCOMP)
-WORKDIRSUFFIX= $(CPRT_PETSC_DEBUG)-$(CPRT_PETSC_SCALAR)-$(CPRT_PETSC_CCOMP)-$(COMPILERS)
+EXTRAVERSION= _$(CPRT_PETSC_DEBUG)-$(CPRT_PETSC_SCALAR)-$(CPRT_PETSC_CCOMP)-$(CPRT_PETSC_BLAS)
+WORKDIRSUFFIX= $(CPRT_PETSC_DEBUG)-$(CPRT_PETSC_SCALAR)-$(CPRT_PETSC_CCOMP)-$(CPRT_PETSC_BLAS)-$(COMPILERS)
 
 CONFIGURE_ARGS +=   $(CPRT_PETSC_OPTS) 
 #CONFIGURE_ARGS +=   $(CPRT_PETSC_OPTS) --LDFLAGS="$(CPRT_PETSC_LDFLAGS)" 
