@@ -122,7 +122,7 @@ assumes that the compilers are already in your path.
  - COMPILERS=pathscale - system version of pathscale compilers
  - COMPILERS=pgi - system version of portland compilers
  - COMPILERS=open64 - system version of open64 compilers
-*** Accessing to different versions of gnu compilers
+*** Accessing different versions of gnu compilers
 For example if you want to vary between the gnu compiler versions
 4.1.2, 4.4.0, 4.5.0 etc... you will first need to install the
 compilers from the cports system. Then manually load up the
