@@ -1271,9 +1271,9 @@ ifdef DESCRIPTION
 MODULEFILE_CMD_HELP?= $(if \
 		$(or \
 		   $(strip $(shell /bin/bash -c \
-		"if [[ $(HAS_CONFIGURE) =~ [yY]es ]]; then echo 1;fi;")),  \
+		"if [[ X$(HAS_CONFIGURE) =~ X[yY]es ]]; then echo 1;fi;")),  \
 		   $(strip $(shell /bin/bash -c \
-		"if [[ $(GNU_CONFIGURE) =~ [yY]es ]]; then echo 1;fi;")) \
+		"if [[ X$(GNU_CONFIGURE) =~ X[yY]es ]]; then echo 1;fi;")) \
 		), \
 		$(ECHO) "proc ModulesHelp { } {";					\
 		for line in "" $(DESCRIPTION); do					\
@@ -1282,11 +1282,19 @@ MODULEFILE_CMD_HELP?= $(if \
 		done;									\
 		$(ECHO) puts stderr "\"\n\"";                                            \
 		$(ECHO) puts stderr "{configured with: $(CONFIGURE_SCRIPT) $(CONFIGURE_ARGS)}";	\
+		$(ECHO) puts stderr "{build depends: $(BUILD_DEPENDS)}";              	\
+		$(ECHO) puts stderr "{run depends: $(RUN_DEPENDS)}";              	\
+		$(ECHO) puts stderr "{module depends: $(MODULE_DEPENDS)}";            	\
+		$(ECHO) puts stderr "{link depends: $(LINK_DEPENDS)}";            	\
 		$(ECHO) "}";,                                                        \
 		$(ECHO) "proc ModulesHelp { } {";					\
 		for line in "" $(DESCRIPTION); do					\
 			if [ "X$$line" = "X" ]; then continue; fi;			\
 			$(ECHO) puts stderr "\"$$line\"";				\
+		$(ECHO) puts stderr "{build depends: $(BUILD_DEPENDS)}";              	\
+		$(ECHO) puts stderr "{run depends: $(RUN_DEPENDS)}";              	\
+		$(ECHO) puts stderr "{module depends: $(MODULE_DEPENDS)}";            	\
+		$(ECHO) puts stderr "{link depends: $(LINK_DEPENDS)}";            	\
 		done;									\
 		$(ECHO) "}";    \
 	)
