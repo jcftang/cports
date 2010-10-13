@@ -1,6 +1,8 @@
 ## make <target>
 ### is equivalent to (using the install target): 
 
+## update for blas if kept
+
 make CPRT_PETSC_DEBUG=debug CPRT_PETSC_SCALAR=real CPRT_PETSC_CCOMP=c install
 
 (so petsc defaults to a single module install of debug/real scalar/with c compiler)
