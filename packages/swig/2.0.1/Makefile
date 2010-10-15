@@ -2,7 +2,7 @@ include ../../../mk/gnu.pre.mk
 
 DISTNAME=	swig
 VERSION=	2.0.1
-CATEGORIES=	system
+CATEGORIES=	development
 HOMEPAGE=	http://www.swig.org/
 MASTER_SITES=	http://sourceforge.net/projects/swig/files/swig/swig-$(VERSION)/
 MAINTAINER=	jtang@tchpc.tcd.ie
