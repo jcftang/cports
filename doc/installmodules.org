@@ -1,0 +1,30 @@
+* For full details read the install and readme file in the source tree
+  - ensure build tools are installed (e.g., ubuntu: install build-essential)
+  - these instructions assume the bash shell
+
+steps:
+
+start with modules-3.2.8.tar.gz (or some version)
+untar file
+cd modules-3.2.8
+
+./configure
+make 
+sudo make install
+(installs to /usr/local/Modules)
+
+cd /usr/local/Modules
+sudo ln -s 3.2.8 default
+
+cd <back to modules-3.2.8>
+sudo install -m 644 etc/global/profile.modules /etc/profile.modules
+
+/usr/local/Modules/default/bin/add.modules
+<and follow instructions>
+
+source your .profile (or .bash_profile etc); this will work for
+current terminal
+
+you may now have to log out and log in again for this to apply
+to  all terminals
+
