@@ -12,6 +12,7 @@ EXTRAVERSION=_openmpi_1.4.2
 
 DEPENDS+="openmpi/1.4.2 --build-env openmpi/1.4.2 --run-env"
 DEPENDS+="Python/2.6.5 --build-env Python/2.6.5 --run-env "
+DEPENDS+="bzip2/1.0.6 --build-env --lib "
 
 DESCRIPTION=	"Boost provides free peer-reviewed portable C++ source libraries."
 
