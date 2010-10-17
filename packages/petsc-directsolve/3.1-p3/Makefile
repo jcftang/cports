@@ -10,9 +10,17 @@ HOMEPAGE=	http://www.mcs.anl.gov/petsc/petsc-as/
 MASTER_SITES=	http://ftp.mcs.anl.gov/pub/petsc/release-snapshots
 HAS_CONFIGURE = yes
 CONFIGURE_SCRIPT = ./configure
-##DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
 
 MODULEFILE_CONFLICTS += petsc-basic
+
+CPRT_PETSC_BLAS?= atlas
+
+ifeq ("$(CPRT_PETSC_BLAS)","atlas")
+DEPENDS+="atlas/3.8.3 --lib --build-env"
+endif
+ifeq ("$(CPRT_PETSC_BLAS)","mkl")
+DEPENDS+="mkl/11111 --lib --build-env"
+endif
 
 DEPENDS+="atlas/3.8.3 --lib --build-env"
 DEPENDS+="openmpi/1.4.2 --lib --build-env"
@@ -21,6 +29,8 @@ DEPENDS+="ParMetis/3.1.1 --lib --build-env"
 DEPENDS+="scalapack/1.8.0_openmpi_1.4.2 --lib --build-env"
 DEPENDS+="superlu_dist/2.4 --build-env --lib"
 DEPENDS+="zlib/1.2.5  --build-env --lib"
+
+$(info BLAS: CPRT_PETSC_BLAS: $(CPRT_PETSC_BLAS); DEPEND: $(DEPENDS))
 
 CPRT_PETSC_LDFLAGS = 
 
@@ -58,6 +68,9 @@ DEPENDS+="boost/1_43_0_openmpi_1.4.2 --lib --build-env"
 CPRT_PETSC_OPTS+=  --with-clanguage=C++ 
 CPRT_PETSC_OPTS+= --with-boost=1 --with-boost-dir=$(PREFIX_boost)
 CPRT_PETSC_C_STR=cxx
+ifeq ("$(COMPILERS)","intel10.1")
+CPRT_PETSC_OPTS+= --CXXFLAGS=" -shared-intel "
+endif
 else
 CPRT_PETSC_OPTS+= --with-clanguage=C
 endif
@@ -68,8 +81,8 @@ $(warning petsc arch: $(CPRT_PETSC_DBG_STR))
 $(warning petsc arch: $(CPRT_PETSC_C_STR))
 $(warning petsc c comp: $(CPRT_PETSC_CCOMP))
 
-EXTRAVERSION= _$(CPRT_PETSC_DEBUG)-$(CPRT_PETSC_SCALAR)-$(CPRT_PETSC_CCOMP)
-WORKDIRSUFFIX= $(CPRT_PETSC_DEBUG)-$(CPRT_PETSC_SCALAR)-$(CPRT_PETSC_CCOMP)
+EXTRAVERSION= _$(CPRT_PETSC_DEBUG)-$(CPRT_PETSC_SCALAR)-$(CPRT_PETSC_CCOMP)-$(CPRT_PETSC_BLAS)
+WORKDIRSUFFIX= $(CPRT_PETSC_DEBUG)-$(CPRT_PETSC_SCALAR)-$(CPRT_PETSC_CCOMP)-$(CPRT_PETSC_BLAS)-$(COMPILERS)
 
 DESCRIPTION=  "PETSc, pronounced PET-see (the S is silent), is a suite of data structures and routines for the scalable (parallel) solution of scientific applications modeled by partial differential equations "
 
@@ -95,6 +108,24 @@ MODULEFILE_CMD_PETSC?= \
 
 #$(warning modulething is $(MODULEFILE_CMD_PETSC))
 
+## Yes, petsc seems to assign linux-gnu-... to an intel compiler
+## compile too -- of course this may change at some point
+PETSC_ARCH=$(strip \
+	$(if \
+	$(or \
+	$(findstring gnu, $(COMPILERS)), \
+	$(findstring intel, $(COMPILERS)) \
+	), \
+	linux-gnu-$(CPRT_PETSC_C_STR)-$(CPRT_PETSC_DBG_STR), \
+	unknown-petsc-arch))
+
+do-configure:
+	$(MODULE_ADD) $(BUILD_DEPENDS);   \
+	cd $(WRKSRC); \
+	$(ECHO) $(PETSC_ARCH); \
+	env ;\
+	$(CONFIGURE_SCRIPT) $(CONFIGURE_ARGS)
+
 do-build:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
 	cd $(WRKSRC); \
@@ -114,10 +145,4 @@ do-install:
 	$(MAKE) PETSC_DIR=$(WRKSRC) PETSC_ARCH=$(PETSC_ARCH) install 2>&1 | tee cportsintsalllog
 
 include ../../../mk/gnu.post.mk
-
-## If I put this here, it seems to work -- no (real) idea what is
-## going on
-ifeq "$(COMPILERS)" "gnu"
-  PETSC_ARCH=linux-gnu-$(CPRT_PETSC_C_STR)-$(CPRT_PETSC_DBG_STR)
-endif
 
