@@ -1,10 +1,10 @@
 include ../../../mk/gnu.pre.mk
 
 DISTNAME=	glusterfs
-VERSION=	3.0.5
+VERSION=	3.1.0
 CATEGORIES=	system
 HOMEPAGE=	http://www.gluster.org
-MASTER_SITES=	http://download.gluster.com/pub/gluster/glusterfs/3.0/$(VERSION)
+MASTER_SITES=	http://download.gluster.com/pub/gluster/glusterfs/3.1/$(VERSION)
 MAINTAINER=	jtang@tchpc.tcd.ie
 GNU_CONFIGURE=	yes
 DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
