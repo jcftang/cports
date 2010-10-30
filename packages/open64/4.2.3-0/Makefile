@@ -9,7 +9,7 @@ CATEGORIES=	development
 HOMEPAGE=	http://www.open64.net/
 MASTER_SITES=	http://downloads.sourceforge.net/project/open64/open64/Open64-4.2.3
 MAINTAINER=	jtang@tchpc.tcd.ie
-GNU_CONFIGURE=	yes
+HAS_CONFIGURE=	no
 DISTFILES = $(DISTNAME)-$(VERSION).src.tar.bz2
 
 EXTRAVERSION=
@@ -22,20 +22,24 @@ DEPENDS+=	"gettext/0.18.1.1 --build-env --lib"
 DEPENDS+=	"autoconf/2.67 --build-env"
 DEPENDS+=	"automake/1.11 --build-env"
 
-DESCRIPTION=	"Open64 is the final result of research contributions from a number of compiler groups around the world. Formerly known as Pro64, Open64 was initially created by SGI and licensed under the GNU Public License (GPL v2). It was derived from SGI's MIPSPro compiler."
+DESCRIPTION=	"Open64 is the final result of research contributions from a number"
+DESCRIPTION+=	"of compiler groups around the world. Formerly known as Pro64, Open64"
+DESCRIPTION+=	"was initially created by SGI and licensed under the GNU Public License"
+DESCRIPTION+=	"(GPL v2). It was derived from SGI's MIPSPro compiler."
 
-do-configure:
-	@
+ifneq ($(SYSTEM_TYPE_CPU), x86_64)
+OPEN_TYPE="MACHINE_TYPE=i386"
+endif
 
 TOOLROOT=$(PROGRAM_PREFIX)
 
 do-build:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
-	cd $(WRKSRC); make ;\
-	cd $(WRKSRC); make library
+	cd $(WRKSRC); make $(OPEN_TYPE);\
+	cd $(WRKSRC); make $(OPEN_TYPE) library
 
 do-install:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
-	cd $(WRKSRC); make install TOOLROOT=$(PROGRAM_PREFIX)
+	cd $(WRKSRC); make $(OPEN_TYPE) install TOOLROOT=$(PROGRAM_PREFIX)
 
 include ../../../mk/gnu.post.mk
