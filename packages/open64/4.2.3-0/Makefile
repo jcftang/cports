@@ -19,6 +19,7 @@ CONFIGURE_ARGS+=
 DEPENDS+=	"flex/2.5.35 --build-env"
 DEPENDS+=	"bison/2.4.3 --build-env"
 DEPENDS+=	"gettext/0.18.1.1 --build-env --lib"
+DEPENDS+=	"libiconv/1.13 --build-env --lib"
 DEPENDS+=	"autoconf/2.67 --build-env"
 DEPENDS+=	"automake/1.11 --build-env"
 
