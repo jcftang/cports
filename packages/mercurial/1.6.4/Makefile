@@ -11,7 +11,9 @@ HAS_CONFIGURE=  no
 
 DEPENDS+= "Python/2.6.5 --lib --build-env --run-env"
 
-DESCRIPTION=    "Mercurial is a free, distributed source control management tool. It efficiently handles projects of any size and offers an easy and intuitive interface."
+DESCRIPTION=	"Mercurial is a free, distributed source control management tool. It"
+DESCRIPTION+=	"efficiently handles projects of any size and offers an easy and intuitive"
+DESCRIPTION+=	"interface."
 
 MODULEFILE_LINES+=	PYTHONPATH
 MODULEFILE_CMD_PYTHONPATH?= \
