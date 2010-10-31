@@ -160,6 +160,10 @@ gcc 4.1.2 unless otherwise stated
 | stressapptest |           | x         |
 | RDKit         | x         |           |
 | abyss         |           | x         |
+* Table of apps that fail to build on certain systems
+| App    | debian5.0 | sl5 |
+|--------+-----------+-----|
+| open64 | x         |     | 
 
 * Changelog - OLD
 ** Fork of cports from caoslinux, which in turn is a fork of mpkg
