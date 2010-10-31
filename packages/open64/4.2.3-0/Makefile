@@ -36,7 +36,7 @@ TOOLROOT=$(PROGRAM_PREFIX)
 
 do-build:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
-	cd $(WRKSRC); make $(OPEN_TYPE);\
+	cd $(WRKSRC); make $(OPEN_TYPE) all;\
 	cd $(WRKSRC); make $(OPEN_TYPE) library
 
 do-install:
