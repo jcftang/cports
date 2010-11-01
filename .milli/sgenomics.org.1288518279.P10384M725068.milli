@@ -1,0 +1,7 @@
+Title: open64 fails to build on debian5
+UID: sgenomics.org.1288518279.P10384M725068
+Added: Sun Oct 31 09:44:39 2010
+Status: open
+
+
+open64 seems to fail to link against libgettext or fails with gcc 4.4.x
