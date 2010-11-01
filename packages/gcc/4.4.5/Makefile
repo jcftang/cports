@@ -37,6 +37,7 @@ CONFIGURE_ARGS += --with-mpfr=$(PREFIX_mpfr)
 CONFIGURE_ARGS += --with-mpc=$(PREFIX_mpc)
 CONFIGURE_ARGS += --with-cloog=$(PREFIX_cloog)
 CONFIGURE_ARGS += --with-libelf=$(PREFIX_libelf)
+CONFIGURE_ARGS += --disable-multilib
 
 
 ALL_TARGET= bootstrap
