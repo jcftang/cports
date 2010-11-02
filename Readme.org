@@ -1,6 +1,8 @@
 #+TITLE: cports - TCHPC fork
 #+EMAIL: jtang@tchpc.tcd.ie,darach@tchpc.tcd.ie
 #+AUTHOR: Jimmy Tang, Darach Golden
+#+OPTIONS: ^:nil
+#+LINK_HOME: Readme.html
 
 * Why fork cports
  - Needed more than just one version of gcc, intel, pgi builds of
@@ -163,17 +165,17 @@ gcc 4.1.2 unless otherwise stated
 * Table of apps that fail to build on certain systems
 | App    | debian5.0 | sl5 |
 |--------+-----------+-----|
-| open64 | x         |     | 
+| open64 | x         |     |
 
 * Changelog - OLD
-** Fork of cports from caoslinux, which in turn is a fork of mpkg
-** Fix up modulefile naming convention
-** Fix up current target to add symlink to modulefile as well
-*** reverted the linking to modulefile, it breaks things
-*** also added uncurrent target
-** Added open64 COMPILERS option
-** Added F90 variables, to make sure a fortran90 compiler is selected when needed
-** Extended the modulefile generation targets to include these variables
+- Fork of cports from caoslinux, which in turn is a fork of mpkg
+- Fix up modulefile naming convention
+- Fix up current target to add symlink to modulefile as well
+  - reverted the linking to modulefile, it breaks things
+  - also added uncurrent target
+- Added open64 COMPILERS option
+- Added F90 variables, to make sure a fortran90 compiler is selected when needed
+- Extended the modulefile generation targets to include these variables
   - INCLUDE_PATH
   - CPLUS_INCLUDE_PATH
   - C_INCLUDE_PATH
@@ -182,6 +184,10 @@ gcc 4.1.2 unless otherwise stated
   - LD_RUN_PATH
   - PKG_CONFIG_PATH
   - PYTHONPATH
-** New packages that TCHPC finds useful
-** Added R modules in the same style the perl modules for convenience
+- New packages that TCHPC finds useful
+- Added R modules in the same style the perl modules for convenience
 
+
+* Misc Notes
+ - [[file:Todo.org][TODO]]
+ - [[file:Packages.org][Packages]]

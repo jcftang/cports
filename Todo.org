@@ -1,3 +1,5 @@
+#+LINK_HOME: Readme.html
+
 * Features and Bugs
 ** Python --> perl module model??
 * Possible new packages

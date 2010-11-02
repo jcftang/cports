@@ -1,4 +1,6 @@
 #+TITLE: Erratas and Notes
+#+OPTIONS: ^:nil
+#+LINK_HOME: Readme.html
 
 * MPI
 ** OpenMPI
