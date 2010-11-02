@@ -23,7 +23,7 @@ $(DISTFILE).tar.bz2.sha1sum: $(DISTFILE).tar.bz2
 	@openssl sha1 $(DISTFILE).tar.bz2 > $(DISTFILE).tar.bz2.sha1sum
 
 clean:
-	#@-rm $(DISTFILE).tar
+	@-rm $(DOCS)
 
 whatchanged:
 	(git whatchanged  `git tag -l | tail -1`..HEAD  | git shortlog)
