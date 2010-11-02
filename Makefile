@@ -2,6 +2,7 @@
 VERSION=$(shell git describe)
 DISTNAME=cports
 DISTFILE=$(DISTNAME)-$(VERSION)
+DOCS=Readme.html Packages.html Todo.html
 
 default: check-environment
 
@@ -29,6 +30,12 @@ whatchanged:
 
 changelog:
 	(git log --pretty --summary --numstat | ./scripts/git2cl > changelog)
+
+docs: $(DOCS)
+	@:
+
+%.html: %.org
+	./scripts/org2html.sh $?
 
 .PHONY: whatchanged changelog
 
