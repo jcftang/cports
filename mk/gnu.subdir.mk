@@ -34,6 +34,8 @@ PACKAGE_BASE_HTML= echo "<html>" \
 	echo "<h1>Package $(PACKAGE_BASE)</h1>"; \
 	echo "TODO, generate list of build packages" ; \
 	echo "</body></html>";
+PACKAGE_BASE_MARKDOWN= echo "\# Package $(PACKAGE_BASE)"; \
+	echo "[[!map pages=\"$(PACKAGE_BASE)/* and !*.mk\"]]"
 
 all: help
 
@@ -113,6 +115,25 @@ ifneq	(,$(SUBDIRS))
 	) || exit 1; done
 endif
 	$(QUIET) ($(PACKAGE_BASE_HTML)) > $(PREFIX)/$(DISTROTYPE)/html/$(PACKAGE_BASE)/index.html
+
+markdown:
+ifneq	(,$(SUBDIRS))
+	$(QUIET) foo=`echo $(SUBDIR) | sed s,packages/,, | sed s,packages$$,.,`; \
+	$(MKDIR) $(PREFIX)/markdown/$$foo; \
+	(echo SUBDIRS=$(SUBDIRS); \
+	echo INSTALL_SUBDIRS=$(INSTALL_SUBDIRS); \
+	echo LATEST=$(LATEST); \
+	) > $(PREFIX)/markdown/$$foo/markdown.mk
+	$(QUIET) SUBDIRS='$(SUBDIRS)'; \
+	for i in $$SUBDIRS; do \
+	(cd $$i && \
+	 echo "++++++++++++++++ Make markdown in $$i" && \
+	 $(MAKE) $(MFLAGS) $@ || \
+	 echo "--------------------- FAILED:" `pwd` \
+	) || exit 1; done
+endif
+	$(QUIET) ($(PACKAGE_BASE_MARKDOWN)) > $(PREFIX)/$(DISTROTYPE)/markdown/$(PACKAGE_BASE).mdwn
+
 
 show-latest:
 	@echo latest: $(LATEST)

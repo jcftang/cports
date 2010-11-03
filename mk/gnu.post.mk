@@ -90,6 +90,7 @@ MODULE_COOKIE=		$(WORKDIR)/.module_done
 MENUDEFS_COOKIE=	$(WORKDIR)/.menudefs_done
 INFORMATION_COOKIE=	$(WORKDIR)/.information_done
 HTML_COOKIE=		$(WORKDIR)/.html_cookie_done
+MARKDOWN_COOKIE=	$(WORKDIR)/.markdown_cookie_done
 INSTALL_DEPENDS_COOKIE=	$(WORKDIR)/.install_depends_done
 
 
@@ -782,6 +783,11 @@ $(HTML_COOKIE):
 	$(QUIET) $(MKDIR) $(WORKDIR)
 	$(QUIET) $(MAKE) do-html
 
+$(MARKDOWN_COOKIE):
+	$(QUIET) $(MKDIR) $(WORKDIR)
+	$(QUIET) $(MAKE) do-markdown
+
+
 #
 # Show help message
 #
@@ -817,6 +823,7 @@ install-program: build $(INSTALL_COOKIE)
 	$(QUIET) $(MAKE) information
 information: depends $(INFORMATION_COOKIE)
 html: depends $(HTML_COOKIE)
+markdown: depends $(MARKDOWN_COOKIE)
 package: $(PACKAGE_COOKIE)
 install-depends: $(INSTALL_DEPENDS_COOKIE)
 
@@ -1404,6 +1411,17 @@ do-html:
 	test -f $(PROGRAM_PREFIX)/.mpkg_depends || (echo "-3- Program not installed"; exit 1)
 	$(QUIET) $(MKDIR) $(PREFIX)/html/$(DISTNAME)/$(VERSION)
 	$(QUIET) ($(PACKAGE_HTML)) > $(PREFIX)/html/$(DISTNAME)/$(VERSION)/index.html
+
+do-markdown:
+	$(QUIET) \
+	test -d $(PROGRAM_PREFIX) || (echo "-1- Program not installed"; exit 1)
+	$(QUIET) \
+	test -f $(PROGRAM_PREFIX)/.mpkg_depends || (echo "-3- Program not installed"; exit 1)
+	#$(QUIET) $(MKDIR) $(PREFIX)/markdown/$(DISTNAME)/$(VERSION)
+	$(QUIET) ($(PACKAGE_MARKDOWN)) > $(PREFIX)/markdown/$(DISTNAME)/$(VERSION)$(EXTRAVERSION)$(COMPILER_TAG).mdwn
+	$(QUIET) \
+	test -f $(PREFIX)/markdown/index.mdwn || echo "[[!map pages=\"* and !*/* and !index\"]]" > $(PREFIX)/markdown/index.mdwn
+
 
 #
 # PVP-making

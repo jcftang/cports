@@ -55,3 +55,14 @@ USAGE_HTML=		echo "<h2>Usage</h2>"; $(USAGE_TEXT_HTML)
 endif
 
 MODULE_SHOW_HTML=	echo "<pre>"; ($(CAT) $(MODULEDIR)/$(DISTNAME)/$(VERSION)$(EXTRAVERSION)$(COMPILER_TAG) | $(GREP) -v "^$$" | $(HTML_ESCAPE_COMMAND)); echo "</pre>";
+
+# Markdown output
+PACKAGE_MARKDOWN=	echo "\# $(DISTNAME) $(VERSION)$(EXTRAVERSION)$(COMPILER_TAG)"; \
+			echo "\#\# Description " ;\
+			$(DESCRIPTION_MARKDOWN) \
+			echo "\#\# References" ;\
+			$(REFERENCES_MARDKWON)
+
+DESCRIPTION_MARKDOWN=	echo $(DESCRIPTION) | $(HTML_ESCAPE_COMMAND) ;
+REFERENCES_MARDKWON=	echo "* Package homepage: <$(HOMEPAGE)>" ; \
+			echo "* Maintainer: <$(MAINTAINER)>"
