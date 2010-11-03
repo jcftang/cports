@@ -823,7 +823,7 @@ install-program: build $(INSTALL_COOKIE)
 	$(QUIET) $(MAKE) information
 information: depends $(INFORMATION_COOKIE)
 html: depends $(HTML_COOKIE)
-markdown: depends $(MARKDOWN_COOKIE)
+markdown: depends $(MARKDOWN_COOKIE) $(INFORMATION_COOKIE)
 package: $(PACKAGE_COOKIE)
 install-depends: $(INSTALL_DEPENDS_COOKIE)
 
