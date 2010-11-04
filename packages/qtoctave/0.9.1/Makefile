@@ -40,8 +40,10 @@ do-configure:
 	cd $(WRKSRC); \
 	$(MKDIR) BUILD ;\
 	cd BUILD ;\
-	cmake -DCMAKE_INSTALL_PREFIX=$(PROGRAM_PREFIX) \
+	cmake "-DCMAKE_INSTALL_PREFIX=$(PROGRAM_PREFIX)" \
 	../
+	cd $(WRKSRC); \
+	$(SED) -i s,/opt/qtoctave-0.8.2,$(PROGRAM_PREFIX),g qtoctave/src/configure.h
 
 do-build:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
