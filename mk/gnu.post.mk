@@ -1418,6 +1418,7 @@ do-markdown:
 	$(QUIET) \
 	test -f $(PROGRAM_PREFIX)/.mpkg_depends || (echo "-3- Program not installed"; exit 1)
 	#$(QUIET) $(MKDIR) $(PREFIX)/markdown/$(DISTNAME)/$(VERSION)
+	$(QUIET) $(MKDIR) $(PREFIX)/markdown/$(DISTNAME)
 	$(QUIET) ($(PACKAGE_MARKDOWN)) > $(PREFIX)/markdown/$(DISTNAME)/$(VERSION)$(EXTRAVERSION)$(COMPILER_TAG).mdwn
 	$(QUIET) \
 	test -f $(PREFIX)/markdown/index.mdwn || echo "[[!map pages=\"* and !*/* and !index and !markdown.mk\"]]" > $(PREFIX)/markdown/index.mdwn
