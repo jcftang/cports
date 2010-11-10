@@ -3,10 +3,10 @@ all:
 	@false
 
 runtests:
-	t/test.sh
+	./test.sh
 
 test:
-	./scripts/wvtestrun $(MAKE) -f Makefile.test runtests
+	../scripts/wvtestrun $(MAKE) runtests
 
 clean::
 	rm -f *~ t/*~

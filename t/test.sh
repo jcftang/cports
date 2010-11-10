@@ -1,5 +1,5 @@
 #!/bin/bash
-. ./scripts/wvtest.sh
+. ../scripts/wvtest.sh
 
 WVSTART "Tools"
 WVPASS wget --version
@@ -11,8 +11,8 @@ WVPASS makeinfo --version
 WVPASS patch --version
 
 WVSTART "Distro Type"
-WVPASSNE "unknown.i386" "$(./scripts/distro.guess)"
-WVPASSNE "unknown.x86_64" "$(./scripts/distro.guess)"
+WVPASSNE "unknown.i386" "$(../scripts/distro.guess)"
+WVPASSNE "unknown.x86_64" "$(../scripts/distro.guess)"
 
 #WVSTART "gnu compilers"
 #WVPASS gcc --version
