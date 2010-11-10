@@ -4,6 +4,7 @@ all:
 
 runtests:
 	./test.sh
+	./tgnu.sh
 
 test:
 	../scripts/wvtestrun $(MAKE) runtests
