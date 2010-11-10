@@ -1,5 +1,7 @@
 all:
 	@echo "Try: make test"
+	@echo "	or make test-gnu"
+	@echo "	or make test-intel"
 	@false
 
 runtests: 
