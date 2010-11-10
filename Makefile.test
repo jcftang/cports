@@ -1,0 +1,12 @@
+all:
+	@echo "Try: make test"
+	@false
+
+runtests:
+	t/test.sh
+
+test:
+	./scripts/wvtestrun $(MAKE) -f Makefile.test runtests
+
+clean::
+	rm -f *~ t/*~
