@@ -51,3 +51,10 @@ WVPASSRC $?
 (cd ../packages/libtool/2.2.10/ && make build)
 WVPASSRC $?
 
+# clean
+WVSTART "Clean up"
+(cd ../packages/bootstrap/1.0; make do-cleaz; make clean)
+WVPASSRC $?
+(cd ../packages/bootstrap/2.0; make do-cleaz; make clean)
+WVPASSRC $?
+
