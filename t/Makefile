@@ -5,14 +5,15 @@ all:
 	@false
 
 runtests: 
-	./test.sh
+	./t1000-test.sh
 
 runtests-gnu: runtests
-	./tgnu.sh
-	./tbuild.sh
+	./t2000-gnu.sh
+	./t3000-build.sh
+	./t3010-gnutbootstrap.sh
 
 runtests-intel: runtests
-	./tintel.sh
+	./t2000-intel.sh
 
 test:
 	../scripts/wvtestrun $(MAKE) runtests
