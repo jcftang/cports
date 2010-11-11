@@ -1,0 +1,9 @@
+Title: nmag as a package
+UID: x00.tchpc.tcd.ie.1289487224.P42762M650601
+Added: Thu Nov 11 14:53:44 2010
+Status: open
+
+
+propose to add http://nmag.soton.ac.uk/nmag/0.1/index.html, this
+depends on petsc, so it should be a good test, and we have users
+who want it.

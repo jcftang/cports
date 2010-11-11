@@ -9,3 +9,7 @@ dependacies, --libs is broken, probably due to the way that the modulefile
 and directory generation is working.
 
 Seems that --libs does work somewhat but requires us to put in explicity versions
+
+Modified: Thu Nov 11 14:54:44 2010
+Status: closed
+
