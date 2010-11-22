@@ -11,6 +11,10 @@ DISTFILES=      $(DISTNAME)-$(VERSION).tar.gz
 
 EXTRAVERSION=
 
+MODULEFILE_LINES+=      PYTHONPATH
+MODULEFILE_CMD_PYTHONPATH?= \
+        $(ECHO) "prepend-path   PYTHONPATH $(PROGRAM_PREFIX)/lib/python2.6/site-packages";
+
 CONFIGURE_ARGS+= CFLAGS="-O3" CXXFLAGS="-O3"
 
 DEPENDS+=	"openmpi/1.4.2 --build-env --lib --run-env"
