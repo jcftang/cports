@@ -1415,6 +1415,7 @@ do-html:
 	$(QUIET) ($(PACKAGE_HTML)) > $(PREFIX)/html/$(DISTNAME)/$(VERSION)/index.html
 
 do-markdown:
+ifndef DONT_CREATE_METAINFO
 	$(QUIET) \
 	test -d $(PROGRAM_PREFIX) || (echo "-1- Program not installed"; exit 1)
 	$(QUIET) \
@@ -1424,7 +1425,8 @@ do-markdown:
 	$(QUIET) ($(PACKAGE_MARKDOWN)) > $(PREFIX)/markdown/$(DISTNAME)/$(VERSION)$(EXTRAVERSION)$(COMPILER_TAG).mdwn
 	$(QUIET) \
 	test -f $(PREFIX)/markdown/index.mdwn || echo "[[!map pages=\"* and !*/* and !index and !markdown.mk\"]]" > $(PREFIX)/markdown/index.mdwn
-
+endif
+	@:
 
 #
 # PVP-making
