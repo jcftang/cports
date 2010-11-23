@@ -786,6 +786,7 @@ $(HTML_COOKIE):
 $(MARKDOWN_COOKIE):
 	$(QUIET) $(MKDIR) $(WORKDIR)
 	$(QUIET) $(MAKE) do-markdown
+	$(QUIET) touch $(MARKDOWN_COOKIE)
 
 
 #
@@ -821,6 +822,7 @@ module: menudefs $(MODULE_COOKIE)
 install-program: build $(INSTALL_COOKIE)
 	$(QUIET) $(MAKE) module
 	$(QUIET) $(MAKE) information
+	$(QUIET) $(MAKE) markdown
 information: depends $(INFORMATION_COOKIE)
 html: depends $(HTML_COOKIE)
 markdown: depends $(MARKDOWN_COOKIE) $(INFORMATION_COOKIE)
