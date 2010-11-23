@@ -43,7 +43,8 @@ PERL_MODULES+= AcePerl DBD-Pg libxml-enno Set-Scalar SVG-Graph XML-SAX	\
 	XML-DOM-XPath XML-Simple Bio-ASN1-EntrezGene Data-Stag Graph	\
 	IO-stringy Math-Random Spreadsheet-WriteExcel			\
 	XML-NamespaceSupport XML-Twig BioPerl DBD-mysql GraphViz	\
-	libwww-perl PostScript SVG XML-Parser XML-Writer Statistics-Descriptive
+	libwww-perl PostScript SVG XML-Parser XML-Writer Statistics-Descriptive \
+	IO-Interface Unix-Syslog Net-ARP
 
 include ../../../mk/prg.perl.mk
 include ../../../mk/gnu.post.mk
