@@ -94,7 +94,7 @@ xorg-x11-proto-devel
   - cd into *cports/packages/bootstrap/1.0* and type make install,
     this will try and install the basic packages needed to build the
     rest of the system
-** proxies
+** Proxies
    - many people have a http_proxy variable set in their shell config.
      However make installs often fail on ftp download attempts. So you
      should set an ftp_proxy variable as well.  For example,
@@ -166,7 +166,9 @@ gcc 4.1.2 unless otherwise stated
 | App    | debian5.0 | sl5 |
 |--------+-----------+-----|
 | open64 | x         |     |
-
+* List of apps that are binary installs
+ - darcs
+ - ghc
 * Changelog - OLD
 - Fork of cports from caoslinux, which in turn is a fork of mpkg
 - Fix up modulefile naming convention
