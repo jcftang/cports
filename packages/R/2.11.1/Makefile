@@ -25,6 +25,7 @@ DEPENDS+="gettext/0.18.1.1 --lib --build-env"
 
 DESCRIPTION=  "R is a free software environment for statistical computing and graphics."
 
+CONFIGURE_ARGS +=  --enable-R-shlib 
 CONFIGURE_ARGS +=  --with-blas="-L$(PREFIX_atlas)/lib -lf77blas -latlas"
 CONFIGURE_ARGS +=  --with-lapack="-L$(PREFIX_atlas)/lib -llapack -lcblas"
 
