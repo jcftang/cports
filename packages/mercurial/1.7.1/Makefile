@@ -21,13 +21,14 @@ MODULEFILE_CMD_PYTHONPATH?= \
 
 do-build:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
-	cd $(WRKSRC); \
-	$(MAKE) PREFIX=$(PROGRAM_PREFIX) all
+	cd $(WRKSRC); 
+	@:
+	#$(MAKE) PREFIX=$(PROGRAM_PREFIX) all
 
 do-install:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
 	cd $(WRKSRC); \
-	$(MAKE) PREFIX=$(PROGRAM_PREFIX) install
+	$(MAKE) PREFIX=$(PROGRAM_PREFIX) install-bin
 
 include ../../../mk/gnu.post.mk
 
