@@ -1,0 +1,67 @@
+#VERSION=HEAD
+VERSION=$(shell git describe)
+DISTNAME=cports
+DISTFILE=$(DISTNAME)-$(VERSION)
+DOCS=Readme.html Packages.html Todo.html
+
+default: bootstrap
+
+dist: do-dist
+
+do-dist: $(DISTFILE).tar.bz2.sha1sum
+	@mv $(DISTFILE).tar.bz2.sha1sum releases
+	@mv $(DISTFILE).tar.bz2 releases
+
+$(DISTFILE).tar:
+	@mkdir -p releases
+	@git archive --format tar --prefix $(DISTFILE)/ -o $(DISTFILE).tar $(VERSION)
+
+$(DISTFILE).tar.bz2: $(DISTFILE).tar
+	@bzip2 -f $(DISTFILE).tar
+
+$(DISTFILE).tar.bz2.sha1sum: $(DISTFILE).tar.bz2
+	@openssl sha1 $(DISTFILE).tar.bz2 > $(DISTFILE).tar.bz2.sha1sum
+
+clean:
+	@-rm $(DOCS)
+	#@-rm $(DISTFILE).tar
+
+distclean:
+	@-rm -f @CONFIGURE_FILES@ @GENERATED_FILES@
+
+whatchanged:
+	(git whatchanged  `git tag -l | tail -1`..HEAD  | git shortlog)
+
+changelog:
+	(git log --pretty --summary --numstat | ./scripts/git2cl > changelog)
+
+docs: $(DOCS)
+	@:
+
+%.html: %.org
+	./scripts/org2html.sh $?
+
+.PHONY: whatchanged changelog
+
+# Bootstrapping it all on machines without some basic software.
+
+all: bootstrap
+
+dummy:
+	@echo ""
+
+bootstrap:
+	@echo ""
+	@echo "To bootstrap."
+	@echo ""
+	@echo " > cd packages/bootstrap/1.0"
+	@echo " > $(MAKE) do-cleaz"
+	@echo " > $(MAKE) install"
+	@echo " > cd ../2.0"
+	@echo " > $(MAKE) do-cleaz"
+	@echo " > $(MAKE) install"
+	@echo " > $(MAKE) do-cleaz"
+	@echo ""
+
+install: all
+	cd packages && $(MAKE) all

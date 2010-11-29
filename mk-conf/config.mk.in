@@ -1,0 +1,30 @@
+DISTDIR?=               @prefix@/sources
+prefix=			@prefix@/$(DISTRO_TYPE)
+PREFIX?=                @prefix@/$(DISTRO_TYPE)
+LOCAL_DIST_SITE?=
+MODULEDIR?=             $(PREFIX)/modulefiles
+MENUDEFSDIR?=           $(PREFIX)/menudefs
+BASE_ICONPATH?=         /misc/graphics/icons
+INFODIR?=               $(PREFIX)/information
+
+INSTALL_INFO?=		@INSTALL_INFO@
+COMPILERS?=		@COMPILERS@
+
+#INSTALL=		@INSTALL@
+#FETCH?=			@FETCH@
+#GMAKE=			@GMAKE@
+#TEST=			@TEST@
+#GCC=			@GCC@
+
+#SYSTEM_TYPE_BUILD=	@build@
+#SYSTEM_TYPE_HOST=	@host@
+#SYSTEM_TYPE_TARGET=	@target@
+#SYSTEM_TYPE_BUILD_CPU=	@build_cpu@
+#SYSTEM_TYPE_BUILD_VENDOR=	@build_vendor@
+#SYSTEM_TYPE_BUILD_OS=	@build_os@
+#SYSTEM_TYPE_HOST_CPU=	@host_cpu@
+#SYSTEM_TYPE_HOST_VENDOR=	@host_vendor@
+#SYSTEM_TYPE_HOST_OS=	@host_os@
+#SYSTEM_TYPE_TARGET_CPU=	@target_cpu@
+#SYSTEM_TYPE_TARGET_VENDOR=	@target_vendor@
+#SYSTEM_TYPE_TARGET_OS=	@target_os@

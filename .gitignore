@@ -1,3 +1,16 @@
 releases
+
+# files generated from configure.sh
+Makefile
+config.cmd
+config.sub
+config.h
+config.mak
+config.log
+config.md
+
+# some config files
+mk-conf/config.mk
+cports.modulefile
 *.html
 *.html~

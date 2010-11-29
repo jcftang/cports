@@ -48,9 +48,9 @@ HELP_MSG += "     Clean up, remove the build tree.\n"
 
 MPKGDIR=	$(shell while [ ! -f mk/gnu.pre.mk ]; do cd ..; done; pwd)
 -include $(MPKGDIR)/mk/gnu.local.mk
-MPKGCONF?=	$(MPKGDIR)/../mpkg-conf
-SUBDIR=		$(shell pwd | sed s,$(MPKGDIR)/,,)
--include $(MPKGCONF)/$(SUBDIR)/config.mk
+MPKGCONF?=	$(MPKGDIR)/mk-conf
+#SUBDIR=		$(shell pwd | sed s,$(MPKGDIR)/,,)
+-include $(MPKGCONF)/config.mk
 
 
 #

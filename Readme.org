@@ -50,8 +50,9 @@
 * Requirements
 ** Required software
  - gnu make
- - gcc, gfortran (and basic devel, compile tools etc...)
+ - gcc, g++ and gfortran (and basic devel, compile tools etc...)
  - wget
+ - texinfo
  - environment-modules
 
 you can do a "make check-environment" to see if you meet the basic
@@ -78,22 +79,38 @@ mesa-libGL-devel
 xorg-x11-proto-devel
 
 * Installation and configuration
-  - Unpack cports-?.tar.bz2 to somewhere (I usually put it into ${HOME}/develop/cports)
-  - Configure cports by creating either /etc/mpkg.mk or
-    ${HOME}/.mpkg.mk see the example in doc/examples/dot.mpkg.mk
+  - Unpack cports-?.tar.bz2 to somewhere (I usually put it into
+    ${HOME}/develop/cports)
+  - run the ./configure.sh script to check if you have the basic
+    requirements installed, this configure script will also setup a
+    default install prefix for the programs to be installed from
+    cports.
+    - e.g. you can do *./configure.sh --prefix=/tmp/cports* this will
+      configure cports to install anything built from cports into
+      */tmp/cports*. The configure script will also generate a sample
+      module file for you to copy into your global modulefile
+      directory.
+  - Optional - Do more configuring of cports by creating either
+    /etc/mpkg.mk or ${HOME}/.mpkg.mk see the example in
+    doc/examples/dot.mpkg.mk
   - Configure environment modules either at the system level or in
     your own home directory in ${HOME}/privatemodules/cports see
     doc/examples/privatemodules.cports make sure the paths in here
     correspond to the MODULEDIR variable in /etc/mpkg.mk or
-    ${HOME}.mpkg.mk. Look in cports/mk/gnu.def.mk for some default
-    options that you can override and or set.
+    ${HOME}/.mpkg.mk. Look in cports/mk/gnu.def.mk or
+    cports/mk/config.mk for some default options that you can override
+    and or set. Or just copy the *cports.modulefile* to your
+    modulefile directory.
   - cd into *cports/scripts* and run the *distro.guess* script, if it
     outputs 'unknown.*' then add a new check for your distro. This
     step isn't strictly needed, but it does provide your installed
     target with some useful information.
-  - cd into *cports/packages/bootstrap/1.0* and type make install,
+  - cd into *cports/packages/bootstrap/1.0* and type *make install*,
     this will try and install the basic packages needed to build the
-    rest of the system
+    rest of the system.
+  - cd into *cports/packages/bootstrap/2.0* and type *make do-cleaz*
+    and *make install* to get gettext and libiconv to behave
+    correctly.
 ** Proxies
    - many people have a http_proxy variable set in their shell config.
      However make installs often fail on ftp download attempts. So you
