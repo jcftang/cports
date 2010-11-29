@@ -1,10 +1,13 @@
+BIN=$(wildcard *.sh)
+
 all:
 	@echo "Try: make test"
 	@echo "	or make test-gnu"
 	@echo "	or make test-intel"
 	@false
 
-runtests: 
+runtests: $(BIN)
+	@chmod u+x $(BIN)
 	./t1000-test.sh
 
 runtests-gnu: runtests
@@ -26,3 +29,5 @@ test-intel:
 
 clean::
 	rm -f *~ t/*~
+
+.PHONE: $(BIN)
