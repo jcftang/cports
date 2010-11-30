@@ -29,7 +29,7 @@ esac'
 #
 for i in config.guess distro.guess git2cl org2html.sh wvtestrun wvtest.sh
 do
-	echo chmod u+x scripts/$i
+	chmod u+x scripts/$i
 done
 
 AC_INIT $TARGET
