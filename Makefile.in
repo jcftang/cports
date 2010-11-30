@@ -65,3 +65,6 @@ bootstrap:
 
 install: all
 	cd packages && $(MAKE) all
+
+test:
+	$(MAKE) -C t test

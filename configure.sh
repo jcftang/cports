@@ -23,6 +23,15 @@ esac'
 . ./configure.inc
 . ./local.inc
 
+#
+# make sure all the scripts in scripts are executable (or at least the
+# ones that configure.sh needs
+#
+for i in config.guess distro.guess git2cl org2html.sh wvtestrun wvtest.sh
+do
+	echo chmod u+x scripts/$i
+done
+
 AC_INIT $TARGET
 
 if [ -z "$AC_COMPILER" ]; then
