@@ -1,7 +1,7 @@
 releases
 
 # files generated from configure.sh
-Makefile
+./Makefile
 config.cmd
 config.sub
 config.h
