@@ -10,7 +10,7 @@ GNU_CONFIGURE=  yes
 
 ifndef BOOTSTRAP
 DEPENDS=        "gettext/0.18.1.1 --lib --build-env"
-DEPENDS+=	"m4/1.4.14 --build-env"
+DEPENDS+=	"m4/1.4.15 --build-env"
 CONFIGURE_ENV+= LIBS=-lintl
 else
 CONFIGURE_ARGS= --with-included-gettext

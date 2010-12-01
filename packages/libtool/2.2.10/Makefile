@@ -14,7 +14,7 @@ DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
 EXTRAVERSION=
 
 ifndef BOOTSTRAP
-DEPENDS+=       "m4/1.4.14 --build-env"
+DEPENDS+=       "m4/1.4.15 --build-env"
 DEPENDS+=       "gawk/3.1.8 --build-env"
 DEPENDS+=       "automake/1.11 --build-env"
 

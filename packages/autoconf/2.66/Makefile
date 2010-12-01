@@ -8,7 +8,7 @@ MASTER_SITES=   $(MASTER_SITE_GNU:=$(DISTNAME)/)
 MAINTAINER=     jtang@tchpc.tcd.ie
 GNU_CONFIGURE=  yes
 
-DEPENDS+=       "m4/1.4.14 --build-env"
+DEPENDS+=       "m4/1.4.15 --build-env"
 DEPENDS+=       "gawk/3.1.8 --build-env"
 #DEPENDS+=       "perl/5.12.1 --build-env"
 

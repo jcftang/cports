@@ -16,7 +16,7 @@ DEPENDS+=	"libiconv/1.13 --lib --build-env"
 DEPENDS+=	"gettext/0.18.1.1 --lib --build-env"
 DEPENDS+=	"libtool/2.2.10 --build-env"
 DEPENDS+=	"gawk/3.1.8 --build-env"
-DEPENDS+=	"m4/1.4.14 --build-env"
+DEPENDS+=	"m4/1.4.15 --build-env"
 DEPENDS+=	"automake/1.11 --build-env"
 DEPENDS+=	"openssl/1.0.0a --build-env"
 
