@@ -23,7 +23,12 @@ DESCRIPTION+=    "links, switches, or routing contention."
 do-install:
 	$(MODULE_ADD) $(BUILD_DEPENDS); \
 	cd $(WRKSRC); \
-	$(MKDIR) $(PROGRAM_PREFIX) ;\
-	tar -cpf - . | (cd $(PROGRAM_PREFIX)/ && tar -xpf - ) ;
+	$(MKDIR) $(PROGRAM_PREFIX)/bin ;\
+	tar -cpf - . | (cd $(PROGRAM_PREFIX)/ && tar -xpf - ) ;\
+	cd $(PROGRAM_PREFIX) ;\
+	$(LN) $(PROGRAM_PREFIX)/mpiBench/mpiBench $(PROGRAM_PREFIX)/bin/ ;\
+	$(LN) $(PROGRAM_PREFIX)/mpiBench/crunch_mpiBench $(PROGRAM_PREFIX)/bin/ ;\
+	$(LN) $(PROGRAM_PREFIX)/mpiGraph/mpiGraph $(PROGRAM_PREFIX)/bin/ ;\
+	$(LN) $(PROGRAM_PREFIX)/mpiGraph/crunch_mpiGraph $(PROGRAM_PREFIX)/bin/ ;
 
 include ../../../mk/gnu.post.mk
