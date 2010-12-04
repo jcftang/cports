@@ -15,7 +15,7 @@ DESCRIPTION=	"A whole bunch of utilities for primitive manipulation ofgraphic im
 DEPENDS+=	"flex/2.5.35 --build-env"
 DEPENDS+=	"libjpeg/8b --lib --build-env"
 DEPENDS+=	"libtiff/3.9.4 --lib --build-env"
-DEPENDS+=	"libpng/1.2.39 --lib --build-env"
+DEPENDS+=	"libpng/1.2.42 --lib --build-env"
 DEPENDS+=	"libxml2/2.7.7 --lib --build-env"
 DEPENDS+=	"zlib/1.2.5 --lib --build-env"
 

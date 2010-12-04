@@ -14,7 +14,7 @@ EXTRAVERSION=
 
 DEPENDS=	"autoconf/2.67 --build-env"
 DEPENDS+=	"automake/1.11 --build-env"
-DEPENDS+=	"libpng/1.2.39 --lib --build-env"
+DEPENDS+=	"libpng/1.2.42 --lib --build-env"
 DEPENDS+=	"libjpeg/8b --lib --build-env"
 DEPENDS+=	"freetype/2.4.2 --lib --build-env"
 DEPENDS+=	"xbitmaps/1.1.0 --lib --build-env"

@@ -20,7 +20,7 @@ DEPENDS+=	"qt/4.3.5 --build-env --lib --run-env"
 
 DEPENDS+=       "fontconfig/2.8.0 --lib --build-env"
 DEPENDS+=       "libjpeg/8b --lib --build-env"
-DEPENDS+=       "libpng/1.2.39 --lib --build-env"
+DEPENDS+=       "libpng/1.2.42 --lib --build-env"
 DEPENDS+=       "libtiff/3.9.4 --lib --build-env"
 DEPENDS+=       "pango/1.28.1 --build-env --lib"
 DEPENDS+=       "cairo/1.8.10 --build-env --lib"

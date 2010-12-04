@@ -21,7 +21,7 @@ INSTALL_FILES+=	ghostscript-fonts-other-$(FONTVERSION).tar.gz
 
 #DEPENDS=	"gtk --lib --build-env"
 #DEPENDS+=	"glib --lib --build-env"
-DEPENDS+=	"libpng/1.4.3 --lib"
+DEPENDS+=	"libpng/1.2.42 --lib"
 DEPENDS+=	"libtiff/3.9.4 --lib"
 DEPENDS+=	"libjpeg/6b --lib --build-env"
 DEPENDS+=	"zlib/1.2.5 --lib"

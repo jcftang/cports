@@ -13,7 +13,7 @@ DEPENDS+="pixman/0.18.2 --build-env --lib"
 DEPENDS+="cairo/1.8.10  --build-env --lib"
 DEPENDS+="freetype/2.4.2 --build-env --lib"
 DEPENDS+="poppler/0.14.1 --build-env --lib"
-DEPENDS+="libpng/1.4.3 --build-env --lib"
+DEPENDS+="libpng/1.2.42 --build-env --lib"
 DEPENDS+="autoconf/2.67 --build-env"
 DEPENDS+="automake/1.11 --build-env"
 
