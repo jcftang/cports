@@ -1,7 +1,7 @@
 include ../../../mk/gnu.pre.mk
 
 DISTNAME=	glib
-VERSION=	2.24.1
+VERSION=	2.24.2
 HOMEPAGE=	http://www.gtk.org/
 MASTER_SITES=	http://ftp.gnome.org/pub/gnome/sources/glib/2.24
 MAINTAINER=	jtang@tchpc.tcd.ie

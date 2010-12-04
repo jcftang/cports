@@ -15,6 +15,7 @@ DEPENDS+="sqlite/3.6.23.1 --lib --build-env"
 DEPENDS+="libxml2/2.7.7 --lib --build-env"
 DEPENDS+="c-ares/1.7.3 --lib --build-env"
 DEPENDS+="openssl/1.0.0a --lib --build-env"
+DEPENDS+="zlib/1.2.5 --lib --build-env"
 
 CONFIGURE_ARGS+=         --with-openssl --without-gnutls
 
