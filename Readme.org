@@ -85,6 +85,8 @@ libxext-dev
 libxmu-dev
 x11proto-xext-dev
 libxpm-dev
+libxrender-dev 
+x11proto-render-dev
 
 * Installation and configuration
   - Unpack cports-?.tar.bz2 to somewhere (I usually put it into
