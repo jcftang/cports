@@ -78,6 +78,14 @@ libXt-devel
 mesa-libGL-devel
 xorg-x11-proto-devel
 
+On a Debian 5.x system (this list isn't complete)
+
+libx11-dev
+libxext-dev
+libxmu-dev
+x11proto-xext-dev
+libxpm-dev
+
 * Installation and configuration
   - Unpack cports-?.tar.bz2 to somewhere (I usually put it into
     ${HOME}/develop/cports)

@@ -1,0 +1,8 @@
+Title: glib 2.24.1 needs zlib
+UID: x00.tchpc.tcd.ie.1291485765.P53731M510267
+Added: Sat Dec  4 18:02:45 2010
+Status: open
+
+build needs zlib and gettext in the depends list
+
+
