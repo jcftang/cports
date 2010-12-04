@@ -6,3 +6,7 @@ Status: open
 libxaw's documentation needs groff (or some newer version of troff) on debian otherwise it fails 
 
 
+
+Modified: Sat Dec  4 18:39:11 2010
+Status: closed
+

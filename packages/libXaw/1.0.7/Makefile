@@ -11,6 +11,7 @@ MAINTAINER=	mpkg@e.kth.se
 GNU_CONFIGURE=	yes
 
 DESCRIPTION=	"libXaw the standard Athena widget set"
+DEPEDNS+=	"groff/1.20 --build-env"
 
 #do-configure:	do-configur%
 #	$(MKDIR) $(WRKSRC)/X11/X11 ; cp $(WRKSRC)/lib/xpm.h $(WRKSRC)/X11/X11
