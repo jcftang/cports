@@ -22,6 +22,7 @@ DEPENDS+=	"texinfo/4.13 --build-env"
 DEPENDS+=	"db/4.8.26 --lib --build-env"
 DEPENDS+=	"sqlite/3.6.23.1 --lib --build-env"
 DEPENDS+=	"openssl/1.0.0a --lib --build-env"
+DEPENDS+=	"zlib/1.2.5 --lib --build-env"
 
 EXTRAVERSION=
 
