@@ -13,7 +13,8 @@ EXTRAVERSION=
 
 DEPENDS+=	"ghc/6.12.3-$(SYSTEM_TYPE_CPU) --build-env --run-env --lib"
 DEPENDS+=	"gmp/4.3.2 --build-env --lib --run-env"
-#DEPENDS+=	"ncurses/5.7 --build-env --lib --run-env"
+DEPENDS+=	"ncurses/5.7 --build-env --lib --run-env"
+DEPENDS+=	"zlib/1.2.5 --build-env --lib --run-env"
 
 ALL_TARGET=	default
 

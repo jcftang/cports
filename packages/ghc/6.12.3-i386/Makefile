@@ -11,6 +11,7 @@ DISTFILES = $(DISTNAME)-$(VERSION)$(EXTRAVERSION)-unknown-linux-n.tar.bz2
 GNU_CONFIGURE=	yes
 
 DEPENDS+=	"gmp/4.3.2 --build-env --lib --run-env"
+DEPENDS+=	"zlib/1.2.5 --build-env --lib --run-env"
 
 DESCRIPTION=	"GHC is a state-of-the-art, open source, compiler and interactive environment for the functional language Haskell. "
 

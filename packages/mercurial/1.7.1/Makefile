@@ -10,6 +10,7 @@ DISTFILES=	$(DISTNAME)-$(VERSION).tar.gz
 HAS_CONFIGURE=  no
 
 DEPENDS+= "Python/2.6.5 --lib --build-env --run-env"
+DEPENDS+="zlib/1.2.5 --lib --build-env"
 
 DESCRIPTION=	"Mercurial is a free, distributed source control management tool. It"
 DESCRIPTION+=	"efficiently handles projects of any size and offers an easy and intuitive"
