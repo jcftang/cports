@@ -6,6 +6,7 @@ CATEGORIES=	numerical
 HOMEPAGE=	http://www.r-project.org/
 MASTER_SITES=	http://ftp.heanet.ie/mirrors/cran.r-project.org/src/base/R-2
 GNU_CONFIGURE = yes
+MAINTAINER=	darach@tchpc.tcd.ie
 DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
 
 EXTRAVERSION=

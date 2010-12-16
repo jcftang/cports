@@ -1,18 +1,18 @@
 include ../../../mk/gnu.pre.mk
 
 DISTNAME=	R
-VERSION=	2.10.1
+VERSION=	2.12.1
 CATEGORIES=	numerical
 HOMEPAGE=	http://www.r-project.org/
 MASTER_SITES=	http://ftp.heanet.ie/mirrors/cran.r-project.org/src/base/R-2
 GNU_CONFIGURE = yes
-MAINTAINER=     darach@tchpc.tcd.ie
+MAINTAINER=	darach@tchpc.tcd.ie
 DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
 
 EXTRAVERSION=
 
 DEPENDS+="atlas/3.8.3 --lib"
-DEPENDS+="openmpi/1.4.2 --build-env openmpi/1.4.2 --run-env"
+DEPENDS+="openmpi/1.4.3 --build-env openmpi/1.4.3 --run-env" 
 DEPENDS+="ncurses/5.7 --lib --build-env"
 DEPENDS+="readline/6.1 --lib --build-env"
 DEPENDS+="pcre/8.10 --lib --build-env"
@@ -37,14 +37,15 @@ CONFIGURE_ARGS +=  --with-lapack="-L$(PREFIX_atlas)/lib -llapack -lcblas"
 do-test:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
 	cd $(WRKSRC); \
-	make check 2>&1 | tee testlog;
+	make check 2>&1 | tee testlog;                                                                                                                                  
 
 #do-install:
 #	$(MODULE_ADD) $(BUILD_DEPENDS);  \
 #	cd $(WRKSRC); \
 #       make install
 
-R_MODULES+=	outliers rbugs
+#R_MODULES+=	outliers rbugs Rmpi 
+R_MODULES+=	outliers rbugs rlecuyer Rmpi snow snowfall
 
 include ../../../mk/prg.R.mk
 include ../../../mk/gnu.post.mk
