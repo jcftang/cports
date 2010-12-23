@@ -12,7 +12,7 @@ EXTRAVERSION=
 
 DESCRIPTION=	"KeePassX is an application for people with extremly high demands on secure personal data management. It has a light interface, is cross platform and published under the terms of the GNU General Public License."
 
-DEPENDS+=       "qt/4.7.0 --lib --build-env"
+DEPENDS+=       "qt/4.7.0 --lib --build-env --run-env"
 DEPENDS+=       "gettext/0.18.1.1 --lib --build-env --run-env"
 DEPENDS+=       "fontconfig/2.8.0 --lib --build-env"
 
