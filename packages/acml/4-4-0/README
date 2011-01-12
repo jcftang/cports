@@ -1,0 +1,3 @@
+To install shared memory version
+
+make CPRT_ACML_SMP=yes install
