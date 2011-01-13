@@ -58,20 +58,29 @@ MODULE_SHOW_HTML=	echo "<pre>"; ($(CAT) $(MODULEDIR)/$(DISTNAME)/$(VERSION)$(EXT
 
 # Markdown output
 PACKAGE_MARKDOWN=	echo "\# $(DISTNAME) $(VERSION)$(EXTRAVERSION)$(COMPILER_TAG)"; \
+			echo "" ;\
 			echo "\#\# Description " ;\
+			echo "" ;\
 			$(DESCRIPTION_MARKDOWN) \
+			echo "" ;\
 			echo "\#\# References" ;\
+			echo "" ;\
 			$(REFERENCES_MARDKWON) ;\
+			echo "" ;\
 			echo "\#\# Extra information " ;\
+			echo "" ;\
 			echo "* Configured with: $(CONFIGURED_MARKDOWN)" ;\
 			echo "* Build depends: module load $(BUILD_DEP_MARKDOWN)" ;\
 			echo "* Run depends: module load $(RUN_DEP_MARKDOWN)" ;\
 			echo "* Link depends: module load $(LINK_DEP_MARKDOWN)" ;\
 			echo "* Internal module depends: $(MODULE_DEP_MARKDOWN)" ;
+			echo "" ;\
 
 DESCRIPTION_MARKDOWN=	echo $(DESCRIPTION) | $(HTML_ESCAPE_COMMAND) ;
+			echo "" ;\
 REFERENCES_MARDKWON=	echo "* Package homepage: <$(HOMEPAGE)>" ; \
 			echo "* Maintainer: <$(MAINTAINER)>"
+			echo "" ;\
 
 CONFIGURED_MARKDOWN=	$(CONFIGURE_SCRIPT) $(CONFIGURE_ARGS)
 BUILD_DEP_MARKDOWN=	$(BUILD_DEPENDS)
