@@ -60,6 +60,8 @@ do-build:
 
 do-install:
 	cd $(WORKDIR); \
-	./install-$(DISTNAME)-$(VERSION)-$(CPRT_ACML_COMPILER_CLASS)-$(CPRT_ACML_NBITS)bit.sh -accept -installdir=$(PROGRAM_PREFIX)
+	./install-$(DISTNAME)-$(VERSION)-$(CPRT_ACML_COMPILER_CLASS)-$(CPRT_ACML_NBITS)bit.sh -accept -installdir=$(PROGRAM_PREFIX); \
+	ln -s $(PROGRAM_PREFIX)/$(CPRT_ACML_INST_DIR)/lib $(PROGRAM_PREFIX)/lib
+	ln -s $(PROGRAM_PREFIX)/$(CPRT_ACML_INST_DIR)/include $(PROGRAM_PREFIX)/include
 
 include ../../../mk/gnu.post.mk
