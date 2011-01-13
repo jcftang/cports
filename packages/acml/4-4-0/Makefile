@@ -30,7 +30,7 @@ $(info acml class: $(CPRT_ACML_COMPILER_CLASS) )
 
 DISTFILES = $(DISTNAME)-$(VERSION)-$(CPRT_ACML_COMPILER_CLASS)-$(CPRT_ACML_NBITS)bit.tgz
 
-CPRT_ACML_INST_DIR=$(CPRT_ACML_COMPILER_CLASS)$(CPRT_ACML_NBITS)$(strip $(if $(findstring yes, $(CPRT_ACML_SMP)),_mp, ))
+CPRT_ACML_INST_DIR=$(strip $(if $(findstring open, $(CPRT_ACML_COMPILER_CLASS)),$(CPRT_ACML_COMPILER_CLASS)_,$(CPRT_ACML_COMPILER_CLASS)))$(CPRT_ACML_NBITS)$(strip $(if $(findstring yes, $(CPRT_ACML_SMP)),_mp, ))
 
 EXTRAVERSION= _$(strip $(if $(findstring yes, $(CPRT_ACML_SMP)),smp, nosmp))
 WORKDIRSUFFIX= $(strip $(if $(findstring yes, $(CPRT_ACML_SMP)),smp, nosmp))
