@@ -1,9 +1,9 @@
 include ../../../../../mk/gnu.pre.mk
 
 DISTNAME=       Rmpi
-VERSION=        0.5-8
+VERSION=        0.5-9
 
-DEPENDS+="openmpi/1.4.2 --build-env openmpi/1.4.2 --run-env"
+DEPENDS+="openmpi/1.4.3 --build-env openmpi/1.4.3 --run-env"
 
 CPRT_R_INSTARGS += --configure-args=--with-mpi=$(PREFIX_openmpi)
 
