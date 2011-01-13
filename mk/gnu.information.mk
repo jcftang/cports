@@ -65,7 +65,7 @@ PACKAGE_MARKDOWN=	echo "\# $(DISTNAME) $(VERSION)$(EXTRAVERSION)$(COMPILER_TAG)"
 			echo "" ;\
 			echo "\#\# References" ;\
 			echo "" ;\
-			$(REFERENCES_MARDKWON) ;\
+			$(REFERENCES_MARDKWON) \
 			echo "" ;\
 			echo "\#\# Extra information " ;\
 			echo "" ;\
@@ -76,11 +76,11 @@ PACKAGE_MARKDOWN=	echo "\# $(DISTNAME) $(VERSION)$(EXTRAVERSION)$(COMPILER_TAG)"
 			echo "* Internal module depends: $(MODULE_DEP_MARKDOWN)" ; \
 			echo "" ;
 
-DESCRIPTION_MARKDOWN=	echo $(DESCRIPTION) | $(HTML_ESCAPE_COMMAND) ;
-			echo "" ;\
+DESCRIPTION_MARKDOWN=	echo $(DESCRIPTION) | $(HTML_ESCAPE_COMMAND) ; \
+			echo "" ;
 REFERENCES_MARDKWON=	echo "* Package homepage: <$(HOMEPAGE)>" ; \
 			echo "* Maintainer: <$(MAINTAINER)>"; \
-			echo "" ;\
+			echo "";
 
 CONFIGURED_MARKDOWN=	$(CONFIGURE_SCRIPT) $(CONFIGURE_ARGS)
 BUILD_DEP_MARKDOWN=	$(BUILD_DEPENDS)
