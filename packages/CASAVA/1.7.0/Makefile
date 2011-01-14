@@ -24,7 +24,7 @@ DEPENDS+=	"bzip2/1.0.6 --build-env --lib"
 DEPENDS+=	"zlib/1.2.5 --build-env --lib"
 DEPENDS+=	"libxml2/2.7.7  --build-env --lib"
 
-DESCRIPTION=    "CASAVA"
+DESCRIPTION=    "CASAVA pipeline"
 
 do-configure:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
