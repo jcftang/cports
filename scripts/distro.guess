@@ -24,6 +24,8 @@ elif [ -f "/etc/redhat-release" ]; then
 elif [ -f "/etc/debian_version" ]; then
 	release=`cat /etc/debian_version | awk -F"." '{print $1}'`
 	echo "debian-$release.$machine"
+elif [ `uname` == "Darwin" ]; then
+	echo "darwin"
 else
 	echo "unknown.$machine"
 fi
