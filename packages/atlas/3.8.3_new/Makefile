@@ -29,7 +29,7 @@ ifndef COMPILERS
 COMPILERS?=gnu
 endif
 
-CPRT_COMPILER_CLASS=$(strip \
+CPRT_ATLAS_COMPILER_CLASS=$(strip \
 	$(if \
 	$(or \
 	$(findstring gnu, $(COMPILERS)), \
@@ -38,13 +38,13 @@ CPRT_COMPILER_CLASS=$(strip \
 	gnu, \
 	intel))
 
-$(info compiler type  $(CPRT_COMPILER_CLASS))
+$(info compiler type  $(CPRT_ATLAS_COMPILER_CLASS))
 
 CPRT_ATLAS_CONFIG_ARGS =  -Fa alg -fPIC --with-netlib-lapack=../lapack-$(CPRT_NETLIB_LAPACK_VERSION)/lapack_LINUX.a
-ifeq ($(CPRT_COMPILER_CLASS),gnu)
+ifeq ($(CPRT_ATLAS_COMPILER_CLASS),gnu)
 CPRT_ATLAS_CONFIG_ARGS +=
 endif
-ifeq ("$(CPRT_COMPILER_CLASS)","intel")
+ifeq ("$(CPRT_ATLAS_COMPILER_CLASS)","intel")
 CPRT_ATLAS_CONFIG_ARGS +=  --cc=icc -C if ifort -F if '-O2 -fPIC' -C ic icc -F ic '-O2 -fPIC'
 endif
 
