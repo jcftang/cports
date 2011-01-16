@@ -4,7 +4,9 @@
 
 include ../../../mk/gnu.pre.mk
 
-DISTNAME=       acml
+DISTNAME=       acml-nosmp
+PKGFILENAME= acml
+PKGSUBDIR= acml
 EXTRAVERSION=   
 VERSION=        4-4-0
 CATEGORIES=     numerical
@@ -16,7 +18,6 @@ HAS_CONFIGURE=  no
 
 DESCRIPTION=    "ACML provides a free set of thoroughly optimized and threaded math routines for HPC, scientific, engineering and related compute-intensive applications. ACML is ideal for weather modeling, computational fluid dynamics, financial analysis, oil and gas applications and more."
 
-CPRT_ACML_SMP=no
 CPRT_ACML_NBITS=$(strip 64)
 
 CPRT_ACML_INT_NBITS=    
@@ -28,12 +29,12 @@ CPRT_ACML_COMPILER_CLASS:=$(strip $(if $(findstring open, $(COMPILERS)),open64,$
 
 $(info acml class: $(CPRT_ACML_COMPILER_CLASS) )
 
-DISTFILES = $(DISTNAME)-$(VERSION)-$(CPRT_ACML_COMPILER_CLASS)-$(CPRT_ACML_NBITS)bit.tgz
+DISTFILES = $(PKGFILENAME)-$(VERSION)-$(CPRT_ACML_COMPILER_CLASS)-$(CPRT_ACML_NBITS)bit.tgz
 
-CPRT_ACML_INST_DIR=$(strip $(if $(findstring open, $(CPRT_ACML_COMPILER_CLASS)),$(CPRT_ACML_COMPILER_CLASS)_,$(CPRT_ACML_COMPILER_CLASS)))$(CPRT_ACML_NBITS)$(strip $(if $(findstring yes, $(CPRT_ACML_SMP)),_mp, ))
+CPRT_ACML_INST_DIR=$(strip $(if $(findstring open, $(CPRT_ACML_COMPILER_CLASS)),$(CPRT_ACML_COMPILER_CLASS)_,$(CPRT_ACML_COMPILER_CLASS)))$(CPRT_ACML_NBITS)
 
-EXTRAVERSION= _$(strip $(if $(findstring yes, $(CPRT_ACML_SMP)),smp, nosmp))
-WORKDIRSUFFIX= $(strip $(if $(findstring yes, $(CPRT_ACML_SMP)),smp, nosmp))
+EXTRAVERSION= 
+WORKDIRSUFFIX= 
 
 $(info root install dir: $(CPRT_ACML_INST_DIR) )
 $(info extraversion: $(EXTRAVERSION) )
@@ -60,7 +61,7 @@ do-build:
 
 do-install:
 	cd $(WORKDIR); \
-	./install-$(DISTNAME)-$(VERSION)-$(CPRT_ACML_COMPILER_CLASS)-$(CPRT_ACML_NBITS)bit.sh -accept -installdir=$(PROGRAM_PREFIX); \
+	./install-$(PKGFILENAME)-$(VERSION)-$(CPRT_ACML_COMPILER_CLASS)-$(CPRT_ACML_NBITS)bit.sh -accept -installdir=$(PROGRAM_PREFIX); \
 	ln -s $(PROGRAM_PREFIX)/$(CPRT_ACML_INST_DIR)/lib $(PROGRAM_PREFIX)/lib
 	ln -s $(PROGRAM_PREFIX)/$(CPRT_ACML_INST_DIR)/include $(PROGRAM_PREFIX)/include
 

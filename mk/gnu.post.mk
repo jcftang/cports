@@ -1300,11 +1300,11 @@ MODULEFILE_CMD_HELP?= $(if \
 		for line in "" $(DESCRIPTION); do					\
 			if [ "X$$line" = "X" ]; then continue; fi;			\
 			$(ECHO) puts stderr "\"$$line\"";				\
+		done;                                                                   \
 		$(ECHO) puts stderr "{build depends: $(BUILD_DEPENDS)}";              	\
 		$(ECHO) puts stderr "{run depends: $(RUN_DEPENDS)}";              	\
 		$(ECHO) puts stderr "{module depends: $(MODULE_DEPENDS)}";            	\
 		$(ECHO) puts stderr "{link depends: $(LINK_DEPENDS)}";            	\
-		done;									\
 		$(ECHO) "}";    \
 	)
 endif
