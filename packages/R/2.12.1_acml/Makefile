@@ -11,7 +11,7 @@ DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
 
 EXTRAVERSION= _acml
 
-DEPENDS+="acml/4-4-0_nosmp --lib --build-env"
+DEPENDS+="acml-nosmp/4-4-0 --lib --build-env"
 DEPENDS+="openmpi/1.4.3 --build-env openmpi/1.4.3 --run-env" 
 DEPENDS+="ncurses/5.7 --lib --build-env"
 DEPENDS+="readline/6.1 --lib --build-env"
