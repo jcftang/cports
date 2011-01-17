@@ -56,7 +56,9 @@ $(info CPRT_ATLAS_COMPILERS_FLAGS = $(CPRT_ATLAS_COMPILERS_FLAGS))
 
 ## defined for benefit of module file generator
 DESCRIPTION += " "
-DESCRIPTION += "configuration args: --prefix=<install dir> $(CPRT_ATLAS_CONFIG_ARGS) $(CPRT_ATLAS_COMPILERS_FLAGS) "
+DESCRIPTION += "configuration args: --prefix=<install dir>	\
+$(CPRT_ATLAS_CONFIG_ARGS) $(CPRT_ATLAS_COMPILERS_FLAGS) -t	\
+$(CPRT_ATLAS_NUM_THREADS)"
 
 do-configure:
 	$(MODULE_ADD) $(BUILD_DEPENDS); \
