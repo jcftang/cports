@@ -6,7 +6,7 @@ include ../../../mk/gnu.pre.mk
 
 DISTNAME=	ncbi-blast
 VERSION=	2.2.24+
-CATEGORIES=	utilities
+CATEGORIES=	bio
 HOMEPAGE=	http://www.mpiblast.org/
 MASTER_SITES=	ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.2.24
 MAINTAINER=	jtang@tchpc.tcd.ie
