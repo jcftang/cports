@@ -2,7 +2,6 @@
 VERSION=$(shell git describe)
 DISTNAME=cports
 DISTFILE=$(DISTNAME)-$(VERSION)
-DOCS=Readme.html Packages.html Todo.html
 
 default: bootstrap
 
@@ -22,9 +21,16 @@ $(DISTFILE).tar.bz2: $(DISTFILE).tar
 $(DISTFILE).tar.bz2.sha1sum: $(DISTFILE).tar.bz2
 	@openssl sha1 $(DISTFILE).tar.bz2 > $(DISTFILE).tar.bz2.sha1sum
 
-clean:
-	@-rm $(DOCS)
+clean: Documentation/clean
 	#@-rm $(DISTFILE).tar
+
+docs: Documentation/all
+
+%/all:
+	$(MAKE) -C $* all
+
+%/clean:
+	$(MAKE) -C $* clean
 
 distclean:
 	@-rm -f @CONFIGURE_FILES@ @GENERATED_FILES@
@@ -35,11 +41,9 @@ whatchanged:
 changelog:
 	(git log --pretty --summary --numstat | ./scripts/git2cl > changelog)
 
-docs: $(DOCS)
-	@:
-
-%.html: %.org
-	./scripts/org2html.sh $?
+#docs:
+#	$(MAKE) -C Documentation/all
+Documentation/all:
 
 .PHONY: whatchanged changelog
 
