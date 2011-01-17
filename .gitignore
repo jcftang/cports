@@ -12,5 +12,5 @@ config.md
 # some config files
 mk-conf/config.mk
 cports.modulefile
-*.html
-*.html~
+
+*.tmp
