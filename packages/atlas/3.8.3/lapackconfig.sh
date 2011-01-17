@@ -5,7 +5,7 @@ optflags=$(cat compflags)
 rm compflags
 mkdir lapackdir
 cd lapackdir
-wget http://www.netlib.org/lapack/lapack.tgz
+wget http://www.netlib.org/lapack/lapack-3.2.2.tgz
 tar zxvf lapack.tgz
 lapv=$(find . -maxdepth 1 -type d -printf '%f\n' | grep lapack | sed -e 's/^lapack-//')
 if [[ $lapv ]]
