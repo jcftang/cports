@@ -2,7 +2,7 @@ include ../../../mk/gnu.pre.mk
 
 DISTNAME=	bfast
 VERSION=	0.6.4e
-CATEGORIES=	utilities
+CATEGORIES=	bio
 HOMEPAGE=	http://sourceforge.net/projects/bfast
 MASTER_SITES=	http://sourceforge.net/projects/bfast/files/bfast/0.6.4/
 MAINTAINER=	jtang@tchpc.tcd.ie
