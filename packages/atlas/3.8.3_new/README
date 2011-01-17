@@ -1,0 +1,10 @@
+threading turned off by default;
+
+To turn on, set:
+
+CPRT_ATLAS_NUM_THREADS=-1 to autodetect num threads
+
+OR
+
+CPRT_ATLAS_NUM_THREADS=<positive number of threads> 
+
