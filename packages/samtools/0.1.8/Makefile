@@ -35,5 +35,10 @@ do-install:
 
 	$(INSTALL) $(WRKSRC)/misc/*.pl $(PROGRAM_PREFIX)/bin
 	$(INSTALL) $(WRKSRC)/misc/{md5sum-lite,md5fa,maq2sam-short,maq2sam-long,wgsim} $(PROGRAM_PREFIX)/bin
+	
+	$(INSTALL) -d $(PROGRAM_PREFIX)/lib
+	$(INSTALL) $(WRKSRC)/lib* $(PROGRAM_PREFIX)/lib/
+	$(INSTALL) -d $(PROGRAM_PREFIX)/include
+	$(INSTALL) $(WRKSRC)/*.h $(PROGRAM_PREFIX)/include
 
 include ../../../mk/gnu.post.mk
