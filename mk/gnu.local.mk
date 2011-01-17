@@ -22,7 +22,7 @@ ENVIRONMENT+= FC=gfortran
 COMPILER_VERSION?= $(shell gcc -dumpversion)
 COMPILER_TAG?=-gnu${COMPILER_VERSION}
 ifneq ($(COMPILER_TAG),-$(COMPILERS))
-COMPILER_TAG= echo "Error compiler that is loaded up is wrong"
+$(error "Error compiler mismatch: detected: $(COMPILER_TAG); specified: -$(COMPILERS)")
 endif
 endif
 
@@ -35,7 +35,7 @@ ENVIRONMENT+= FC=openf95
 COMPILER_VERSION?= $(shell opencc -dumpversion)
 COMPILER_TAG?=-open64${COMPILER_VERSION}
 ifneq ($(COMPILER_TAG),-$(COMPILERS))
-COMPILER_TAG= echo "Error compiler that is loaded up is wrong"
+$(error "Error compiler mismatch: detected: $(COMPILER_TAG); specified: -$(COMPILERS)")
 endif
 endif
 
@@ -48,7 +48,7 @@ ENVIRONMENT+= FC=ifort
 COMPILER_VERSION?= $(shell icc -dumpversion)
 COMPILER_TAG?=-intel${COMPILER_VERSION}
 ifneq ($(COMPILER_TAG),-$(COMPILERS))
-COMPILER_TAG= echo "Error compiler that is loaded up is wrong"
+$(error "Error compiler mismatch: detected: $(COMPILER_TAG); specified: -$(COMPILERS)")
 endif
 endif
 
