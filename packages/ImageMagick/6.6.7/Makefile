@@ -16,7 +16,7 @@ DEPENDS+=       "libjpeg/8b --lib --build-env"
 DEPENDS+=       "libpng/1.2.42 --lib --build-env"
 DEPENDS+=       "libtiff/3.9.4 --lib --build-env"
 DEPENDS+=	"ghostscript/9.00 --lib --build-env"
-DEPENDS+=	"perl/5.12.1 --lib --build-env"
+DEPENDS+=	"perl/5.10.1 --lib --build-env"
 
 
 CONFIGURE_ARGS+= "--with-perl"
