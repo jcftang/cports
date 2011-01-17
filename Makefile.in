@@ -47,13 +47,14 @@ export-docs: Documentation/all
 
 # push the pregenerated doc files to origin/man and origin/html
 push-docs: export-docs
-	git push origin man html
+	#git push origin man html
+	git push origin html
 
 # import pregenerated doc files from origin/man and origin/html, in case you
 # don't have pandoc but still want to be able to install the docs.
 import-docs: Documentation/clean
 	git archive origin/html | (cd Documentation; tar -xvf -)
-	git archive origin/man | (cd Documentation; tar -xvf -)
+	#git archive origin/man | (cd Documentation; tar -xvf -)
 
 
 
