@@ -1,5 +1,5 @@
 EMACS:=$(shell \
-	if qemacs --version >/dev/null; then \
+	if emacs --version >/dev/null; then \
 		echo emacs;\
 		touch .docs-available; \
 	else \
