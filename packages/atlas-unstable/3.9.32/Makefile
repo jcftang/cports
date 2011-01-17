@@ -14,12 +14,13 @@ DISTFILES = lapack-$(CPRT_NETLIB_LAPACK_VERSION).tgz atlas$(VERSION).tar.bz2
 
 PKGSUBDIR = ATLAS
 
+CPRT_ATLAS_NUM_THREADS?= 0
 # PATCH_STRIP=		-p1
 # PATCH_ARGS=		-d $(CURDIR)/work/$(PKGSUBDIR) -N -E $(PATCH_STRIP)
 
 $(info workdir $(CURDIR))
 
-EXTRAVERSION=
+EXTRAVERSION?=
 
 DESCRIPTION=	"The ATLAS (Automatically Tuned Linear Algebra Software) project \
 is an ongoing research effort focusing on applying empirical \
@@ -51,7 +52,7 @@ do-configure:
 	mv $(PKGSUBDIR) ATLAS-$(VERSION)-srcdir; \
 	mkdir ATLAS-build-$(SYSTEM_TYPE); \
 	cd ATLAS-build-$(SYSTEM_TYPE); \
-	../ATLAS-$(VERSION)-srcdir/configure  --shared -C dk 'gcc -fPIC ' -C sk 'gcc -fPIC '  $(CPRT_ATLAS_INTERFACE_CONFIG_FLAGS)  --prefix=$(PROGRAM_PREFIX) --with-netlib-lapack-tarfile=$(DISTDIR)/$(DISTNAME)/lapack-$(CPRT_NETLIB_LAPACK_VERSION).tgz 2>&1 | tee $(WORKDIR)/configlog
+	../ATLAS-$(VERSION)-srcdir/configure  --shared -C dk 'gcc -fPIC ' -C sk 'gcc -fPIC '  $(CPRT_ATLAS_INTERFACE_CONFIG_FLAGS)  --prefix=$(PROGRAM_PREFIX) --with-netlib-lapack-tarfile=$(DISTDIR)/$(DISTNAME)/lapack-$(CPRT_NETLIB_LAPACK_VERSION).tgz -t $(CPRT_ATLAS_NUM_THREADS) 2>&1 | tee $(WORKDIR)/configlog
 
 do-build:
 	$(MODULE_ADD) $(BUILD_DEPENDS); \

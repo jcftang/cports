@@ -16,23 +16,28 @@ DISTFILES = lapack-$(CPRT_NETLIB_LAPACK_VERSION).tgz $(DISTNAME)$(VERSION).tar.b
 
 PKGSUBDIR = ATLAS
 
+## -1 => autodetect
+CPRT_ATLAS_NUM_THREADS?= 0
+
 PATCH_STRIP=		-p2
 PATCH_ARGS=		-d $(CURDIR)/work/$(PKGSUBDIR) -N -E $(PATCH_STRIP)
 
-EXTRAVERSION=
+EXTRAVERSION?=
 
 DESCRIPTION=	"The ATLAS (Automatically Tuned Linear Algebra Software) project is an ongoing research effort focusing on applying empirical techniques in order to provide portable performance."
-
-ifndef COMPILERS
-COMPILERS?=gnu
-endif
 
 CPRT_ATLAS_COMPILER_CLASS := nocompiler
 CPRT_ATLAS_COMPILER_CLASS:=$(strip $(if $(findstring intel, $(COMPILERS)),intel,$(CPRT_ATLAS_COMPILER_CLASS)))
 CPRT_ATLAS_COMPILER_CLASS:=$(strip $(if $(findstring gnu, $(COMPILERS)),gnu,$(CPRT_ATLAS_COMPILER_CLASS)))
 CPRT_ATLAS_COMPILER_CLASS:=$(strip $(if $(findstring open, $(COMPILERS)),open64,$(CPRT_ATLAS_COMPILER_CLASS)))
-
 $(info compiler type  $(CPRT_ATLAS_COMPILER_CLASS))
+
+CPRT_ATLAS_LAPACK_MAKE_EXT := nocompiler
+CPRT_ATLAS_LAPACK_MAKE_EXT:=$(strip $(if $(findstring intel, $(COMPILERS)),ifort,$(CPRT_ATLAS_LAPACK_MAKE_EXT)))
+CPRT_ATLAS_LAPACK_MAKE_EXT:=$(strip $(if $(findstring gnu, $(COMPILERS)),gfortran,$(CPRT_ATLAS_LAPACK_MAKE_EXT)))
+CPRT_ATLAS_LAPACK_MAKE_EXT:=$(strip $(if $(findstring open, $(COMPILERS)),openf90,$(CPRT_ATLAS_LAPACK_MAKE_EXT)))
+$(info CPRT_ATLAS_LAPACK_MAKE_EXT is $(CPRT_ATLAS_LAPACK_MAKE_EXT))
+$(info so will copy  INSTALL/make.inc.$(CPRT_ATLAS_LAPACK_MAKE_EXT) during lapack install)
 
 CPRT_ATLAS_CONFIG_ARGS =  -Fa alg -fPIC --with-netlib-lapack=../lapack-$(CPRT_NETLIB_LAPACK_VERSION)/lapack_LINUX.a
 
@@ -63,7 +68,7 @@ do-configure:
 	../ATLAS-$(VERSION)-srcdir/configure -Fa alg -fPIC $(CPRT_ATLAS_COMPILERS_FLAGS) --prefix=$HOME/tmp/thisthat; \
 	compflags=$$(grep 'F77FLAGS =' Make.inc  | sed -e 's/.* =[ \t]*//'); \
 	cd ../lapack-$(CPRT_NETLIB_LAPACK_VERSION); \
-	cp INSTALL/make.inc.gfortran ./make.inc.tmp; \
+	cp INSTALL/make.inc.$(CPRT_ATLAS_LAPACK_MAKE_EXT) ./make.inc.tmp; \
 	cat make.inc.tmp | sed -e "s/^OPTS[ \t]*=.*/OPTS    = $$compflags/" | sed -e 's/^NOOPT[ \t]*=.*/NOOPT    = -O0 -fPIC /' > make.inc; \
 	rm make.inc.tmp; \
 	make lib; \
@@ -75,7 +80,7 @@ do-build:
 	cd $(WORKDIR); \
 	mkdir ATLAS-build-$(SYSTEM_TYPE); \
 	cd ATLAS-build-$(SYSTEM_TYPE);  \
-	../ATLAS-$(VERSION)-srcdir/configure --prefix=$(PROGRAM_PREFIX) $(CPRT_ATLAS_CONFIG_ARGS) $(CPRT_ATLAS_COMPILERS_FLAGS) ; \
+	../ATLAS-$(VERSION)-srcdir/configure --prefix=$(PROGRAM_PREFIX) $(CPRT_ATLAS_CONFIG_ARGS) $(CPRT_ATLAS_COMPILERS_FLAGS) -t $(CPRT_ATLAS_NUM_THREADS) ; \
 	make 2>&1 | tee $(WORKDIR)/buildlog; \
 	cd lib; make shared; cd ..; \
 	make check 2>&1 | tee $(WORKDIR)/checklog;  \
