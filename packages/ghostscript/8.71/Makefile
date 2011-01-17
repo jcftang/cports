@@ -47,6 +47,6 @@ do-install: do-instal%
 	for i in $(INSTALL_FILES); do \
 		$(GZCAT) $(_DISTDIR)/$$i | $(TAR_EXTRACT); \
 	done
-	$(LN) -f gsc $(PROGRAM_PREFIX)/bin/gs
+#	$(LN) -f gsc $(PROGRAM_PREFIX)/bin/gs
 
 include ../../../mk/gnu.post.mk
