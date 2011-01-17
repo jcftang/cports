@@ -1,7 +1,7 @@
 include ../../../mk/gnu.pre.mk
 
 DISTNAME=	ghostscript
-VERSION=	8.71
+VERSION=	9.00
 FONTVERSION=	6.0
 CATEGORIES=	printing graphics lib
 HOMEPAGE=	http://www.cs.wisc.edu/~ghost/
@@ -47,6 +47,6 @@ do-install: do-instal%
 	for i in $(INSTALL_FILES); do \
 		$(GZCAT) $(_DISTDIR)/$$i | $(TAR_EXTRACT); \
 	done
-#	$(LN) -f gsc $(PROGRAM_PREFIX)/bin/gs
+	#$(LN) -f gsc $(PROGRAM_PREFIX)/bin/gs
 
 include ../../../mk/gnu.post.mk
