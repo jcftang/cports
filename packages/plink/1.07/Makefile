@@ -19,7 +19,7 @@ DESCRIPTION=	"PLINK is a free, open-source whole genome association"
 DESCRIPTION=    "analysis toolset, designed to perform a range of basic, large-scale"
 DESCRIPTION=    "analyses in a computationally efficient manner. "
 
-MAKE_FLAGS+=	FORCE_DYNAMIC=1 WITH_LAPACK=1 LIB_LAPACK="-lgfortran -lf77blas -lcblas -latlas -llapack"
+MAKE_FLAGS+=	FORCE_DYNAMIC=1 WITH_LAPACK=1 LIB_LAPACK="-lgfortran -lf77blas -lcblas -latlas -llapack  -lf77blas -lcblas -latlas"
 
 do-install:
 	$(INSTALL) -d $(PROGRAM_PREFIX)/bin
