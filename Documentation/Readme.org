@@ -102,14 +102,13 @@ freeglut3-dev
       */tmp/cports*. The configure script will also generate a sample
       module file for you to copy into your global modulefile
       directory.
-  - Optional - Do more configuring of cports by creating either
-    /etc/mpkg.mk or ${HOME}/.mpkg.mk see the example in
-    doc/examples/dot.mpkg.mk
+  - Optional - Do more configuring of cports by editing
+     ${PREFIX}/mk-conf/config.mk
   - Configure environment modules either at the system level or in
     your own home directory in ${HOME}/privatemodules/cports see
-    doc/examples/privatemodules.cports make sure the paths in here
-    correspond to the MODULEDIR variable in /etc/mpkg.mk or
-    ${HOME}/.mpkg.mk. Look in cports/mk/gnu.def.mk or
+    ${PREFIX}/cports.modulefile cports make sure the paths in here
+    correspond to the MODULEDIR variable in
+    ${PREFIX}/mk-conf/config.mk. Look in cports/mk/gnu.def.mk or
     cports/mk/config.mk for some default options that you can override
     and or set. Or just copy the *cports.modulefile* to your
     modulefile directory.
