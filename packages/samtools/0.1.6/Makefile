@@ -19,7 +19,8 @@ do-build:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
 	cd $(WRKSRC); \
 	$(MAKE); \
-	$(MAKE) razip
+	$(MAKE) razip;\
+	$(MAKE) libbam.so.1
 
 do-install:
 	$(INSTALL) -d $(PROGRAM_PREFIX)/bin
@@ -38,6 +39,7 @@ do-install:
 	
 	$(INSTALL) -d $(PROGRAM_PREFIX)/lib
 	$(INSTALL) $(WRKSRC)/lib* $(PROGRAM_PREFIX)/lib/
+	$(LN) -sf $(PROGRAM_PREFIX)/lib/libbam.so.1 $(PROGRAM_PREFIX)/lib/libbam.so
 	$(INSTALL) -d $(PROGRAM_PREFIX)/include
 	$(INSTALL) $(WRKSRC)/*.h $(PROGRAM_PREFIX)/include
 
