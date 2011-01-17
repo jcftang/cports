@@ -9,7 +9,7 @@ GNU_CONFIGURE = yes
 MAINTAINER=	darach@tchpc.tcd.ie
 DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
 
-EXTRAVERSION=
+EXTRAVERSION?=
 
 DEPENDS+="atlas/3.8.3 --lib"
 DEPENDS+="openmpi/1.4.3 --build-env openmpi/1.4.3 --run-env" 
