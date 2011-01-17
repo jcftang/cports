@@ -2,7 +2,7 @@ include ../../../mk/gnu.pre.mk
 
 DISTNAME=	mpiBLAST
 VERSION=	1.5.0-pio
-CATEGORIES=	utilities
+CATEGORIES=	bio
 HOMEPAGE=	http://www.mpiblast.org/
 MASTER_SITES=	http://www.mpiblast.org/downloads/files/
 MAINTAINER=	jtang@tchpc.tcd.ie
