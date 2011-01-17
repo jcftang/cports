@@ -8,7 +8,9 @@ MASTER_SITES=	http://downloads.sourceforge.net/project/libpng/zlib/$(VERSION)/
 MAINTAINER=	jtang@tchpc.tcd.ie
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ARGS=
+ifeq ("$(SYSTEM_TYPE_CPU)", "x86_64")
+CPRT_CONFIGURE_ARGS= --64 
+endif
 
 DESCRIPTION=	"The 'zlib' compression library provides in-memory compression"
 DESCRIPTION+=	"and decompression functions, including integrity checks of"
@@ -18,6 +20,6 @@ DESCRIPTION+=	"will be added later and will have the same stream interface."
 
 do-configure:
 	cd $(WRKSRC); \
-	$(CONFIGURE_SCRIPT) --prefix=$(PROGRAM_PREFIX)
+	$(CONFIGURE_SCRIPT) --prefix=$(PROGRAM_PREFIX) $(CPRT_CONFIGURE_ARGS)
 
 include ../../../mk/gnu.post.mk
