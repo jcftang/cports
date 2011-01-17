@@ -19,6 +19,3 @@ cp INSTALL/make.inc.gfortran ./make.inc.tmp
 cat make.inc.tmp | sed -e "s/^OPTS[ \t]*=.*/OPTS    = $optflags/" | sed -e 's/^NOOPT[ \t]*=.*/NOOPT    = -O0 -fPIC /' > make.inc
 rm make.inc.tmp
 make lib
-
-
-
