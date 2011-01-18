@@ -30,11 +30,12 @@ do-build:
 
 do-install:
 	$(MODULE_ADD) $(BUILD_DEPENDS); \
-	mkdir -p $(PROGRAM_PREFIX); \
-	cp -r $(WRKSRC)/* $(PROGRAM_PREFIX); \
+	$(MKDIR) -p $(PROGRAM_PREFIX); \
+	$(CP) -r $(WRKSRC)/* $(PROGRAM_PREFIX); \
 	cd $(PROGRAM_PREFIX); \
-	mkdir bin; \
-	cp dindel ./bin
+	$(MKDIR) bin; \
+	cd bin; \
+	$(LN) -s -f ../dindel dindel
 	
 
 include ../../../mk/gnu.post.mk
