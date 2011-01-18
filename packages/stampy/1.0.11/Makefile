@@ -16,6 +16,8 @@ DESCRIPTION=	"Stampy is a package for the mapping of short reads from illumina s
 
 DEPENDS+=	"Python/2.6.5 --build-env --lib --run-env"
 DEPENDS+=	"bwa/0.5.8a --run-env"
+DEPENDS+= 	"maq/0.7.1 --run-env"
+DEPENDS+=	"samtools/0.1.8	--run-env"
 
 
 do-configure:
@@ -29,11 +31,11 @@ do-build:
 
 do-install:
 	$(MODULE_ADD) $(BUILD_DEPENDS); \
-	mkdir -p $(PROGRAM_PREFIX); \
-	cp -r $(WRKSRC)/* $(PROGRAM_PREFIX); \
+	$(MKDIR) -p $(PROGRAM_PREFIX); \
+	$(CP) -r $(WRKSRC)/* $(PROGRAM_PREFIX); \
 	cd $(PROGRAM_PREFIX); \
-	mkdir bin; \
+	$(MKDIR) -p bin; \
 	cd bin; \
-	ln -s ../stampy.py stampy.py	
+	$(LN) -s ../stampy.py stampy.py	
 
 include ../../../mk/gnu.post.mk
