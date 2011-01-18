@@ -36,6 +36,6 @@ do-install:
 	cd $(PROGRAM_PREFIX); \
 	$(MKDIR) -p bin; \
 	cd bin; \
-	$(LN) -s ../stampy.py stampy.py	
+	$(LN) -s -f ../stampy.py stampy.py	
 
 include ../../../mk/gnu.post.mk
