@@ -1,7 +1,7 @@
 include ../../../../../mk/gnu.pre.mk
 
 DISTNAME=       Rmpi
-VERSION=        0.5-8
+VERSION=        0.5-9
 
 DEPENDS+="openmpi/1.4.3 --build-env openmpi/1.4.3 --run-env"
 

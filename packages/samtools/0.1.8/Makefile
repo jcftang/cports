@@ -23,6 +23,10 @@ do-build:
 	$(MAKE) 'CFLAGS=-g -Wall -O2 -fPIC' libbam.so.1-local
 
 do-install:
+	$(INSTALL) -d $(PROGRAM_PREFIX)
+	cd $(WRKSRC) ; \
+	tar -cpf - . | (cd $(PROGRAM_PREFIX)/ && tar -xpf - )	
+
 	$(INSTALL) -d $(PROGRAM_PREFIX)/bin
 	$(INSTALL) $(WRKSRC)/samtools $(PROGRAM_PREFIX)/bin
 	$(INSTALL) $(WRKSRC)/razip $(PROGRAM_PREFIX)/bin
@@ -40,7 +44,7 @@ do-install:
 	$(INSTALL) -d $(PROGRAM_PREFIX)/lib
 	$(INSTALL) $(WRKSRC)/lib* $(PROGRAM_PREFIX)/lib/
 	$(LN) -sf $(PROGRAM_PREFIX)/lib/libbam.so.1 $(PROGRAM_PREFIX)/lib/libbam.so
-	$(INSTALL) -d $(PROGRAM_PREFIX)/include
-	$(INSTALL) $(WRKSRC)/*.h $(PROGRAM_PREFIX)/include
+	$(INSTALL) -d $(PROGRAM_PREFIX)/include/bam
+	$(INSTALL) $(WRKSRC)/*.h $(PROGRAM_PREFIX)/include/bam
 
 include ../../../mk/gnu.post.mk

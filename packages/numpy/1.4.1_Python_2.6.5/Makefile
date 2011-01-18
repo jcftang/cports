@@ -23,6 +23,11 @@ DESCRIPTION=	"numpy is a numerical module associated with python"
 
 CONFIGURE_ARGS +=
 
+#MODULEFILE_LINES+=      PYTHONPATH
+#MODULEFILE_CMD_PYTHONPATH?= \
+#	$(ECHO) "prepend-path   PYTHONPATH $(PROGRAM_PREFIX)/lib/python/site-packages";
+
+
 do-configure:
 	@
 

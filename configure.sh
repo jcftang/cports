@@ -40,9 +40,15 @@ fi
 
 case X"$AC_COMPILER" in
 Xgnu)	
+	if [ -z "$CC" ]; then
 	CC=gcc
+	fi
+	if [ -z "$CXX" ]; then
 	CXX=g++
+	fi
+	if [ -z "$FC" ]; then
 	FC=gfortran
+	fi
 	AC_SUB COMPILERS gnu
 	;;
 Xintel)
