@@ -15,6 +15,7 @@ PKGSUBDIR=      $(DISTNAME)-$(VERSION)
 DESCRIPTION=	"Stampy is a package for the mapping of short reads from illumina sequencing machines onto a reference genome. It's recommended for most workflows, including those for genomic resequencing, RNA-Seq and Chip-seq. Stampy excels in the mapping of reads containing that contain sequence variation relative to the reference, in particular for those containing insertions or deletions. It can map reads from a highly divergent species to a reference genome for instance. Stampy achieves high sensitivity and speed by using a fashashing algorithm and a detailed statistical model"
 
 DEPENDS+=	"Python/2.6.5 --build-env --lib --run-env"
+DEPENDS+=	"bwa/0.5.8a --run-env"
 
 
 do-configure:
