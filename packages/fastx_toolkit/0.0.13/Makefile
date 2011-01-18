@@ -13,5 +13,6 @@ EXTRAVERSION=
 DESCRIPTION=	"The FASTX-Toolkit is a collection of command line tools for Short-Reads FASTA/FASTQ files preprocessing."
 
 DEPENDS+=	"libgtextutils/0.6 --lib --build-env"
+DEPENDS+=	"gnuplot/4.4.0 --build-env --run-env"
 
 include ../../../mk/gnu.post.mk
