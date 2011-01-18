@@ -1424,7 +1424,7 @@ ifndef DONT_CREATE_METAINFO
 	$(QUIET) $(MKDIR) $(PREFIX)/markdown/$(DISTNAME)
 	$(QUIET) ($(PACKAGE_MARKDOWN)) > $(PREFIX)/markdown/$(DISTNAME)/$(VERSION)$(EXTRAVERSION)$(COMPILER_TAG).mdwn
 	$(QUIET) \
-	test -f $(PREFIX)/markdown/index.mdwn || echo "[[!map pages=\"* and !*/* and !index and !markdown.mk\"]]" > $(PREFIX)/markdown/index.mdwn
+	test -f $(PREFIX)/markdown/index.mdwn || echo "[[!map pages=\"* and !index and !markdown.mk\"]]" > $(PREFIX)/markdown/index.mdwn
 endif
 	@:
 
