@@ -180,7 +180,9 @@ it at least provides a way of systematically creating installations.
    - not recommended to run in this environment unless necessary
    - need to redefine F77 to use g77 instead if you need numerical packages to work
  - Debian 5.x (64bit)
-
+* Systems failed on
+- OSX 10.6 - doesn't have a gfortran by default, users must install
+  gfortran from a third party packaging system.
 * Table of apps that require specific compilers 
 The reference compiler is gcc 4.1.2, we assume all apps compile with
 gcc 4.1.2 unless otherwise stated
