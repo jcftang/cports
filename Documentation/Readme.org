@@ -172,6 +172,16 @@ installations. More compilers can be added by editting gnu.local.mk
 This method of tagging things isn't straightforward to understand but
 it at least provides a way of systematically creating installations.
 
+*** make can be run with arguments like 
+	- make COMPILERS=intel10.1 install
+    if you don't have icc for intel10.1, then make will error straight 
+    away
+    Note that the compiler version number _should_ be included.
+    Typing something like
+	- make COMPILERS=intel build
+    can lead to cports _mistakenly_ passing the compiler check even
+    if (in this case) you don't have icc
+
 * Systems tested on
  - ScientificLinux 5.x (64bit)
  - ScientificLinux 5.x (32bit)
