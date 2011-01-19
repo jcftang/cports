@@ -20,6 +20,9 @@ ENVIRONMENT+= F77=gfortran
 ENVIRONMENT+= F90=gfortran
 ENVIRONMENT+= FC=gfortran
 COMPILER_VERSION?= $(shell gcc -dumpversion)
+ifeq (X$(COMPILER_VERSION),X)
+$(error cannot obtain compiler version)
+endif
 COMPILER_TAG?=-gnu${COMPILER_VERSION}
 ifneq ($(COMPILER_TAG),-$(COMPILERS))
 $(error "Error compiler mismatch: detected: $(COMPILER_TAG); specified: -$(COMPILERS)")
@@ -33,6 +36,9 @@ ENVIRONMENT+= F77=openf90
 ENVIRONMENT+= F90=openf90
 ENVIRONMENT+= FC=openf95
 COMPILER_VERSION?= $(shell opencc -dumpversion)
+ifeq (X$(COMPILER_VERSION),X)
+$(error cannot obtain compiler version)
+endif
 COMPILER_TAG?=-open64${COMPILER_VERSION}
 ifneq ($(COMPILER_TAG),-$(COMPILERS))
 $(error "Error compiler mismatch: detected: $(COMPILER_TAG); specified: -$(COMPILERS)")
@@ -46,6 +52,9 @@ ENVIRONMENT+= F77=ifort
 ENVIRONMENT+= F90=ifort
 ENVIRONMENT+= FC=ifort
 COMPILER_VERSION?= $(shell icc -dumpversion)
+ifeq (X$(COMPILER_VERSION), X)
+$(error cannot obtain compiler version)
+endif
 COMPILER_TAG?=-intel${COMPILER_VERSION}
 ifneq ($(COMPILER_TAG),-$(COMPILERS))
 $(error "Error compiler mismatch: detected: $(COMPILER_TAG); specified: -$(COMPILERS)")
