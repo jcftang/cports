@@ -23,6 +23,14 @@ GNU_CONFIGURE=  yes
 CONFIGURE_ARGS +=  $(OPT)
 DESCRIPTION=    "The GNU Hello program produces a familiar, friendly greeting."
 
+#$(eval $(call decide_by_compiler,CPRT_HELLO_FLAG,hellognu,zintel,zoopen))
+#$(info hello flag: $(CPRT_HELLO_FLAG))
+#
+#
+#COMPV= $(shell icc -dumpversion 2>&1 | cat)
+#$(info compv is $(COMPV))
+#
+
 do-blah:
 	$(if $(findstring gnu, $(COMPILERS)), \
 	@echo "gnu compiler",)
