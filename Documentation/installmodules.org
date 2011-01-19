@@ -1,3 +1,5 @@
+#+LINK_HOME: Readme.html
+
 * For full details read the install and readme file in the source tree
   - ensure build tools are installed (e.g., ubuntu: install build-essential)
   - these instructions assume the bash shell
