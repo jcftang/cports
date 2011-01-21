@@ -23,11 +23,12 @@ do-configure:
 	cd $(PROGRAM_PREFIX) ;\
 	$(PROGRAM_PREFIX)/makemake $(PROGRAM_PREFIX) linux g77_gcc ;\
 	$(SED) -i 's,FCOMPL=g77,FCOMPL=gfortran,g' $(PROGRAM_PREFIX)/makefile ;\
-	$(SED) -i 's,FFLAGC=-u -Wall -fPIC -O,FFLAGC=-ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O,g' $(PROGRAM_PREFIX)/makefile
+	$(SED) -i 's,FFLAGC=-u -Wall -fPIC -O,FFLAGC=-ff2c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O,g' $(PROGRAM_PREFIX)/makefile
 
 do-build:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
 	cd $(PROGRAM_PREFIX) ;\
+	$(MAKE) clean ;\
 	$(MAKE) ;\
 	$(MAKE) cpg
 
