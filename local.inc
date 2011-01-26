@@ -102,9 +102,9 @@ int main()
 }
 EOF
 
-    TLOGN "checking the C compiler"
+    TLOGN "checking the C+ compiler"
 
-    unset AC_CFLAGS AC_LDFLAGS
+    unset AC_CXXFLAGS AC_LDFLAGS
 
     if [ "$CXX" ] ; then
 	AC_CXX="$CXX"
@@ -129,20 +129,20 @@ EOF
     if [ $status -eq 0 ]; then
 	TLOG " ok"
 
-	# check that the CFLAGS and LDFLAGS aren't bogus
+	# check that the CXXFLAGS and LDFLAGS aren't bogus
 
-	unset AC_CFLAGS AC_LDFLAGS
+	unset AC_CXXFLAGS AC_LDFLAGS
 
-	if [ "$CFLAGS" ]; then
-	    test "$CFLAGS" && echo "validating CFLAGS=${CFLAGS}"
-	    if $AC_CXX $CFLAGS -o /tmp/ngc$$.o /tmp/ngc$$.cpp ; then
-		AC_CFLAGS=${CFLAGS:-"-g"}
-		test "$CFLAGS" && echo "CFLAGS=\"${CFLAGS}\" are okay"
+	if [ "$CXXFLAGS" ]; then
+	    test "$CXXFLAGS" && echo "validating CXXFLAGS=${CXXFLAGS}"
+	    if $AC_CXX $CXXFLAGS -o /tmp/ngc$$.o /tmp/ngc$$.cpp ; then
+		AC_CFLAGS=${CXXFLAGS:-"-g"}
+		test "$CXXFLAGS" && echo "CXXFLAGS=\"${CXXFLAGS}\" are okay"
 	    elif [ "$CFLAGS" ]; then
-		echo "ignoring bogus CFLAGS=\"${CFLAGS}\""
+		echo "ignoring bogus CFLAGS=\"${CXXFLAGS}\""
 	    fi
 	else
-	    AC_CFLAGS=-g
+	    AC_CXXFLAGS=-g
 	fi
 	if [ "$LDFLAGS" ]; then
 	    test "$LDFLAGS" && echo "validating LDFLAGS=${LDFLAGS}"
@@ -153,7 +153,7 @@ EOF
 		TLOG "ignoring bogus LDFLAGS=\"${LDFLAGS}\""
 	    fi
 	else
-	    AC_LDFLAGS=${CFLAGS:-"-g"}
+	    AC_LDFLAGS=${CXXFLAGS:-"-g"}
 	fi
     else
 	AC_FAIL " does not compile code properly"

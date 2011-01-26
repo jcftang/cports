@@ -951,6 +951,8 @@ AC_OUTPUT () {
     AC_SUB 'CONFIGURE_FILES' "$__config_files"
     AC_SUB 'GENERATED_FILES' "$*"
     AC_SUB 'CFLAGS'  "$AC_CFLAGS"
+    AC_SUB 'FCFLAGS' "$AC_FCFLAGS"
+    AC_SUB 'CXXFLAGS' "$AC_CXXFLAGS"
     AC_SUB 'LDFLAGS' "$AC_LDFLAGS"
     AC_SUB 'srcdir'  "$AC_SRCDIR"
     AC_SUB 'prefix'  "$AC_PREFIX"
