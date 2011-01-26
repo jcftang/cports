@@ -972,7 +972,7 @@ AC_OUTPUT () {
 	Q=\'
 	cat - > config.cmd << EOF
 #! /bin/sh
-${FC:+FC=${Q}${FC}${Q}} ${FFLAGS:+FFLAGS=${Q}${FFLAGS}${Q}} ${CC:+CC=${Q}${CC}${Q}} ${CFLAGS:+CFLAGS=${Q}${CFLAGS}${Q}} $ac_progname $ac_configure_command
+${CXX:+CXX=${Q}${CXX}${Q}} ${CXXFLAGS:+CXXFLAGS=${Q}${CXXFLAGS}${Q}} ${FC:+FC=${Q}${FC}${Q}} ${FCFLAGS:+FCFLAGS=${Q}${FCFLAGS}${Q}} ${CC:+CC=${Q}${CC}${Q}} ${CFLAGS:+CFLAGS=${Q}${CFLAGS}${Q}} $ac_progname $ac_configure_command
 EOF
 	chmod +x config.cmd
 
