@@ -105,3 +105,6 @@ install: all
 
 test:
 	$(MAKE) -C t test
+
+reconfig: Makefile.in
+	./config.cmd
