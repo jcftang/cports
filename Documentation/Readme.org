@@ -172,6 +172,8 @@ installations. More compilers can be added by editting gnu.local.mk
 This method of tagging things isn't straightforward to understand but
 it at least provides a way of systematically creating installations.
 
+If there is a mismatch of version numbers the system will fail early.
+
 *** make can be run with arguments like 
 	- make COMPILERS=intel10.1 install
     if you don't have icc for intel10.1, then make will error straight 
