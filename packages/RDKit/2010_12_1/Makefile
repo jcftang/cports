@@ -1,10 +1,10 @@
 include ../../../mk/gnu.pre.mk
 
 DISTNAME=	RDKit
-VERSION=	Q32010_1beta1
+VERSION=	2010_12_1
 CATEGORIES=	bio
 HOMEPAGE=	http://www.rdkit.org/
-MASTER_SITES=	https://sourceforge.net/projects/rdkit/files/rdkit/Q3_2010
+MASTER_SITES=	http://downloads.sourceforge.net/project/rdkit/rdkit/Q4_2010/
 MAINTAINER=	jtang@tchpc.tcd.ie
 HAS_CONFIGURE=	no
 DISTFILES = 	$(DISTNAME)_$(VERSION).tgz
