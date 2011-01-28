@@ -4,7 +4,7 @@ DISTNAME=	RDKit
 VERSION=	2010_12_1
 CATEGORIES=	bio
 HOMEPAGE=	http://www.rdkit.org/
-MASTER_SITES=	https://sourceforge.net/projects/rdkit/files/rdkit/Q3_2010
+MASTER_SITES=	http://downloads.sourceforge.net/project/rdkit/rdkit/Q4_2010/
 MAINTAINER=	jtang@tchpc.tcd.ie
 HAS_CONFIGURE=	no
 DISTFILES = 	$(DISTNAME)_$(VERSION).tgz
@@ -15,7 +15,7 @@ EXTRAVERSION=
 #
 # need gcc43 or newer to build
 #
-DEPENDS=	"cmake/2.8.2 --build-env"
+DEPENDS=	"cmake/2.8.3 --build-env"
 DEPENDS+=	"Python/2.6.5 --build-env --lib --run-env"
 DEPENDS+=	"sqlite/3.6.23.1 --build-env --lib"
 DEPENDS+=	"bison/2.4.2 --build-env"
