@@ -1,8 +1,0 @@
-Title: munge is probably needed for slurm to be more useful
-UID: lonsdale01.1280418860.P31419M737463
-Added: Thu Jul 29 16:54:20 2010
-Status: open
-
-
-slurm is only compiled with openssl/authnone support munged should be
-added at somepoint if we want the system to be more *scalable* and secure.

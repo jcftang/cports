@@ -1,7 +1,0 @@
-Title: add libmng at some point
-UID: cports-devel.1285679018.P17307M960926
-Added: Tue Sep 28 14:03:38 2010
-Status: open
-
-
-QT4.x seems to want libmng, it might be worth packaging this up as well.

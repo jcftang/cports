@@ -1,8 +1,0 @@
-Title: fontconfig needs pkg-config
-UID: x00.tchpc.tcd.ie.1291483713.P53426M84179
-Added: Sat Dec  4 17:28:33 2010
-Status: open
-
-fontconfig needs pkg-config to configure, should consider in bundling this in the packages
-
-

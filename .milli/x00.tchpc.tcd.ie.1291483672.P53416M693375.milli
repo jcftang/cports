@@ -1,8 +1,0 @@
-Title: libxpm needs gettext to build
-UID: x00.tchpc.tcd.ie.1291483672.P53416M693375
-Added: Sat Dec  4 17:27:52 2010
-Status: open
-
-need add a dependancy for libxpm, it needs xgettext from gettext package
-
-

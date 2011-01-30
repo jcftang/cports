@@ -1,8 +1,0 @@
-Title: Need to test on none RHEL5 like systems
-UID: x00.tchpc.tcd.ie.1280419607.P24690M383749
-Added: Thu Jul 29 17:06:47 2010
-Status: open
-
-
-So far testing has only been done on SL5x/RHEL5x like systems,
-testing should be expanded to RHEL4x/SL4x and Debian/Ubuntu.

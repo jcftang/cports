@@ -1,7 +1,0 @@
-Title: drop libXaw and libXpm
-UID: cports-devel.1284823346.P18512M773670
-Added: Sat Sep 18 16:22:26 2010
-Status: open
-
-
-libXaw and libXpm are apart of xorg, should probably drop these two packages.
