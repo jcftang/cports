@@ -11,7 +11,6 @@ DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
 
 EXTRAVERSION=_Python_2.6.5
 
-DEPENDS+=	"atlas/3.8.3 --build-env"
 DEPENDS+=	"Python/2.6.5 --build-env --run-env"
 
 DESCRIPTION=	"a fast erasure codec which can be used with the command-line, C, Python, or Haskell"
