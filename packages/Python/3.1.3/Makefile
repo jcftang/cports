@@ -5,10 +5,10 @@ include ../../../mk/gnu.pre.mk
 
 
 DISTNAME=	Python
-VERSION=	2.7
+VERSION=	3.1.3
 CATEGORIES=	scripting
 HOMEPAGE=	http://www.python.org/
-MASTER_SITES=	http://www.python.org/ftp/python/2.7/
+MASTER_SITES=	http://www.python.org/ftp/python/3.1.3
 MAINTAINER=	jtang@tchpc.tcd.ie
 GNU_CONFIGURE=	yes
 DISTFILES = $(DISTNAME)-$(VERSION).tar.bz2
@@ -29,5 +29,8 @@ DEPENDS+=       "db/4.8.26 --lib --build-env"
 DEPENDS+=       "sqlite/3.6.23.1 --lib --build-env"
 DEPENDS+=       "openssl/1.0.0a --lib --build-env"
 DEPENDS+=       "zlib/1.2.5 --lib --build-env"
+
+DO_RUN_TESTS=	yes
+TEST_TARGET=	test
 
 include ../../../mk/gnu.post.mk
