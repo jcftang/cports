@@ -5,10 +5,10 @@ include ../../../mk/gnu.pre.mk
 
 
 DISTNAME=	Python
-VERSION=	2.7
+VERSION=	3.0.1
 CATEGORIES=	scripting
 HOMEPAGE=	http://www.python.org/
-MASTER_SITES=	http://www.python.org/ftp/python/2.7/
+MASTER_SITES=	http://www.python.org/ftp/python/3.0.1
 MAINTAINER=	jtang@tchpc.tcd.ie
 GNU_CONFIGURE=	yes
 DISTFILES = $(DISTNAME)-$(VERSION).tar.bz2
@@ -18,6 +18,9 @@ EXTRAVERSION=
 DESCRIPTION=	"Python is a remarkably powerful dynamic programming language that is used in a wide variety of application domains. "
 
 CONFIGURE_ARGS +=
+
+DO_RUN_TESTS=	yes
+TEST_TARGET=	test
 
 DEPENDS+=       "bzip2/1.0.5 --lib --build-env"
 DEPENDS+=       "tk/8.5.8 --lib --build-env"
