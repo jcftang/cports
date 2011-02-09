@@ -1111,7 +1111,7 @@ do-buil%:
 do-tes%:
 	$(MODULE_ADD) $(BUILD_DEPENDS);			\
 	$(ECHO_MSG) "Testing for package $(DISTNAME)-$(VERSION)";			\
-	cd $(WRKSRC) && $(SETENV) $(MAKE_ENV) $(MAKE_PROGRAM) $(MAKE_FLAGS) -f $(MAKEFILE) $(TEST_TARGET) 2>&1 | tee $(CURDIR)/testlog
+	cd $(WRKSRC) && $(SETENV) $(MAKE_ENV) $(MAKE_PROGRAM) $(MAKE_FLAGS) -f $(MAKEFILE) $(TEST_TARGET) 2>&1 | tee $(CURDIR)/do-test.log
 
 #
 # Many packages don't use install-info to build a dir file.
@@ -1479,7 +1479,7 @@ clean: do-clean
 do-clea%:
 	$(QUIET) $(RM_RF) $(WORKDIR)
 	$(QUIET) $(RM) *~
-	$(QUIET) if [ -e testlog ]; then $(RM) testlog; fi
+	$(QUIET) if [ -e do-test.log ]; then $(RM) do-test.log; fi
 
 remove-distribution-files:
 	$(QUIET) $(MAKE) clean
