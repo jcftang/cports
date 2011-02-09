@@ -26,7 +26,7 @@ MODULEFILE_CMD_PYTHONPATH?= \
 do-fetch:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
 	cd $(WORKDIR); \
-	git clone https://github.com/apenwarr/$(DISTNAME).git $(DISTNAME)
+	git clone git://github.com/apenwarr/$(DISTNAME).git $(DISTNAME)
 
 do-build:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
