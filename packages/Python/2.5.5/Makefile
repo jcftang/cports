@@ -19,4 +19,20 @@ DESCRIPTION=	"Python is a remarkably powerful dynamic programming language that 
 
 CONFIGURE_ARGS +=
 
+DEPENDS+=	"bzip2/1.0.5 --lib --build-env"
+DEPENDS+=	"tk/8.5.8 --lib --build-env"
+DEPENDS+=	"tcl/8.5.8 --lib --build-env"
+DEPENDS+=	"ncurses/5.7 --build-env --lib"
+DEPENDS+=	"readline/6.1 --build-env --lib"
+DEPENDS+=	"texinfo/4.13 --build-env"
+DEPENDS+=	"db/4.8.26 --lib --build-env"
+DEPENDS+=	"sqlite/3.6.23.1 --lib --build-env"
+DEPENDS+=	"openssl/1.0.0a --lib --build-env"
+DEPENDS+=	"zlib/1.2.5 --lib --build-env"
+
+EXTRAVERSION=
+
+DO_RUN_TESTS=yes
+TEST_TARGET=          test
+
 include ../../../mk/gnu.post.mk
