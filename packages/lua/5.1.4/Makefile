@@ -21,7 +21,7 @@ DEPENDS+=	"ncurses/5.7 --lib --build-env"
 do-build:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
         cd $(WRKSRC); \
-	$(MAKE) INSTALL_TOP=$(PROGRAM_PREFIX) $(ALL_TARGET)
+	 $(MAKE) CC='gcc -fPIC '  INSTALL_TOP=$(PROGRAM_PREFIX) $(ALL_TARGET)
 
 do-install:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
