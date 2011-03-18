@@ -3,13 +3,20 @@ VERSION=$(shell git describe)
 DISTNAME=cports
 DISTFILE=$(DISTNAME)-$(VERSION)
 
+ifeq ($(shell which zsyncmake),)
+ZSYNCMAKE=@echo "** zsyncmake not found, skipping creating of zsync file" >&2; true
+else
+ZSYNCMAKE=zsyncmake
+endif
+
 default: bootstrap
 
 dist: do-dist
 
-do-dist: $(DISTFILE).tar.bz2.sha1sum
-	@mv $(DISTFILE).tar.bz2.sha1sum releases
-	@mv $(DISTFILE).tar.bz2 releases
+do-dist: $(DISTFILE).tar.bz2.sha1sum $(DISTFILE).tar.bz2.zsync
+	@mv $(DISTFILE).tar.bz2.sha1sum releases/
+	@mv $(DISTFILE).tar.bz2 releases/
+	@if [ -f $(DISTFILE).tar.bz2.zsync ] ; then mv $(DISTFILE).tar.bz2.zsync releases/; fi
 
 $(DISTFILE).tar:
 	@mkdir -p releases
@@ -20,6 +27,9 @@ $(DISTFILE).tar.bz2: $(DISTFILE).tar
 
 $(DISTFILE).tar.bz2.sha1sum: $(DISTFILE).tar.bz2
 	@openssl sha1 $(DISTFILE).tar.bz2 > $(DISTFILE).tar.bz2.sha1sum
+
+$(DISTFILE).tar.bz2.zsync: $(DISTFILE).tar.bz2
+	@$(ZSYNCMAKE) -u $(DISTFILE).tar.bz2 $(DISTFILE).tar.bz2
 
 clean: Documentation/clean
 	#@-rm $(DISTFILE).tar
