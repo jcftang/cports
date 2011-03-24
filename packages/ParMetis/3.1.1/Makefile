@@ -11,7 +11,7 @@ DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
 
 EXTRAVERSION= 
 
-TDEPEND="openmpi/1.4.2 --build-env openmpi/1.4.2 --run-env" 
+TDEPEND="openmpi/1.4.3 --build-env openmpi/1.4.3 --run-env" 
 DEPENDS+=$(TDEPEND)
 
 DESCRIPTION=	"ParMETIS is an MPI-based parallel library that implements a variety of algorithms for partitioning unstructured graphs, meshes, and for computing fill-reducing orderings of sparse matrices."
