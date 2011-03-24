@@ -38,7 +38,7 @@ endif
 $(info BLAS: CPRT_PETSC_BLAS: $(CPRT_PETSC_BLAS); DEPEND: $(DEPENDS))
 
 DEPENDS+="openmpi/1.4.3 --lib --build-env --run-env"
-DEPENDS+="ParMetis/3.1.1 --lib --build-env"
+DEPENDS+="ParMetis/3.1.1_openmpi_1.4.3 --lib --build-env"
 
 CPRT_PETSC_LDFLAGS =  
 
