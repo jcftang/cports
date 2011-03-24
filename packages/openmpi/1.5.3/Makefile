@@ -11,7 +11,7 @@ DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
 
 EXTRAVERSION=
 
-CONFIGURE_ARGS+= CFLAGS="-O2" CXXFLAGS="-O2" --without-mpi-profile
+CONFIGURE_ARGS+= CFLAGS="-O2" CXXFLAGS="-O2" --with-threads
 
 ifeq ($(COMPILERS),intel10.1)
 CONFIGURE_ARGS+=--with-wrapper-cflags=-shared-intel
