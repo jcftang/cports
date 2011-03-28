@@ -13,6 +13,8 @@ DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
 
 EXTRAVERSION=
 
+DEPENDS+= "gmp/4.3.2 --build-env --lib"
+
 DESCRIPTION=	"PolyLib - A library of polyhedral functions"
 
 

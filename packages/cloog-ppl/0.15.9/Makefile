@@ -13,7 +13,13 @@ DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
 
 EXTRAVERSION=
 
-DEPENDS+= "ppl/0.10.2 --build-env"
+DEPENDS+= "ppl/0.10.2 --build-env --lib"
+DEPENDS+= "gmp/4.3.2 --build-env --lib"
+DEPENDS+= "polylib/5.22.5 --build-env --lib"
+
+CONFIGURE_ARGS += --with-polylib-dir=$(PREFIX_polylib)
+CONFIGURE_ARGS += --with-gmp=$(PREFIX_gmp)
+CONFIGURE_ARGS += --with-ppl=$(PREFIX_ppl)
 
 DESCRIPTION=	"CLooG is a software which generates loops for scanning Z-polyhedra."
 

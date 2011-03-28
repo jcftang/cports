@@ -15,6 +15,6 @@ EXTRAVERSION=
 
 DESCRIPTION=	"GMP: a free library for arbitrary precision arithmetic"
 
-CONFIGURE_ARGS += "--enable-mpfr"
+CONFIGURE_ARGS+= --enable-mpfr --enable-cxx
 
 include ../../../mk/gnu.post.mk
