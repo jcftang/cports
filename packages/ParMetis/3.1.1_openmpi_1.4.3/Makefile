@@ -9,9 +9,9 @@ MAINTAINER=	darach@tchpc.tcd.ie
 HAS_CONFIGURE = no
 DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
 
-EXTRAVERSION=
+EXTRAVERSION=$(strip _openmpi_1.4.3)
 
-TDEPEND="openmpi/1.4.2 --build-env openmpi/1.4.2 --run-env" 
+TDEPEND="openmpi/1.4.3 --build-env openmpi/1.4.3 --run-env" 
 DEPENDS+=$(TDEPEND)
 
 DESCRIPTION=	"ParMETIS is an MPI-based parallel library that implements a variety of algorithms for partitioning unstructured graphs, meshes, and for computing fill-reducing orderings of sparse matrices."
