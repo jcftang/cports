@@ -50,7 +50,7 @@ MODULEFILE_CMD_LIBPATH= \
 		$(ECHO) "prepend-path LIBRARY_PATH $(PROGRAM_PREFIX)/$(CPRT_ACML_INST_DIR)/lib"; \
 		$(ECHO) "prepend-path LD_RUN_PATH $(PROGRAM_PREFIX)/$(CPRT_ACML_INST_DIR)/lib";
 
-$(info moduels $(PROGRAM_PREFIX)/$(CPRT_ACML_INST_DIR)/lib)
+$(info modules $(PROGRAM_PREFIX)/$(CPRT_ACML_INST_DIR)/lib)
 
 
 do-configure:
