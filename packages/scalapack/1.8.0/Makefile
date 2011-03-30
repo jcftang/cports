@@ -62,7 +62,11 @@ do-install:
 	cd $(WORKDIR); \
 	$(ECHO) $(CPRT_SCLPK_CONFIG_ARGS); \
 	cd scalapack_installer_0.96 ; \
-	python ./setup.py $(CPRT_SCLPK_CONFIG_ARGS)
+	python ./setup.py $(CPRT_SCLPK_CONFIG_ARGS);
+	cd $(PROGRAM_PREFIX)/lib; \
+	cp blacs.a libblacs.a; \
+	cp blacsC.a libblacsC.a; \
+	cp blacsF77.a libblacsF77.a	
 
 
 include ../../../mk/gnu.post.mk
