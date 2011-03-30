@@ -20,15 +20,15 @@ of scientific applications modeled by partial differential equations "
 MODULEFILE_CONFLICTS += petsc-directsolve
 
 ## I want to make things more complicated so: BLAS configuration!!
-CPRT_PETSC_BLAS?= acml
+CPRT_PETSC_BLAS?=mkl
 
 ifeq ("$(CPRT_PETSC_BLAS)","atlas")
 DEPENDS+="atlas/3.8.3 --lib --build-env"
 CONFIGURE_ARGS +=  --with-blas-lapack-dir=$(PREFIX_atlas)
 endif
 ifeq ("$(CPRT_PETSC_BLAS)","mkl")
-DEPENDS+="mkl/11111 --lib --build-env"
-CONFIGURE_ARGS +=  --with-blas-lapack-dir=$(PREFIX_mkl)
+DEPENDS+="l_mkl_p/10.2.2.025 --lib --build-env"
+CONFIGURE_ARGS +=  --with-blas-lapack-dir=$(PREFIX_l_mkl_p)
 endif
 ifeq ("$(CPRT_PETSC_BLAS)","acml")
 DEPENDS+="acml-nosmp/4-4-0 --lib --build-env"
