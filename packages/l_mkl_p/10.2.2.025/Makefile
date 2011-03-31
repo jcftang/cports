@@ -20,6 +20,12 @@ PKGSUBDIR=	$(DISTNAME)_$(VERSION)
 
 DESCRIPTION=	"Intel MKL"
 
+CPRT_MKL_LIBSUBDIR:=em64t
+CPRT_MKL_LIBSUBDIR:=$(strip $(if $(findstring IA_64,$(SYSTEM_TYPE_CPU)),64,$(CPRT_MKL_LIBSUBDIR)))
+CPRT_MKL_LIBSUBDIR:=$(strip $(if $(findstring 32,$(SYSTEM_TYPE_CPU)),32,$(CPRT_MKL_LIBSUBDIR)))
+
+$(warning mkl lib subdir: $(CPRT_MKL_LIBSUBDIR))
+
 MODULEFILE_LINES+=      MKL
 MODULEFILE_CMD_MKL?= \
         $(ECHO) "setenv  MKLROOT $(PROGRAM_PREFIX)"; \
@@ -31,6 +37,11 @@ MODULEFILE_CMD_INCLUDEPATH= \
                 $(ECHO) "prepend-path INCLUDE_PATH $(PROGRAM_PREFIX)/include"; \
                 $(ECHO) "prepend-path CPLUS_INCLUDE_PATH $(PROGRAM_PREFIX)/include"; \
                 $(ECHO) "prepend-path C_INCLUDE_PATH $(PROGRAM_PREFIX)/include";
+
+MODULEFILE_CMD_LIBPATH= \
+                $(ECHO) "prepend-path LD_LIBRARY_PATH $(PROGRAM_PREFIX)/lib/$(CPRT_MKL_LIBSUBDIR)"; \
+                $(ECHO) "prepend-path LD_RUN_PATH $(PROGRAM_PREFIX)/lib/$(CPRT_MKL_LIBSUBDIR)"; \
+                $(ECHO) "prepend-path LIBRARY_PATH $(PROGRAM_PREFIX)/lib/$(CPRT_MKL_LIBSUBDIR)";
 
 MODULEFILE_CMD_MANPATH+= \
 	 $(ECHO) "prepend-path MANPATH $(PROGRAM_PREFIX)/man/$(CPRT_MKL_MAN_LANG)";
