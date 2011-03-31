@@ -12,11 +12,37 @@ MAINTAINER=	jtang@tchpc.tcd.ie
 GNU_CONFIGURE=	yes
 DISTFILES = $(DISTNAME)_installer.tgz $(DISTNAME)-$(VERSION).tgz 
 
-EXTRAVERSION=_openmpi_1.4.2
-DEPENDS+="openmpi/1.4.2 --build-env --run-env"
-DEPENDS+="atlas/3.8.3 --build-env --run-env --lib"
+## this should be (so far): acml-nosmp, acml-smp, atlas; anything else will
+## probably cause confusion
+CPRT_SCLPK_BLAS?=acml-nosmp
 
-CONFIGURE_ARGS+= 
+ifeq ($(findstring atlas,$(CPRT_SCLPK_BLAS)),atlas)
+DEPENDS+="atlas/3.8.3 --lib --build-env"
+CPRT_SCLPK_CONFIG_ARGS +=   --blaslib="-lcblas -lf77blas -latlas"
+CPRT_SCLPK_CONFIG_ARGS +=   --lapacklib=$(PREFIX_atlas)/lib/liblapack.so
+endif
+ifeq ($(findstring acml,$(CPRT_SCLPK_BLAS)),acml)
+DEPENDS+="$(CPRT_SCLPK_BLAS)/4-4-0 --lib --build-env"
+CPRT_SCLPK_CONFIG_ARGS +=   --blaslib="$(PREFIX_acml-nosmp)/lib/libacml.so"
+CPRT_SCLPK_CONFIG_ARGS +=  --lapacklib=$(PREFIX_acml-nosmp)/lib/libacml.so
+endif
+## no mkl for scalapack
+#ifeq ("$(CPRT_PETSC_BLAS)","mkl")
+#DEPENDS+="l_mkl_p/10.2.2.025 --lib --build-env"
+#CPRT_SCLPK_CONFIG_ARGS +=  --with-blas-lapack-dir=$(PREFIX_l_mkl_p)
+#endif
+
+EXTRAVERSION=_openmpi_1.4.3-$(CPRT_SCLPK_BLAS)
+
+DEPENDS+="openmpi/1.4.3 --build-env --run-env"
+
+CPRT_SCLPK_CONFIG_ARGS+= --fcflags="-O3 -fPIC" --ccflags="-O3 -fPIC" \
+                 --downblacs --prefix=$(PROGRAM_PREFIX)
+CPRT_SCLPK_CONFIG_ARGS+=$(strip $(if $(findstring intel,$(COMPILERS)),--ldflags_c="-nofor-main",))
+# icc/ifort specific
+
+$(warning configure args: $(CPRT_SCLPK_CONFIG_ARGS))
+$(warning depends $(DEPENDS))
 
 ifndef COMPILERS
 COMPILERS?=gnu
@@ -28,86 +54,19 @@ do-configure:
 	@
 
 do-build:
-# gcc/gfortran, default is the gnu compiler
-ifeq ("$(COMPILERS)","gnu")
-	mkdir -p $(PROGRAM_PREFIX);
-	$(QUIET) $(MODULE_ADD) $(BUILD_DEPENDS);                        \
-	cd $(WORKDIR); \
-	cd scalapack_installer_0.96 ; \
-	python ./setup.py \
-	--fcflags="-O3 -fPIC" \
-	--ccflags="-O3 -fPIC" \
-	--downblacs \
-	--blaslib="-lcblas -lf77blas -latlas" \
-	--lapacklib="$(PREFIX_atlas)/lib/liblapack.so" \
-	--prefix=$(PROGRAM_PREFIX)
-	
-	# rely on atlas for this
-	#--downlapack \
-	#--f90 mpif90 \
-	#--downblas \
-
-endif
-ifeq ("$(COMPILERS)","gnu4.5.0")
-	mkdir -p $(PROGRAM_PREFIX);
-	$(QUIET) $(MODULE_ADD) $(BUILD_DEPENDS);                        \
-	cd $(WORKDIR); \
-	cd scalapack_installer_0.96 ; \
-	python ./setup.py \
-	--fcflags="-O3 -fPIC" \
-	--ccflags="-O3 -fPIC" \
-	--downblacs \
-	--blaslib="-lcblas -lf77blas -latlas" \
-	--lapacklib="$(PREFIX_atlas)/lib/liblapack.so" \
-	--prefix=$(PROGRAM_PREFIX)
-	
-	# rely on atlas for this
-	#--downlapack \
-	#--f90 mpif90 \
-	#--downblas \
-
-endif
-ifeq ("$(COMPILERS)","gnu4.5.1")
-	mkdir -p $(PROGRAM_PREFIX);
-	$(QUIET) $(MODULE_ADD) $(BUILD_DEPENDS);                        \
-	cd $(WORKDIR); \
-	cd scalapack_installer_0.96 ; \
-	python ./setup.py \
-	--fcflags="-O3 -fPIC" \
-	--ccflags="-O3 -fPIC" \
-	--downblacs \
-	--blaslib="-lcblas -lf77blas -latlas" \
-	--lapacklib="$(PREFIX_atlas)/lib/liblapack.so" \
-	--prefix=$(PROGRAM_PREFIX)
-	
-	# rely on atlas for this
-	#--downlapack \
-	#--f90 mpif90 \
-	#--downblas \
-
-endif
-
-
-
-# icc/ifort specific
-ifeq ("$(COMPILERS)","intel11.0")
-	mkdir -p $(PROGRAM_PREFIX);
-	$(QUIET) $(MODULE_ADD) $(BUILD_DEPENDS);                        \
-	cd $(WORKDIR); \
-	cd scalapack_installer_0.96 ; \
-	python ./setup.py \
-	--ldflags_c="-nofor-main" \
-	--fcflags="-O3 -fPIC" \
-	--ccflags="-O3 -fPIC" \
-	--downblacs \
-	--blaslib="-lcblas -lf77blas -latlas" \
-	--lapacklib="$(PREFIX_atlas)/lib/liblapack.so" \
-	--prefix=$(PROGRAM_PREFIX)
-
-endif
-
+	@
 
 do-install:
-	@
+	mkdir -p $(PROGRAM_PREFIX);
+	$(QUIET) $(MODULE_ADD) $(BUILD_DEPENDS);                        \
+	cd $(WORKDIR); \
+	$(ECHO) $(CPRT_SCLPK_CONFIG_ARGS); \
+	cd scalapack_installer_0.96 ; \
+	python ./setup.py $(CPRT_SCLPK_CONFIG_ARGS);
+	cd $(PROGRAM_PREFIX)/lib; \
+	cp blacs.a libblacs.a; \
+	cp blacsC.a libblacsC.a; \
+	cp blacsF77.a libblacsF77.a	
+
 
 include ../../../mk/gnu.post.mk
