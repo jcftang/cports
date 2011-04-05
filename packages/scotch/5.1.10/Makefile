@@ -1,7 +1,7 @@
 include ../../../mk/gnu.pre.mk
 
 DISTNAME=	scotch
-VERSION=	5.1.10a_esmumps
+VERSION=	5.1.10
 CATEGORIES=	parallel
 MAINTAINER=	darach@tchpc.tcd.ie
 
@@ -11,7 +11,7 @@ DISTFILES+=	$(DISTNAME)_$(VERSION).tar.gz
 
 #MODULELINES=	"prepend-path PATH	$(PROGRAM_PREFIX)/bin"
 
-DEPENDS+=	"openmpi/1.4.2 --build-env openmpi/1.4.2 --run-env "
+DEPENDS+=	"openmpi/1.4.3 --build-env openmpi/1.4.3 --run-env "
 DEPENDS+=	"zlib/1.2.5 --build-env --lib"
 
 HAS_CONFIGURE=	no
@@ -35,7 +35,7 @@ CPRT_SCOTCH_MAKEINC = Makefile.inc.i686_mac_darwin8
 endif
 
 do-configure:
-	echo "configureing"
+	echo "configuring"
 	cd $(SOURCEDIR)/$(DISTNAME)_$(VERSION)/src/Make.inc; \
 	mv $(CPRT_SCOTCH_MAKEINC) make.inc.tmp.cprt; \
 	$(SED) -e "s|CCD.*=\(.*\)|CCD		=\1 -I$(PREFIX_openmpi)/include|" make.inc.tmp.cprt | \
