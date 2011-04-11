@@ -18,6 +18,8 @@ HAS_CONFIGURE=	no
 
 #CONFIGURE_ARGS+=
 
+PKGSUBDIR=scotch_$(VERSION)a_esmumps
+
 DESCRIPTION=	"Software package and libraries for sequential and parallel graph partitioning, static mapping, and sparse matrix block ordering, and sequential mesh and hypergraph partitioning"
 
 #do-fetch:
@@ -36,16 +38,16 @@ endif
 
 do-configure:
 	echo "configuring"
-	cd $(SOURCEDIR)/$(DISTNAME)_$(VERSION)/src/Make.inc; \
+	cd $(SOURCEDIR)/$(PKGSUBDIR)/src/Make.inc; \
 	mv $(CPRT_SCOTCH_MAKEINC) make.inc.tmp.cprt; \
 	$(SED) -e "s|CCD.*=\(.*\)|CCD		=\1 -I$(PREFIX_openmpi)/include|" make.inc.tmp.cprt | \
 	$(SED) -e "s|\(CFLAGS.*\)|\1 -fPIC|" > $(CPRT_SCOTCH_MAKEINC); \
 	cd ..; \
-	ln -s Make.inc/$(CPRT_SCOTCH_MAKEINC) Makefile.inc;  
+	ln -sf Make.inc/$(CPRT_SCOTCH_MAKEINC) Makefile.inc;  
 
 do-build:
 	$(MODULE_ADD) $(BUILD_DEPENDS); \
-	cd $(SOURCEDIR)/$(DISTNAME)_$(VERSION)/src; \
+	cd $(SOURCEDIR)/$(PKGSUBDIR)/src; \
 	make scotch; \
 	make ptscotch;
 
@@ -57,9 +59,9 @@ do-install:
 	$(MKDIR) $(PROGRAM_PREFIX)/share;
 	$(MKDIR) $(PROGRAM_PREFIX)/man;
 	$(MODULE_ADD) $(BUILD_DEPENDS); \
-	cd $(SOURCEDIR)/$(DISTNAME)_$(VERSION)/src; \
+	cd $(SOURCEDIR)/$(PKGSUBDIR)/src; \
 	make prefix=$(PROGRAM_PREFIX) install;
-	$(INSTALL) -m 755 $(SOURCEDIR)/$(DISTNAME)_$(VERSION)/lib/lib*.* $(PROGRAM_PREFIX)/lib
+	$(INSTALL) -m 755 $(SOURCEDIR)/$(PKGSUBDIR)/lib/lib*.* $(PROGRAM_PREFIX)/lib
 
 include ../../../mk/gnu.post.mk
 
