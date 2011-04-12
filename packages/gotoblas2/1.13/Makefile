@@ -9,9 +9,9 @@ CATEGORIES=     test
 HOMEPAGE=       http://www.tacc.utexas.edu/tacc-projects/gotoblas2/
 MASTER_SITES=   http://www.tacc.utexas.edu/fileadmin/images/
 MAINTAINER=     darach@tchpc.tcd.ie
-GNU_CONFIGURE=  yes
+GNU_CONFIGURE=  no
 CONFIGURE_ARGS +=  $(OPT)
-DESCRIPTION=    "Ooptimised BLAS.  Currently not in development.  Moved to BSD license in 2010"
+DESCRIPTION=    "Optimised BLAS.  Currently not in development.  Moved to BSD license in 2010"
 
 do-configure:
 	echo "configure dummy"
@@ -19,7 +19,7 @@ do-configure:
 do-build:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
 	cd $(WRKSRC); \
-	make FC=gfortran BINARY=64
+	make
 
 do-install:
 	$(MKDIR) $(PROGRAM_PREFIX)/lib;
