@@ -10,6 +10,7 @@ CPRT_COMPILER_CLASS:=nocompiler
 CPRT_COMPILER_CLASS:=$(strip $(if $(findstring intel, $(COMPILERS)),intel,$(CPRT_COMPILER_CLASS)))
 CPRT_COMPILER_CLASS:=$(strip $(if $(findstring gnu, $(COMPILERS)),gnu,$(CPRT_COMPILER_CLASS)))
 CPRT_COMPILER_CLASS:=$(strip $(if $(findstring open, $(COMPILERS)),open64,$(CPRT_COMPILER_CLASS)))
+CPRT_COMPILER_CLASS:=$(strip $(if $(findstring pcc, $(COMPILERS)),pcc,$(CPRT_COMPILER_CLASS)))
 
 #$(info CPRT_COMPILER_CLASS is $(CPRT_COMPILER_CLASS))
 
@@ -56,6 +57,18 @@ ifeq (X$(COMPILER_VERSION), X)
 $(error cannot obtain compiler version)
 endif
 COMPILER_TAG?=-intel${COMPILER_VERSION}
+ifneq ($(COMPILER_TAG),-$(COMPILERS))
+$(error "Error compiler mismatch: detected: $(COMPILER_TAG); specified: -$(COMPILERS)")
+endif
+endif
+
+ifeq (pcc,$(CPRT_COMPILER_CLASS))
+ENVIRONMENT+= CC=pcc
+COMPILER_VERSION?= $(shell pcc --version | awk '{print $$2}' | sed -e s/.RELEASE//g)
+ifeq (X$(COMPILER_VERSION), X)
+$(error cannot obtain compiler version)
+endif
+COMPILER_TAG?=-pcc${COMPILER_VERSION}
 ifneq ($(COMPILER_TAG),-$(COMPILERS))
 $(error "Error compiler mismatch: detected: $(COMPILER_TAG); specified: -$(COMPILERS)")
 endif
