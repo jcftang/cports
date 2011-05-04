@@ -45,7 +45,7 @@ do-test:
 #       make install
 
 #R_MODULES+=	outliers rbugs Rmpi
-R_MODULES+=	outliers rbugs rlecuyer Rmpi snow snowfall
+R_MODULES+=	outliers rbugs rlecuyer Rmpi snow snowfall haplo.stats
 
 include ../../../mk/prg.R.mk
 include ../../../mk/gnu.post.mk
