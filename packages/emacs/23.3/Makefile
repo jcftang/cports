@@ -40,6 +40,7 @@ DEPENDS+=	"libXaw/1.0.7 --lib --build-env"
 DEPENDS+=	"a2ps/4.14 --run-env --build-env"
 DEPENDS+=	"pixman/0.18.2 --build-env --lib"
 DEPENDS+=	"coreutils/8.5 --build-env"
+DEPENDS+=	"netpbm/10.35.77 --build-env --lib"
 #if you want gtk the following is the minimum needed, pixman might go here as well
 DEPENDS+=	"gtk+/2.20.1 --build-env --lib"
 DEPENDS+=	"atk/1.30.0 --build-env --lib"
