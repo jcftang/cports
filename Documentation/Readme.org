@@ -211,6 +211,7 @@ gcc 4.1.2 unless otherwise stated
 * List of apps that are binary installs
  - darcs
  - ghc
+ - apache-ant
 * Changelog - OLD
 - Fork of cports from caoslinux, which in turn is a fork of mpkg
 - Fix up modulefile naming convention
@@ -240,7 +241,7 @@ Some packages that tend to get installed quite early and quickly.
 - R
 - Octave
 - Emacs
-- topgit/git
+- topgit/git/gitflow
 - Grace
 - OpenMPI
 - Scipy/Numpy
