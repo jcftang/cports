@@ -13,7 +13,7 @@ include ../../../mk/gnu.pre.mk
 DISTNAME=	SuiteSparse
 VERSION=	3.4.0
 METISNAME=	metis
-METISVERSION=	4.0
+METISVERSION=	4.0.3
 CATEGORIES=	numerical
 MAINTAINER=     darach@tchpc.tcd.ie
 HOMEPAGE=       http://www.cise.ufl.edu/research/sparse/SuiteSparse/
