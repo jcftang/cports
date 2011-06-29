@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>install</title>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+<link rel="stylesheet" href="local.css" type="text/css" />
+
+
+
+
+
+</head>
+<body>
+
+<div class="page">
+
+<div class="pageheader">
+<div class="header">
+<span>
+<span class="parentlinks">
+
+<a href="./index.html">cports</a>/ 
+
+</span>
+<span class="title">
+install
+
+</span>
+</span>
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+<div id="pagebody">
+
+<div id="content">
+<h2>Requirements</h2>
+
+<h3>Required software</h3>
+
+<ul>
+<li>gnu make</li>
+<li>gcc, g++ and gfortran (and basic devel, compile tools etc...)</li>
+<li>wget</li>
+<li>texinfo</li>
+<li>environment-modules - <a href="./install_modules.html">install modules</a></li>
+</ul>
+
+<p>you can do a "make check-environment" to see if you meet the basic
+requirements.</p>
+
+<h3>Required devel packages/software if you wish to build X11 programs</h3>
+
+<p>This list was compiled from a SL55 machine</p>
+
+<ul>
+<li>freeglut-devel</li>
+<li>libICE-devel</li>
+<li>libSM-devel</li>
+<li>libX11-devel</li>
+<li>libXau-devel</li>
+<li>libXdmcp-devel</li>
+<li>libXext-devel</li>
+<li>libXft-devel</li>
+<li>libXmu-devel</li>
+<li>libXp-devel</li>
+<li>libXpm-devel</li>
+<li>libXrender-devel</li>
+<li>libXt-devel</li>
+<li>mesa-libGL-devel</li>
+<li>xorg-x11-proto-devel</li>
+</ul>
+
+<p>On a Debian 5.x system (this list isn't complete)</p>
+
+<ul>
+<li>libx11-dev</li>
+<li>libxext-dev</li>
+<li>libxmu-dev</li>
+<li>x11proto-xext-dev</li>
+<li>libxpm-dev</li>
+<li>libxrender-dev</li>
+<li>x11proto-render-dev</li>
+<li>mesa-common-dev</li>
+<li>freeglut3-dev</li>
+</ul>
+
+<h2>Installation and configuration</h2>
+
+<ul>
+<li>Unpack cports-?.tar.bz2 to somewhere (I usually put it into
+${HOME}/develop/cports)</li>
+<li>run the ./configure.sh script to check if you have the basic
+requirements installed, this configure script will also setup a
+default install prefix for the programs to be installed from
+cports.
+<ul>
+<li>e.g. you can do <em>./configure.sh --prefix=/tmp/cports</em> this will
+configure cports to install anything built from cports into
+<em>/tmp/cports</em>. The configure script will also generate a sample
+module file for you to copy into your global modulefile
+directory.</li>
+</ul></li>
+<li>Optional - Do more configuring of cports by editing
+ ${PREFIX}/mk-conf/config.mk</li>
+<li>Configure environment modules either at the system level or in
+your own home directory in ${HOME}/privatemodules/cports see
+${PREFIX}/cports.modulefile cports make sure the paths in here
+correspond to the MODULEDIR variable in
+${PREFIX}/mk-conf/config.mk. Look in cports/mk/gnu.def.mk or
+cports/mk/config.mk for some default options that you can override
+and or set. Or just copy the <em>cports.modulefile</em> to your
+modulefile directory.</li>
+<li>cd into <em>cports/scripts</em> and run the <em>distro.guess</em> script, if it
+outputs 'unknown.*' then add a new check for your distro. This
+step isn't strictly needed, but it does provide your installed
+target with some useful information.</li>
+<li>cd into <em>cports/packages/bootstrap/1.0</em> and type <em>make install</em>,
+this will try and install the basic packages needed to build the
+rest of the system.</li>
+<li>cd into <em>cports/packages/bootstrap/2.0</em> and type <em>make do-cleaz</em>
+and <em>make install</em> to get gettext and libiconv to behave
+correctly.</li>
+</ul>
+
+<h2>Proxies</h2>
+
+<ul>
+<li>many people have a <code>http_proxy</code> variable set in their shell config.
+ However make installs often fail on ftp download attempts. So you
+ should set an <code>ftp_proxy</code> variable as well.  For example, 
+ <code>ftp_proxy=http://proxy.yourdomain.ie:80</code>.  This works in our
+ setup. Yours may be different. Some packages even require that a
+ <code>https_proxy</code> variable be set 
+ (e.g. <code>https_proxy=https://proxy.yourdomain.ie:80</code>)</li>
+</ul>
+
+</div>
+
+
+
+<div id="comments">
+
+
+
+
+<div class="addcomment">Comments on this page are closed.</div>
+
+</div>
+
+
+
+</div>
+
+<div id="footer" class="pagefooter">
+
+<div id="pageinfo">
+
+
+
+
+<div id="backlinks">
+Links:
+
+<a href="./index.html">index</a>
+
+
+</div>
+
+
+
+
+
+
+<div class="pagedate">
+Last edited <span class="date">Wed 29 Jun 17:31:13 2011</span>
+<!-- Created <span class="date">Wed 29 Jun 17:18:32 2011</span> -->
+</div>
+
+</div>
+
+
+<!-- from cports -->
+</div>
+
+</div>
+
+</body>
+</html>

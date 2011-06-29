@@ -41,17 +41,232 @@ cports
 </div>
 
 
+<div class="sidebar">
+<p><img src="./tchpc_icon128x128.png" width="128" height="128" class="img" /></p>
+
+<ul>
+<li><a href="./install.html">install</a></li>
+<li><a href="./usage.html">usage</a></li>
+<li><a href="./todo.html">todo</a></li>
+<li><span class="createlink">contact</span></li>
+<li><span class="createlink">copyright</span></li>
+</ul>
+
+</div>
+
 
 <div id="pagebody">
 
 <div id="content">
-<p>Welcome to your new wiki.</p>
+<h2>Why fork cports</h2>
 
-<p>All wikis are supposed to have a <a href="./sandbox.html">SandBox</a>, so this one does too.</p>
+<ul>
+<li>Needed more than just one version of gcc, intel, pgi builds of
+software</li>
+<li>Needed more control with being able to add packages</li>
+<li>Needed more variables put into the modulefiles</li>
+<li>Needed repeatable and documented methods of installing libraries
+and applications</li>
+<li>Didn't care too much about generating portable objects, and since
+it's dervived from a derived piece of work it just makes life
+easier.</li>
+<li>Why not use Gentoo, NetBSD ports, packaging system XYZ?
+<ul>
+<li>most of the other systems are not as easily hackable as just
+makefiles</li>
+<li>don't allow multiple verisons of software installed</li>
+</ul></li>
+<li>Wanted to extend the modulefile generation targets to include these
+variables
+<ul>
+<li>INCLUDE<em>PATH </li>
+<li>CPLUS<em>INCLUDE</em>PATH </li>
+<li>C<em>INCLUDE</em>PATH </li>
+<li>LD<em>LIBRARY</em>PATH</li>
+<li>LIBRARY</em>PATH</li>
+<li>LD<em>RUN</em>PATH</li>
+<li>PKG<em>CONFIG</em>PATH</li>
+<li>PYTHONPATH (this needs tweaking)</li>
+<li>INSERT<em>MODULEFILE</em>CONFLICTS (conflict or not?)</li>
+<li>MODULEFILE_CONFLICTS (conflict package with itself)</li>
+<li>DO<em>RUN</em>TESTS (testing of packages)</li>
+</ul></li>
+</ul>
 
-<hr />
+<h2>The upstream authors</h2>
 
-<p>This wiki is powered by <a href="./ikiwiki.html">ikiwiki</a>.</p>
+<ul>
+<li>mpkg - http://staff.e.kth.se/mpkg/index.html</li>
+<li>cports - http://www.caoslinux.org/ and http://caoswiki.infiscale.org/</li>
+</ul>
+
+<h2>The current authors</h2>
+
+<ul>
+<li>Mainly staff from TCHPC
+<ul>
+<li>The time is paid for by eINIS, HPCE2, OIP and maybe one or two
+other projects that may be benefitting from the results of this
+build/package system.</li>
+</ul></li>
+</ul>
+
+<h2>What cports doesn't do</h2>
+
+<ul>
+<li>It doesn't generate portable binaries</li>
+<li>Provide good documentation on the modifications TCHPC has made</li>
+<li>Support for people who use this :)</li>
+<li>Dependancy and conflict checking of the packages, the admin who is
+writing the package will need to do this</li>
+<li>Work with non-gnu based tools (it's a fork and the original authors
+used and based everything on gnu make etc...)</li>
+</ul>
+
+<h2>Systems tested on</h2>
+
+<ul>
+<li>ScientificLinux 5.x (64bit)</li>
+<li>ScientificLinux 5.x (32bit)</li>
+</ul>
+
+<h3>Systems that bootstrap works on, but not fully tested</h3>
+
+<ul>
+<li>ScientificLinux 4.x (32bit)
+<ul>
+<li>not recommended to run in this environment unless necessary</li>
+<li>need to redefine F77 to use g77 instead if you need numerical packages to work</li>
+</ul></li>
+<li>Debian 5.x (64bit)</li>
+</ul>
+
+<h2>Systems failed on</h2>
+
+<ul>
+<li>OSX 10.6 - doesn't have a gfortran by default, users must install
+gfortran from a third party packaging system.</li>
+</ul>
+
+<h3>Table of apps that require specific compilers</h3>
+
+<p>The reference compiler is gcc 4.1.2, we assume all apps compile with
+gcc 4.1.2 unless otherwise stated</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>
+</th>
+            <th>App           </th>
+            <th>gcc 4.3.2 </th>
+            <th colspan="2">gcc 4.5.1 </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+</td>
+            <td>stressapptest </td>
+            <td>
+</td>
+            <td colspan="2">x         </td>
+        </tr>
+        <tr>
+            <td>
+</td>
+            <td>RDKit         </td>
+            <td>x         </td>
+            <td colspan="2">
+</td>
+        </tr>
+        <tr>
+            <td>
+</td>
+            <td>abyss         </td>
+            <td>
+</td>
+            <td colspan="2">x         </td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>Table of apps that fail to build on certain systems</h3>
+
+<table>
+    <thead>
+        <tr>
+            <th>
+</th>
+            <th>App    </th>
+            <th>debian5.0 </th>
+            <th colspan="2">sl5 </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+</td>
+            <td>open64 </td>
+            <td>x         </td>
+            <td colspan="2">
+</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>List of apps that are binary installs</h3>
+
+<ul>
+<li>darcs</li>
+<li>ghc</li>
+<li>apache-ant</li>
+</ul>
+
+<h2>Changelog - OLD</h2>
+
+<pre><code>- Fork of cports from caoslinux, which in turn is a fork of mpkg
+- Fix up modulefile naming convention
+- Fix up current target to add symlink to modulefile as well
+  - reverted the linking to modulefile, it breaks things
+  - also added uncurrent target
+- Added open64 COMPILERS option
+- Added F90 variables, to make sure a fortran90 compiler is selected when needed
+- Extended the modulefile generation targets to include these variables
+  - INCLUDE_PATH
+  - CPLUS_INCLUDE_PATH
+  - C_INCLUDE_PATH
+  - LD_LIBRARY_PATH
+  - LIBRARY_PATH
+  - LD_RUN_PATH
+  - PKG_CONFIG_PATH
+  - PYTHONPATH
+- New packages that TCHPC finds useful
+- Added R modules in the same style the perl modules for convenience
+</code></pre>
+
+<h2>Misc Notes</h2>
+
+<ul>
+<li><a href="./todo.html">todo</a></li>
+<li><a href="./packages.html">packages</a></li>
+</ul>
+
+<h2>Key packages to install - jtang</h2>
+
+<p>Some packages that tend to get installed quite early and quickly.</p>
+
+<ul>
+<li>R</li>
+<li>Octave</li>
+<li>Emacs</li>
+<li>topgit/git/gitflow</li>
+<li>Grace</li>
+<li>OpenMPI</li>
+<li>Scipy/Numpy</li>
+<li>Mercurial</li>
+<li>Fossil</li>
+</ul>
 
 </div>
 
@@ -83,8 +298,8 @@ cports
 
 
 <div class="pagedate">
-Last edited <span class="date">Wed  8 Jun 22:40:22 2011</span>
-<!-- Created <span class="date">Wed  8 Jun 22:40:22 2011</span> -->
+Last edited <span class="date">Wed 29 Jun 17:30:46 2011</span>
+<!-- Created <span class="date">Wed 29 Jun 16:56:08 2011</span> -->
 </div>
 
 </div>
