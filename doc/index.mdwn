@@ -2,9 +2,8 @@
 
 [[!img tchpc_icon128x128.png link=no]]
 
-* [[requirements]]
 * [[install]]
-* [[usage]]
+* [[walkthrough]]
 * [[todo]]
 * [[contact]]
 * [[copyright]]

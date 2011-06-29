@@ -1,0 +1,11 @@
+Copyright notices found in source (cports core files and not packages)
+
+- Copyright (C) 2011 Trinity Centre for High Performance Computing, Trinity College Dublin.
+- Copyright (c) 2000 Kungliga Tekniska Högskolan
+- Copyright (C) 2007, 2008 Simon Josefsson <simon@josefsson.org>
+- Copyright (C) 2007 Luis Mondesi <lemsx1@gmail.com>
+- Copyright (C) 2001,2002,2003,2004 Martyn J. Pearce <fluffy@cpan.org>
+- Copyright (C) 1999 Karl Fogel <kfogel@red-bean.com>
+- Copyright (C) 2007-2009 Versabanq Innovations Inc. and contributors.
+- Copyright (C) 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999,
+2000, 2001, 2002, 2003 Free Software Foundation, Inc.

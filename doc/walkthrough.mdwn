@@ -1,0 +1,8 @@
+A walkthrough of the basic features of cports
+
+[[!toc]]
+
+[[!inline feeds=no show=0 template=walkthrough pagenames="""
+	requirements
+	install
+"""]]
