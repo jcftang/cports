@@ -1,4 +1,0 @@
-Something like this may be necessary for those in the universe of
-SELinux
-
-sudo chcon -t texrel_shlib_t /path/to/libacml.so

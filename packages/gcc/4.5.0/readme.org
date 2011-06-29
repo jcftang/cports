@@ -1,9 +1,0 @@
-
-Dependancies...
-
-Source1:    ppl-0.10.2.tar.gz
-Source2:    cloog-ppl-0.15.6.tar.gz
-Source3:    mpfr-2.4.2.tar.gz
-Source4:    mpc-0.8.1.tar.gz
-Source5:    gmp-4.3.2.tar.gz
-Source6:    libelf-0.8.12.tar.gz

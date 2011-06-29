@@ -1,9 +1,0 @@
-##make CPRT_PETSC_DEBUG=debug CPRT_PETSC_SCALAR=real CPRT_PETSC_CCOMP=c install
-make install
-#make CPRT_PETSC_DEBUG=debug CPRT_PETSC_SCALAR=real CPRT_PETSC_CCOMP=cxx install
-make CPRT_PETSC_DEBUG=debug CPRT_PETSC_SCALAR=complex CPRT_PETSC_CCOMP=c install
-#make CPRT_PETSC_DEBUG=debug CPRT_PETSC_SCALAR=complex CPRT_PETSC_CCOMP=cxx install
-make CPRT_PETSC_DEBUG=nodebug CPRT_PETSC_SCALAR=real CPRT_PETSC_CCOMP=c install
-#make CPRT_PETSC_DEBUG=nodebug CPRT_PETSC_SCALAR=real CPRT_PETSC_CCOMP=cxx install
-make CPRT_PETSC_DEBUG=nodebug CPRT_PETSC_SCALAR=complex CPRT_PETSC_CCOMP=c install
-#make CPRT_PETSC_DEBUG=nodebug CPRT_PETSC_SCALAR=complex CPRT_PETSC_CCOMP=cxx install

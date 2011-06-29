@@ -1,5 +1,0 @@
-To enable ROMIO, you should add "ROMIO=1" to your make line. e.g:
-
-   # make ROMIO=1 install
-
-This will also build PVFS2 if you haven't done this already.

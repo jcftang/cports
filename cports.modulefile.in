@@ -1,6 +1,0 @@
-#%Module1.0#######################################################################
-## default modulefile
-##
-module-whatis   "adds cports modules"
-module use --append @prefix@/@DISTRO_TYPE@/modulefiles
-

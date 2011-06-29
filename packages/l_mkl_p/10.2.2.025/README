@@ -1,3 +1,0 @@
-This package assumes that there is a flexlm license server running on
-the network. We have not tackled the problem of license files and how
-to deal with them.
