@@ -1,0 +1,6 @@
+A very simple bootstrap package to get the base system installed.
+Should try and resolve any circular dependacies early on here.
+
+Type 
+
+make install

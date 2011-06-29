@@ -1,0 +1,31 @@
+#!/bin/sh
+# Always probe for /etc/redhat-release because many other distros use that
+# as a compatibility facade so don't trust it.
+
+if [ `uname -m` == "x86_64" ]; then
+   machine=x86_64
+else
+   machine=i386
+fi
+
+if [ -f "/etc/caos-release" ]; then
+   release=`cat /etc/caos-release  | sed "s,.*Release \(.\).*,\\1,i"`
+   if grep -q "^Caos NSA" /etc/caos-release; then
+      echo "nsa-$release.$machine"
+   else
+      echo "caos-$release.$machine"
+   fi
+elif [ -f "/etc/fedora-release" ]; then
+   release=`cat /etc/fedora-release  | sed "s,.*Release \(.\).*,\\1,i"`
+   echo "fedora-$release.$machine"
+elif [ -f "/etc/redhat-release" ]; then
+   release=`cat /etc/redhat-release  | sed "s,.*Release \(.\).*,\\1,i"`
+   echo "rhel-$release.$machine"
+elif [ -f "/etc/debian_version" ]; then
+	release=`cat /etc/debian_version | awk -F"." '{print $1}'`
+	echo "debian-$release.$machine"
+elif [ `uname` == "Darwin" ]; then
+	echo "darwin"
+else
+	echo "unknown.$machine"
+fi
