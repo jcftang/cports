@@ -1,0 +1,16 @@
+## Features and Bugs
+
+* Python --> perl module model??
+
+## Possible new packages
+
+* Libraries/interfaces (numerical)
+  * scotch
+  * mumps
+  * libmesh
+  * trilinos?
+  * netcdf
+* Libraries/interfaces (GUI's)
+* Applications/Devel
+
+## Existing Packages

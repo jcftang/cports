@@ -1,0 +1,145 @@
+[[!sidebar content="""
+
+[[!img tchpc_icon128x128.png link=no]]
+
+* [[requirements]]
+* [[install]]
+* [[usage]]
+* [[todo]]
+* [[contact]]
+* [[copyright]]
+
+"""]]
+
+## Why fork cports
+
+ - Needed more than just one version of gcc, intel, pgi builds of
+   software
+ - Needed more control with being able to add packages
+ - Needed more variables put into the modulefiles
+ - Needed repeatable and documented methods of installing libraries
+   and applications
+ - Didn't care too much about generating portable objects, and since
+   it's dervived from a derived piece of work it just makes life
+   easier.
+ - Why not use Gentoo, NetBSD ports, packaging system XYZ?
+   - most of the other systems are not as easily hackable as just
+     makefiles
+   - don't allow multiple verisons of software installed
+ - Wanted to extend the modulefile generation targets to include these
+   variables
+  - `INCLUDE_PATH` 
+  - `CPLUS_INCLUDE_PATH` 
+  - `C_INCLUDE_PATH` 
+  - `LD_LIBRARY_PATH`
+  - `LIBRARY_PATH`
+  - `LD_RUN_PATH`
+  - `PKG_CONFIG_PATH`
+  - `PYTHONPATH` (this needs tweaking)
+  - `INSERT_MODULEFILE_CONFLICTS` (conflict or not?)
+  - `MODULEFILE_CONFLICTS` (conflict package with itself)
+  - `DO_RUN_TESTS` (testing of packages)
+
+## The upstream authors
+
+  - mpkg - <http://staff.e.kth.se/mpkg/index.html>
+  - cports - <http://www.caoslinux.org/> and <http://caoswiki.infiscale.org/>
+
+## The current authors
+
+ - Mainly staff from TCHPC
+   - The time is paid for by eINIS, HPCE2, OIP and maybe one or two
+     other projects that may be benefitting from the results of this
+     build/package system.
+
+##  What cports doesn't do 
+
+ - It doesn't generate portable binaries
+ - Provide good documentation on the modifications TCHPC has made
+ - Support for people who use this :)
+ - Dependancy and conflict checking of the packages, the admin who is
+   writing the package will need to do this
+ - Work with non-gnu based tools (it's a fork and the original authors
+   used and based everything on gnu make etc...)
+
+## Systems tested on
+
+ - ScientificLinux 5.x (64bit)
+ - ScientificLinux 5.x (32bit)
+
+### Systems that bootstrap works on, but not fully tested
+
+ - ScientificLinux 4.x (32bit)
+   - not recommended to run in this environment unless necessary
+   - need to redefine F77 to use g77 instead if you need numerical packages to work
+ - Debian 5.x (64bit)
+
+## Systems failed on
+
+- OSX 10.6 - doesn't have a gfortran by default, users must install
+  gfortran from a third party packaging system.
+
+### Table of apps that require specific compilers 
+
+The reference compiler is gcc 4.1.2, we assume all apps compile with
+gcc 4.1.2 unless otherwise stated
+
+[[!table data="""
+| App           | gcc 4.3.2 | gcc 4.5.1 |
+| stressapptest |           | x         |
+| RDKit         | x         |           |
+| abyss         |           | x         |
+"""]]
+
+### Table of apps that fail to build on certain systems
+
+[[!table data="""
+| App    | debian5.0 | sl5 |
+| open64 | x         |     |
+"""]]
+
+### List of apps that are binary installs
+
+ - darcs
+ - ghc
+ - apache-ant
+
+## Changelog - OLD
+
+	- Fork of cports from caoslinux, which in turn is a fork of mpkg
+	- Fix up modulefile naming convention
+	- Fix up current target to add symlink to modulefile as well
+	  - reverted the linking to modulefile, it breaks things
+	  - also added uncurrent target
+	- Added open64 COMPILERS option
+	- Added F90 variables, to make sure a fortran90 compiler is selected when needed
+	- Extended the modulefile generation targets to include these variables
+	  - INCLUDE_PATH
+	  - CPLUS_INCLUDE_PATH
+	  - C_INCLUDE_PATH
+	  - LD_LIBRARY_PATH
+	  - LIBRARY_PATH
+	  - LD_RUN_PATH
+	  - PKG_CONFIG_PATH
+	  - PYTHONPATH
+	- New packages that TCHPC finds useful
+	- Added R modules in the same style the perl modules for convenience
+
+
+## Misc Notes
+
+ - [[packages]]
+
+## Key packages to install
+
+Some packages that tend to get installed quite early and quickly.
+
+- R
+- Octave
+- Emacs
+- topgit/git/gitflow
+- Grace
+- OpenMPI
+- Scipy/Numpy
+- Mercurial
+- Fossil

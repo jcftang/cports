@@ -1,0 +1,42 @@
+## Required software
+
+ - gnu make
+ - gcc, g++ and gfortran (and basic devel, compile tools etc...)
+ - wget
+ - texinfo
+ - environment-modules - [[install modules]]
+
+you can do a "make check-environment" to see if you meet the basic
+requirements.
+
+## Required devel packages/software if you wish to build X11 programs
+
+This list was compiled from a SL55 machine
+
+ - freeglut-devel
+ - libICE-devel
+ - libSM-devel
+ - libX11-devel
+ - libXau-devel
+ - libXdmcp-devel
+ - libXext-devel
+ - libXft-devel
+ - libXmu-devel
+ - libXp-devel
+ - libXpm-devel
+ - libXrender-devel
+ - libXt-devel
+ - mesa-libGL-devel
+ - xorg-x11-proto-devel
+
+On a Debian 5.x system (this list isn't complete)
+
+ - libx11-dev
+ - libxext-dev
+ - libxmu-dev
+ - x11proto-xext-dev
+ - libxpm-dev
+ - libxrender-dev
+ - x11proto-render-dev
+ - mesa-common-dev
+ - freeglut3-dev
