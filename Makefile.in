@@ -9,6 +9,16 @@ else
 ZSYNCMAKE=zsyncmake
 endif
 
+# If ikiwiki is available, build static html docs suitable for being
+# shipped in the software package.
+ifeq ($(shell which ikiwiki),)
+IKIWIKI=@echo "** ikiwiki not found, skipping building docs" >&2; true
+## NO_IKIWIKI=1
+else
+IKIWIKI=ikiwiki
+endif
+
+
 default: bootstrap
 
 dist: do-dist
@@ -35,19 +45,6 @@ clean:
 	#@-rm $(DISTFILE).tar
 	rm -rf html doc/.ikiwiki
 	rm -f gitindex.tmp
-
-docs:
-
-VERSION=$(shell cat ../VERSION)
-
-# If ikiwiki is available, build static html docs suitable for being
-# shipped in the software package.
-ifeq ($(shell which ikiwiki),)
-IKIWIKI=@echo "** ikiwiki not found, skipping building docs" >&2; true
-## NO_IKIWIKI=1
-else
-IKIWIKI=ikiwiki
-endif
 
 all: docs 
 
