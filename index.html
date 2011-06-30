@@ -46,10 +46,10 @@ cports
 
 <ul>
 <li><a href="./install.html">install</a></li>
-<li><a href="./usage.html">usage</a></li>
+<li><a href="./walkthrough.html">walkthrough</a></li>
 <li><a href="./todo.html">todo</a></li>
-<li><span class="createlink">contact</span></li>
-<li><span class="createlink">copyright</span></li>
+<li><a href="./contact.html">contact</a></li>
+<li><a href="./copyright.html">copyright</a></li>
 </ul>
 
 </div>
@@ -58,6 +58,18 @@ cports
 <div id="pagebody">
 
 <div id="content">
+<h2>About</h2>
+
+<p>cports is a collection of Makefiles and macros for semi-automatic
+builds of various pieces of software. It also uses [[!google 
+environment-modules]] to allow us to have multiple versions of software
+installed. Users can select which versions they want to use with the
+module system.</p>
+
+<p>cports primarily acts as documentation on how to build (some times
+pretty complicated) pieces of software, so the stack can be reproduced
+on different systems with some poking from the sysadmin.</p>
+
 <h2>Why fork cports</h2>
 
 <ul>
@@ -93,60 +105,19 @@ variables
 </ul></li>
 </ul>
 
-<h2>The upstream authors</h2>
-
-<ul>
-<li>mpkg - <a href="http://staff.e.kth.se/mpkg/index.html">http://staff.e.kth.se/mpkg/index.html</a></li>
-<li>cports - <a href="http://www.caoslinux.org/">http://www.caoslinux.org/</a> and <a href="http://caoswiki.infiscale.org/">http://caoswiki.infiscale.org/</a></li>
-</ul>
-
-<h2>The current authors</h2>
-
-<ul>
-<li>Mainly staff from TCHPC
-<ul>
-<li>The time is paid for by eINIS, HPCE2, OIP and maybe one or two
-other projects that may be benefitting from the results of this
-build/package system.</li>
-</ul></li>
-</ul>
-
 <h2>What cports doesn't do</h2>
 
 <ul>
 <li>It doesn't generate portable binaries</li>
 <li>Provide good documentation on the modifications TCHPC has made</li>
-<li>Support for people who use this :)</li>
+<li>Support for people who use this</li>
 <li>Dependancy and conflict checking of the packages, the admin who is
 writing the package will need to do this</li>
 <li>Work with non-gnu based tools (it's a fork and the original authors
 used and based everything on gnu make etc...)</li>
 </ul>
 
-<h2>Systems tested on</h2>
-
-<ul>
-<li>ScientificLinux 5.x (64bit)</li>
-<li>ScientificLinux 5.x (32bit)</li>
-</ul>
-
-<h3>Systems that bootstrap works on, but not fully tested</h3>
-
-<ul>
-<li>ScientificLinux 4.x (32bit)
-<ul>
-<li>not recommended to run in this environment unless necessary</li>
-<li>need to redefine F77 to use g77 instead if you need numerical packages to work</li>
-</ul></li>
-<li>Debian 5.x (64bit)</li>
-</ul>
-
-<h2>Systems failed on</h2>
-
-<ul>
-<li>OSX 10.6 - doesn't have a gfortran by default, users must install
-gfortran from a third party packaging system.</li>
-</ul>
+<p>There is also an <a href="./old_changelog.html">old changelog</a> with some of the initial changes that were made.</p>
 
 <h3>Table of apps that require specific compilers</h3>
 
@@ -223,28 +194,6 @@ gcc 4.1.2 unless otherwise stated</p>
 <li>apache-ant</li>
 </ul>
 
-<h2>Changelog - OLD</h2>
-
-<pre><code>- Fork of cports from caoslinux, which in turn is a fork of mpkg
-- Fix up modulefile naming convention
-- Fix up current target to add symlink to modulefile as well
-  - reverted the linking to modulefile, it breaks things
-  - also added uncurrent target
-- Added open64 COMPILERS option
-- Added F90 variables, to make sure a fortran90 compiler is selected when needed
-- Extended the modulefile generation targets to include these variables
-  - INCLUDE_PATH
-  - CPLUS_INCLUDE_PATH
-  - C_INCLUDE_PATH
-  - LD_LIBRARY_PATH
-  - LIBRARY_PATH
-  - LD_RUN_PATH
-  - PKG_CONFIG_PATH
-  - PYTHONPATH
-- New packages that TCHPC finds useful
-- Added R modules in the same style the perl modules for convenience
-</code></pre>
-
 <h2>Misc Notes</h2>
 
 <ul>
@@ -297,8 +246,8 @@ gcc 4.1.2 unless otherwise stated</p>
 
 
 <div class="pagedate">
-Last edited <span class="date">Wed 29 Jun 17:42:32 2011</span>
-<!-- Created <span class="date">Wed 29 Jun 16:56:08 2011</span> -->
+Last edited <span class="date">Thu 30 Jun 09:59:54 2011</span>
+<!-- Created <span class="date">Thu 30 Jun 09:53:05 2011</span> -->
 </div>
 
 </div>

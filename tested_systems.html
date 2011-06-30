@@ -5,7 +5,7 @@
 <head>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>packages</title>
+<title>tested systems</title>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 
@@ -29,7 +29,7 @@
 
 </span>
 <span class="title">
-packages
+tested systems
 
 </span>
 </span>
@@ -47,30 +47,29 @@ packages
 <div id="pagebody">
 
 <div id="content">
-<h2>MPI</h2>
-
-<h3>OpenMPI</h3>
+<h2>Systems tested on</h2>
 
 <ul>
-<li>Preferred MPI Implementation</li>
+<li>ScientificLinux 5.x (64bit)</li>
+<li>ScientificLinux 5.x (32bit)</li>
 </ul>
 
-<h2>GCC (and friends)</h2>
+<h3>Systems that bootstrap works on, but not fully tested</h3>
 
 <ul>
-<li>Generally prefer the system version of GCC unless it is absolutely
-required to use a newer version.</li>
-<li>Should consistently use the same toolchain or you will have issues
-with fortran based apps and libs</li>
+<li>ScientificLinux 4.x (32bit)
+<ul>
+<li>not recommended to run in this environment unless necessary</li>
+<li>need to redefine F77 to use g77 instead if you need numerical packages to work</li>
+</ul></li>
+<li>Debian 5.x (64bit)</li>
 </ul>
 
-<h2>Bio Packages</h2>
-
-<h3>BioPerl</h3>
+<h2>Systems failed on</h2>
 
 <ul>
-<li>Works only with perl 5.12.1</li>
-<li>Has build issues with 5.8.9</li>
+<li>OSX 10.6 - doesn't have a gfortran by default, users must install
+gfortran from a third party packaging system.</li>
 </ul>
 
 </div>
@@ -100,7 +99,7 @@ with fortran based apps and libs</li>
 <div id="backlinks">
 Links:
 
-<a href="./index.html">index</a>
+<a href="./requirements.html">requirements</a>
 
 
 </div>
@@ -111,8 +110,8 @@ Links:
 
 
 <div class="pagedate">
-Last edited <span class="date">Wed 29 Jun 18:17:01 2011</span>
-<!-- Created <span class="date">Wed 29 Jun 18:17:01 2011</span> -->
+Last edited <span class="date">Thu 30 Jun 09:46:07 2011</span>
+<!-- Created <span class="date">Thu 30 Jun 09:46:07 2011</span> -->
 </div>
 
 </div>

@@ -1,0 +1,300 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>walkthrough</title>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+<link rel="stylesheet" href="local.css" type="text/css" />
+
+
+
+
+
+</head>
+<body>
+
+<div class="page">
+
+<div class="pageheader">
+<div class="header">
+<span>
+<span class="parentlinks">
+
+<a href="./index.html">cports</a>/ 
+
+</span>
+<span class="title">
+walkthrough
+
+</span>
+</span>
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+<div id="pagebody">
+
+<div id="content">
+<p>A walkthrough of the basic features of cports</p>
+
+<div class="toc">
+	<ol>
+		<li class="L2"><a href="#index1h2">requirements</a>
+		</li>
+		<li class="L2"><a href="#index2h2">install</a>
+		</li>
+		<li class="L2"><a href="#index3h2">usage</a>
+		</li>
+	</ol>
+</div>
+
+<h2><a name="index1h2"></a><a href="./requirements.html">requirements</a></h2>
+<h3><a name="index1h3"></a>Required software</h3>
+
+<ul>
+<li>gnu make</li>
+<li>gcc, g++ and gfortran (and basic devel, compile tools etc...)</li>
+<li>wget</li>
+<li>texinfo</li>
+<li>environment-modules - <a href="./install_modules.html">install modules</a></li>
+</ul>
+
+<p>you can do a "make check-environment" to see if you meet the basic
+requirements.</p>
+
+<h3><a name="index2h3"></a>Required devel packages/software if you wish to build X11 programs</h3>
+
+<p>This list was compiled from a SL55 machine</p>
+
+<ul>
+<li>freeglut-devel</li>
+<li>libICE-devel</li>
+<li>libSM-devel</li>
+<li>libX11-devel</li>
+<li>libXau-devel</li>
+<li>libXdmcp-devel</li>
+<li>libXext-devel</li>
+<li>libXft-devel</li>
+<li>libXmu-devel</li>
+<li>libXp-devel</li>
+<li>libXpm-devel</li>
+<li>libXrender-devel</li>
+<li>libXt-devel</li>
+<li>mesa-libGL-devel</li>
+<li>xorg-x11-proto-devel</li>
+</ul>
+
+<p>On a Debian 5.x system (this list isn't complete)</p>
+
+<ul>
+<li>libx11-dev</li>
+<li>libxext-dev</li>
+<li>libxmu-dev</li>
+<li>x11proto-xext-dev</li>
+<li>libxpm-dev</li>
+<li>libxrender-dev</li>
+<li>x11proto-render-dev</li>
+<li>mesa-common-dev</li>
+<li>freeglut3-dev</li>
+</ul>
+
+<p>cports is <a href="./tested_systems.html">tested on systems</a> at TCHPC.</p>
+
+<h2><a name="index2h2"></a><a href="./install.html">install</a></h2>
+<p>Once you have met the <a href="./requirements.html">requirements</a> continue with the following.</p>
+
+<h3><a name="index3h3"></a>Installation and configuration</h3>
+
+<ul>
+<li>Unpack cports-?.tar.bz2 to somewhere (I usually put it into
+${HOME}/develop/cports)</li>
+<li>run the ./configure.sh script to check if you have the basic
+requirements installed, this configure script will also setup a
+default install prefix for the programs to be installed from
+cports.
+<ul>
+<li>e.g. you can do <em>./configure.sh --prefix=/tmp/cports</em> this will
+configure cports to install anything built from cports into
+<em>/tmp/cports</em>. The configure script will also generate a sample
+module file for you to copy into your global modulefile
+directory.</li>
+</ul></li>
+<li>Optional - Do more configuring of cports by editing
+ ${PREFIX}/mk-conf/config.mk</li>
+<li>Configure environment modules either at the system level or in
+your own home directory in ${HOME}/privatemodules/cports see
+${PREFIX}/cports.modulefile cports make sure the paths in here
+correspond to the MODULEDIR variable in
+${PREFIX}/mk-conf/config.mk. Look in cports/mk/gnu.def.mk or
+cports/mk/config.mk for some default options that you can override
+and or set. Or just copy the <em>cports.modulefile</em> to your
+modulefile directory.</li>
+<li>cd into <em>cports/scripts</em> and run the <em>distro.guess</em> script, if it
+outputs 'unknown.*' then add a new check for your distro. This
+step isn't strictly needed, but it does provide your installed
+target with some useful information.</li>
+<li>cd into <em>cports/packages/bootstrap/1.0</em> and type <em>make install</em>,
+this will try and install the basic packages needed to build the
+rest of the system.</li>
+<li>cd into <em>cports/packages/bootstrap/2.0</em> and type <em>make do-cleaz</em>
+and <em>make install</em> to get gettext and libiconv to behave
+correctly.</li>
+</ul>
+
+<h3><a name="index4h3"></a>Proxies</h3>
+
+<ul>
+<li>many people have a <code>http_proxy</code> variable set in their shell config.
+ However make installs often fail on ftp download attempts. So you
+ should set an <code>ftp_proxy</code> variable as well.  For example, 
+ <code>ftp_proxy=http://proxy.yourdomain.ie:80</code>.  This works in our
+ setup. Yours may be different. Some packages even require that a
+ <code>https_proxy</code> variable be set 
+ (e.g. <code>https_proxy=https://proxy.yourdomain.ie:80</code>)</li>
+</ul>
+
+<p>Once it is installed you will want to read the basic <a href="./usage.html">usage</a> page.</p>
+
+<h2><a name="index3h2"></a><a href="./usage.html">usage</a></h2>
+<h3><a name="index5h3"></a>Basic Usage</h3>
+
+<ul>
+<li>load up your cports module so that cports can see its own generated
+module files. 
+<ul>
+<li>the best thing to do is to do a <em>module initadd dot cports</em> so
+everytime you login/open a new shell you will have the cports
+environment available to you.</li>
+</ul></li>
+<li>To install packages you cd into the
+cports/packages/PACKAGENAME/VERSION that you want, then just type
+<em>make install</em></li>
+<li>If you want to use a different compiler e.g. do <em>make install
+COMPILERS=intel</em> this assumes that you have the intel compilers in
+your path.</li>
+</ul>
+
+<h3><a name="index6h3"></a>Available COMPILERS</h3>
+
+<p>By default COMPILERS=gnu which means it defaults to the system gnu c
+compilers (at least version 4 where gfortran is available). This all
+assumes that the compilers are already in your path.</p>
+
+<h4><a name="index1h4"></a>The default compilers</h4>
+
+<ul>
+<li>COMPILERS=intel - system version of intel compilers</li>
+<li>COMPILERS=pathscale - system version of pathscale compilers</li>
+<li>COMPILERS=pgi - system version of portland compilers</li>
+<li>COMPILERS=open64 - system version of open64 compilers</li>
+</ul>
+
+<h4><a name="index2h4"></a>Accessing different versions of gnu compilers</h4>
+
+<p>For example if you want to vary between the gnu compiler versions
+4.1.2, 4.4.0, 4.5.0 etc... you will first need to install the
+compilers from the cports system. Then manually load up the
+gcc/VERSION compiler with the module utility. To then compile things
+you will need to set the COMPILERS variable to hint cports to create
+the correct installation directory structures and modulefiles.</p>
+
+<p>Support variables currently available (subject to changes)</p>
+
+<ul>
+<li>COMPILERS=open644.2.3</li>
+<li>COMPILERS=gnu4.5.0</li>
+<li>COMPILERS=gnu4.4.4</li>
+<li>COMPILERS=gnu4.4.0</li>
+</ul>
+
+<p>Setting the COMPILERS variable tags things correctly in the
+installations. More compilers can be added by editting gnu.local.mk
+This method of tagging things isn't straightforward to understand but
+it at least provides a way of systematically creating installations.</p>
+
+<p>If there is a mismatch of version numbers the system will fail early.</p>
+
+<h4><a name="index3h4"></a>Using arguments with the makefiles</h4>
+
+<p>make can be run with arguments like </p>
+
+<pre><code>make COMPILERS=intel10.1 install
+</code></pre>
+
+<p>if you don't have icc for intel10.1, then make will error straight 
+away Note that the compiler version number <em>should</em> be included.</p>
+
+<p>Typing something like</p>
+
+<pre><code>make COMPILERS=intel build
+</code></pre>
+
+<p>can lead to cports <em>mistakenly</em> passing the compiler check even
+if (in this case) you don't have icc.</p>
+
+
+
+</div>
+
+
+
+<div id="comments">
+
+
+
+
+<div class="addcomment">Comments on this page are closed.</div>
+
+</div>
+
+
+
+</div>
+
+<div id="footer" class="pagefooter">
+
+<div id="pageinfo">
+
+
+
+
+<div id="backlinks">
+Links:
+
+<a href="./index.html">index</a>
+
+
+</div>
+
+
+
+
+
+
+<div class="pagedate">
+Last edited <span class="date">Thu 30 Jun 09:54:04 2011</span>
+<!-- Created <span class="date">Thu 30 Jun 09:54:04 2011</span> -->
+</div>
+
+</div>
+
+
+<!-- from cports -->
+</div>
+
+</div>
+
+</body>
+</html>
