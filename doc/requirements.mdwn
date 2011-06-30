@@ -1,4 +1,4 @@
-## Required software
+### Required software
 
  - gnu make
  - gcc, g++ and gfortran (and basic devel, compile tools etc...)
@@ -9,7 +9,7 @@
 you can do a "make check-environment" to see if you meet the basic
 requirements.
 
-## Required devel packages/software if you wish to build X11 programs
+### Required devel packages/software if you wish to build X11 programs
 
 This list was compiled from a SL55 machine
 
@@ -40,3 +40,5 @@ On a Debian 5.x system (this list isn't complete)
  - x11proto-render-dev
  - mesa-common-dev
  - freeglut3-dev
+
+cports is [[tested on systems|tested_systems]] at TCHPC.

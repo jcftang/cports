@@ -2,3 +2,6 @@ Primary contacts for cports
 
 * Jimmy Tang <jtang@tchpc.tcd.ie>
 * Darach Golden <darach@tchpc.tcd.ie>
+
+The primary contacts are the current [[authors]], the list of authors
+also contain a list of upstream authors.

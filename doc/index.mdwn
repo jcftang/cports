@@ -10,6 +10,18 @@
 
 """]]
 
+## About
+
+cports is a collection of Makefiles and macros for semi-automatic
+builds of various pieces of software. It also uses [[!google
+environment-modules]] to allow us to have multiple versions of software
+installed. Users can select which versions they want to use with the
+module system.
+
+cports primarily acts as documentation on how to build (some times
+pretty complicated) pieces of software, so the stack can be reproduced
+on different systems with some poking from the sysadmin.
+
 ## Why fork cports
 
  - Needed more than just one version of gcc, intel, pgi builds of
@@ -39,44 +51,17 @@
   - `MODULEFILE_CONFLICTS` (conflict package with itself)
   - `DO_RUN_TESTS` (testing of packages)
 
-## The upstream authors
-
-  - mpkg - <http://staff.e.kth.se/mpkg/index.html>
-  - cports - <http://www.caoslinux.org/> and <http://caoswiki.infiscale.org/>
-
-## The current authors
-
- - Mainly staff from TCHPC
-   - The time is paid for by eINIS, HPCE2, OIP and maybe one or two
-     other projects that may be benefitting from the results of this
-     build/package system.
-
 ##  What cports doesn't do 
 
  - It doesn't generate portable binaries
  - Provide good documentation on the modifications TCHPC has made
- - Support for people who use this :)
+ - Support for people who use this
  - Dependancy and conflict checking of the packages, the admin who is
    writing the package will need to do this
  - Work with non-gnu based tools (it's a fork and the original authors
    used and based everything on gnu make etc...)
 
-## Systems tested on
-
- - ScientificLinux 5.x (64bit)
- - ScientificLinux 5.x (32bit)
-
-### Systems that bootstrap works on, but not fully tested
-
- - ScientificLinux 4.x (32bit)
-   - not recommended to run in this environment unless necessary
-   - need to redefine F77 to use g77 instead if you need numerical packages to work
- - Debian 5.x (64bit)
-
-## Systems failed on
-
-- OSX 10.6 - doesn't have a gfortran by default, users must install
-  gfortran from a third party packaging system.
+There is also an [[old changelog]] with some of the initial changes that were made.
 
 ### Table of apps that require specific compilers 
 
@@ -102,28 +87,6 @@ gcc 4.1.2 unless otherwise stated
  - darcs
  - ghc
  - apache-ant
-
-## Changelog - OLD
-
-	- Fork of cports from caoslinux, which in turn is a fork of mpkg
-	- Fix up modulefile naming convention
-	- Fix up current target to add symlink to modulefile as well
-	  - reverted the linking to modulefile, it breaks things
-	  - also added uncurrent target
-	- Added open64 COMPILERS option
-	- Added F90 variables, to make sure a fortran90 compiler is selected when needed
-	- Extended the modulefile generation targets to include these variables
-	  - INCLUDE_PATH
-	  - CPLUS_INCLUDE_PATH
-	  - C_INCLUDE_PATH
-	  - LD_LIBRARY_PATH
-	  - LIBRARY_PATH
-	  - LD_RUN_PATH
-	  - PKG_CONFIG_PATH
-	  - PYTHONPATH
-	- New packages that TCHPC finds useful
-	- Added R modules in the same style the perl modules for convenience
-
 
 ## Misc Notes
 

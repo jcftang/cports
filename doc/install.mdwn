@@ -1,6 +1,6 @@
 Once you have met the [[requirements]] continue with the following.
 
-## Installation and configuration
+### Installation and configuration
 
   - Unpack cports-?.tar.bz2 to somewhere (I usually put it into
     ${HOME}/develop/cports)
@@ -34,7 +34,7 @@ Once you have met the [[requirements]] continue with the following.
     and *make install* to get gettext and libiconv to behave
     correctly.
 
-## Proxies
+### Proxies
 
    - many people have a `http_proxy` variable set in their shell config.
      However make installs often fail on ftp download attempts. So you
