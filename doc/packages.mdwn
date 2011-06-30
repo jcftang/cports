@@ -10,6 +10,32 @@
    with fortran based apps and libs
   
 ## Bio Packages
+
 ### BioPerl
  - Works only with perl 5.12.1
  - Has build issues with 5.8.9
+
+## Table of apps that require specific compilers
+
+The reference compiler is gcc 4.1.2, we assume all apps compile with
+gcc 4.1.2 unless otherwise stated
+
+[[!table data="""
+| App           | gcc 4.3.2 | gcc 4.5.1 |
+| stressapptest |           | x         |
+| RDKit         | x         |           |
+| abyss         |           | x         |
+"""]]
+
+## Table of apps that fail to build on certain systems
+
+[[!table data="""
+| App    | debian5.0 | sl5 |
+| open64 | x         |     |
+"""]]
+
+## List of apps that are binary installs
+
+ - darcs
+ - ghc
+ - apache-ant

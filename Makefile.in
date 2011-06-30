@@ -34,6 +34,7 @@ $(DISTFILE).tar.bz2.zsync: $(DISTFILE).tar.bz2
 clean:
 	#@-rm $(DISTFILE).tar
 	rm -rf html doc/.ikiwiki
+	rm -f gitindex.tmp
 
 docs:
 

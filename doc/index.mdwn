@@ -13,10 +13,10 @@
 ## About
 
 cports is a collection of Makefiles and macros for semi-automatic
-builds of various pieces of software. It also uses [[!google
-environment-modules]] to allow us to have multiple versions of software
-installed. Users can select which versions they want to use with the
-module system.
+builds of various pieces of software. It also uses
+[environment-modules](http://sourceforge.net/projects/modules/) to allow
+us to have multiple versions of software installed. Users can select
+which versions they want to use with the module system.
 
 cports primarily acts as documentation on how to build (some times
 pretty complicated) pieces of software, so the stack can be reproduced
@@ -62,31 +62,6 @@ on different systems with some poking from the sysadmin.
    used and based everything on gnu make etc...)
 
 There is also an [[old changelog]] with some of the initial changes that were made.
-
-### Table of apps that require specific compilers 
-
-The reference compiler is gcc 4.1.2, we assume all apps compile with
-gcc 4.1.2 unless otherwise stated
-
-[[!table data="""
-| App           | gcc 4.3.2 | gcc 4.5.1 |
-| stressapptest |           | x         |
-| RDKit         | x         |           |
-| abyss         |           | x         |
-"""]]
-
-### Table of apps that fail to build on certain systems
-
-[[!table data="""
-| App    | debian5.0 | sl5 |
-| open64 | x         |     |
-"""]]
-
-### List of apps that are binary installs
-
- - darcs
- - ghc
- - apache-ant
 
 ## Misc Notes
 
