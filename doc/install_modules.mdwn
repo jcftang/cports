@@ -27,5 +27,13 @@ Start with modules-3.2.8.tar.gz (or some version)
 Source your .profile (or .bash_profile etc); this will work for
 current terminal.
 
+in e.g., .bash_profile: place
+export MODULE_VERSION=3.2.8
+
+then 
+
+%> source .bashrc
+%> module list
+
 You may now have to log out and log in again for this to apply
 to  all terminals.
