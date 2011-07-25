@@ -1,0 +1,530 @@
+Program Database Toolkit (PDT)
+Version 3.15
+
+=============================================================================
+
+Description
+-----------
+
+The Program Database Toolkit (PDT) is a tool infrastructure that provides
+access to the high-level interface of source code for analysis tools and
+applications.  Currently, the toolkit consists of the C/C++ and Fortran 77/90/95
+IL (Intermediate Language) Analyzers, and DUCTAPE (C++ program Database 
+Utilities and Conversion Tools APplication Environment) library and applica-
+tions.  The EDG C++ (or Mutek Fortran 90) Front End first parses a source 
+file, and produces an intermediate language file.  The appropriate IL 
+Analyzer processes this IL file, and creates a "program database" (PDB) file 
+consisting of the high-level interface of the original source.  Use of the 
+DUCTAPE library then makes the contents of the PDB file accessible to 
+applications. This release also includes the Flint F95 parser from Cleanscape 
+Inc.
+
+See http://www.cs.uoregon.edu/research/pdt for more information 
+on PDT.  See doc/converter.txt for a complete listing of what has been 
+implemented in this release of PDT, as well as notes and caveats.
+
+=============================================================================
+
+Summary
+-------
+
+This directory contains the Program Database Toolkit software.
+
+Subdirectories in this PDT directory include the following.
+
+doc             documentation
+ductape		DUCTAPE
+ductape/doc	DUCTAPE documentation
+ductape/inc	DUCTAPE include files
+ductape/lib	DUCTAPE library source files
+ductape/src	tools that use the DUCTAPE library
+hmtl            documentation
+include		files copied from ductape/inc
+include/kai	KAI include files
+
+The following architecture-specific subdirectories are also included.
+These directories have bin and lib subdirectories for the PDT shell
+script, executables, and library.
+
+alpha
+apple
+hp9000s700
+crayx1
+linux
+x86_64
+mips
+mips64
+rs6000
+ibm64
+ibm64linux
+sgi32
+sgin32
+sgi64
+solaris2
+sun386i
+hitachi
+Windows
+t3e
+
+The files in the architecture-specific bin and lib directories include,
+or will include, the following.  The bin and lib directories may be in
+a user-specified subdirectory.  (See Installation below.)
+
+bin/cxxparse    shell script that executes edgcpfe and taucpdisp for C++ apps
+bin/cparse      shell script that executes edgcpfe and taucpdisp for C apps
+bin/edgcpfe     EDG C++ Front End executable
+bin/taucpdisp   C++ IL Analyzer executable
+bin/f90parse	shell script that executes f90fe and pdtf90disp
+bin/f90fe	Mutek Fortran 90 Front End executable
+bin/pdtf90disp	Fortran 90 IL Analyzer executable
+bin/f95parse	shell script that executes pdtflint
+bin/pdtflint    Cleanscape Inc. Flint F95 parser
+bin/pdbconv     DUCTAPE application
+bin/pdbhtml	DUCTAPE application
+bin/pdbmerge    DUCTAPE application
+bin/pdbtree     DUCTAPE application
+bin/pdbcomment  DUCTAPE application
+bin/xmlgen      DUCTAPE application
+lib/libpdb.a    DUCTAPE library
+
+The binaries are built for the following platforms.
+
+-----------------------------------------------------
+Architecture 	Platform 	   Operating System  
+-----------------------------------------------------
+alpha           Compaq Alpha       Tru64 OSF1 v5.1  
+apple           Apple G4           Darwin MacOS X 10.2
+crayx1          Cray X1            Unicos/MP
+linux           Intel PIII/ia64    RedHat Linux 6.1/6.2/7.0/7.1/7.2/7.3/8.0/9.x
+ppc64           IBM Power4 Linux   SuSE Linux 2.4.21 for pSeries
+ibm64linux      IBM Power4 Linux   SuSE Linux 2.4.21 for pSeries
+x86_64          AMD x86_64 Opteron SuSE Linux ES 8 for AMD64, SP2 
+x86_64          Intel EM64T        All Linux flavors for Intel
+mips            SiCortex           MIPS Linux 32 bit
+mips64          SiCortex           MIPS Linux 64 bit
+rs6000          IBM pSeries        AIX 4.3, 5.x
+ibm64           IBM pSeries        AIX 4.3, 5.x
+sgi32           SGI R4400 IP22     IRIX 6.5.4	  
+sgin32          SGI R10000 IP25    IRIX 6.5.4	  
+sgi64           SGI R10000 IP25    IRIX 6.5.4	  
+solaris2        SUN sun4m          Solaris SunOS 5.8
+sun386i         SUN Opteron/x86    Solaris SunOS 5.10
+Windows		Microsoft Windows  W98/NT/W2K/XP
+t3e             Cray T3E           Unicos MK 2.0.4.61 
+hp9000s700      HP PA-RISC 1.1     HP-UX 10.20 
+hitachi 	Hitachi SR8000	   Hitachi
+
+=============================================================================
+
+Installation
+------------
+
+In order to use PDT, you will need to perform configuration.  ./configure
+will setup the Makefiles so they work with the selected compilers and
+operating system. 
+
+NOTE: PDT requires gunzip. Please ensure that gunzip is in your path before
+configuring PDT.
+
+(1) Run ./configure.  This scans your system for usable C++ compilers and
+automatically configures the Makefiles and cxxparse, cparse, and f90parse.
+
+If you prefer, you can specify a C++ compiler as a command line option to
+./configure. The following switches are understood:
+
+    -ICPC 		Use Intel IA-32/IA-64 icpc compiler
+    -GNU                Use GNU C++ under the name "g++"
+    -CC                 Use SGI's CC
+    -CC                 Use SUN's CC (v6.2 or better)
+    -CXX                Use Tru64's cxx
+    -C++                Use Apple's c++
+    -XLC or -IBM        Use IBM's xlC
+    -PGI                Use PGI's pgCC (v4.0 or better)
+    -PATHSCALE          Use Pathscale pathCC
+    -KAI or -KCC        Use KAI's KCC
+
+It is not necessary to specify an architecture, unless you are using PDT
+on IBM AIX, where you might want to use ibm64 for 64 bits or on SGI, where you 
+might want to choose among IRIXO32, IRIXN32, and IRIX64 or on IBM Power4 Linux 
+where you may want to use ibm64linux for 64 bits. By default, rs6000 refers
+to IBM AIX and ppc64 refers to IBM Power4 Linux (32 bits each).
+Use one of the following command line options:
+
+    -arch=ibm64
+    -arch=ibm64linux
+    -arch=IRIXO32
+    -arch=IRIXN32
+    -arch=IRIX64
+    -arch=mips64
+
+Normally, source files are compiled for optimization (i.e., +K2 for KCC, 
+-O2 otherwise). If you want other compiler options, you can pass these to 
+configure via the -useropt=... command-line switch.
+E.g.,
+
+    ./configure -useropt='-g'
+
+If you are using older (pre-7.3.0) versions of the SGI CC compiler, you
+must use the -enable-old-headers option, e.g.,
+
+    ./configure -enable-old-headers
+
+If you want multiple versions of the DUCTAPE library (to support use of
+multiple compilers), you must do multiple installations.  During each,
+specify a different compiler via the command-line option -compdir=...
+for ./configure, e.g.,
+
+    -compdir=KCC-3.4f
+
+This will create a subdirectory named "KCC-3.4f" that will contain the
+bin and lib directories for the current architecture and the specified
+compiler.
+
+To install the PDT in a different directory, use the command-line option 
+-prefix=<dir>. For e.g.,
+
+     ./configure -prefix=/usr/local/packages/pdt -compdir=intel
+
+To use a different name for the architecture directory, use the command-line
+option -exec-prefix=<dir>. For e.g.,
+     
+    ./configure -exec-prefix=sun32
+
+This will create a /usr/local/packages/pdt/intel directory with include lib and
+bin subdirectories. 
+
+
+(2) Type "gmake". We recommend GNU gmake over vendor supplied make (especially
+    for Cray T3E users).
+
+(3) Type "gmake install" to install binaries in bin and lib subdirectories
+
+(4) [Optional] Type "gmake clean" to free up disk space
+
+(5) [Optional] Generate a browsable HTML index of the DUCTAPE interface.
+This can be done by the following commands (after you extended your $PATH
+environment variable as described by the output of the configure script):
+
+    cd ductape/inc
+    ./MakeHtmlDocu
+
+The HTML index will be placed in the directory ductape/html.
+
+=============================================================================
+
+Description of the Tools in the bin Directory
+---------------------------------------------
+
+edgcpfe   : Edison Design Group (EDG) C++ Front End.  This parses C and C++
+            source code, and produces an intermediate language (IL) file
+            that is processed by the C and C++ IL Analyzer.
+
+            See http://www.edg.com/ for further information.
+ 
+taucpdisp : C++ and C IL Analyzer from PDT.  This processes an IL file produced
+            by the EDG Front End, and creates a program database (PDB) file.
+            The PDB file contains the language interface of the original
+            source code.  The DUCTAPE library libpdb.a makes this high-level 
+            program information available to applications.
+
+f90fe     : Mutek Fortran 90 Front End. This parses Fortran 77 and 90
+            source code, and produces an intermediate language (IL) file
+            that is processed by the Fortran IL analyzer.
+
+pdtflint  : Cleanscape Inc. Flint Fortran parser. This parses Fortran 77, 90
+            and 95 source code, and produces the PDB file. 
+
+pdtf90disp: Fortran 90 IL Analyzer executable
+
+cxxparse  :
+cparse    :
+f90parse  :
+f95parse  : 
+gfparse   : Shell scripts that execute the right parsers and IL analyzers.
+            Usage:
+
+              cxxparse <c++ file> <c++ flags>
+              cparse   <c file>   <c flags>
+              f90parse <f90 file> <f90 flags>
+              f95parse <f90 file(s)> <f90 flags>
+              gfparse  <f90 file(s)> <f90 flags> 
+
+            <### file> is the source file for which a program database (PDB)
+            file is generated. The filename of the PDB file will have the
+            basename of the ### file and the suffix ".pdb".
+
+            <### flags> are additional flags necessary for your program to
+            compile.  The configure script will determine most, if not all,
+            flags and incorporate these in ###parse.  Local options, such as
+            an application include directory, can be specified here.
+             
+            cxxparse and cparse scripts accept -I<dir> and -D<define> flags
+            for include directory and defines respectively.
+
+            f90parse accepts the following flags:
+
+            -F : Fixed form for source. By default, the form is free. In fixed
+                 form positions (columns) 1-5 can be used only for lables, 
+                 position 6 is for continuation and a "C" or "*" is for comment 
+                 lines. The main program must fall in positions 7-72.
+
+            -I<dir> : Adds a directory dir to the list of directories searched
+                 for INCLUDE statements.
+           
+            -M<dir> : Specifies a list of directories for searching module 
+                 definition files. Members of the list must be separated by 
+                 semicolon. While modules are defined or used this option is 
+                 mandatory.
+ 
+            -R : Suppress folding constant expressions but those that either are
+                 public constant values of modules or define parameters of type.
+
+            -r : Issue remarks, which are diagnostic messages even milder than 
+                 warnings.
+ 
+            -U : Case sensitivity for identifiers.
+
+            -u : Disable implicit typing of identifiers. This has the same
+                 effect as IMPLICIT NONE statement as applied to the file.
+
+            -A : Warn about use of non-F90 features, disable features that 
+                 conflict with F90. 
+
+            -Llfile: Generate raw listing information in the file lfile. This
+                 information is used to generate a formatted listing where each
+                 line begins with a key character that identifies the type:
+                 N  - Normal line
+                 S  - Comment line
+                 R  - Remark diagnostics
+                 W  - Warning diagnostics
+                 E  - Error diagnostics
+                 C  - Catastrophic error diagnostics.
+ 
+  IMPORTANT NOTE: The Fortran 90 parser included in PDT adheres very strictly
+  *************** to the F90 language specification and does not comply with 
+                  extensions to the language typically implemented by vendors.
+                  This includes real*8 or integer*8 types, kind parameters,
+                  and some continuation fields in fixed form. In some cases, 
+                  the source must be modified to comply with the standard before
+                  the PDT front-end can parse the program. f95parse may be used
+                  to parse codes that f90parse cannot handle. 
+
+            f95parse accepts the following flags:
+	
+            -v : Verbose flag. In this mode, all error messages and warnings
+                 are displayed. 
+            -R free: Specifies free form, -R fixed specifies fixed form for
+                  the Fortran source code. If your Fortran source has a .f file 
+                  extension and uses free form, it is important to specify 
+                  this flag. By default the parser assumes fixed form for F77.
+                  For other flags that f95parse accepts, please refer to the 
+                  etc/flint.hls file.
+            -p : invoke preprocessor.
+            -o<pdbfile> : Specifies the name of the PDB file. Note: there is
+                 no space between -o and the file name. 
+
+            You may specify multiple fortran files on the command-line to 
+            resolve module dependencies. e.g.,
+
+             % f95parse `find . -name "*.f90" -print` -omerged.pdb  
+
+            parses all files with .f90 suffix to produce merged.pdb file.
+
+ IMPORTANT NOTE: Currently, f95parse can produce PDB files that have enough 
+ *************** information for use with the TAU profiling package. However,
+                 it does not have argument and calltree information that may
+                 be needed for other tools such as CHASM. This will be added
+                 in future releases. 
+                 The Mutek parser in f90parse could only parse one file at a 
+                 time whereas f95parse parses more than one file.
+                  
+            gfparse accepts the following flags:
+            -R free: for free form
+            -R fixed: for fixed form
+            -p: pre-processor 
+	    -v: verbose output
+
+NOTE:
+*****
+	   Setting the PDT_MOD_DIR environment variable specifies the location 
+           of the directory where GNU gfortran .mod module files are stored. 
+           If this is not specified, the files are stored in /tmp/pdt-$USER
+	   directory. See etc/gfortran.txt file for further information on 
+           compiler options supported. Now the gfortran based PDT parser emits
+           sufficient information for loop level instrumentation in TAU and also
+           includes type information needed for CHASM. 
+
+
+                
+pdbconv   : Simple tool that checks the consistency/correctness of a PDB file
+            and converts it to a more verbose, human-readable format.
+            Usage:
+
+              pdbconv [-c | -o <outfile>] [-AGMNPRSTY] <pdbfile>
+
+            Called without any options, pdbconv reads the PDB file <pdbfile>
+            checks it for correctness, and prints it out again in a standard
+            form.  The following options are available:
+
+            -c            Check for correctness only
+
+            -o <outfile>  Write output to file <outfile>
+
+            -A            Convert (A)ll item output to verbose format
+
+            -G            Print only (G)roup items (in verbose format)
+
+            -M            Print only (M)acro items (in verbose format)
+
+            -N            Print only (N)amespace items (in verbose format)
+
+            -P            Print only (P)ragma items (in verbose format)
+
+            -R            Print only (R)outine items (in verbose format)
+
+            -S            Print only (S)ource file items (in verbose format)
+
+            -T            Print only (T)emplate items (in verbose format)
+
+            -Y            Print only t(Y)pe items (in verbose format)
+
+pdbhtml   : Produces "htmlized" versions of all source and header files
+            contained in the program database file <pdbfile>. It also
+            produces an HTML index of Classes, Templates, Namespaces,
+            and Functions called "index.html". Usage:
+
+              pdbhtml <pdbfile>
+
+            Only works for C and C++ sources for now.
+
+pdbmerge  : Takes a set of program database files and merges them into one,
+            eliminating duplicate items from different files, in the process.
+            Usage:
+
+              pdbmerge [ [-v] -o <outfile>] <pdbfiles>...
+
+            -v            Verbose.
+
+            -o <outfile>  Write merged database to file <outfile> instead of
+                          cout.
+
+            Note:  Namespace definitions spread over several files are
+            not merged correctly yet.
+
+pdbtree   : Prints the source file inclusion tree, class hierarchy (IS-A +
+            HAS-A), and function call graph. Usage: 
+
+              pdbtree [-CRS] pdbfile
+
+            -C            Print only the (C)lass hierarchy
+
+            -R            Print only the (R)outine call graph
+
+            -S            Print only the (S)ource file inclusion tree
+
+            Note: Class hierarchy is a DAG, not a tree, and therefore display
+            is bad.
+
+pdbcomment: Scans all (non-system) source files related to a PDB file
+            for C, C++, Fortran comments, C/C++ pragmas, and Fortran
+            directives and prints out a new enhanced PDB file containing
+            this additional information. Usage:
+
+              pdbcomment [-o outfile] [-c|-p] [-d] [-D string] pdbfile
+
+            -o <outfile>  Write output to file <outfile>
+
+            -c            Only scan for comments (ignore pragmas)
+
+            -p            Only scan for pragmas (ignore comments)
+
+            -d            Fortran only: Consider lines with a 'D'
+                          in the first column also as comments
+	
+	    -v            Verbose mode
+
+            -D string     Fortran only: Scan also for directives
+                          which are marked with the sentinel 'string'.
+                          This option can be specified several times,
+                          once for each directive sentinel to scan for.
+                          Case does NOT matter when specifiying 'string'.
+                          pdbcomment recognizes OpenMP (sentinel $omp)
+                          by default.
+                          
+
+xmlgen    : Converts a PDB file to an XML file.  Usage: 
+	      xmlgen [-c] outfile.xml [file1.pdb file2.pdb ... filen.pdb]
+
+       	      -c : optional flag.  forces generator to assume C, not C++.
+
+	    Note: In the current release, support for Fortran is mostly 
+            complete. C++ templates or multiple inheritance are not yet 
+            supported. 
+            The CHASM project [http://sourceforge.net/projects/chasm-interop] 
+            at LANL developed xmlgen.
+
+=============================================================================
+
+Typical use of the Binaries
+---------------------------
+
+(1) Generate a PDB file for each compilation unit of your application:
+
+    cxxparse srcfile1.cc -DMY_DEFINES=1 -I../my_includes ...
+    cxxparse srcfile2.cc -DMY_DEFINES=1 -I../my_includes ...
+    cxxparse srcfile3.cc -DMY_DEFINES=1 -I../my_includes ...
+    ...
+
+(2) Generate a PDB file for the whole application:
+
+    pdbmerge -o myapp.pdb srcfile1.pdb srcfile2.pdb srcfile3.pdb ...
+
+(3) Use the htmlizer or tree display:
+
+    pdbhtml myapp.pdb
+    pdbtree myapp.pdb
+
+=============================================================================
+
+Writing your own PDT applications
+---------------------------------
+
+The DUCTAPE library, lib/libpdb.a, can be used to develop your own PDT
+application.  Unfortunately, no a lot of documentation about writing
+applications exists yet. A first draft of a DUCTAPE Primer can be
+found in ductape/html/primer.html.
+
+See the example programs in the ductape/src directories (especially
+pdbconv.cc and pdbtree.cc) on how to use the DUCTAPE library API.  ("Use 
+the source, Luke!")  To compile your programs use:
+
+    -I$(PDT_HOME)/include -L$(PDT_HOME)/$(ARCH)/lib -lpdb
+
+If you have already developed PDT Version 1.3 applications, the
+ductape/doc/porting-1.o-to-2.0.txt document gives an overview
+about the main changes and things which need to be changed so your
+application can make use of version 2.0 features.
+
+=============================================================================
+
+Acknowledgements
+----------------
+
+The Program Database Toolkit development team would like to thank the
+following companies for their help: 
+
+Edison Design Group (EDG) 
+Mutek Solutions, Ltd.
+    We would like to thank EDG and Mutek for the use of their respective
+    C++ and Fortran 90 Front Ends, as well as their support, throughout the 
+    development of PDT. 
+
+Cleanscape Inc.
+    We would like to thank Cleanscape for the use of their Fortran 95 Flint 
+    parser.
+
+KAI Software, A Division of Intel Americas, Inc.
+    We would also like to thank KAI for letting us distribute their
+    C++ header files with the PDT release. 
+    
+
