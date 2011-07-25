@@ -13,4 +13,6 @@ DEPENDS+=       "texinfo/4.13 --build-env"
 DESCRIPTION=	"Tools to produce, examine and manipulate executable"
 DESCRIPTION+=	"binaries and libraries"
 
+CONFIGURE_ARGS+= --enable-shared
+
 include ../../../mk/gnu.post.mk
