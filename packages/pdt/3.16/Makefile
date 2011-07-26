@@ -30,12 +30,15 @@ do-configure:
 do-build:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
         cd $(WRKSRC); \
-	make
+	make all;
 
 do-install:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
-        cd $(WRKSRC)/..; \
-	cp -r $(WRKSRC) $(PROGRAM_PREFIX); \
+        cd $(WRKSRC)/; \
+	make install; \
+	cd ..; \
+	$(MKDIR) $(PROGRAM_PREFIX); \
+	cp -r $(WRKSRC)/* $(PROGRAM_PREFIX); \
 	cd $(PROGRAM_PREFIX)/$(CPRT_PDT_SYSTEM_ARCH); \
 	if [ -e ./include ]; then rm -f ./include;fi; \
 	ln -s $(PROGRAM_PREFIX)/include .
