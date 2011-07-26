@@ -12,10 +12,9 @@ PKGSUBDIR=$(PKGNAME)/src
 
 DEPENDS+=	
 
-#DESCRIPTION+=	"PAPI aims to provide the tool designer and application engineer with a"
-#DESCRIPTION+=   "consistent interface and methodology for use of the performance counter"
-#DESCRIPTION+=   "hardware found in most major microprocessors"
-
+DESCRIPTION+=	"PAPI aims to provide the tool designer and application engineer with a"
+DESCRIPTION+=   "consistent interface and methodology for use of the performance counter"
+DESCRIPTION+=   "hardware found in most major microprocessors"
 
 do-build:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
