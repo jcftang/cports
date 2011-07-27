@@ -83,6 +83,9 @@ endif
 
 ifndef DISTRO_TYPE
 DISTRO_TYPE=            $(shell $(MPKGDIR)/scripts/distro.guess)
+CPRT_PAPI_KERNEL=$(strip $(if \
+                           $(findstring rhel-6, $(DISTRO_TYPE)), \
+                           yes,no))
 endif
 
 

@@ -11,15 +11,19 @@ DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
 
 #DO_RUN_TESTS=yes
 
+ifeq  ("X$(CPRT_PAPI_KERNEL)","Xyes")
+$(info papi kernel)
+DEPENDS+= "papi/4.1.3  --build-env --lib --run-env"
+CPRT_SCALASCA_CONFIGURE_ARGS+= --with-papi=$(PREFIX_papi)
+endif
+
 DEPENDS+= "binutils/2.20  --build-env --lib"
 DEPENDS+= "openmpi/1.4.3 --build-env --lib --run-env"
-DEPENDS+= "papi/4.1.3 --build-env --lib --run-env"
 DEPENDS+= "qt/4.7.0 --build-env --lib"
 DEPENDS+= "pdt/3.16 --build-env --lib"
 DEPENDS+= "jdk/1.6.0_26 --build-env --lib"
 
 CPRT_SCALASCA_CONFIGURE_ARGS+= --with-binutils=$(PREFIX_binutils)
-CPRT_SCALASCA_CONFIGURE_ARGS+= --with-papi=$(PREFIX_papi)
 CPRT_SCALASCA_CONFIGURE_ARGS+= --with-pdt=$(PREFIX_pdt)
 CPRT_SCALASCA_CONFIGURE_ARGS+= --enable-all-mpi-wrappers
 

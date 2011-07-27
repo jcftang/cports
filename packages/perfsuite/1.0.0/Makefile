@@ -10,9 +10,15 @@ DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
 
 DO_RUN_TESTS=yes
 
+ifeq  ("X$(CPRT_PAPI_KERNEL)","Xyes")
+$(info papi kernel)
+DEPENDS+= "papi/4.1.3  --build-env --lib"	
+CONFIGURE_ARGS+= --with-papi=$(PREFIX_papi)
+endif
+
 DEPENDS+= "binutils/2.20  --build-env --lib"	
 DEPENDS+= "expat/2.0.1  --build-env --lib"	
-DEPENDS+= "papi/4.1.3  --build-env --lib"	
+
 DEPENDS+= "openmpi/1.4.3 --build-env --lib --run-env"
 DEPENDS+= "tcl/8.5.8 --build-env --lib --run-env"
 DEPENDS+= "tk/8.5.8 --build-env --lib --run-env"
@@ -20,7 +26,6 @@ DEPENDS+= "tDOM/0.8.3 --build-env --lib "
 DEPENDS+= "scalasca/1.3.3 --build-env --lib --run-env "
 DEPENDS+= "jdk/1.6.0_26 --build-env --lib --run-env "
 
-CONFIGURE_ARGS+= --with-papi=$(PREFIX_papi)
 CONFIGURE_ARGS+= --with-tdom=$(PREFIX_tDOM)
 CONFIGURE_ARGS+= --with-cube=$(PREFIX_scalasca)
 CONFIGURE_ARGS+= --with-mpi

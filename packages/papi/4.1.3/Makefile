@@ -8,6 +8,8 @@ MAINTAINER=	darach@tchpc.tcd.ie
 GNU_CONFIGURE=	yes
 DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
 
+CPRT_PAPI_PERCTR_INSTALLED=no
+
 PKGSUBDIR=$(PKGNAME)/src
 
 DEPENDS+=	
@@ -15,6 +17,13 @@ DEPENDS+=
 DESCRIPTION+=	"PAPI aims to provide the tool designer and application engineer with a"
 DESCRIPTION+=   "consistent interface and methodology for use of the performance counter"
 DESCRIPTION+=   "hardware found in most major microprocessors"
+
+
+ifeq  ("X$(CPRT_PAPI_PERCTR_INSTALLED)","Xno")
+ifeq  ("X$(CPRT_PAPI_KERNEL)","Xno")
+$(error not a papi kernel; if perfctr module installed, set CPRT_PAPI_PERCTR_INSTALLED)
+endif
+endif
 
 do-build:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
