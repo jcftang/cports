@@ -16,6 +16,7 @@ DEPENDS+= "openmpi/1.4.3 --build-env --lib --run-env"
 DEPENDS+= "papi/4.1.3 --build-env --lib --run-env"
 DEPENDS+= "qt/4.7.0 --build-env --lib"
 DEPENDS+= "pdt/3.16 --build-env --lib"
+DEPENDS+= "jdk/1.6.0_26 --build-env --lib"
 
 CPRT_SCALASCA_CONFIGURE_ARGS+= --with-binutils=$(PREFIX_binutils)
 CPRT_SCALASCA_CONFIGURE_ARGS+= --with-papi=$(PREFIX_papi)
