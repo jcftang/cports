@@ -34,6 +34,7 @@ CONFIGURE_ARGS+= --with-wish=$(PREFIX_tk)/bin/wish
 ## allows configure to go through.  Compilation and install and test also
 ## go through -- but there might be hidden problems
 ## this should be checked for future versions of perfsuite
+CONFIGURE_ARGS+= JAVA=$(PREFIX_jdk)/bin/java
 CONFIGURE_ARGS+= JAVAC=$(PREFIX_jdk)/bin/javac _ACJNI_JAVAC=$(PREFIX_jdk)/bin/javac
 
 DESCRIPTION+=	"PerfSuite is a collection of tools, utilities, and libraries for software performance analysis where the primary design goals are ease of use, comprehensibility, interoperability, and simplicity."
