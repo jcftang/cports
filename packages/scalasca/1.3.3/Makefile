@@ -37,9 +37,15 @@ do-configure:
 	$(MODULE_ADD) $(BUILD_DEPENDS);  \
 	cd $(WRKSRC); \
 	./configure --prefix=$(PROGRAM_PREFIX) $(CPRT_SCALASCA_CONFIGURE_ARGS); \
-	cd build-linux-gomp-openmpi; \
-	if [ -e mf.tmp.out ];then rm -f mf.tmp.out;fi;\
-	cat Makefile.defs | $(SED) -e 's|^OPTFLAGS.*=|OPTFLAGS= -fPIC |' > mf.tmp.out;\
+	if [ -e build-linux-gomp-openmpi -a -d build-linux-gomp-openmpi ]; \
+	then \
+	   cd build-linux-gomp-openmpi; \
+	else \
+	   cd build-linux-gnu-openmpi; \
+	fi; \
+	if [ -e mf.tmp.out ];then rm -f mf.tmp.out;fi; \
+	echo "here"; \
+	cat Makefile.defs | $(SED) -e 's|^OPTFLAGS.*=|OPTFLAGS= -fPIC |' > mf.tmp.out; \
 	mv mf.tmp.out Makefile.defs
 
 do-build:

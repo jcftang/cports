@@ -11,10 +11,11 @@ DISTFILES = $(DISTNAME)-$(VERSION).tgz
 DEPENDS+= "tcl/8.5.8 --build-env --lib"
 DEPENDS+= "tk/8.5.8 --build-env --lib"
 
+WGET= wget --no-check-certificate 
+
 #DESCRIPTION+=   "hardware found in most major microprocessors"
 
 CONFIGURE_ARGS+= --with-tcl=$(PREFIX_tcl)/lib
-
 
 #do-build:
 #	$(MODULE_ADD) $(BUILD_DEPENDS);   \
