@@ -11,7 +11,7 @@ HAS_CONFIGURE=  no
 PKGSUBDIR=$(DISTNAME)
 
 DEPENDS+= "Python/2.6.5 --lib --build-env --run-env"
-DEPENDS+= "git/1.7.5 --build-env"
+DEPENDS+= "git/1.7.6 --build-env"
 
 DESCRIPTION=    "Git extensions to provide high-level repository operations for Vincent Driessen's branching model."
 

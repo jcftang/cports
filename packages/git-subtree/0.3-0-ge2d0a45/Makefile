@@ -14,7 +14,7 @@ PATCH_STRIP=-p1
 
 DONT_CREATE_METAINFO=yes
 
-DEPENDS+= "git/1.7.2.2 --build-env --run-env"
+DEPENDS+= "git/1.7.6 --build-env --run-env"
 #DEPENDS+= "asciidoc/8.6.1 --build-env"
 #DEPENDS+= "libxslt/1.1.26 --build-env"
 

@@ -14,7 +14,7 @@ TEST_TARGET=	test
 PKGSUBDIR=$(DISTNAME)
 
 DEPENDS+= "Python/2.6.5 --lib --build-env --run-env"
-DEPENDS+= "git/1.7.2.2 --build-env --run-env"
+DEPENDS+= "git/1.7.6 --build-env --run-env"
 DEPENDS+= "par2cmdline/0.4 --build-env --run-env"
 
 DESCRIPTION=    "Highly efficient file backup system based on the git packfile format."

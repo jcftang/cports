@@ -14,7 +14,7 @@ PKGSUBDIR=      $(DISTNAME)-$(VERSION)
 NO_BUILD=	yes
 HAS_CONFIGURE=  no
 
-DEPENDS+=	"git/1.7.2.2 --run-env"
+DEPENDS+=	"git/1.7.6 --run-env"
 
 DESCRIPTION=    "TopGit manages a patch queue using Git topic branches, one patch per branch. It allows for patch dependencies and can thus manage non-linear patch series."
 
