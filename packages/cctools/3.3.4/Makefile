@@ -13,10 +13,12 @@ PKGSUBDIR=	$(DISTNAME)-$(VERSION)-src
 
 DESCRIPTION=	"The cctools package contains Parrot, Chirp, Makeflow, Work Queue, SAND and other software"
 
+DEPENDS+=	"openmpi/1.4.3 --build-env --run-env"
+
 do-configure:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
 	cd $(WRKSRC); \
-	./configure --prefix $(PROGRAM_PREFIX)
+	./configure --prefix $(PROGRAM_PREFIX) --with-mpi-path $(PREFIX_openmpi)
 	
 
 include ../../../mk/gnu.post.mk
