@@ -19,7 +19,8 @@ MAKEFILE=	GNUmakefile
 do-configure:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
 	cd $(WRKSRC); \
-	./configure.classic --prefix=$(PROGRAM_PREFIX)
+	./configure.classic --prefix=$(PROGRAM_PREFIX) \
+	--no-arch-subdirs
 	
 
 include ../../../mk/gnu.post.mk
