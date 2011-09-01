@@ -10,7 +10,7 @@ GNU_CONFIGURE=	no
 HAS_CONFIGURE=	no
 DISTFILES = $(VERSION).tar.bz2
 
-PKGSUBDIR=eigen-eigen-9ca09dbd70ce
+PKGSUBDIR=eigen-eigen-$(VERSION)
 
 EXTRAVERSION=
 
