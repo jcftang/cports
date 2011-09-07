@@ -9,7 +9,7 @@ MAINTAINER=	neil@tchpc.tcd.ie
 HAS_CONFIGURE=	no
 DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
 
-EXTRAVERSION=_Python_2.6.5
+EXTRAVERSION=_Python_2.7.2
 
 DEPENDS+=	"atlas/3.8.3 --build-env"
 DEPENDS+=	"Python/2.7.2 --build-env --run-env"
