@@ -45,3 +45,12 @@ Once you have met the [[requirements]] continue with the following.
      (e.g. `https_proxy=https://proxy.yourdomain.ie:80`)
 
 Once it is installed you will want to read the basic [[usage]] page.
+
+### Notes
+
+   - Scientific Linux 5. Requires /usr/sbin and /sbin to be in your 
+     $PATH for running configure.sh
+
+     export PATH=$PATH:/usr/sbin/:/sbin/
+
+
