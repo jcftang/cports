@@ -141,6 +141,8 @@ if test -f /etc/redhat-release ; then
     VENDOR=redhat ;
 elif test -f /etc/caos-release ; then
     VENDOR=caos ;
+elif test -f /etc/SuSE-release ; then
+    VENDOR=SuSE ;
 else
     VENDOR= ;
 fi

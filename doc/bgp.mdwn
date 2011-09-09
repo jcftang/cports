@@ -1,0 +1,13 @@
+## BG/P - SLES 10.3 (64bit power5+)
+
+*cports* should probably not be used for providing numerical libraries to
+the user without extensive testing.
+
+Support utitilies such as python, git, etc... is provided via cports.
+
+### Tested/Installed apps
+
+* bootstrap/1.0
+* bootstrap/2.0
+* git/1.7.6
+* mercurial/1.9.2
