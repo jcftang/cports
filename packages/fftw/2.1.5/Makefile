@@ -14,6 +14,6 @@ DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
 
 DESCRIPTION=	"fftw: Discrete Fourier Transform in one or more dimensions"
 
-CONFIGURE_ARGS += --enable-threads
+#CONFIGURE_ARGS += --enable-threads
 
 include ../../../mk/gnu.post.mk
