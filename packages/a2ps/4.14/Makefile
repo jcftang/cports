@@ -6,10 +6,10 @@ CATEGORIES=	printing
 HOMEPAGE=	http://www.gnu.org/software/a2ps/a2ps.html
 MASTER_SITES=	http://ftp.gnu.org/gnu/a2ps/
 MASTER_SITES+=	ftp://ftp.enst.fr/pub/unix/a2ps/
-MASTER_SITES+=	http://www.inf.enst.fr/~demaille/a2ps/sheets
+#MASTER_SITES+=	http://www.inf.enst.fr/~demaille/a2ps/sheets
 PKGSUBDIR=	$(DISTNAME)-4.14
 DISTFILES=	$(DISTNAME)-$(VERSION)$(EXTRACT_SUFX)
-DISTFILES+=	sheets.tar.gz
+#DISTFILES+=	sheets.tar.gz
 MAINTAINER=	jtang@tchpc.tcd.ie
 GNU_CONFIGURE=	yes
 

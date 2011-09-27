@@ -19,6 +19,7 @@ DEPENDS+=	"libpng/1.2.42 --lib --build-env"
 DEPENDS+=	"libxml2/2.7.7 --lib --build-env"
 DEPENDS+=	"zlib/1.2.5 --lib --build-env"
 
+
 MAKE_FLAGS+= DEFAULT_TARGET=nonmerge 
 MAKE_FLAGS+= NETPBMLIBTYPE=unixshared
 MAKE_FLAGS+= NETPBMLIBSUFFIX=so
@@ -34,6 +35,7 @@ MAKE_FLAGS+= JPEGLIB=libjpeg.so
 MAKE_FLAGS+= ZLIB=libz.so
 MAKE_FLAGS+= X11LIB=libX11.so
 MAKE_FLAGS+= NETPBM_DOCURL="http://netpbm.sourceforge.net/doc/"
+MAKE_FLAGS+= LDFLAGS+=" -L$(PREFIX_zlib)/lib "
 
 
 do-configure:

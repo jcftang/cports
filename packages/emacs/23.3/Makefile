@@ -46,6 +46,7 @@ DEPENDS+=	"gtk+/2.20.1 --build-env --lib"
 DEPENDS+=	"atk/1.30.0 --build-env --lib"
 DEPENDS+=	"glib/2.24.1 --build-env --lib"
 DEPENDS+=	"pango/1.28.1 --build-env --lib"
+DEPENDS+=	"freetype/2.4.2 --build-env --lib"
 DEPENDS+=	"cairo/1.8.10 --build-env --lib"
 
 # Should be in mailcrypt
