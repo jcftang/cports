@@ -26,6 +26,7 @@ do-install:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
 	cd $(WRKSRC); \
 	$(MAKE) install ; \
-	ln -sf $(PROGRAM_PREFIX)/include/ncurses/*.h $(PROGRAM_PREFIX)/include/
+	ln -sf $(PROGRAM_PREFIX)/include/ncurses/*.h $(PROGRAM_PREFIX)/include/ ; \
+	ln -sf $(PROGRAM_PREFIX)/lib/libncurses.so $(PROGRAM_PREFIX)/lib/libcurses.so
 
 include ../../../mk/gnu.post.mk
