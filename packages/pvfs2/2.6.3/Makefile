@@ -10,6 +10,8 @@ GNU_CONFIGURE=	yes
 DISTFILES = pvfs-$(VERSION).tar.gz
 PKGSUBDIR = pvfs-$(VERSION)
 
+DEPENDS   = "db/5.1.25 --build-env"
+
 HELP_MSG += " > make kmod_install\n"
 HELP_MSG += "     Build and update just the kernel module\n"
 

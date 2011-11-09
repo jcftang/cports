@@ -1,7 +1,7 @@
 include ../../../mk/gnu.pre.mk
 
 DISTNAME=	pvfs2
-VERSION=	2.6.2
+VERSION=	2.8.2
 CATEGORIES=	clustering
 HOMEPAGE=	http://www.pvfs2.org/
 MASTER_SITES=	ftp://mirror.anl.gov/pub/pvfs2/ ftp://ftp.parl.clemson.edu/pub/pvfs2/old
