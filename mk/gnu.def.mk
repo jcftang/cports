@@ -116,6 +116,7 @@ CP?=			cp
 MV?=			mv
 CHMOD?=			chmod
 RPM2CPIO?=		rpm2cpio
+TR?=                    tr
 
 ifneq (,${MODULESHOME})
 MODULE_ADD?=		. $$MODULESHOME/init/sh; \

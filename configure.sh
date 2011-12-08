@@ -156,6 +156,14 @@ if [ -z "$PATCH" ]; then
 fi
 TLOG " - you have some patch program - ok"
 
+# check that we have tr
+TLOGN "checking for tr"
+TR=`acLookFor tr`
+if [ -z "$TR" ]; then
+    AC_FAIL "Cannot find tr";
+fi
+TLOG " - you have some tr program - ok"
+
 # assuming the above checks pass, get the path of everything
 MF_PATH_INCLUDE	GMAKE make gmake
 MF_PATH_INCLUDE WGET wget
@@ -164,6 +172,7 @@ MF_PATH_INCLUDE MAKEINFO makeinfo
 MF_PATH_INCLUDE INSTALL_INFO install-info
 MF_PATH_INCLUDE GUNZIP gunzip
 MF_PATH_INCLUDE PATCH patch
+MF_PATH_INCLUDE TR tr 
 
 AC_SUB	DISTRO_TYPE `./scripts/distro.guess`
 AC_OUTPUT Makefile mk-conf/config.mk cports.modulefile

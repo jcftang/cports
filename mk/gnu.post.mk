@@ -253,7 +253,7 @@ TOUCH_FLAGS?=		-f
 #
 
 # This is a kludge, but we want each libdir only once
-UNIQ_LINK_PATHS=	$(shell for foo in $(LINK_PATHS) ""; do echo $$foo; done | sort -u | /usr/bin/tr "\n" " "; echo "")
+UNIQ_LINK_PATHS=	$(shell for foo in $(LINK_PATHS) ""; do echo $$foo; done | sort -u | $(TR) "\n" " "; echo "")
 
 #  The C pre-processor flags. (-I)
 CPP_FLAGS+=		$(INCLUDE_PATHS:%=-I%)
@@ -273,7 +273,7 @@ NO_AUTO_DYNAMIC_LINK_PATHS=	yes
 ifdef LINK_PATHS
 ifdef NO_AUTO_DYNAMIC_LINK_PATHS
 
-LD_RPATH_LIST=		$(shell (for foo in $(UNIQ_LINK_PATHS) ""; do if ls $$foo/*.so* 2> /dev/null > /dev/null || test "$$foo" = "$(PROGRAM_PREFIX)/lib" ; then echo $$foo; fi; done | /usr/bin/tr "\n" ":"; echo "") | sed -e "s;:*$$;;")
+LD_RPATH_LIST=		$(shell (for foo in $(UNIQ_LINK_PATHS) ""; do if ls $$foo/*.so* 2> /dev/null > /dev/null || test "$$foo" = "$(PROGRAM_PREFIX)/lib" ; then echo $$foo; fi; done | $(TR) "\n" ":"; echo "") | sed -e "s;:*$$;;")
 
 # XXX autoconf
 ifneq (,$(findstring osf,$(SYSTEM_TYPE_OS)))

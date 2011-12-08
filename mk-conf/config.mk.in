@@ -8,6 +8,7 @@ BASE_ICONPATH?=         /misc/graphics/icons
 INFODIR?=               $(PREFIX)/information
 
 INSTALL_INFO?=		@INSTALL_INFO@
+TR?=			@TR@
 COMPILERS?=		@COMPILERS@
 
 #INSTALL=		@INSTALL@
