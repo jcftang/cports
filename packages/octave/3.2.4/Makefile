@@ -5,7 +5,7 @@ VERSION=	3.2.4
 CATEGORIES=	numerical
 MAINTAINER=     darach@tchpc.tcd.ie
 HOMEPAGE=       http://www.gnu.org/software/octave/	
-MASTER_SITES=   ftp://ftp.octave.org/pub/octave
+MASTER_SITES=   http://ftp.octave.org/pub/gnu/octave/
 GNU_CONFIGURE = yes
 DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
 
