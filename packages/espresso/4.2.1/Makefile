@@ -8,8 +8,8 @@ MASTER_SITES=   http://qe-forge.org/frs/download.php/114/espresso-4.2.1.tar.gz
 MAINTAINER=     jtang@tchpc.tcd.ie
 GNU_CONFIGURE=  yes
 
-DEPENDS+=       "openmpi/1.4.2 --run-env --build-env"
-DEPENDS+=       "scalapack/1.8.0_openmpi_1.4.2 --lib --build-env"
+DEPENDS+=       "openmpi/1.4.3 --run-env --build-env"
+DEPENDS+=       "scalapack/1.8.0_openmpi_1.4.3 --lib --build-env"
 DEPENDS+=	"fftw/3.2.2 --lib --build-env"
 DEPENDS+=	"atlas/3.8.3 --lib --build-env"
 
