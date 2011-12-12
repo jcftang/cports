@@ -61,7 +61,7 @@ do-install:
 	$(QUIET) $(MODULE_ADD) $(BUILD_DEPENDS);                        \
 	cd $(WORKDIR); \
 	$(ECHO) $(CPRT_SCLPK_CONFIG_ARGS); \
-	cd scalapack_installer_0.96 ; \
+	cd scalapack_installer; \
 	python ./setup.py $(CPRT_SCLPK_CONFIG_ARGS);
 	cd $(PROGRAM_PREFIX)/lib; \
 	cp blacs.a libblacs.a; \
