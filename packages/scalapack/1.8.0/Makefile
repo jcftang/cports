@@ -37,7 +37,7 @@ EXTRAVERSION=_openmpi_1.4.3-$(CPRT_SCLPK_BLAS)
 DEPENDS+="openmpi/1.4.3 --build-env --run-env"
 
 CPRT_SCLPK_CONFIG_ARGS+= --fcflags="-O3 -fPIC" --ccflags="-O3 -fPIC" \
-                 --downblacs --prefix=$(PROGRAM_PREFIX)
+                 --prefix=$(PROGRAM_PREFIX)
 CPRT_SCLPK_CONFIG_ARGS+=$(strip $(if $(findstring intel,$(COMPILERS)),--ldflags_c="-nofor-main",))
 # icc/ifort specific
 
