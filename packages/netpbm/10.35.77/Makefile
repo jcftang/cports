@@ -18,6 +18,7 @@ DEPENDS+=	"libtiff/3.9.4 --lib --build-env"
 DEPENDS+=	"libpng/1.2.42 --lib --build-env"
 DEPENDS+=	"libxml2/2.7.7 --lib --build-env"
 DEPENDS+=	"zlib/1.2.5 --lib --build-env"
+DEPENDS+=	"ghostscript/8.71 --lib --build-env --run-env"
 
 
 MAKE_FLAGS+= DEFAULT_TARGET=nonmerge 
@@ -46,7 +47,8 @@ do-configure:
 do-build:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
 	cd $(WRKSRC); \
-	$(MAKE) $(MAKE_FLAGS) 
+	$(MAKE) $(MAKE_FLAGS);\
+	cp -a $(WRKSRC)/converter/other/pnmtops $(WRKSRC)/install_root/bin
 
 do-install:
 	$(INSTALL) -d $(PROGRAM_PREFIX)
