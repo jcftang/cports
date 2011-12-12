@@ -176,7 +176,7 @@ endif
 # Common places
 #
 
-MASTER_SITE_GNU?=	http://ftp.heanet.ie/mirrors/ftp.gnu.org/gnu
+MASTER_SITE_GNU?=	http://ftp.heanet.ie/mirrors/ftp.gnu.org/gnu/ \
 			ftp://ftp.heanet.ie/mirrors/ftp.gnu.org/gnu/ \
 			ftp://ftp.stacken.kth.se/pub/gnu/ \
 			ftp://ftp.sunet.se/pub/gnu/ \
