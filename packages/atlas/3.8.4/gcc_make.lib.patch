@@ -1,0 +1,12 @@
+diff -ur ATLAS/makes/Make.lib ATLAS_patched/makes/Make.lib
+--- ATLAS/makes/Make.lib	2011-05-14 18:33:24.000000000 +0100
++++ ATLAS_patched/makes/Make.lib	2012-01-17 15:05:52.000000000 +0000
+@@ -50,7 +50,7 @@
+         --whole-archive libatlas.a --no-whole-archive -lc $(LIBS)
+ liblapack.so : liblapack.a
+ 	ld $(LDFLAGS) -shared -soname $@ -o $@ --whole-archive \
+-           liblapack.a --no-whole-archive $(F77SYSLIB)
++           liblapack.a --no-whole-archive $(F77SYSLIB) -lgcc
+ libclapack.so : libclapack.a
+ 	ld $(LDFLAGS) -shared -soname liblapack.so -o liblapack.so \
+            --whole-archive libclapack.a
