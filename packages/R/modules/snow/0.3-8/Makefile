@@ -1,7 +1,7 @@
 include ../../../../../mk/gnu.pre.mk
 
 DISTNAME=       snow
-VERSION=        0.3-3
+VERSION=        0.3-8
 
 DEPENDS+="openmpi/1.4.3 --build-env openmpi/1.4.3 --run-env"
 R_DEPENDS+="Rmpi"
