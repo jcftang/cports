@@ -48,14 +48,18 @@ do-build:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
 	cd $(WRKSRC); \
 	$(MAKE) $(MAKE_FLAGS);\
-	cp -a $(WRKSRC)/converter/other/pnmtops $(WRKSRC)/install_root/bin
+	$(MKDIR) $(WRKSRC)/install_root/bin; \
+	cp -a $(WRKSRC)/converter/other/pnmtops $(WRKSRC)/install_root/bin; \
+	cp -a $(WRKSRC)/converter/other/pnmtojpeg $(WRKSRC)/install_root/bin
 
 do-install:
 	$(INSTALL) -d $(PROGRAM_PREFIX)
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
 	cd $(WRKSRC); \
-	$(MAKE) package PKGDIR=$(WRKSRC)/install_root ;\
-	cd $(WRKSRC)/install_root ;\
-	tar -cpf - . | (cd $(PROGRAM_PREFIX)/ && tar -xpf - )
+	$(MAKE) package PKGDIR=$(WORKDIR)/install_root ;\
+	cd $(WORKDIR)/install_root ; \
+	tar -cpf - . | (cd $(PROGRAM_PREFIX)/ && tar -xpf - ); \
+	cp $(WRKSRC)/install_root/bin/pnmtops $(PROGRAM_PREFIX)/bin; \
+	cp $(WRKSRC)/install_root/bin/pnmtojpeg $(PROGRAM_PREFIX)/bin;
 
 include ../../../mk/gnu.post.mk
