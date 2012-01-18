@@ -1,0 +1,12 @@
+diff -ur ATLAS/CONFIG/src/backend/archinfo_x86.c ATLAS-patched/CONFIG/src/backend/archinfo_x86.c
+--- ATLAS/CONFIG/src/backend/archinfo_x86.c	2011-05-14 18:33:24.000000000 +0100
++++ ATLAS-patched/CONFIG/src/backend/archinfo_x86.c	2012-01-18 14:36:20.000000000 +0000
+@@ -311,7 +311,7 @@
+       case 0x1F:
+          iret = IntCorei1;
+          break;
+-      case 0x25:
++      case 0x25: iret = IntCorei1; break;
+       case 0x2A:
+          iret = IntCorei2;
+ 	 break;
