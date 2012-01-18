@@ -14,6 +14,11 @@ CPRT_COMPILER_CLASS:=$(strip $(if $(findstring pcc, $(COMPILERS)),pcc,$(CPRT_COM
 
 #$(info CPRT_COMPILER_CLASS is $(CPRT_COMPILER_CLASS))
 
+## options: atlas, mkl, acml, openblas
+CPRT_BLAS?= atlas
+
+$(info CPRT_BLAS: $(CPRT_BLAS))
+
 ifeq (gnu,$(CPRT_COMPILER_CLASS))
 ENVIRONMENT+= CC=gcc
 ENVIRONMENT+= CXX=g++
