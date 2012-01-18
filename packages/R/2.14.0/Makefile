@@ -11,7 +11,7 @@ DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
 
 EXTRAVERSION?=
 
-DEPENDS+="atlas/3.8.3 --lib"
+DEPENDS+="atlas/3.8.4 --lib"
 DEPENDS+="openmpi/1.4.3 --build-env openmpi/1.4.3 --run-env"
 DEPENDS+="ncurses/5.7 --lib --build-env"
 DEPENDS+="readline/6.1 --lib --build-env"
