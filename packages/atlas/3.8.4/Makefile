@@ -94,6 +94,9 @@ do-build:
 	make ptcheck 2>&1 | tee $(WORKDIR)/ptchecklog;  \
 	make time 2>&1 | tee $(WORKDIR)/timelog
 
+do-test:
+	@
+
 do-install:
 	cd $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE); \
 	make install; \
