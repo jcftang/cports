@@ -4,6 +4,7 @@ DISTNAME=	emacs
 VERSION=	23.3b
 CATEGORIES=	editor
 MAINTAINER=	jtang@tchpc.tcd.ie
+PKGSUBDIR=      emacs-23.3
 
 HOMEPAGE=	http://www.gnu.org/software/emacs/emacs.html
 MASTER_SITES=	$(MASTER_SITE_GNU:=$(DISTNAME)/)
