@@ -4,7 +4,7 @@ DISTNAME=	atlas
 VERSION=	3.8.4
 ## version 3.3.0 has repeat definitions of some functions (spotrf??);
 ## needs to be sorted out. In meantime revert to fixed older version
-CPRT_NETLIB_LAPACK_VERSION= 3.2.2
+CPRT_NETLIB_LAPACK_VERSION= 3.2.1
 CATEGORIES=	numerical
 HOMEPAGE=	http://math-atlas.sourceforge.net/
 MAINTAINER=	darach@tchpc.tcd.ie
@@ -18,6 +18,8 @@ PKGSUBDIR = ATLAS
 
 ## -1 => autodetect
 CPRT_ATLAS_NUM_THREADS?= -1
+
+CPRT_ATLAS_LAPACK_OS?=  LINUX
 
 PATCH_STRIP=		-p1
 PATCH_ARGS=		-d $(CURDIR)/work/$(PKGSUBDIR) -N -E $(PATCH_STRIP)
@@ -39,7 +41,7 @@ CPRT_ATLAS_LAPACK_MAKE_EXT:=$(strip $(if $(findstring open, $(COMPILERS)),openf9
 $(info CPRT_ATLAS_LAPACK_MAKE_EXT is $(CPRT_ATLAS_LAPACK_MAKE_EXT))
 $(info so will copy  INSTALL/make.inc.$(CPRT_ATLAS_LAPACK_MAKE_EXT) during lapack install)
 
-CPRT_ATLAS_CONFIG_ARGS =  -Fa alg -fPIC --with-netlib-lapack=../lapack-$(CPRT_NETLIB_LAPACK_VERSION)/lapack_LINUX.a
+CPRT_ATLAS_CONFIG_ARGS =  -Fa alg -fPIC --with-netlib-lapack=../lapack-$(CPRT_NETLIB_LAPACK_VERSION)/lapack_$(CPRT_ATLAS_LAPACK_OS).a
 
 CPRT_ATLAS_COMPILERS_FLAGS?=
 ifeq ($(CPRT_ATLAS_COMPILER_CLASS),gnu)
@@ -92,10 +94,43 @@ do-build:
 	cd lib; make shared; cd ..; \
 	make check 2>&1 | tee $(WORKDIR)/checklog;  \
 	make ptcheck 2>&1 | tee $(WORKDIR)/ptchecklog;  \
-	make time 2>&1 | tee $(WORKDIR)/timelog
+	make time 2>&1 | tee $(WORKDIR)/timelog;
+	if [ ! -e $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/libatlas.so -o \
+	     ! -e  $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/libatlas.so ]; \
+	       then echo "libatlas shared lib missing"; exit 1; fi; 
+	if [ ! -e $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/libcblas.so -o \
+	     ! -e  $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/libcblas.so ]; \
+	       then echo "libcblas shared lib missing"; exit 1; fi; 
+	if [ ! -e $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/libf77blas.so -o \
+	     ! -e  $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/libf77blas.so ]; \
+	       then echo "libf77blas shared lib missing"; exit 1; fi; 
 
 do-test:
-	@
+	$(MODULE_ADD) $(BUILD_DEPENDS);   \
+        echo "------- Running (some) LAPACK tests (DOTA LIBS) -------"; \
+	mkdir $(WORKDIR)/lapack_test_results; \
+	mkdir $(WORKDIR)/lapack_test_results/dota; \
+	mkdir $(WORKDIR)/lapack_test_results/dotso; \
+        cd $(WORKDIR)/lapack-$(CPRT_NETLIB_LAPACK_VERSION); \
+       cat make.inc | sed -e "s@^BLASLIB[ \t]*=.*@BLASLIB = $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/libcblas.a $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/libf77blas.a $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/libatlas.a@" | sed -e "s@^LAPACKLIB[ \t]*=.*@LAPACKLIB=../ATLAS-build-$(SYSTEM_TYPE)/lib/liblapack.a@" > make.inc.tmp; \
+        rm make.inc; mv make.inc.tmp make.inc; \
+        cd TESTING; \
+        make 2>&1 | tee $(WORKDIR)/lapack_test_results/lapack_staticlib_test_output; \
+	cp *.out $(WORKDIR)/lapack_test_results/dota; \
+	cd ../; make clean;
+	$(MODULE_ADD) $(BUILD_DEPENDS);   \
+	echo "------- Running (some) LAPACK tests (SHARED) -------"; \
+	LD_RUN_PATH=$(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib:$$LD_RUN_PATH; \
+	echo "------- LD_RUN_PATH -------"; \
+	echo $$LD_RUN_PATH; \
+	echo "---------------------------"; \
+	cd $(WORKDIR)/lapack-$(CPRT_NETLIB_LAPACK_VERSION); \
+	cat make.inc | sed -e "s@^BLASLIB[ \t]*=.*@BLASLIB = $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/libcblas.so $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/libf77blas.so $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/libatlas.so@" | sed -e "s@^LAPACKLIB[ \t]*=.*@LAPACKLIB=../ATLAS-build-$(SYSTEM_TYPE)/lib/liblapack.so@" > make.inc.tmp; \
+	rm make.inc; mv make.inc.tmp make.inc; \
+	cd $(WORKDIR)/lapack-$(CPRT_NETLIB_LAPACK_VERSION)/TESTING; \
+	make 2>&1 | tee $(WORKDIR)/lapack_test_results/lapack_sharedlib_test_output; \
+	pwd; \
+	cp *.out $(WORKDIR)/lapack_test_results/dotso; 
 
 do-install:
 	cd $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE); \
@@ -104,6 +139,7 @@ do-install:
 	cp *.so  $(PROGRAM_PREFIX)/lib; \
 	cp $(WORKDIR)/buildlog $(PROGRAM_PREFIX); \
 	cp $(WORKDIR)/checklog $(WORKDIR)/ptchecklog $(PROGRAM_PREFIX); \
-	cp $(WORKDIR)/timelog $(PROGRAM_PREFIX);
+	cp $(WORKDIR)/timelog $(PROGRAM_PREFIX); \
+	cp -r $(WORKDIR)/lapack_test_results $(PROGRAM_PREFIX);
 
 include ../../../mk/gnu.post.mk
