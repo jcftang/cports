@@ -137,9 +137,12 @@ do-install:
 	make install; \
 	cd lib; \
 	cp *.so  $(PROGRAM_PREFIX)/lib; \
+	cp $(WORKDIR)/lapack-$(CPRT_NETLIB_LAPACK_VERSION)/tmglib_$(CPRT_ATLAS_LAPACK_OS).a $(PROGRAM_PREFIX)/lib/libtmglib.a; \
 	cp $(WORKDIR)/buildlog $(PROGRAM_PREFIX); \
 	cp $(WORKDIR)/checklog $(WORKDIR)/ptchecklog $(PROGRAM_PREFIX); \
 	cp $(WORKDIR)/timelog $(PROGRAM_PREFIX); \
-	cp -r $(WORKDIR)/lapack_test_results $(PROGRAM_PREFIX);
+	if [ -e $(WORKDIR)/lapack_test_results -a -d $(WORKDIR)/lapack_test_results ]; \
+	     then cp -r $(WORKDIR)/lapack_test_results $(PROGRAM_PREFIX); \
+	fi;
 
 include ../../../mk/gnu.post.mk
