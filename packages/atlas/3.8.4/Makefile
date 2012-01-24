@@ -96,14 +96,17 @@ do-build:
 	make ptcheck 2>&1 | tee $(WORKDIR)/ptchecklog;  \
 	make time 2>&1 | tee $(WORKDIR)/timelog;
 	if [ ! -e $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/libatlas.so -o \
-	     ! -e  $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/libatlas.so ]; \
+	     ! -f  $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/libatlas.so ]; \
 	       then echo "libatlas shared lib missing"; exit 1; fi; 
 	if [ ! -e $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/libcblas.so -o \
-	     ! -e  $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/libcblas.so ]; \
+	     ! -f  $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/libcblas.so ]; \
 	       then echo "libcblas shared lib missing"; exit 1; fi; 
 	if [ ! -e $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/libf77blas.so -o \
-	     ! -e  $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/libf77blas.so ]; \
-	       then echo "libf77blas shared lib missing"; exit 1; fi; 
+	     ! -f  $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/libf77blas.so ]; \
+	       then echo "libf77blas shared lib missing"; exit 1; fi; \
+	if [ ! -e $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/liblapack.so -o \
+	     ! -f $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/liblapack.so ]; \
+	       then echo "liblapack shared lib missing"; exit 1; fi; 
 
 do-test:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
