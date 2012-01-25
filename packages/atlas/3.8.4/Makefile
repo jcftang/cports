@@ -95,9 +95,9 @@ do-build:
 	make check 2>&1 | tee $(WORKDIR)/checklog;  \
 	make ptcheck 2>&1 | tee $(WORKDIR)/ptchecklog;  \
 	make time 2>&1 | tee $(WORKDIR)/timelog;
-	if [ ! -e $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/libatlas.so -o \
-	     ! -f  $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/libatlas.so ]; \
-	       then echo "libatlas shared lib missing"; exit 1; fi; 
+#	if [ ! -e $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/libatlas.so -o \
+#	     ! -f  $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/libatlas.so ]; \
+#	       then echo "libatlas shared lib missing"; exit 1; fi; 
 #	if [ ! -e $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/libcblas.so -o \
 #	     ! -f  $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/libcblas.so ]; \
 #	       then echo "libcblas shared lib missing"; exit 1; fi; 
