@@ -36,6 +36,7 @@ ac_default_path="/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/bin:/usr/X11R6/bin"
 
 ac_standard="--src=DIR		where the source lives (.)
 --prefix=DIR		where to install the final product (/usr/local)
+--distdir=DIR		where to find/put cports sources; specify full path (prefix/sources)
 --execdir=DIR		where to put executables (prefix/bin)
 --sbindir=DIR		where to put static executables (prefix/sbin)
 --confdir=DIR		where to put configuration information (/etc)
@@ -102,6 +103,17 @@ while [ $# -gt 0 ]; do
 	__d=`echo "$1"| sed -e 's/^[^=]*=//'`
 	AC_PREFIX=`__ac_dir "$__d"`
 	_set_prefix=1
+	shift 1;;
+
+    X--distdir)
+	AC_DISTDIR=`__ac_dir "$2"`
+	_set_distdir=1
+	shift 2;;
+
+    X--distdir=*)
+	__d=`echo "$1" | sed -e 's/^[^=]*=//'`
+	AC_DISTDIR=`__ac_dir "$__d"`
+	_set_distdir=1
 	shift 1;;
 
     X--confdir)
@@ -640,6 +652,7 @@ EOF
 
 
     AC_PREFIX=${AC_PREFIX:-/usr/local}
+    AC_DISTDIR=${AC_DISTDIR:-$AC_PREFIX/sources}
     AC_EXECDIR=${AC_EXECDIR:-$AC_PREFIX/bin}
     AC_SBINDIR=${AC_SBINDIR:-$AC_PREFIX/sbin}
     AC_LIBDIR=${AC_LIBDIR:-$AC_PREFIX/lib}
@@ -956,6 +969,7 @@ AC_OUTPUT () {
     AC_SUB 'LDFLAGS' "$AC_LDFLAGS"
     AC_SUB 'srcdir'  "$AC_SRCDIR"
     AC_SUB 'prefix'  "$AC_PREFIX"
+    AC_SUB 'distdir' "$AC_DISTDIR"
     AC_SUB 'exedir'  "$AC_EXECDIR"
     AC_SUB 'sbindir' "$AC_SBINDIR"
     AC_SUB 'libdir'  "$AC_LIBDIR"

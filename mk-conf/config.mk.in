@@ -1,4 +1,4 @@
-DISTDIR?=               @prefix@/sources
+DISTDIR?=               @distdir@
 prefix=			@prefix@/$(DISTRO_TYPE)
 PREFIX?=                @prefix@/$(DISTRO_TYPE)
 LOCAL_DIST_SITE?=
