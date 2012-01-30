@@ -9,6 +9,7 @@
    - not recommended to run in this environment unless necessary
    - need to redefine F77 to use g77 instead if you need numerical packages to work
  - Debian 5.x (64bit)
+ - SLES 10.3 (64bit power5+)
 
 ## Systems failed on
 

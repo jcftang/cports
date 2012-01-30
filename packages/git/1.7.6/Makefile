@@ -22,5 +22,9 @@ DESCRIPTION+=	"Git is a free & open source, distributed version control system  
 DESCRIPTION+=	"to handle everything from small to very large projects with speed and"
 DESCRIPTION+=	"efficiency."
 
+ifeq ("$(SYSTEM_TYPE)", "powerpc64-SuSE-linux-gnu")
+MAKE_FLAGS+=	NO_PYTHON=1
+endif
+
 include ../../../mk/gnu.post.mk
 

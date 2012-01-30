@@ -170,6 +170,15 @@ ENVIRONMENT+= F90=openf90
 ENVIRONMENT+= FC=openf95
 COMPILER_TAG?=-open64
 endif
+ifeq (bgp,$(COMPILERS))
+ENVIRONMENT+= CC=mpixlc_r
+ENVIRONMENT+= CXX=mpixlcxx_r
+ENVIRONMENT+= F77=mpixlf77_r
+ENVIRONMENT+= F90=mpixlf90_r
+ENVIRONMENT+= FC=mpixlf90_r
+COMPILER_TAG?=-bgp
+endif
+
 
 
 #

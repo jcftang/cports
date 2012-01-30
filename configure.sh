@@ -113,7 +113,7 @@ MAKE_VERSION=`$MAKE --version | grep "GNU Make" | awk '{print $3}'`
 if [ -z "$MAKE_VERSION" ]; then
     AC_FAIL "$MAKE --version does not return sensible output?"
 fi
-expr "$MAKE_VERSION" '>=' '3.81' || AC_FAIL "$MAKE must be >= version 3.81"
+expr "$MAKE_VERSION" '>=' '3.80' || AC_FAIL "$MAKE must be >= version 3.80"
 TLOG " ok"
 
 # check that we have tar
