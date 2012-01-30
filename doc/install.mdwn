@@ -34,6 +34,22 @@ Once you have met the [[requirements]] continue with the following.
     and *make install* to get gettext and libiconv to behave
     correctly.
 
+#### Example of installation
+
+This will put the install target into your home directory
+
+	tar jxf cports-0.8.1.0-38-g93c9e5e.tar.bz2
+	cd cports-0.8.1.0-38-g93c9e5e
+	./configure.sh --prefix=$HOME/
+	cp cports.modulefile ${HOME}/privatemodules/cports
+	module load use.own cports
+	cd cports/packages/bootstrap/1.0
+	make install
+	make do-cleaz
+	cd cports/packages/bootstrap/2.0
+	make install
+	make do-cleaz
+
 ### Proxies
 
    - many people have a `http_proxy` variable set in their shell config.
@@ -43,6 +59,10 @@ Once you have met the [[requirements]] continue with the following.
      setup. Yours may be different. Some packages even require that a
      `https_proxy` variable be set 
      (e.g. `https_proxy=https://proxy.yourdomain.ie:80`)
+
+	export ftp_proxy=http://proxy.yourdomain.ie:8080
+	export http_proxy=http://proxy.yourdomain.ie:8080
+	export https_proxy=http://proxy.yourdomain.ie:8080
 
 Once it is installed you will want to read the basic [[usage]] page.
 
