@@ -122,6 +122,10 @@ do-test:
 	cp *.out $(WORKDIR)/lapack_test_results/dota; \
 	cd ../; make clean;
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
+	if [ -f $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/libatlas.so -a \
+	     -f $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/libcblas.so -a \
+	     -f $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/libf77blas.so -a \ 
+	     -f $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/liblapack.so ]; then \
 	echo "------- Running (some) LAPACK tests (SHARED) -------"; \
 	LD_RUN_PATH=$(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib:$$LD_RUN_PATH; \
 	echo "------- LD_RUN_PATH -------"; \
@@ -133,7 +137,8 @@ do-test:
 	cd $(WORKDIR)/lapack-$(CPRT_NETLIB_LAPACK_VERSION)/TESTING; \
 	make 2>&1 | tee $(WORKDIR)/lapack_test_results/lapack_sharedlib_test_output; \
 	pwd; \
-	cp *.out $(WORKDIR)/lapack_test_results/dotso; 
+	cp *.out $(WORKDIR)/lapack_test_results/dotso;  \
+	fi;
 
 do-install:
 	cd $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE); \
