@@ -11,3 +11,6 @@ To turn off, set
 
 CPRT_ATLAS_NUM_THREADS=0
 
+## Notes
+
+* Seems broken on westmere
