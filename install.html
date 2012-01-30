@@ -87,16 +87,37 @@ and <em>make install</em> to get gettext and libiconv to behave
 correctly.</li>
 </ul>
 
+<h4>Example of installation</h4>
+
+<p>This will put the install target into your home directory</p>
+
+<pre><code>tar jxf cports-0.8.1.0-38-g93c9e5e.tar.bz2
+cd cports-0.8.1.0-38-g93c9e5e
+./configure.sh --prefix=&#036;HOME/
+cp cports.modulefile &#036;{HOME}/privatemodules/cports
+module load use.own cports
+cd cports/packages/bootstrap/1.0
+make install
+make do-cleaz
+cd cports/packages/bootstrap/2.0
+make install
+make do-cleaz
+</code></pre>
+
 <h3>Proxies</h3>
 
 <ul>
-<li>many people have a <code>http_proxy</code> variable set in their shell config.
+<li><p>many people have a <code>http_proxy</code> variable set in their shell config.
  However make installs often fail on ftp download attempts. So you
  should set an <code>ftp_proxy</code> variable as well.  For example, 
  <code>ftp_proxy=http://proxy.yourdomain.ie:80</code>.  This works in our
  setup. Yours may be different. Some packages even require that a
  <code>https_proxy</code> variable be set 
- (e.g. <code>https_proxy=https://proxy.yourdomain.ie:80</code>)</li>
+ (e.g. <code>https_proxy=https://proxy.yourdomain.ie:80</code>)</p>
+
+<p>export ftp<em>proxy=http://proxy.yourdomain.ie:8080
+export http</em>proxy=http://proxy.yourdomain.ie:8080
+export https_proxy=http://proxy.yourdomain.ie:8080</p></li>
 </ul>
 
 <p>Once it is installed you will want to read the basic <a href="./usage.html">usage</a> page.</p>
@@ -148,7 +169,7 @@ Links:
 
 
 <div class="pagedate">
-Last edited <span class="date">Mon 12 Sep 17:59:22 2011</span>
+Last edited <span class="date">Mon 30 Jan 16:30:50 2012</span>
 <!-- Created <span class="date">Thu 30 Jun 09:39:18 2011</span> -->
 </div>
 
