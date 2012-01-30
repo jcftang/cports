@@ -37,7 +37,7 @@ $(DISTFILE).tar.bz2.sha1sum: $(DISTFILE).tar.bz2
 	@openssl sha1 $(DISTFILE).tar.bz2 > $(DISTFILE).tar.bz2.sha1sum
 
 $(DISTFILE).tar.bz2.zsync: $(DISTFILE).tar.bz2
-	@$(ZSYNCMAKE) -u $(DISTFILE).tar.bz2 $(DISTFILE).tar.bz2
+	-@$(ZSYNCMAKE) -u $(DISTFILE).tar.bz2 $(DISTFILE).tar.bz2
 
 clean:
 	#@-rm $(DISTFILE).tar
