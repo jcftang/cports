@@ -1,7 +1,5 @@
-#VERSION=HEAD
 VERSION=$(shell git describe)
-DISTNAME=cports
-DISTFILE=$(DISTNAME)-$(VERSION)
+DISTFILE=$(VERSION)
 
 ifeq ($(shell which zsyncmake),)
 ZSYNCMAKE=@echo "** zsyncmake not found, skipping creating of zsync file" >&2; true
