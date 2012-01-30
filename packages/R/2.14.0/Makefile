@@ -11,7 +11,28 @@ DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
 
 EXTRAVERSION?=
 
-DEPENDS+="atlas/3.8.4 --lib"
+ifeq ("$(CPRT_BLAS)","acml")
+$(info install with acml BLAS)
+DEPENDS+="acml-smp/4-4-0 --lib --build-env --run-env"
+CONFIGURE_ARGS +=  --with-blas="-L$(PREFIX_acml-smp)/lib -lacml_mp"
+CONFIGURE_ARGS +=  --with-lapack="-L$(PREFIX_acml-smp)/lib -lacml_mp"
+endif
+
+ifeq ("$(CPRT_BLAS)","atlas")
+$(info install with atlas BLAS)
+DEPENDS+="atlas/3.8.3 --lib --build-env"
+CONFIGURE_ARGS +=  --with-blas-lapack-dir=$(PREFIX_atlas)
+CONFIGURE_ARGS +=  --with-blas="-L$(PREFIX_atlas)/lib -lptf77blas -lpthread -latlas"
+CONFIGURE_ARGS +=  --with-lapack="-L$(PREFIX_atlas)/lib -llapack -lptcblas"
+endif
+
+ifeq ("$(CPRT_BLAS)","mkl")
+$(info install with mkl BLAS)
+DEPENDS+="l_mkl_p/10.2.2.025 --lib --build-env"
+CONFIGURE_ARGS +=  --with-blas=$(PREFIX_l_mkl_p)
+CONFIGURE_ARGS +=  --with-lapack=$(PREFIX_l_mkl_p)
+endif
+
 DEPENDS+="openmpi/1.4.3 --build-env openmpi/1.4.3 --run-env"
 DEPENDS+="ncurses/5.7 --lib --build-env"
 DEPENDS+="readline/6.1 --lib --build-env"
@@ -26,9 +47,6 @@ DEPENDS+="gettext/0.18.1.1 --lib --build-env"
 DEPENDS+="cairo/1.8.10 --lib --build-env"
 
 DESCRIPTION=  "R is a free software environment for statistical computing and graphics."
-
-CONFIGURE_ARGS +=  --with-blas="-L$(PREFIX_atlas)/lib -lptf77blas -lpthread -latlas"
-CONFIGURE_ARGS +=  --with-lapack="-L$(PREFIX_atlas)/lib -llapack -lptcblas"
 
 #do-build:
 #	$(MODULE_ADD) $(BUILD_DEPENDS);   \
