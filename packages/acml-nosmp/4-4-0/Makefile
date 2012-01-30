@@ -20,7 +20,8 @@ DESCRIPTION=    "ACML provides a free set of thoroughly optimized and threaded m
 
 CPRT_ACML_NBITS=$(strip 64)
 
-CPRT_ACML_INT_NBITS=    
+#CPRT_ACML_INT_NBITS= -int64
+CPRT_ACML_INT_NBITS= 
 
 CPRT_ACML_COMPILER_CLASS := nocompiler
 CPRT_ACML_COMPILER_CLASS:=$(strip $(if $(findstring intel, $(COMPILERS)),ifort,$(CPRT_ACML_COMPILER_CLASS)))
@@ -29,7 +30,9 @@ CPRT_ACML_COMPILER_CLASS:=$(strip $(if $(findstring open, $(COMPILERS)),open64,$
 
 $(info acml class: $(CPRT_ACML_COMPILER_CLASS) )
 
-DISTFILES = $(PKGFILENAME)-$(VERSION)-$(CPRT_ACML_COMPILER_CLASS)-$(CPRT_ACML_NBITS)bit.tgz
+DISTFILES = $(PKGFILENAME)-$(VERSION)-$(CPRT_ACML_COMPILER_CLASS)-$(CPRT_ACML_NBITS)bit$(strip $(CPRT_ACML_INT_NBITS)).tgz
+
+$(info acml tarfile: $(DISTFILES))
 
 CPRT_ACML_INST_DIR=$(strip $(if $(findstring open, $(CPRT_ACML_COMPILER_CLASS)),$(CPRT_ACML_COMPILER_CLASS)_,$(CPRT_ACML_COMPILER_CLASS)))$(CPRT_ACML_NBITS)
 
@@ -61,7 +64,7 @@ do-build:
 
 do-install:
 	cd $(WORKDIR); \
-	./install-$(PKGFILENAME)-$(VERSION)-$(CPRT_ACML_COMPILER_CLASS)-$(CPRT_ACML_NBITS)bit.sh -accept -installdir=$(PROGRAM_PREFIX); \
+	./install-$(PKGFILENAME)-$(VERSION)-$(CPRT_ACML_COMPILER_CLASS)-$(CPRT_ACML_NBITS)bit$(strip $(CPRT_ACML_INT_NBITS)).sh -accept -installdir=$(PROGRAM_PREFIX); \
 	ln -s $(PROGRAM_PREFIX)/$(CPRT_ACML_INST_DIR)/lib $(PROGRAM_PREFIX)/lib
 	ln -s $(PROGRAM_PREFIX)/$(CPRT_ACML_INST_DIR)/include $(PROGRAM_PREFIX)/include
 
