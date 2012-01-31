@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>install modules</title>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+<link rel="stylesheet" href="local.css" type="text/css" />
+
+
+
+
+
+</head>
+<body>
+
+<div class="page">
+
+<div class="pageheader">
+<div class="header">
+<span>
+<span class="parentlinks">
+
+<a href="./index.html">cports</a>/ 
+
+</span>
+<span class="title">
+install modules
+
+</span>
+</span>
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+<div id="pagebody">
+
+<div id="content">
+<h2>For full details read the install and readme file in the source tree</h2>
+
+<ul>
+<li>ensure build tools are installed (e.g., ubuntu: install build-essential)</li>
+<li>these instructions assume the bash shell</li>
+</ul>
+
+<h3>Steps</h3>
+
+<p>Start with modules-3.2.8.tar.gz (or some version)</p>
+
+<pre><code>tar zxvf modules-3.2.8.tar.gz
+cd modules-3.2.8
+
+./configure
+make 
+sudo make install
+(installs to /usr/local/Modules)
+
+cd /usr/local/Modules
+sudo ln -s 3.2.8 default
+
+cd &lt;back to modules-3.2.8&gt;
+sudo install -m 644 etc/global/profile.modules /etc/profile.modules
+
+/usr/local/Modules/default/bin/add.modules
+&lt;and follow instructions&gt;
+</code></pre>
+
+<p>Source your .profile (or .bash_profile etc); this will work for
+current terminal.</p>
+
+<p>in e.g., .bash<em>profile: place
+export MODULE</em>VERSION=3.2.8</p>
+
+<p>then </p>
+
+<p>%&gt; source .bashrc
+%&gt; module list</p>
+
+<p>You may now have to log out and log in again for this to apply
+to  all terminals.</p>
+
+</div>
+
+
+
+<div id="comments">
+
+
+
+
+<div class="addcomment">Comments on this page are closed.</div>
+
+</div>
+
+
+
+</div>
+
+<div id="footer" class="pagefooter">
+
+<div id="pageinfo">
+
+
+
+
+<div id="backlinks">
+Links:
+
+<a href="./requirements.html">requirements</a>
+
+
+</div>
+
+
+
+
+
+
+<div class="pagedate">
+Last edited <span class="date">Tue 31 Jan 14:49:51 2012</span>
+<!-- Created <span class="date">Tue 31 Jan 14:49:51 2012</span> -->
+</div>
+
+</div>
+
+
+<!-- from cports -->
+</div>
+
+</div>
+
+</body>
+</html>

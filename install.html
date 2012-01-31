@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>install</title>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+<link rel="stylesheet" href="local.css" type="text/css" />
+
+
+
+
+
+</head>
+<body>
+
+<div class="page">
+
+<div class="pageheader">
+<div class="header">
+<span>
+<span class="parentlinks">
+
+<a href="./index.html">cports</a>/ 
+
+</span>
+<span class="title">
+install
+
+</span>
+</span>
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+<div id="pagebody">
+
+<div id="content">
+<p>Once you have met the <a href="./requirements.html">requirements</a> continue with the following.</p>
+
+<h3>Installation and configuration</h3>
+
+<ul>
+<li>Unpack cports-?.tar.bz2 to somewhere (I usually put it into
+${HOME}/develop/cports)</li>
+<li>run the ./configure.sh script to check if you have the basic
+requirements installed, this configure script will also setup a
+default install prefix for the programs to be installed from
+cports.
+<ul>
+<li>e.g. you can do <em>./configure.sh --prefix=/tmp/cports</em> this will
+configure cports to install anything built from cports into
+<em>/tmp/cports</em>. The configure script will also generate a sample
+module file for you to copy into your global modulefile
+directory.</li>
+</ul></li>
+<li>Optional - Do more configuring of cports by editing
+ ${PREFIX}/mk-conf/config.mk</li>
+<li>Configure environment modules either at the system level or in
+your own home directory in ${HOME}/privatemodules/cports see
+${PREFIX}/cports.modulefile cports make sure the paths in here
+correspond to the MODULEDIR variable in
+${PREFIX}/mk-conf/config.mk. Look in cports/mk/gnu.def.mk or
+cports/mk/config.mk for some default options that you can override
+and or set. Or just copy the <em>cports.modulefile</em> to your
+modulefile directory.</li>
+<li>cd into <em>cports/scripts</em> and run the <em>distro.guess</em> script, if it
+outputs 'unknown.*' then add a new check for your distro. This
+step isn't strictly needed, but it does provide your installed
+target with some useful information.</li>
+<li>cd into <em>cports/packages/bootstrap/1.0</em> and type <em>make install</em>,
+this will try and install the basic packages needed to build the
+rest of the system.</li>
+<li>cd into <em>cports/packages/bootstrap/2.0</em> and type <em>make do-cleaz</em>
+and <em>make install</em> to get gettext and libiconv to behave
+correctly.</li>
+</ul>
+
+<h4>Example of installation</h4>
+
+<p>This will put the install target into your home directory</p>
+
+<pre><code>tar jxf cports-0.8.1.0-38-g93c9e5e.tar.bz2
+cd cports-0.8.1.0-38-g93c9e5e
+./configure.sh --prefix=&#036;HOME/
+cp cports.modulefile &#036;{HOME}/privatemodules/cports
+module load use.own cports
+cd cports/packages/bootstrap/1.0
+make install
+make do-cleaz
+cd cports/packages/bootstrap/2.0
+make install
+make do-cleaz
+</code></pre>
+
+<h3>Proxies</h3>
+
+<ul>
+<li><p>many people have a <code>http_proxy</code> variable set in their shell config.
+ However make installs often fail on ftp download attempts. So you
+ should set an <code>ftp_proxy</code> variable as well.  For example, 
+ <code>ftp_proxy=http://proxy.yourdomain.ie:80</code>.  This works in our
+ setup. Yours may be different. Some packages even require that a
+ <code>https_proxy</code> variable be set 
+ (e.g. <code>https_proxy=https://proxy.yourdomain.ie:80</code>)</p>
+
+<p>export ftp<em>proxy=http://proxy.yourdomain.ie:8080
+export http</em>proxy=http://proxy.yourdomain.ie:8080
+export https_proxy=http://proxy.yourdomain.ie:8080</p></li>
+</ul>
+
+<p>Once it is installed you will want to read the basic <a href="./usage.html">usage</a> page.</p>
+
+<h3>Notes</h3>
+
+<ul>
+<li><p>Scientific Linux 5. Requires /usr/sbin and /sbin to be in your 
+ $PATH for running configure.sh</p>
+
+<p>export PATH=$PATH:/usr/sbin/:/sbin/</p></li>
+</ul>
+
+</div>
+
+
+
+<div id="comments">
+
+
+
+
+<div class="addcomment">Comments on this page are closed.</div>
+
+</div>
+
+
+
+</div>
+
+<div id="footer" class="pagefooter">
+
+<div id="pageinfo">
+
+
+
+
+<div id="backlinks">
+Links:
+
+<a href="./index.html">index</a>
+
+
+</div>
+
+
+
+
+
+
+<div class="pagedate">
+Last edited <span class="date">Tue 31 Jan 14:49:51 2012</span>
+<!-- Created <span class="date">Tue 31 Jan 14:49:51 2012</span> -->
+</div>
+
+</div>
+
+
+<!-- from cports -->
+</div>
+
+</div>
+
+</body>
+</html>
