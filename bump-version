@@ -12,4 +12,4 @@
 echo cports-0.$(date +%Y%m%d) > VERSION
 
 git add VERSION
-git commit -m "Bumped version number to $1"
+git commit -m "Bumped version number to $(cat VERSION)"
