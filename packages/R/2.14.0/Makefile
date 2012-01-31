@@ -11,14 +11,18 @@ DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
 
 EXTRAVERSION?=
 
-ifeq ("$(CPRT_BLAS)","acml")
+CPRT_R_BLAS?=$(CPRT_BLAS)
+#CPRT_R_BLAS?=atlas
+
+## some R tests fail with acml 4-4-0
+ifeq ("$(CPRT_R_BLAS)","acml")
 $(info install with acml BLAS)
 DEPENDS+="acml-smp/4-4-0 --lib --build-env --run-env"
 CONFIGURE_ARGS +=  --with-blas="-L$(PREFIX_acml-smp)/lib -lacml_mp"
 CONFIGURE_ARGS +=  --with-lapack="-L$(PREFIX_acml-smp)/lib -lacml_mp"
 endif
 
-ifeq ("$(CPRT_BLAS)","atlas")
+ifeq ("$(CPRT_R_BLAS)","atlas")
 $(info install with atlas BLAS)
 DEPENDS+="atlas/3.8.3 --lib --build-env"
 CONFIGURE_ARGS +=  --with-blas-lapack-dir=$(PREFIX_atlas)
@@ -26,7 +30,7 @@ CONFIGURE_ARGS +=  --with-blas="-L$(PREFIX_atlas)/lib -lptf77blas -lpthread -lat
 CONFIGURE_ARGS +=  --with-lapack="-L$(PREFIX_atlas)/lib -llapack -lptcblas"
 endif
 
-ifeq ("$(CPRT_BLAS)","mkl")
+ifeq ("$(CPRT_R_BLAS)","mkl")
 $(info install with mkl BLAS)
 DEPENDS+="l_mkl_p/10.2.2.025 --lib --build-env"
 CONFIGURE_ARGS +=  --with-blas=$(PREFIX_l_mkl_p)
