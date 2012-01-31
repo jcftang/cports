@@ -1,5 +1,13 @@
 2012-01-31  Jimmy Tang <jtang@tchpc.tcd.ie>
 
+	* bump-version: Generate a changelog on a bump version Change-Id: I6ea6ae608af4d1631a346e9e5ff7da5b5c9f22cc
+
+2012-01-31  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* ChangeLog: Bumped version number to cports-0.20120131 Change-Id: I614be24f4540f86ce9c8dd50d7a2a58b649ca4c5
+
+2012-01-31  Jimmy Tang <jtang@tchpc.tcd.ie>
+
 	* scripts/gitlog2changelog.py: alternate changelog generator, should
 	really generate change logs after tagging Change-Id: Ifec97246628878830db4b3005c33880d517eac9b
 
