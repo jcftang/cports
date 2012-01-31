@@ -1,0 +1,762 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>cports - TCHPC fork</title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta name="title" content="cports - TCHPC fork"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2012-01-31 14:45:38 GMT"/>
+<meta name="author" content="Jimmy Tang, Darach Golden"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+<div id="org-div-home-and-up" style="text-align:right;font-size:70%;white-space:nowrap;">
+ <a accesskey="h" href="Readme.html"> UP </a>
+ |
+ <a accesskey="H" href="Readme.html"> HOME </a>
+</div>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">cports - TCHPC fork</h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Why fork cports</a></li>
+<li><a href="#sec-2">2 The upstream authors</a></li>
+<li><a href="#sec-3">3 The current authors</a></li>
+<li><a href="#sec-4">4 What cports doesn't do</a></li>
+<li><a href="#sec-5">5 Requirements</a>
+<ul>
+<li><a href="#sec-5-1">5.1 Required software</a></li>
+<li><a href="#sec-5-2">5.2 Required devel packages/software if you wish to build X11 programs</a></li>
+</ul>
+</li>
+<li><a href="#sec-6">6 Installation and configuration</a>
+<ul>
+<li><a href="#sec-6-1">6.1 Proxies</a></li>
+</ul>
+</li>
+<li><a href="#sec-7">7 Usage</a>
+<ul>
+<li><a href="#sec-7-1">7.1 Available COMPILERS</a>
+<ul>
+<li><a href="#sec-7-1-1">7.1.1 The default compilers</a></li>
+<li><a href="#sec-7-1-2">7.1.2 Accessing different versions of gnu compilers</a></li>
+<li><a href="#sec-7-1-3">7.1.3 make can be run with arguments like</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-8">8 Systems tested on</a>
+<ul>
+<li><a href="#sec-8-1">8.1 Systems that bootstrap works on, but not fully tested</a></li>
+</ul>
+</li>
+<li><a href="#sec-9">9 Systems failed on</a></li>
+<li><a href="#sec-10">10 Table of apps that require specific compilers</a></li>
+<li><a href="#sec-11">11 Table of apps that fail to build on certain systems</a></li>
+<li><a href="#sec-12">12 List of apps that are binary installs</a></li>
+<li><a href="#sec-13">13 Changelog - OLD</a></li>
+<li><a href="#sec-14">14 Misc Notes</a>
+<ul>
+<li><a href="#sec-14-1">14.1 Key packages to install - jtang</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Why fork cports</h2>
+<div class="outline-text-2" id="text-1">
+
+<ul>
+<li>Needed more than just one version of gcc, intel, pgi builds of
+   software
+</li>
+<li>Needed more control with being able to add packages
+</li>
+<li>Needed more variables put into the modulefiles
+</li>
+<li>Needed repeatable and documented methods of installing libraries
+   and applications
+</li>
+<li>Didn't care too much about generating portable objects, and since
+   it's dervived from a derived piece of work it just makes life
+   easier.
+</li>
+<li>Why not use Gentoo, NetBSD ports, packaging system XYZ?
+<ul>
+<li>most of the other systems are not as easily hackable as just
+     makefiles
+</li>
+<li>don't allow multiple verisons of software installed
+</li>
+</ul>
+
+</li>
+<li>Wanted to extend the modulefile generation targets to include these
+   variables
+<ul>
+<li>INCLUDE_PATH 
+</li>
+<li>CPLUS_INCLUDE_PATH 
+</li>
+<li>C_INCLUDE_PATH 
+</li>
+<li>LD_LIBRARY_PATH
+</li>
+<li>LIBRARY_PATH
+</li>
+<li>LD_RUN_PATH
+</li>
+<li>PKG_CONFIG_PATH
+</li>
+<li>PYTHONPATH (this needs tweaking)
+</li>
+<li>INSERT_MODULEFILE_CONFLICTS (conflict or not?)
+</li>
+<li>MODULEFILE_CONFLICTS (conflict package with itself)
+</li>
+<li>DO_RUN_TESTS (testing of packages)
+</li>
+</ul>
+
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> The upstream authors</h2>
+<div class="outline-text-2" id="text-2">
+
+<ul>
+<li>mpkg - <a href="http://staff.e.kth.se/mpkg/index.html">http://staff.e.kth.se/mpkg/index.html</a>
+</li>
+<li>cports - <a href="http://www.caoslinux.org/">http://www.caoslinux.org/</a> and <a href="http://caoswiki.infiscale.org/">http://caoswiki.infiscale.org/</a>
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> The current authors</h2>
+<div class="outline-text-2" id="text-3">
+
+<ul>
+<li>Mainly staff from TCHPC
+<ul>
+<li>The time is paid for by eINIS, HPCE2, OIP and maybe one or two
+     other projects that may be benefitting from the results of this
+     build/package system.
+</li>
+</ul>
+
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> What cports doesn't do</h2>
+<div class="outline-text-2" id="text-4">
+
+<ul>
+<li>It doesn't generate portable binaries
+</li>
+<li>Provide good documentation on the modifications TCHPC has made
+</li>
+<li>Support for people who use this :)
+</li>
+<li>Dependancy and conflict checking of the packages, the admin who is
+   writing the package will need to do this
+</li>
+<li>Work with non-gnu based tools (it's a fork and the original authors
+   used and based everything on gnu make etc&hellip;)
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Requirements</h2>
+<div class="outline-text-2" id="text-5">
+
+
+</div>
+
+<div id="outline-container-5-1" class="outline-3">
+<h3 id="sec-5-1"><span class="section-number-3">5.1</span> Required software</h3>
+<div class="outline-text-3" id="text-5-1">
+
+<ul>
+<li>gnu make
+</li>
+<li>gcc, g++ and gfortran (and basic devel, compile tools etc&hellip;)
+</li>
+<li>wget
+</li>
+<li>texinfo
+</li>
+<li>environment-modules
+</li>
+</ul>
+
+
+<p>
+you can do a "make check-environment" to see if you meet the basic
+requirements.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-5-2" class="outline-3">
+<h3 id="sec-5-2"><span class="section-number-3">5.2</span> Required devel packages/software if you wish to build X11 programs</h3>
+<div class="outline-text-3" id="text-5-2">
+
+
+<p>
+This list was compiled from a SL55 machine
+</p>
+<p>
+freeglut-devel
+libICE-devel
+libSM-devel
+libX11-devel
+libXau-devel
+libXdmcp-devel
+libXext-devel
+libXft-devel
+libXmu-devel
+libXp-devel
+libXpm-devel
+libXrender-devel
+libXt-devel
+mesa-libGL-devel
+xorg-x11-proto-devel
+</p>
+<p>
+On a Debian 5.x system (this list isn't complete)
+</p>
+<p>
+libx11-dev
+libxext-dev
+libxmu-dev
+x11proto-xext-dev
+libxpm-dev
+libxrender-dev
+x11proto-render-dev
+mesa-common-dev
+freeglut3-dev
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> Installation and configuration</h2>
+<div class="outline-text-2" id="text-6">
+
+<ul>
+<li>Unpack cports-?.tar.bz2 to somewhere (I usually put it into
+    ${HOME}/develop/cports)
+</li>
+<li>run the ./configure.sh script to check if you have the basic
+    requirements installed, this configure script will also setup a
+    default install prefix for the programs to be installed from
+    cports.
+<ul>
+<li>e.g. you can do <b>./configure.sh &ndash;prefix=/tmp/cports</b> this will
+      configure cports to install anything built from cports into
+      <b>/tmp/cports</b>. The configure script will also generate a sample
+      module file for you to copy into your global modulefile
+      directory.
+</li>
+</ul>
+
+</li>
+<li>Optional - Do more configuring of cports by editing
+     ${PREFIX}/mk-conf/config.mk
+</li>
+<li>Configure environment modules either at the system level or in
+    your own home directory in ${HOME}/privatemodules/cports see
+    ${PREFIX}/cports.modulefile cports make sure the paths in here
+    correspond to the MODULEDIR variable in
+    ${PREFIX}/mk-conf/config.mk. Look in cports/mk/gnu.def.mk or
+    cports/mk/config.mk for some default options that you can override
+    and or set. Or just copy the <b>cports.modulefile</b> to your
+    modulefile directory.
+</li>
+<li>cd into <b>cports/scripts</b> and run the <b>distro.guess</b> script, if it
+    outputs 'unknown.*' then add a new check for your distro. This
+    step isn't strictly needed, but it does provide your installed
+    target with some useful information.
+</li>
+<li>cd into <b>cports/packages/bootstrap/1.0</b> and type <b>make install</b>,
+    this will try and install the basic packages needed to build the
+    rest of the system.
+</li>
+<li>cd into <b>cports/packages/bootstrap/2.0</b> and type <b>make do-cleaz</b>
+    and <b>make install</b> to get gettext and libiconv to behave
+    correctly.
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-6-1" class="outline-3">
+<h3 id="sec-6-1"><span class="section-number-3">6.1</span> Proxies</h3>
+<div class="outline-text-3" id="text-6-1">
+
+<ul>
+<li>many people have a http_proxy variable set in their shell config.
+     However make installs often fail on ftp download attempts. So you
+     should set an ftp_proxy variable as well.  For example,
+     ftp_proxy=<a href="http://proxy.yourdomain.ie:80">http://proxy.yourdomain.ie:80</a>.  This works in our
+     setup. Yours may be different. Some packages even require that a
+     https_proxy variable be set
+     (e.g. ,https_proxy=<a href="https://proxy.yourdomain.ie:80">https://proxy.yourdomain.ie:80</a>)
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> Usage</h2>
+<div class="outline-text-2" id="text-7">
+
+<ul>
+<li>load up your cports module so that cports can see its own generated
+   module files. 
+<ul>
+<li>the best thing to do is to do a <b>module initadd dot cports</b> so
+     everytime you login/open a new shell you will have the cports
+     environment available to you.
+</li>
+</ul>
+
+</li>
+<li>To install packages you cd into the
+   cports/packages/PACKAGENAME/VERSION that you want, then just type
+   <b>make install</b>
+</li>
+<li>If you want to use a different compiler e.g. do <b>make install    COMPILERS=intel</b> this assumes that you have the intel compilers in
+   your path.
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-7-1" class="outline-3">
+<h3 id="sec-7-1"><span class="section-number-3">7.1</span> Available COMPILERS</h3>
+<div class="outline-text-3" id="text-7-1">
+
+<p>By default COMPILERS=gnu which means it defaults to the system gnu c
+compilers (at least version 4 where gfortran is available). This all
+assumes that the compilers are already in your path.
+</p>
+</div>
+
+<div id="outline-container-7-1-1" class="outline-4">
+<h4 id="sec-7-1-1"><span class="section-number-4">7.1.1</span> The default compilers</h4>
+<div class="outline-text-4" id="text-7-1-1">
+
+<ul>
+<li>COMPILERS=intel - system version of intel compilers
+</li>
+<li>COMPILERS=pathscale - system version of pathscale compilers
+</li>
+<li>COMPILERS=pgi - system version of portland compilers
+</li>
+<li>COMPILERS=open64 - system version of open64 compilers
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-7-1-2" class="outline-4">
+<h4 id="sec-7-1-2"><span class="section-number-4">7.1.2</span> Accessing different versions of gnu compilers</h4>
+<div class="outline-text-4" id="text-7-1-2">
+
+<p>For example if you want to vary between the gnu compiler versions
+4.1.2, 4.4.0, 4.5.0 etc&hellip; you will first need to install the
+compilers from the cports system. Then manually load up the
+gcc/VERSION compiler with the module utility. To then compile things
+you will need to set the COMPILERS variable to hint cports to create
+the correct installation directory structures and modulefiles.
+</p>
+<p>
+Support variables currently available (subject to changes)
+</p>
+<ul>
+<li>COMPILERS=open644.2.3
+</li>
+<li>COMPILERS=gnu4.5.0
+</li>
+<li>COMPILERS=gnu4.4.4
+</li>
+<li>COMPILERS=gnu4.4.0
+</li>
+</ul>
+
+
+<p>
+Setting the COMPILERS variable tags things correctly in the
+installations. More compilers can be added by editting gnu.local.mk
+This method of tagging things isn't straightforward to understand but
+it at least provides a way of systematically creating installations.
+</p>
+<p>
+If there is a mismatch of version numbers the system will fail early.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-7-1-3" class="outline-4">
+<h4 id="sec-7-1-3"><span class="section-number-4">7.1.3</span> make can be run with arguments like</h4>
+<div class="outline-text-4" id="text-7-1-3">
+
+<ul>
+<li>make COMPILERS=intel10.1 install
+</li>
+</ul>
+
+<p>    if you don't have icc for intel10.1, then make will error straight 
+    away
+    Note that the compiler version number <span style="text-decoration:underline;">should</span> be included.
+    Typing something like
+</p><ul>
+<li>make COMPILERS=intel build
+</li>
+</ul>
+
+<p>    can lead to cports <span style="text-decoration:underline;">mistakenly</span> passing the compiler check even
+    if (in this case) you don't have icc
+</p>
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> Systems tested on</h2>
+<div class="outline-text-2" id="text-8">
+
+<ul>
+<li>ScientificLinux 5.x (64bit)
+</li>
+<li>ScientificLinux 5.x (32bit)
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-8-1" class="outline-3">
+<h3 id="sec-8-1"><span class="section-number-3">8.1</span> Systems that bootstrap works on, but not fully tested</h3>
+<div class="outline-text-3" id="text-8-1">
+
+<ul>
+<li>ScientificLinux 4.x (32bit)
+<ul>
+<li>not recommended to run in this environment unless necessary
+</li>
+<li>need to redefine F77 to use g77 instead if you need numerical packages to work
+</li>
+</ul>
+
+</li>
+<li>Debian 5.x (64bit)
+</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-9" class="outline-2">
+<h2 id="sec-9"><span class="section-number-2">9</span> Systems failed on</h2>
+<div class="outline-text-2" id="text-9">
+
+<ul>
+<li>OSX 10.6 - doesn't have a gfortran by default, users must install
+  gfortran from a third party packaging system.
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-10" class="outline-2">
+<h2 id="sec-10"><span class="section-number-2">10</span> Table of apps that require specific compilers</h2>
+<div class="outline-text-2" id="text-10">
+
+<p>The reference compiler is gcc 4.1.2, we assume all apps compile with
+gcc 4.1.2 unless otherwise stated
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">App</th><th scope="col" class="left">gcc 4.3.2</th><th scope="col" class="left">gcc 4.5.1</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">stressapptest</td><td class="left"></td><td class="left">x</td></tr>
+<tr><td class="left">RDKit</td><td class="left">x</td><td class="left"></td></tr>
+<tr><td class="left">abyss</td><td class="left"></td><td class="left">x</td></tr>
+</tbody>
+</table>
+
+</div>
+
+</div>
+
+<div id="outline-container-11" class="outline-2">
+<h2 id="sec-11"><span class="section-number-2">11</span> Table of apps that fail to build on certain systems</h2>
+<div class="outline-text-2" id="text-11">
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">App</th><th scope="col" class="left">debian5.0</th><th scope="col" class="left">sl5</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">open64</td><td class="left">x</td><td class="left"></td></tr>
+</tbody>
+</table>
+
+</div>
+
+</div>
+
+<div id="outline-container-12" class="outline-2">
+<h2 id="sec-12"><span class="section-number-2">12</span> List of apps that are binary installs</h2>
+<div class="outline-text-2" id="text-12">
+
+<ul>
+<li>darcs
+</li>
+<li>ghc
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-13" class="outline-2">
+<h2 id="sec-13"><span class="section-number-2">13</span> Changelog - OLD</h2>
+<div class="outline-text-2" id="text-13">
+
+<ul>
+<li>Fork of cports from caoslinux, which in turn is a fork of mpkg
+</li>
+<li>Fix up modulefile naming convention
+</li>
+<li>Fix up current target to add symlink to modulefile as well
+<ul>
+<li>reverted the linking to modulefile, it breaks things
+</li>
+<li>also added uncurrent target
+</li>
+</ul>
+
+</li>
+<li>Added open64 COMPILERS option
+</li>
+<li>Added F90 variables, to make sure a fortran90 compiler is selected when needed
+</li>
+<li>Extended the modulefile generation targets to include these variables
+<ul>
+<li>INCLUDE_PATH
+</li>
+<li>CPLUS_INCLUDE_PATH
+</li>
+<li>C_INCLUDE_PATH
+</li>
+<li>LD_LIBRARY_PATH
+</li>
+<li>LIBRARY_PATH
+</li>
+<li>LD_RUN_PATH
+</li>
+<li>PKG_CONFIG_PATH
+</li>
+<li>PYTHONPATH
+</li>
+</ul>
+
+</li>
+<li>New packages that TCHPC finds useful
+</li>
+<li>Added R modules in the same style the perl modules for convenience
+</li>
+</ul>
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-14" class="outline-2">
+<h2 id="sec-14"><span class="section-number-2">14</span> Misc Notes</h2>
+<div class="outline-text-2" id="text-14">
+
+<ul>
+<li><a href="Todo.html">TODO</a>
+</li>
+<li><a href="Packages.html">Packages</a>
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-14-1" class="outline-3">
+<h3 id="sec-14-1"><span class="section-number-3">14.1</span> Key packages to install - jtang</h3>
+<div class="outline-text-3" id="text-14-1">
+
+<p>Some packages that tend to get installed quite early and quickly.
+</p><ul>
+<li>R
+</li>
+<li>Octave
+</li>
+<li>Emacs
+</li>
+<li>topgit/git
+</li>
+<li>Grace
+</li>
+<li>OpenMPI
+</li>
+<li>Scipy/Numpy
+</li>
+<li>Mercurial
+</li>
+<li>Fossil
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2012-01-31 14:45:38 GMT</p>
+<p class="author">Author: Jimmy Tang, Darach Golden</p>
+<p class="creator">Org version 7.8.03 with Emacs version 23</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>
