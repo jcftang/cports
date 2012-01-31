@@ -20,7 +20,7 @@ endif
 
 ifeq ("$(CPRT_BLAS)","atlas")
 $(info install with atlas BLAS)
-DEPENDS+="atlas/3.8.3 --lib --build-env"
+DEPENDS+="atlas/3.8.4 --lib --build-env"
 CONFIGURE_ARGS +=  --with-blas-lapack-dir=$(PREFIX_atlas)
 CONFIGURE_ARGS +=  --with-blas="-L$(PREFIX_atlas)/lib -lptf77blas -lpthread -latlas"
 CONFIGURE_ARGS +=  --with-lapack="-L$(PREFIX_atlas)/lib -llapack -lptcblas"
