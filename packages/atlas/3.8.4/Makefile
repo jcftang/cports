@@ -26,7 +26,9 @@ PATCH_ARGS=		-d $(CURDIR)/work/$(PKGSUBDIR) -N -E $(PATCH_STRIP)
 
 EXTRAVERSION?=
 
-DESCRIPTION=	"The ATLAS (Automatically Tuned Linear Algebra Software) project is an ongoing research effort focusing on applying empirical techniques in order to provide portable performance."
+DESCRIPTION=	"The ATLAS (Automatically Tuned Linear Algebra Software) project is an"
+DESCRIPTION+=	"ongoing research effort focusing on applying empirical techniques in"
+DESCRIPTION+=	"order to provide portable performance."
 
 CPRT_ATLAS_COMPILER_CLASS := nocompiler
 CPRT_ATLAS_COMPILER_CLASS:=$(strip $(if $(findstring intel, $(COMPILERS)),intel,$(CPRT_ATLAS_COMPILER_CLASS)))
@@ -110,22 +112,22 @@ do-build:
 
 do-test:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
-        echo "------- Running (some) LAPACK tests (DOTA LIBS) -------"; \
+	echo "------- Running (some) LAPACK tests (DOTA LIBS) -------"; \
 	mkdir $(WORKDIR)/lapack_test_results; \
 	mkdir $(WORKDIR)/lapack_test_results/dota; \
 	mkdir $(WORKDIR)/lapack_test_results/dotso; \
-        cd $(WORKDIR)/lapack-$(CPRT_NETLIB_LAPACK_VERSION); \
-       cat make.inc | sed -e "s@^BLASLIB[ \t]*=.*@BLASLIB = $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/libcblas.a $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/libf77blas.a $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/libatlas.a@" | sed -e "s@^LAPACKLIB[ \t]*=.*@LAPACKLIB=../ATLAS-build-$(SYSTEM_TYPE)/lib/liblapack.a@" > make.inc.tmp; \
-        rm make.inc; mv make.inc.tmp make.inc; \
-        cd TESTING; \
-        make 2>&1 | tee $(WORKDIR)/lapack_test_results/lapack_staticlib_test_output; \
+	cd $(WORKDIR)/lapack-$(CPRT_NETLIB_LAPACK_VERSION); \
+	cat make.inc | sed -e "s@^BLASLIB[ \t]*=.*@BLASLIB = $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/libcblas.a $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/libf77blas.a $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/libatlas.a@" | sed -e "s@^LAPACKLIB[ \t]*=.*@LAPACKLIB=../ATLAS-build-$(SYSTEM_TYPE)/lib/liblapack.a@" > make.inc.tmp; \
+	rm make.inc; mv make.inc.tmp make.inc; \
+	cd TESTING; \
+	make 2>&1 | tee $(WORKDIR)/lapack_test_results/lapack_staticlib_test_output; \
 	cp *.out $(WORKDIR)/lapack_test_results/dota; \
 	cd ../; make clean;
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
-	if [ -f $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/libatlas.so -a \
-	     -f $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/libcblas.so -a \
-	     -f $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/libf77blas.so -a \ 
-	     -f $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/liblapack.so ]; then \
+	if [ 	-f $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/libatlas.so -a \
+		-f $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/libcblas.so -a \
+		-f $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/libf77blas.so -a \
+		-f $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/liblapack.so ]; then \
 	echo "------- Running (some) LAPACK tests (SHARED) -------"; \
 	LD_RUN_PATH=$(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib:$$LD_RUN_PATH; \
 	echo "------- LD_RUN_PATH -------"; \
