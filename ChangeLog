@@ -1,0 +1,5191 @@
+2012-01-31  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* scripts/gitlog2changelog.py: alternate changelog generator, should
+	really generate change logs after tagging Change-Id: Ifec97246628878830db4b3005c33880d517eac9b
+
+2012-01-31  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* bump-version: tweak bump-version script to log correct message Change-Id: I6a77221ce9b02e1ab75513280d9823b7088817cf
+
+2012-01-31  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* VERSION: Bumped version number to Change-Id: I0dbb341f60cc8469f94dac89b17348669b800e21
+
+2012-01-31  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/cloog-ppl/0.15.9/Makefile: continue reversion of ppl
+	0.10.2 -> 0.11.2 change
+
+2012-01-31  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/gcc/4.6.0/Makefile, packages/gcc/4.6.1/Makefile: revert
+	ppl 0.10.2 -> 0.11.2 due to configure breakage
+
+2012-01-31  Darach Golden <darach@tchpc.tcd.ie>
+
+	* : commit e8ad3ae7950b285e38d5c61541a532c9b04899bc Author: Darach
+	Golden <darach@tchpc.tcd.ie> Date:   Tue Jan 31 12:51:29 2012 +0000
+
+2012-01-31  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/l_mkl/10.3.6.233/Makefile,
+	packages/l_mkl/10.3.6.233/README,
+	packages/l_mkl/10.3.6.233/files/silent.ini, packages/l_mkl/Makefile: 
+	added new mkl dir -- name has changed somewhat so it is more
+	convenient to name it l_mkl instead of l_mkl_p
+
+2012-01-31  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/mercurial/2.0.2/Makefile: Update mercurial to latest 2.x
+	releases Change-Id: I14cfa099c1157b91636ecb358fb638ee4d601cda
+
+2012-01-31  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/R/2.14.0/Makefile: update R 2.14.0 with latest stable of
+	atlas Change-Id: I40cb51201904695df2914837bb16ba2369a1dbbb
+
+2012-01-31  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/cloog-ppl/0.15.9/Makefile, packages/gcc/4.6.0/Makefile,
+	packages/gcc/4.6.1/Makefile: update to ppl-0.11.2
+
+2012-01-31  Darach Golden <darach@tchpc.tcd.ie>
+
+	* : commit f02f47e9b4710ec50c2ff33bf00b32f267f6c7d9 Author: Darach
+	Golden <darach@tchpc.tcd.ie> Date:   Tue Jan 31 10:57:00 2012 +0000
+
+2012-01-31  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/git/1.7.9/Makefile: snag latest version of git 1.7.9 Change-Id: Ib42f0d98d47e691b7087d30d0564e524293fbde8
+
+2012-01-31  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/atlas/3.8.4/Makefile: formatting and removal of trailing
+	space causing make to fail Change-Id: If41a438e66046055d853ddfb59b31c38571e6955
+
+2012-01-31  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/atlas/3.8.4/Makefile: fix tabbing in makefile which
+	breaks silently on some machines Change-Id: I9c37313ffcbdc30b6aa374fb6268e09e12d647e9
+
+2012-01-30  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/R/2.14.0/Makefile: updated R 2.14.0 to use acml (added
+	options for more than one blas) Change-Id: I76d097b0d21b7b5375efe3353d506c5c4a3c17e9
+
+2012-01-30  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/scalapack/2.0.1/Makefile: Choice of blas set to CPRT_BLAS
+	by default set options for acml blas in particular cleaned up
+	makefile a little Change-Id: I76ada7d5254bf9b06e15e454ca7ddfaeee00d012
+
+2012-01-30  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/acml-nosmp/4-4-0/Makefile,
+	packages/acml-smp/4-4-0/Makefile: acml 4-4-0 makefile changed Change-Id: Ic4708626ea7ddc4e8ab6e140d9204ad364568787
+
+2012-01-30  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* Makefile.in: add all html files
+
+2012-01-30  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* : Merge commit 'refs/changes/91/191/1' of
+	ssh://marduk.tchpc.tcd.ie:29418/tools/cports
+
+2012-01-30  Darach Golden <darach@tchpc.tcd.ie>
+
+	* : Merge "acml 5-1.0 added; smp/nosmp versions 64 bit int versions
+	not tested at all"
+
+2012-01-30  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* : commit 956699acd2ea1b5754b2002b428dbe0e6a60bb73 Author: Jimmy
+	Tang <jtang@tchpc.tcd.ie> Date:   Mon Jan 30 15:31:35 2012 +0000
+
+2012-01-30  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/atlas/3.8.4/Makefile: check for .so libraries before
+	running .so tests Change-Id: Ie28e57944fd17ae62956bcddbbf20802b45e575b
+
+2012-01-30  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/acml-nosmp/5-1-0/Makefile,
+	packages/acml-smp/5-1-0/Makefile: acml 5-1.0 added; smp/nosmp
+	versions 64 bit int versions not tested at all Change-Id: I0392c2e994edc498acaad54a2615e317447ac09b
+
+2012-01-30  jtang <jtang@tchpc.tcd.ie>
+
+	* : Merge "check for .so libraries before running .so tests"
+
+2012-01-30  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/atlas/3.8.4/Makefile: check for .so libraries before
+	running .so tests Change-Id: Ie28e57944fd17ae62956bcddbbf20802b45e575b
+
+2011-07-20  Darach Golden <darach@tchpc.tcd.ie>
+
+	* doc/install_modules.mdwn: minor change to docs Change-Id: Ib54f15beac0c5fbd460e7079c704d9ed73f8784e Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/140 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2012-01-30  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* Makefile.in: make html dir before importing docs Change-Id: I998ef8a8c233d8614a81abdbbc350d1434f842b7 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/270 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2012-01-26  Darach Golden <darach@tchpc.tcd.ie>
+
+	* configure.inc, mk-conf/config.mk.in: added distdir target to
+	configure for specifying common path to cports sources Change-Id: I42121845e211e7c8c0b9c2cb486946862067fe3c Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/269 Reviewed-by:
+	<darach@tchpc.tcd.ie> Tested-by: <darach@tchpc.tcd.ie>
+
+2012-01-25  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/atlas/3.8.4/Makefile: removed test for libatlas.so from
+	atlas 3.8.4 Change-Id: Ibc7d3d40ce9b9efb90c092d75e63c70997051c4f Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/268 Reviewed-by:
+	<darach@tchpc.tcd.ie> Tested-by: <darach@tchpc.tcd.ie>
+
+2012-01-25  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/atlas/3.8.4/Makefile: comment out checks for shared
+	libraries in atlas 3.8.4 apart from check for libatlas.so Change-Id: I6040e9516d54d3bbd0000b3e4b95bb44ba617110 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/267 Reviewed-by:
+	<darach@tchpc.tcd.ie> Tested-by: <darach@tchpc.tcd.ie>
+
+2012-01-24  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/atlas/3.8.4/Makefile: making further attempt to fix
+	checks for shared libraries in atlas 3.8.4 Makefile Change-Id: I3f94a57c0b1f5a95f0a3b17771b5bd08c48e836a Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/266 Reviewed-by:
+	<darach@tchpc.tcd.ie> Tested-by: <darach@tchpc.tcd.ie>
+
+2012-01-24  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/atlas/3.8.4/Makefile:    copy tmglib to install directory    check of lapack tests dir exists before copying it Change-Id: I859b33b0436f67e696db150ab4568602a8fb411d Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/265 Reviewed-by:
+	<darach@tchpc.tcd.ie> Tested-by: <darach@tchpc.tcd.ie>
+
+2012-01-23  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/setuptools/0.6c11/Makefile, packages/setuptools/Makefile: 
+	added setuptools Change-Id: I322c5ac6ba35e09a911a3fe1626eef0356b25666 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/262 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2012-01-23  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/atlas/3.8.4/Makefile: added do-test target which attempts
+	to run the lapack tests in the netlib lapack TESTING dir aside: compiling lapack tests on my machine with gcc 4.4.5 produces
+	on internal compiler error  while compiling fortran test code file Change-Id: I371740ea1145a79ff89edade16b5234678972094 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/260 Reviewed-by:
+	<darach@tchpc.tcd.ie> Tested-by: <darach@tchpc.tcd.ie>
+
+2012-01-20  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/scalapack/2.0.1/Makefile: initial attempt at scalapack
+	 2.0.1 - need to check lapack -- is it  being picked up  properly?  - even if so, some lapack test functions not present (atlas build?) Change-Id: Ie59f1fca11e124b13a1bdf545aec79dba4447cef Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/259 Reviewed-by:
+	<darach@tchpc.tcd.ie> Tested-by: <darach@tchpc.tcd.ie>
+
+2012-01-20  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/R/2.12.2/Makefile: made R 2.12.2 depend on atlas 3.8.4 Change-Id: Icc1e2866f7e8e157314a79bd4fb1f7ff946e0c48 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/258 Reviewed-by:
+	<darach@tchpc.tcd.ie> Tested-by: <darach@tchpc.tcd.ie>
+
+2012-01-19  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/atlas/3.8.4/Makefile: added a dummy target for do-test in
+	atlas 3.8.4 the test targets are run as part of the build Change-Id: I1514ed914d8b566edb7ca3b60138372de97905f5 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/257 Reviewed-by:
+	<darach@tchpc.tcd.ie> Tested-by: <darach@tchpc.tcd.ie>
+
+2012-01-19  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/emacs/23.3b/Makefile: 'b' in 23.3b messed things up in
+	emacs compile; use PKGSUBDIR Change-Id: Ice31c9deb42f0459db101cbcb3dba1096c17081b Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/256 Reviewed-by:
+	<darach@tchpc.tcd.ie> Tested-by: <darach@tchpc.tcd.ie>
+
+2012-01-18  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/netpbm/10.35.77/Makefile: trying to get netpbm to work...  Change-Id: Ic2cfac41288346e615bc74ac0b7acff09beed9db Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/255 Reviewed-by:
+	<darach@tchpc.tcd.ie> Tested-by: <darach@tchpc.tcd.ie>
+
+2012-01-18  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/R/2.14.0/Makefile: switch R 2.14.0 to using atlas 3.8.4 Change-Id: Id73d055f76afc12ffd4a68167673850ca325962f Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/254 Reviewed-by:
+	<darach@tchpc.tcd.ie> Tested-by: <darach@tchpc.tcd.ie>
+
+2012-01-18  Darach Golden <darach@tchpc.tcd.ie>
+
+	* mk/gnu.local.mk: added variable to indicate which BLAS is being
+	used; no usage of this variable as yet Change-Id: Idd8e4839e776ca70023100e1be74d1883f6441df Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/253 Reviewed-by:
+	<darach@tchpc.tcd.ie> Tested-by: <darach@tchpc.tcd.ie>
+
+2012-01-18  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/R/2.14.0/Makefile: revert openmpi 1.4.4 dependency
+	properly Change-Id: I89ef4c191e4af57852d532d147580f4a1d7fcbb2 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/252 Reviewed-by:
+	<darach@tchpc.tcd.ie> Tested-by: <darach@tchpc.tcd.ie>
+
+2012-01-18  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/R/2.14.0/Makefile: revert openmpi dependency for R 2.14.0
+	back to 1.4.3 1.4.4 was causing confusion with modules etc Change-Id: I6c322ec7aaa84f6226b2f592c83ebc6d65cc0f9c Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/251 Reviewed-by:
+	<darach@tchpc.tcd.ie> Tested-by: <darach@tchpc.tcd.ie>
+
+2012-01-18  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/atlas/3.8.4/Makefile,
+	packages/atlas/3.8.4/patches/patch-corei.01: added corei patch from
+	atlas errata to 3.8.4 (see:
+	http://math-atlas.sourceforge.net/errata.html#i2i1) Change-Id: Ieb24e83494c66d289527104d69b13bb2899ff9d5 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/250 Reviewed-by:
+	<darach@tchpc.tcd.ie> Tested-by: <darach@tchpc.tcd.ie>
+
+2012-01-18  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/R/2.12.2/Makefile, packages/R/2.14.0/Makefile,
+	packages/R/modules/haplo.stats/1.4.4/Makefile: removed haplo_stats
+	from cports R module list Change-Id: I432f2f59e8ed2b47b200141e37e20360b4bca7e6 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/249 Reviewed-by:
+	<darach@tchpc.tcd.ie> Tested-by: <darach@tchpc.tcd.ie>
+
+2012-01-18  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/R/modules/Rmpi/0.5-8/Makefile,
+	packages/R/modules/outliers/0.13-2/Makefile,
+	packages/R/modules/outliers/0.14/Makefile,
+	packages/R/modules/rbugs/0.4-4/Makefile,
+	packages/R/modules/rbugs/0.5-3/Makefile,
+	packages/R/modules/snow/0.3-3/Makefile,
+	packages/R/modules/snow/0.3-8/Makefile: updated R modules to latest
+	versions Change-Id: I84a98d89aad37dbc223e15ac86e2167bbb811e71 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/248 Reviewed-by:
+	<darach@tchpc.tcd.ie> Tested-by: <darach@tchpc.tcd.ie>
+
+2012-01-17  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/atlas/3.8.4/Makefile, packages/atlas/3.8.4/README,
+	packages/atlas/3.8.4/gcc_make.lib.patch: Atlas 3.8.4 (latest
+	 stable): - patch added (adds -lgcc when gnu compilers are involved)  - Makefile changed needs to be tested for intel compilers Change-Id: I895e5bfe4975d18c411964b55ca93011569c0983 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/247 Reviewed-by:
+	<darach@tchpc.tcd.ie> Tested-by: <darach@tchpc.tcd.ie>
+
+2012-01-16  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/allmydata-tahoe/1.9.1-SUMO/Makefile: Update tahoe-lafs to
+	1.9.1 which fixes a security problem.  Change-Id: I0498a1d7dd2d835f700cf8b7ff59adfbee8be926 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/246 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2012-01-03  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/pcre/8.12/Makefile, packages/pcre/8.20/Makefile: update
+	download paths for pcre Change-Id: I1004d9bc11049b4d0a7c1c0453b5ab290c458770 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/245 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-12-16  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/Python/2.4.4/Makefile: added python 2.4.4 for testing Change-Id: Ie1ffd6c4be96d8637f94cfc975c922ea35c21b0b Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/243 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-12-12  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/scalapack/1.8.0/Makefile: scalapack installer defaults to
+	2.0.0 now, mpiblacs is now apart of scalapack Change-Id: Iad28afa49a5cb7dfb95caefbbdb21547f145bcd1 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/241 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-12-12  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/netpbm/10.35.77/Makefile: get netpbm to install pnmtops Change-Id: I40a40d7281bb5858241f05e6134a60897470cfc6 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/240 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-12-12  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/allmydata-tahoe/1.9.0-SUMO/Makefile: updated tahoe-lafs
+	to 1.9.0 Change-Id: Idabe0c2ea16b1342d6dce15a8e12d14d3543f534 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/239 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-12-12  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/scalapack/1.8.0/Makefile: cd into correct scalapack
+	installer directory Change-Id: Icdd7f70b174565db67dd2d024ab797733acdb5f9 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/238 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-12-12  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/emacs/23.3b/Makefile: update to emacs 23.3b Change-Id: Ic7f044e324d675008a78ef70eb4fa5e8d50bd526 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/237 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-12-12  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/pcre/8.10/Makefile: update download site to SF.net Change-Id: I6b67bee20442ad3931f4053525fdfd0d85f1e51a Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/236 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-12-12  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* mk/gnu.def.mk: add trailing slash Change-Id: Ibbdee2a20dabb152e844043e93304603a2c03a5a Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/235 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-12-12  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* mk/gnu.def.mk: make http site the primary one Change-Id: I3bc061706719e7d2c6d3a1d1069776a092375a04 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/234 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-12-12  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/hdf5/1.8.5-patch1/Makefile: fix up releases path for hdf5 Change-Id: If552a38b8a4999a13e2de17ade7a206b21c0e327 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/233 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-12-12  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/groff/1.20/Makefile: fix up depends variable for groff Change-Id: I770a2928ec3f8ce19f632510b91963dd405b6090 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/232 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-12-09  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/octave/3.2.4/Makefile: update octave download site Change-Id: I9990bcf830004b713462582853da9ef47b87b379 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/231 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-12-09  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/espresso/4.2.1/Makefile: update dependancy Change-Id: If10ebf0e2d2b2d051209ccc05d4bf7231d6af55e Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/230 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-12-09  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/groff/1.20/Makefile: added netpbm as dependency of groff Change-Id: Iac1e0759369802863f87d2f5d653f6ee985a84dd Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/229 Reviewed-by:
+	<darach@tchpc.tcd.ie> Tested-by: <darach@tchpc.tcd.ie>
+
+2011-12-08  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/mpfr/3.1.0/Makefile: added mpfr 3.1.0 Change-Id: I0180b486011fadc1f20102721a7b3cab6712a346 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/228 Reviewed-by:
+	<darach@tchpc.tcd.ie> Tested-by: <darach@tchpc.tcd.ie>
+
+2011-12-08  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/mpfr/3.0.0/Makefile: changed download url for mpfr-3.0.0 Change-Id: Iadcf783913fcd7efc5b090bd45292808e6552d34 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/227 Reviewed-by:
+	<darach@tchpc.tcd.ie> Tested-by: <darach@tchpc.tcd.ie>
+
+2011-12-08  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/liblbfgs/1.10/Makefile, packages/liblbfgs/Makefile: added
+	libLBFGS: a library of Limited-memory
+	Broyden-Fletcher-Goldfarb-Shanno (L-BFGS) Change-Id: I2da6777935cc89a00e5b36b007302f2443e7a4c8 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/226 Reviewed-by:
+	<darach@tchpc.tcd.ie> Tested-by: <darach@tchpc.tcd.ie>
+
+2011-12-08  Darach Golden <darach@tchpc.tcd.ie>
+
+	* configure.sh, mk-conf/config.mk.in, mk/gnu.def.mk, mk/gnu.post.mk: 
+	configure changed to find tr (some) hard coded paths to tr removed Change-Id: Ibd614825b9958cf45adc4b4b38253e9edf858778 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/225 Reviewed-by:
+	<darach@tchpc.tcd.ie> Tested-by: <darach@tchpc.tcd.ie>
+
+2011-12-08  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/google-perftools/1.8.3/Makefile: Added google perftools
+	1.8.3 Change-Id: I4d576d74a2476d63fa99e4c543251a13d540dd94 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/224 Reviewed-by:
+	<darach@tchpc.tcd.ie> Tested-by: <darach@tchpc.tcd.ie>
+
+2011-12-08  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/libunwind/1.0.1/Makefile: added libunwind 1.0.1 Change-Id: I0a9a2946b90b70e45878279d39e62e1017085019 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/223 Reviewed-by:
+	<darach@tchpc.tcd.ie> Tested-by: <darach@tchpc.tcd.ie>
+
+2011-12-06  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/orangefs/2.8.4/Makefile, packages/orangefs/Makefile: 
+	first attempt at orangefs for testing Change-Id: Ibf4f8a738d549dc9a1600bac93e342e73bf4e01f Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/222 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-12-06  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/zfec/1.4.22_Python_2.6.5/Makefile: update zfec Change-Id: I9ab7c450c4c80dd3389d01fdb098b832de104e13 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/221 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-11-30  Neil Brookes <neil@tchpc.tcd.ie>
+
+	* packages/plinkseq/0.07/Makefile, packages/plinkseq/Makefile: Added
+	plinkseq 0.07 Change-Id: I4430f7a2f2f9691e6b72312cdeadb83bdb603c94 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/220 Reviewed-by:
+	<neil@tchpc.tcd.ie> Tested-by: <neil@tchpc.tcd.ie>
+
+2011-11-30  Neil Brookes <neil@tchpc.tcd.ie>
+
+	* packages/bfast+bwa/0.7.0a/Makefile, packages/bfast+bwa/Makefile: 
+	Added Bfast+Bwa Change-Id: Ia22bd5c1b92146648fc716de3fa786a0a5160594 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/219 Reviewed-by:
+	<neil@tchpc.tcd.ie> Tested-by: <neil@tchpc.tcd.ie>
+
+2011-11-30  Neil Brookes <neil@tchpc.tcd.ie>
+
+	* packages/bfast/0.7.0a/Makefile: Added bfast 0.7.0a Change-Id: I29659c5d80a4fe5b209e2944007ace8d7f6e545d Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/218 Reviewed-by:
+	<neil@tchpc.tcd.ie> Tested-by: <neil@tchpc.tcd.ie>
+
+2011-11-09  Neil Brookes <neil@tchpc.tcd.ie>
+
+	* packages/R/2.14.0/Makefile: Added cairo as a depend  in R 2.14.0 Change-Id: I9f9b9ee71ec4f5c98d21903894ebfa7a2f5d9f90 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/204 Reviewed-by:
+	<neil@tchpc.tcd.ie> Tested-by: <neil@tchpc.tcd.ie>
+
+2011-11-09  Neil Brookes <neil@tchpc.tcd.ie>
+
+	* packages/R/2.14.0/Makefile: Added R 2.14.0 Change-Id: I0af328bd6ff5ff1e402d2998ba3c2c4fd845daea Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/203 Reviewed-by:
+	<neil@tchpc.tcd.ie> Tested-by: <neil@tchpc.tcd.ie>
+
+2011-11-09  Neil Brookes <neil@tchpc.tcd.ie>
+
+	* packages/libpng/1.5.6/Makefile: LibPNG 1.5.6 added Change-Id: I7c34bc2ac9f470133834f38d88e8152eaa719a70 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/202 Reviewed-by:
+	<neil@tchpc.tcd.ie> Tested-by: <neil@tchpc.tcd.ie>
+
+2011-11-09  Neil Brookes <neil@tchpc.tcd.ie>
+
+	* packages/pcre/8.20/Makefile: pcre 8.20 added Change-Id: I1b85b35b8d18fdee238e8237809b747ca2c572d3 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/201 Reviewed-by:
+	<neil@tchpc.tcd.ie> Tested-by: <neil@tchpc.tcd.ie>
+
+2011-11-09  Neil Brookes <neil@tchpc.tcd.ie>
+
+	* packages/ncurses/5.9/Makefile: Added ncurses 5.9 Change-Id: I84856eb83dcc49e70dd7255c5eaae34eeaab80da Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/200 Reviewed-by:
+	<neil@tchpc.tcd.ie> Tested-by: <neil@tchpc.tcd.ie>
+
+2011-11-09  Neil Brookes <neil@tchpc.tcd.ie>
+
+	* packages/openmpi/1.4.4/Makefile,
+	packages/openmpi/1.4.4/README.romio: Added latest stable openmpi
+	(1.4.4) Change-Id: I1cf2a847b5fe3741e5edd8267d41a362060e4996 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/199 Reviewed-by:
+	<neil@tchpc.tcd.ie> Tested-by: <neil@tchpc.tcd.ie>
+
+2011-11-09  Neil Brookes <neil@tchpc.tcd.ie>
+
+	* packages/pvfs2/2.8.2/README,
+	packages/pvfs2/2.8.2/pvfs2-server.init: Added pvfs2 README file etc.  Change-Id: If0bac6d8b9d223348fa1146e56cde01ffd2c4f5d Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/198 Reviewed-by:
+	<neil@tchpc.tcd.ie> Tested-by: <neil@tchpc.tcd.ie>
+
+2011-11-09  Neil Brookes <neil@tchpc.tcd.ie>
+
+	* packages/pvfs2/2.6.1/Makefile, packages/pvfs2/2.6.2/Makefile,
+	packages/pvfs2/2.6.3/Makefile, packages/pvfs2/2.8.2/Makefile: Added
+	pvfs2 2.8.1 and added db as dependency to all pvfs versions Change-Id: I6fafe6980bf75b5506468284d689be59a809aa1f Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/197 Reviewed-by:
+	<neil@tchpc.tcd.ie> Tested-by: <neil@tchpc.tcd.ie>
+
+2011-11-09  Neil Brookes <neil@tchpc.tcd.ie>
+
+	* packages/dimbl/Makefile, packages/timbl/Makefile: Added forgotten
+	top-level timbl and dimbl Makefiles Change-Id: Id9501b520e4ca4377db2e478a481bae6935409f2 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/196 Reviewed-by:
+	<neil@tchpc.tcd.ie> Tested-by: <neil@tchpc.tcd.ie>
+
+2011-11-09  Neil Brookes <neil@tchpc.tcd.ie>
+
+	* packages/dimbl/0.7/Makefile, packages/timbl/6.4.1/Makefile: Added
+	timbl and dimbl Change-Id: Ie4633d55f939858cd149620271c63366a555c356 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/195 Reviewed-by:
+	<paddy@tchpc.tcd.ie> Tested-by: <paddy@tchpc.tcd.ie>
+
+2011-10-05  Paddy Doyle <paddy@tchpc.tcd.ie>
+
+	* packages/CASAVA/1.8.1/Makefile, packages/ncurses/5.7/Makefile: 
+	trying a makefile for CASAVA 1.8.1 - copied from 1.7.0 needed boost 1.44; also updated ncurses ln; touch missing samtools
+	file Change-Id: Ife5a300535ab94a95070a92624fcb0dcdda835c8 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/193 Reviewed-by:
+	<paddy@tchpc.tcd.ie> Tested-by: <paddy@tchpc.tcd.ie>
+
+2011-09-27  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/a2ps/4.14/Makefile, packages/emacs/23.3/Makefile,
+	packages/netpbm/10.35.77/Makefile: a2ps changed to avoid downloading
+	sheets.tar.gz from broken url netpbm changed to explicitly specify "-L/path/to/zlib" becuase  of apparently altered behaviour of LIBRARY_PATH with later gcc
+	 versions emacs changed to include freetype as dependency Change-Id: Iba7eee2233d3949977d01567e3a4f2bd9f1f6895 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/192 Reviewed-by:
+	<darach@tchpc.tcd.ie> Tested-by: <darach@tchpc.tcd.ie>
+
+2011-09-12  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* mk/gnu.def.mk, packages/fftw/2.1.5/Makefile: Start of cross
+	compiling options for bgp Change-Id: Ibc1028b5353b5fbb6266b48f892b54a9e58416f2
+
+2011-09-09  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* configure.sh, doc/bgp.mdwn, doc/tested_systems.mdwn,
+	packages/git/1.7.6/Makefile, packages/mercurial/1.9.2/Makefile,
+	scripts/config.guess, scripts/distro.guess: Added checks for SLES,
+	tested only on pp64 - power5+ machine Change-Id: Ib5297ff9ae765720e50142c32e544af7517e0f6c
+
+2011-09-08  Neil Brookes <neil@tchpc.tcd.ie>
+
+	* doc/install.mdwn: Slight docmentation change Change-Id: Ia3b7cdab8d5aeda60f8f649c411f11f36994333c Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/189 Reviewed-by:
+	<neil@tchpc.tcd.ie> Tested-by: <neil@tchpc.tcd.ie>
+
+2011-09-08  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/texinfo/4.13/Makefile: remove unsupported configure
+	option Change-Id: I66f89b7c2479f7dce2be0d1c89e19fea6a4ea811 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/188 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-09-07  Neil Brookes <neil@tchpc.tcd.ie>
+
+	* packages/BeautifulSoup/3.2.0_Python_2.7.2/Makefile: Added
+	BeautifulSoup for Python 2.7.2 Change-Id: I38d358f0ed6daed6d154585e4be2e0be04c06faf Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/187 Reviewed-by:
+	<neil@tchpc.tcd.ie> Tested-by: <neil@tchpc.tcd.ie>
+
+2011-09-07  Neil Brookes <neil@tchpc.tcd.ie>
+
+	* packages/cutadapt/0.9.5_Python_2.7.2/Makefile: Added cutadpt 0.9.5
+	built for Python 2.7.2 Change-Id: I81a3db6cc55aab6b8c12b8863bbdf14c3a6e8445 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/186 Reviewed-by:
+	<neil@tchpc.tcd.ie> Tested-by: <neil@tchpc.tcd.ie>
+
+2011-09-07  Neil Brookes <neil@tchpc.tcd.ie>
+
+	* packages/HTSeq/0.5.3_Python_2.7.2/Makefile: Fix the the HTSeq
+	naming convention. Changed EXTRAVERSION variable Change-Id: Icd44653c7db42029e4d187cc5ed4f404dc5bc97e Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/185 Reviewed-by:
+	<neil@tchpc.tcd.ie> Tested-by: <neil@tchpc.tcd.ie>
+
+2011-09-07  Neil Brookes <neil@tchpc.tcd.ie>
+
+	* packages/HTSeq/0.5.3_Python_2.7.2/Makefile: HTseq 0.5.3 built with
+	Python 2.7.2 and varion nose and numpy dependancies Change-Id: I84121dd34cf2c5c3c50bc62a0cff4d60c0f57765 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/184 Reviewed-by:
+	<neil@tchpc.tcd.ie> Tested-by: <neil@tchpc.tcd.ie>
+
+2011-09-07  Neil Brookes <neil@tchpc.tcd.ie>
+
+	* packages/Biopython/1.58_Python_2.7.2/Makefile: Added BioPython
+	1.58 built with Python 2.7.2 Change-Id: I4df5d7e41735ee2504ce0d508f015ce268ea21d1 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/183 Reviewed-by:
+	<neil@tchpc.tcd.ie> Tested-by: <neil@tchpc.tcd.ie>
+
+2011-09-07  Neil Brookes <neil@tchpc.tcd.ie>
+
+	* packages/Biopython/1.57_Python_2.7.2/Makefile,
+	packages/reportlab/2.5_Python_2.7.2/Makefile: Added Biopythion and
+	the its option reportlab dependancy. Both for Python 2.7.2 Change-Id: I18d3328354bbf646afe6cf10859b79ac67abd8fe Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/182 Reviewed-by:
+	<neil@tchpc.tcd.ie> Tested-by: <neil@tchpc.tcd.ie>
+
+2011-09-07  Neil Brookes <neil@tchpc.tcd.ie>
+
+	* packages/nose/0.11.3_Python_2.7.2/Makefile,
+	packages/numpy/1.6.1_Python_2.7.2/Makefile,
+	packages/numpy/1.6.1_Python_2.7.2/site.cfg.template: Added new nose
+	and numpy, built with Python 2.7.2 Change-Id: Ieb60acce9f505987078c76537a5d6fa9b49f1395 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/181 Reviewed-by:
+	<neil@tchpc.tcd.ie> Tested-by: <neil@tchpc.tcd.ie>
+
+2011-09-07  Neil Brookes <neil@tchpc.tcd.ie>
+
+	* packages/Python/2.7.2/Makefile: Added Python 2.7.2 Change-Id: I7b59ab16c3db84b2a96ec36f5a66050d61219832 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/180 Tested-by: <neil@tchpc.tcd.ie>
+	Reviewed-by: <neil@tchpc.tcd.ie>
+
+2011-09-01  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/gd/2.0.26RC1/Makefile, packages/gd/2.0.36RC1/Makefile: 
+	rename gd package to correct version Change-Id: I9ebb95db0cd90bdb060907a47197ecfd6699bd48 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/179 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-09-01  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/gdis/0.90/Makefile, packages/gdis/Makefile: Added gdis Change-Id: Ibc4117b2fde933b1e387fc6a0cd89fb351440cfd Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/178 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-09-01  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/gtkglext/1.2.0/Makefile,
+	packages/gtkglext/1.2.0/patches/patch--Eliminate-usage-of-GTK_WIDGE
+	T_REALIZED-GTK_WIDGET_TO.diff: Added updated and patched version of
+	gtkglext Change-Id: Id5a0349d634c5d2b5839ce64383ddb5624b4d558 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/177 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-09-01  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/eigen/2.0.16/Makefile: Fixed eigen package, users must
+	redownload the source tarball Change-Id: Ib40d265589ba40c08a5c0a44a5ac6fb320895092 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/176 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-09-01  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/gtkglext/1.0.6/Makefile, packages/gtkglext/Makefile: 
+	Added gtkglext for gdis Change-Id: I90106d2d48e34b6936392363b48d04a645e91b4f Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/175 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-08-22  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/samtools/0.1.17/Makefile: Updated samtools Change-Id: I9020acfc0d9f3bd5ecbf99a8c1c256e3b8de354e Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/174 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-08-17  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/jemalloc/2.2.2/Makefile, packages/jemalloc/Makefile: 
+	Added jemalloc as a comparison for google-perftools Change-Id: I4b77badafbe8ad1637bba4d17d367a976d4de09b Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/173 Tested-by: <jtang@tchpc.tcd.ie>
+	Reviewed-by: <jtang@tchpc.tcd.ie>
+
+2011-08-12  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/ninja/Makefile, packages/ninja/git/Makefile: a small
+	build system similar to make - ninja Change-Id: I4fb537df3ef618b65fd5f9b66a9ae2fa114a7888 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/172 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-08-08  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/xz/5.0.3/Makefile: update xz Change-Id: I864f5082e3536f6a4f4a3d3464786a28c8dd55e2 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/167 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-08-04  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/bup/0.24b-0-g92b297d/Makefile,
+	packages/bup/git/Makefile,
+	packages/git-subtree/0.3-0-ge2d0a45/Makefile,
+	packages/git/1.7.2.1/Makefile, packages/git/1.7.2.2/Makefile,
+	packages/git/1.7.3.2/Makefile, packages/git/1.7.4/Makefile,
+	packages/gitflow/git/Makefile, packages/topgit/0.8/Makefile: remove
+	the older versions of git Change-Id: I13a7b4b8a174373a0ebea915e65b0db989377825 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/166 Tested-by: <jtang@tchpc.tcd.ie>
+	Reviewed-by: <jtang@tchpc.tcd.ie>
+
+2011-08-11  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/xrootd/3.0.4/Makefile: no arch dirs Change-Id: Ia59a4e7135725b7771136445aa771049bfb20c7a Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/171 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-08-10  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/xrootd/3.0.4/Makefile, packages/xrootd/Makefile: added
+	xrootd for testing Change-Id: I2d3b299dd90a51981c94e9b107f89915f907b4a0 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/170 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-08-09  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/cctools/3.3.4/Makefile: enable mpi work queue for
+	makeflow Change-Id: If7663c1881cd50ba1fa5d8ee44e739aeb7f0a78f Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/169 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-08-09  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/cctools/3.3.4/Makefile, packages/cctools/Makefile: added
+	cctools for chirp, parrot and makeflow taskfarming Change-Id: I61368f0e2e53c81d9c2cf4f821335318880cb32e Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/168 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-08-03  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/fann/2.1.0/Makefile, packages/fann/Makefile: added FANN
+	2.1.0 beta Change-Id: Iaef4c8205ea59480e6b9381c3a9c192ff9fa3ba3 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/162 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-08-03  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/tau/2.20.2/Makefile: added cports jdk as tau dependency Change-Id: I2daf843d05f1dfe077fa61264e9c9ef2e84199a6 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/165 Reviewed-by:
+	<darach@tchpc.tcd.ie> Tested-by: <darach@tchpc.tcd.ie>
+
+2011-07-27  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/tau/2.20.2/Makefile, packages/tau/Makefile: initial
+	addition of tau Change-Id: Ic44d21e79eb6800430c67ba925525ad0f5b156f2 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/157 Reviewed-by:
+	<darach@tchpc.tcd.ie> Tested-by: <darach@tchpc.tcd.ie>
+
+2011-08-03  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/scalasca/1.3.3/Makefile, packages/tDOM/0.8.3/Makefile: 
+	added 'gnu' build directory option to scalasca configuration added --no-check-certificate for downloading tDOM Change-Id: I134bf29de5cbaf52e7637b362d1d7758b7830793 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/164 Reviewed-by:
+	<darach@tchpc.tcd.ie> Tested-by: <darach@tchpc.tcd.ie>
+
+2011-08-03  Darach Golden <darach@cports-devel.tchpc.tcd.ie>
+
+	* packages/scalasca/1.3.3/Makefile: extra modules added into
+	scalasca makefile Change-Id: Ibdd5e2ffbf27d0cd9c16fc09557b549a2dfaab53 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/163 Reviewed-by:
+	<darach@tchpc.tcd.ie> Tested-by: <darach@tchpc.tcd.ie>
+
+2011-07-27  Darach Golden <darach@tchpc.tcd.ie>
+
+	* mk/gnu.pre.mk, packages/papi/4.1.3/Makefile,
+	packages/perfsuite/1.0.0/Makefile, packages/scalasca/1.3.3/Makefile: 
+	moved test for papi kernel into mk directory altered perfsuite and
+	scalasca configs to test for papi kernel add kernel check into papi Makefile allow a kernel module to be installed in a kernel that does not
+	support papi Change-Id: I0dca68fe14e3df5af450af683180e089c094a5fb Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/158 Reviewed-by:
+	<darach@tchpc.tcd.ie> Tested-by: <darach@tchpc.tcd.ie>
+
+2011-08-02  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/perfsuite/1.0.0/Makefile: added JAVA variable (path to
+	java) to makefile Change-Id: I8a639ad978a45a6b01348a41423474746dcd3a67 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/161 Reviewed-by:
+	<darach@tchpc.tcd.ie> Tested-by: <darach@tchpc.tcd.ie>
+
+2011-08-01  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/perfsuite/1.0.0/Makefile,
+	packages/scalasca/1.3.3/Makefile: made some changes to perfsuite
+	Makefile to allow configure to go through with cports jdk when gcj
+	is installed added cports jdk as dependency to scalasca Change-Id: I33a8f0f620489e676e21d8e845c123ec23bb9350 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/160 Reviewed-by:
+	<darach@tchpc.tcd.ie> Tested-by: <darach@tchpc.tcd.ie>
+
+2011-07-27  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/jdk/1.6.0_26/Makefile: new jdk added Change-Id: Id41083c9fef37bcf0291fde2495ebb70631db5fb Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/156 Reviewed-by:
+	<darach@tchpc.tcd.ie> Tested-by: <darach@tchpc.tcd.ie>
+
+2011-07-27  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/Python/2.5.5/Makefile, packages/Python/2.6.5/Makefile,
+	packages/Python/2.6.6/Makefile, packages/Python/2.7.1/Makefile,
+	packages/Python/2.7/Makefile, packages/Python/3.0.1/Makefile,
+	packages/Python/3.1.3/Makefile: change db dependency for Python from
+	4.8.26 to 4.8.30 Change-Id: I4eb7aa4d2381f1bf0d955210cfd168eb02ec542a Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/159 Reviewed-by:
+	<darach@tchpc.tcd.ie> Tested-by: <darach@tchpc.tcd.ie>
+
+2011-07-25  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/hpctoolkit/5.1.0/Makefile, packages/hpctoolkit/Makefile: 
+	initial addition of hpctoolkit only tried on x86_64 download
+	(do-fetch) could be improved Change-Id: Ib9515b4fdfcf238c65f5df6e8e80c90c3651f417 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/144 Reviewed-by:
+	<darach@tchpc.tcd.ie> Tested-by: <darach@tchpc.tcd.ie>
+
+2011-07-25  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/binutils/2.21/Makefile: binutils 2.21 added Change-Id: I4970cdd282d09b12a4592ab65760b24bf928f7be Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/149 Tested-by:
+	<darach@tchpc.tcd.ie> Reviewed-by: <darach@tchpc.tcd.ie>
+
+2011-07-26  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/pdt/3.16/Makefile, packages/perfsuite/1.0.0/Makefile,
+	packages/scalasca/1.3.3/Makefile, packages/scalasca/Makefile: 
+	initial addition of perfsuite, scalasca and associated packages glib
+	now uses db 4.8.30 Change-Id: I162b7a51e34eae0271d3fbedc8350e2c9d18617b Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/155 Reviewed-by:
+	<darach@tchpc.tcd.ie> Tested-by: <darach@tchpc.tcd.ie>
+
+2011-07-26  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/papi/4.1.3/Makefile: uncomment DESCRIPTION variable for
+	papi Change-Id: I96c86f443657d30d88bb0c55d14ac9f61ef28ac9 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/154 Reviewed-by:
+	<darach@tchpc.tcd.ie> Tested-by: <darach@tchpc.tcd.ie>
+
+2011-07-25  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/pdt/3.16/Makefile: pdt was not installing correctly now
+	installs better testing with scalasca needed Change-Id: I6b93b8e20b163faf4f75039dad0ae944ec751476 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/151 Reviewed-by:
+	<darach@tchpc.tcd.ie> Tested-by: <darach@tchpc.tcd.ie>
+
+2011-07-25  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/pdt/3.16/Makefile, packages/pdt/3.16/pdtookit-README,
+	packages/pdt/Makefile: added Program Database Toolkit (pdt) Change-Id: I14c2d6747dc9aa365a8563ffc1c3b5aa0962044a Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/148 Reviewed-by:
+	<darach@tchpc.tcd.ie> Tested-by: <darach@tchpc.tcd.ie>
+
+2011-07-25  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/perfsuite/1.0.0/Makefile, packages/perfsuite/Makefile: 
+	initial addition of perfsuite Change-Id: I5687f037c8843d15c4da5aab6c4f44d1ced053c1 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/147 Reviewed-by:
+	<darach@tchpc.tcd.ie> Tested-by: <darach@tchpc.tcd.ie>
+
+2011-07-25  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/binutils/2.20/Makefile:  added --enable-shared to be picked up  by bfd in binutils  purpose: allow libbfd to be dynamically opened Change-Id: I289e6f25b5f0bc013c60bb0bff8c977eeb791854 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/146 Reviewed-by:
+	<darach@tchpc.tcd.ie> Tested-by: <darach@tchpc.tcd.ie>
+
+2011-07-25  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/tDOM/0.8.3/Makefile, packages/tDOM/Makefile: tDOM tcl xml
+	parser added Change-Id: I29727b78bd454ba27ebab8af594ffcc65fb194fd Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/145 Reviewed-by:
+	<darach@tchpc.tcd.ie> Tested-by: <darach@tchpc.tcd.ie>
+
+2011-07-26  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/glib/2.24.1/Makefile: change glib to use db 4.8.30 Change-Id: I5047410807895bbab0b5cf44057c86297fa8451b Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/153 Reviewed-by:
+	<darach@tchpc.tcd.ie> Tested-by: <darach@tchpc.tcd.ie>
+
+2011-07-26  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/db/4.8.30/Makefile: debian pool site only seems to store
+	recent versions of db oracle site seems to store some legacy
+	versions _without_ sign-in. However some existing legacy cports db
+	versions (e.g., 4.8.26 and 5.2.26) are not available for download
+	from oracle site BUT e.g 4.8.30 _is_ available for download Change-Id: I75b50189438ee26cb868212ae822b61a8a6137b6 So: added
+	    4.8.30 from oracle added 5.1.25 from debian Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/152 Tested-by:
+	<darach@tchpc.tcd.ie> Reviewed-by: <darach@tchpc.tcd.ie>
+
+2011-07-20  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/db/5.1.25/Makefile: added db-5.1.25 Some other versions
+	cannot be downloaded from main dl site Change-Id: Id1329840941b5374fa74b035e13176856da7c69c Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/141 Reviewed-by:
+	<darach@tchpc.tcd.ie> Tested-by: <darach@tchpc.tcd.ie>
+
+2011-07-22  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/papi/4.1.3/Makefile, packages/papi/Makefile: papi 4.1.3
+	added Change-Id: I9fb284edf4a52bf7a8e7827cedcee9a555360803 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/143 Reviewed-by:
+	<darach@tchpc.tcd.ie> Tested-by: <darach@tchpc.tcd.ie>
+
+2011-07-18  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/gtest/1.6.0/Makefile, packages/gtest/Makefile: Added
+	google-test frameworkf or C++ (should work for C as well) Change-Id: I0ddaa7194531b0b5a335e8c11256b6157c69cffb Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/139 Tested-by: <jtang@tchpc.tcd.ie>
+	Reviewed-by: <jtang@tchpc.tcd.ie>
+
+2011-07-18  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/google-perftools/1.8/Makefile: google-perftools got
+	released in the last few days, update to 1.8 Change-Id: Id3733f16e7451fd312af09f2639ec1a40c0fce9c Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/138 Tested-by: <jtang@tchpc.tcd.ie>
+	Reviewed-by: <jtang@tchpc.tcd.ie>
+
+2011-07-15  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/google-perftools/1.7/Makefile,
+	packages/libunwind/0.99/Makefile, packages/libunwind/Makefile: Added
+	google-perftools, updated Change-Id: I05c97aba171c44ef552d50ae755099dff7451bdd Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/137 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-07-14  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/gc/7.1/Makefile, packages/gc/Makefile: Added libgc - for
+	memory checking and collecting Change-Id: I7557c2f27f0bcaacd852d3eb2ba1095e8cfa8597 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/136 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-07-12  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* doc/install.mdwn: Update installation example Change-Id: I764b2c507b856580ac155947a9a6322593891af6
+
+2011-07-12  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/gcc/4.6.1/Makefile: update gcc to latest 4.6.1 Change-Id: Id69d3811d5cc786dfbc72f5e0653d5f9a7ba1a12 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/133 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-07-12  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/tmux/1.5/Makefile: update of tmux to 1.5 Change-Id: If0568f2123c82054c372dfce99c3c2c609314193 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/132 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-07-07  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/avogadro/1.0.3/Makefile, packages/avogadro/Makefile,
+	packages/eigen/2.0.16/Makefile, packages/eigen/2.0.9/Makefile,
+	packages/eigen/3.0.1/Makefile, packages/eigen/Makefile,
+	packages/libxml2/2.7.7/Makefile, packages/openbabel/2.2.3/Makefile,
+	packages/openbabel/2.3.0/Makefile, packages/openbabel/2.3.0/README,
+	packages/openbabel/Makefile: Creating avogadro editor package Needed to create some dependancies 	* eigen 2.x and 3.x 	* openbabel 2.2.x an 2.3.x Change-Id: Id1f179f4f9245e8f6d1a0b77cb9f2df4838c7855 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/129 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-07-07  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/git/1.7.6/Makefile, packages/mercurial/1.9/Makefile: 
+	Update git and mercurial Change-Id: I936e117766e527e19f513d96e006560cb66c1ecc Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/130 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-07-04  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/dar/2.4.0/Makefile: Update of dar to 2.4.0, need to look
+	at lzo2 support Change-Id: I68aefaadf4f2631c2a909264e8d3164e00d3c57d Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/128 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-06-30  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* Makefile.in: remove typo Change-Id: I4ffeb043552d93007ef8bd0473996d850eb28c83 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/126 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-06-30  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* Makefile.in, doc/index.mdwn, doc/packages.mdwn: minor clean ups Change-Id: Ibf72a6796c0dfc0cb9ef2ec3b2bd60d698f7d192 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/125 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-06-30  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* doc/authors.mdwn, doc/contact.mdwn, doc/index.mdwn,
+	doc/install.mdwn, doc/old_changelog.mdwn, doc/requirements.mdwn,
+	doc/tested_systems.mdwn, doc/usage.mdwn, doc/walkthrough.mdwn: 
+	Breaking out documentation more Change-Id: I79222dbb2b338e451fd8c76d06ab15911242d9e4 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/124 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-06-29  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* doc/contact.mdwn, doc/copyright.mdwn, doc/index.mdwn,
+	doc/templates/bare.tmpl, doc/templates/walkthrough.tmpl,
+	doc/walkthrough.mdwn: Added contacts, copyright notices and started
+	walkthrough Change-Id: I6534652b8ea7498263254b90a80008a8eeb45dce Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/123 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-06-29  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* .gitignore, Archive/Makefile,
+	Archive/cports-doc/cports-0.117/FAQ,
+	Archive/cports-doc/cports-0.117/README,
+	Archive/cports-doc/cports-tree-0.124/README,
+	Archive/examples/dot.mpkg.mk, Archive/examples/markdown.setup,
+	Archive/examples/privatemodules.cports,
+	Archive/mpkg-html/developer.html, Archive/mpkg-html/download.html,
+	Archive/mpkg-html/index.html, Archive/mpkg-html/links.html,
+	Archive/mpkg-html/mpkg.css, Documentation/.gitignore,
+	Documentation/InstallModules.org, Documentation/Makefile,
+	Documentation/Packages.org, Documentation/Readme.org,
+	Documentation/Todo.org, Documentation/cports-doc/cports-0.117/FAQ,
+	Documentation/cports-doc/cports-0.117/README,
+	Documentation/cports-doc/cports-tree-0.124/README,
+	Documentation/examples/dot.mpkg.mk,
+	Documentation/examples/markdown.setup,
+	Documentation/examples/privatemodules.cports,
+	Documentation/mpkg-html/developer.html,
+	Documentation/mpkg-html/download.html,
+	Documentation/mpkg-html/index.html,
+	Documentation/mpkg-html/links.html,
+	Documentation/mpkg-html/mpkg.css, Makefile.in, doc/index.mdwn,
+	doc/install.mdwn, doc/install_modules.mdwn, doc/packages.mdwn,
+	doc/requirements.mdwn, doc/todo.mdwn, doc/usage.mdwn: Move to using
+	ikiwiki for docs Change-Id: I1128e6a7bbe5aa8b133236038419a638e8095f26 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/122 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-06-08  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/git/1.7.5.4/Makefile: Update git to latest stable Change-Id: I14be5fd783f1c3258728370b413a37e4f7bb102c Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/121 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-05-25  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/recutils/1.3/Makefile, packages/recutils/Makefile: Added
+	GNU recutils Change-Id: I8c9574e0f1de53eb0cada70fa20039a766b08ad0 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/120 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-05-13  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/cufflinks/1.0.1/Makefile: Added cufflinks 1.0.1 Change-Id: I9fe4aefcbe29ec8227841989d7f84063d07dc859 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/118 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-05-13  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/bup/0.24b-0-g92b297d/Makefile: Added latest stable
+	version of bup Change-Id: Iabd2721819df0454c48570943f5f90b8b9218314 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/117 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-05-11  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/conceptual/1.3/Makefile: Added conceptual 1.3 for
+	prototyping benchmarks Change-Id: Ifb5830230d2ae4779cf964734b7b85d4f966674d Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/116 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-05-09  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/olb/1.9.0/Makefile: Update OLB to 1.9.0 Change-Id: Id293342a48eb0e6cb2b3f65645727f04bf025fc9 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/115 Tested-by: <jtang@tchpc.tcd.ie>
+	Reviewed-by: <jtang@tchpc.tcd.ie>
+
+2011-05-09  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/hwloc/1.2/Makefile: Update hwloc Change-Id: Ic8f7f5d2d0fa91568cda9dd002fcf0485cb68a4b Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/114 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-05-06  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/SuiteSparse/3.4.0/Makefile,
+	packages/gnuplot/4.4.0/Makefile,
+	packages/hdf5/1.8.5-patch1/Makefile: Added a bunch of dependancies
+	for gnuplot for various output formats Minor update to metis version Correct HDF5 download link Depend on
+	poppler to get pdf output Change-Id: Ie25f4a504ca221c20855cd99c52e4a94acb55b90 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/113 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-05-06  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/gd/2.0.26RC1/Makefile, packages/gd/Makefile: Added libgd
+	to make gnuplot and friends more portable Change-Id: I258ce93b6b2b0f967b408c6cc18283af8da6e8ad Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/112 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-05-05  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/emacs/23.3/Makefile: netpbm is needed for latest version
+	of emacs Change-Id: I82f1bef4fe23e4341c807144fff91d8aadf12250 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/111 Tested-by: <jtang@tchpc.tcd.ie>
+	Reviewed-by: <jtang@tchpc.tcd.ie>
+
+2011-05-05  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* Documentation/InstallModules.org, Documentation/Readme.org,
+	Documentation/installmodules.org: Update documentation Change-Id: I74de9cc610375551169593ef1d453ccfa8aae8aa Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/110 Tested-by: <jtang@tchpc.tcd.ie>
+	Reviewed-by: <jtang@tchpc.tcd.ie>
+
+2011-05-04  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/vancouvershortr/Makefile,
+	packages/vancouvershortr/svn/Makefile: Added vancouvershortr
+	package, this relies on svn working Change-Id: I64055000cf56f519297bcc98c57ec65c670be44a Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/109 Tested-by: <neil@tchpc.tcd.ie>
+	Reviewed-by: <neil@tchpc.tcd.ie>
+
+2011-05-04  Neil Brookes <neil@tchpc.tcd.ie>
+
+	* packages/R/2.12.2/Makefile,
+	packages/R/modules/haplo.stats/1.4.4/Makefile: Added haplo.stats to
+	R modules Change-Id: I133dc088cdfb1eae503f6f311e8670b219a2e4c1 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/108 Tested-by: <neil@tchpc.tcd.ie>
+	Reviewed-by: <neil@tchpc.tcd.ie>
+
+2011-05-03  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/mercurial/1.8.3/Makefile: Update mercurial to 1.8.3 Change-Id: Ie3c67434d1a1d6b160bea91d7dc93ec2771783e2 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/107 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-05-03  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/jmol/12.0.41/Makefile, packages/jmol/Makefile: Added jmol Change-Id: I554cc7930cd1cc4d5be075f3965445ca911316cf Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/105 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-05-01  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/gitflow/Makefile, packages/gitflow/git/Makefile: Initial
+	add of gitflow Change-Id: I3fdd6f412a42abd1e1847e852099ac471d302949 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/103 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-04-27  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/git/1.7.5/Makefile: fix makefile to include curl and
+	update git to 1.7.5 Change-Id: I93330f6713e6d9249b8d920ee953c6badc736f24 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/102 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-04-20  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/bcrypt/1.1/Makefile, packages/bcrypt/Makefile: First
+	attempt at bcrypt Change-Id: I6153db912a654eb57190a1fe13c83b15172c5dff Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/101 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-04-19  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/sector/2.6.a/Makefile, packages/sector/2.6/Makefile: 
+	Update sector/sphere to 2.6 stable Change-Id: I8c345c6ef2e240710f67ef4ef0e99ae729a6e9e0 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/100 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-04-15  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/apache-ant/1.8.2/Makefile, packages/apache-ant/Makefile: 
+	Added apache ant binaries Change-Id: I24af9b490dd20a850c85df9a57cbaa8a67a0365b Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/99 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-04-15  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/nginx/1.0.0/Makefile: Update nginx to 1.0.0 Change-Id: Ieb0025f30b7f22dcd83eb04ca8f5b5305ea416b4 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/98 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-04-14  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/mercurial/1.8.2/Makefile: Updated mercurial to 1.8.2 Change-Id: I3f9ee282dff16367809a1a89b66bd83b6acb3f62 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/97 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-04-13  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* mk/gnu.local.mk, packages/pcc-libs/1.0.0/Makefile,
+	packages/pcc-libs/Makefile, packages/pcc/1.0.0/Makefile,
+	packages/pcc/Makefile: Added PCC - Portable C Compiler Change-Id: I994302efbb9fba54f7396d9b6be0ca7c90b08f63 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/96 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-04-12  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/OpenBLAS/0.1alpha1-0-ge4bb6f2/Makefile,
+	packages/OpenBLAS/Makefile: Added alpha version of OpenBLAS Not quite the HEAD of the repo, but there are bug fixes Change-Id: I90ceee86bf659b25afa45d0afdc9ecfde8ee6cc0 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/94 Tested-by: <jtang@tchpc.tcd.ie>
+	Reviewed-by: <jtang@tchpc.tcd.ie>
+
+2011-04-12  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/gotoblas2/1.13/Makefile: Fix gotoblas2 build, now it
+	works on cports devel Change-Id: Iba61a9d96f1f1aa51d2a19eae254d8609bf8a4e2 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/95 Tested-by: <jtang@tchpc.tcd.ie>
+	Reviewed-by: <jtang@tchpc.tcd.ie>
+
+2011-04-05  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/scotch/5.1.11/Makefile: original scotch dir now for non
+	esmumps compile of scotch also, new version 5.1.11 added Change-Id: I36c1a8385b475cabee7e2bbb696a05fb6e3b80dd Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/83 Reviewed-by:
+	<darach@tchpc.tcd.ie> Reviewed-by: <jtang@tchpc.tcd.ie> Tested-by:
+	<jtang@tchpc.tcd.ie>
+
+2011-04-11  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/scotch/5.1.10/Makefile: Amendment to the last commit
+	3ad04563a532be7cbb52ebbdd2eac73ad71dd647 Some naming issues with upstream, package still needs more work Change-Id: I8916881b4b54aed4cb920f4d14e01b7708e92f7d Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/93 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-04-05  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/scotch/5.1.10/Makefile: update scotch to openmpi 1.4.3
+	typo Change-Id: Ic063b60e81034ab649df44ef62ae9f88c603241a Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/81 Reviewed-by:
+	<darach@tchpc.tcd.ie> Reviewed-by: <jtang@tchpc.tcd.ie> Tested-by:
+	<jtang@tchpc.tcd.ie>
+
+2011-04-09  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/hwloc/1.1.2/Makefile: Update hwloc Change-Id: Iabfe7674c846a7ab7f9df4119227aca2e125248b Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/92 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-04-03  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	*
+	packages/darcs-binary/2.5.2-linux-amd64-ghc7.0.3-CURL-static/Makefi
+	le,
+	packages/darcs-binary/2.5.2-linux-i386-ghc7.0.3-CURL-static/Makefil
+	e: update darcs to 2.5.2 Change-Id: I2cf97357f22367bb957d2e868d143cd123b91f51 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/78 Tested-by: <jtang@tchpc.tcd.ie>
+	Reviewed-by: <jtang@tchpc.tcd.ie>
+
+2011-04-04  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/quantlib/1.0.1_boost_1_44_0/Makefile: quantlib 1.0.1
+	added compiled with boost 1_44_0 Change-Id: I433ccffa93458294709e2b05190eee1fd354748d Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/80 Reviewed-by:
+	<darach@tchpc.tcd.ie> Reviewed-by: <jtang@tchpc.tcd.ie> Tested-by:
+	<jtang@tchpc.tcd.ie>
+
+2011-04-04  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/boost/1_44_0_openmpi_1.4.3/Makefile,
+	packages/boost/1_46_1_openmpi_1.4.3/Makefile: boost 1_44_0: added
+	version which uses openmpi 1.4.3 added boost 1_46_1 Change-Id: Ie37599224f51a6a2f610b2c12fa77d387187561c Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/79 Reviewed-by:
+	<darach@tchpc.tcd.ie> Reviewed-by: <jtang@tchpc.tcd.ie> Tested-by:
+	<jtang@tchpc.tcd.ie>
+
+2011-03-31  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/l_mkl_p/10.2.2.025/Makefile: module file contains choice
+	of mkl library subdir based on SYSTEM_TYPE_CPU.  em64t is default Change-Id: I2bbfc0a9e8cafcdf4f764d424b471d9e548b5c27 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/77 Reviewed-by:
+	<darach@tchpc.tcd.ie> Reviewed-by: <jtang@tchpc.tcd.ie> Tested-by:
+	<jtang@tchpc.tcd.ie>
+
+2011-03-31  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/slurm/2.2.4/Makefile: Update slurm for devel purposes Change-Id: I4a982810f730f53deec5e9194ec3aac992e2b7f9 Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/76 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-03-31  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/petsc-basic/3.1-p8/generate_make_commands.sh: format
+	output Change-Id: I4e5d374a33af988eb432d2e66773f370bb0f774a Reviewed-on:
+	https://marduk.tchpc.tcd.ie:8443/75 Reviewed-by:
+	<jtang@tchpc.tcd.ie> Tested-by: <jtang@tchpc.tcd.ie>
+
+2011-03-31  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* : Merge commit 'refs/changes/72/72/1' of
+	ssh://marduk.tchpc.tcd.ie:29418/tools/cports Conflicts: 	packages/l_mkl_p/10.2.2.025/Makefile Change-Id: Id8d573625a6e65d2d82b06fcd60852cb38cc69a5
+
+2011-03-30  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/l_mkl_p/10.2.2.025/Makefile: changes made to mkl install
+	sets some extra variables in module file builds with petsc/smeagol Change-Id: I3a669ff2f39f0acc208b63917bd37cfe0ada0cb0
+
+2011-03-28  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/cloog-ppl/0.15.9/Makefile, packages/gcc/4.6.0/Makefile,
+	packages/gmp/4.3.2/Makefile, packages/polylib/5.22.5/Makefile,
+	packages/ppl/0.10.2/Makefile, packages/ppl/0.11.2/Makefile: Added
+	gcc 4.6.0 Updated some dependancies needed to build this version of gcc.  This
+	is still untested and should not be used in production.  Change-Id: I70425f43c02796f4d72ea331a0a793172169fd8d
+
+2011-03-30  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/scalapack/1.8.0/Makefile: renaming (copying) scalapack
+	libraries seemed to help linking Change-Id: Iff3f3c500ac01f37682f9ebff8e3d931c39b5b19
+
+2011-03-30  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/petsc-basic/3.1-p8/Makefile: petsc-basic now compiles
+	with intell11/mkl Change-Id: I5563ed102c4d83bad0d9320093e68e1fd4afac9d
+
+2011-03-30  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/scalapack/1.8.0/Makefile: scalapack makefile
+	significantly altered; now compiles acml more testing needed as
+	usual Change-Id: I05385721928836e34a64739e7ad8a8f9fd54fd59
+
+2011-03-30  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/l_mkl_p/10.2.2.025/Makefile: changes made to mkl install
+	sets some extra variables in module file builds with petsc/smeagol Change-Id: I3a669ff2f39f0acc208b63917bd37cfe0ada0cb0
+
+2011-03-29  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/acml-nosmp/4-4-0/Makefile: Fix typo Change-Id: Ie1da300763f464468ff7b2b5aef3920fd1a2c5d9
+
+2011-03-28  Darach Golden <darach@tchpc.tcd.ie>
+
+	* : Merge changes Ia32398f5,I2d9ff2cb,I15c9c283,I38b1a3ad * changes:   depend on ParMetis/3.1.1_openmpi_1.4.3   revert to dependence on openmpi 1.4.2 for 3.1.1   make parmetis depend on mpi version/implementation using
+	  EXTRAVERSION variable petsc 3.1p8 added to petsc-basic package
+	Makefile altered significantly changes _not_ ported to older 3.1p3
+	install
+
+2011-03-24  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/petsc-basic/3.1-p8/Makefile: depend on
+	ParMetis/3.1.1_openmpi_1.4.3 i.e., the EXTRAVERSION version of ParMetis Change-Id: Ia32398f5f074901fbac8c42fd43582be105c0d0f
+
+2011-03-24  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/ParMetis/3.1.1/Makefile: revert to dependence on openmpi
+	1.4.2 for 3.1.1 Change-Id: I2d9ff2cba9f022e108b80c619ffa7f288554048e
+
+2011-03-24  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/ParMetis/3.1.1_openmpi_1.4.3/Makefile: make parmetis
+	depend on mpi version/implementation using EXTRAVERSION variable Change-Id: I15c9c283bc99c9db810a9d91d9b2a76817bcc1e1
+
+2011-03-24  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/petsc-basic/3.1-p8/Makefile,
+	packages/petsc-basic/3.1-p8/README,
+	packages/petsc-basic/3.1-p8/clean_script,
+	packages/petsc-basic/3.1-p8/generate_make_commands.sh,
+	packages/petsc-basic/3.1-p8/inst_script: petsc 3.1p8 added to
+	petsc-basic package Makefile altered significantly changes _not_
+	ported to older 3.1p3 install Change-Id: I38b1a3ad2cb44893d3e7dbbd69e8572086a2742d
+
+2011-03-24  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/acml-nosmp/README, packages/acml-smp/README: fun with
+	SELinux Change-Id: Iaf47077716d748afb1383d68a694220c6ec2695e
+
+2011-03-24  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/ParMetis/3.1.1/Makefile: make parmetis depend on openmpi
+	1.4.3 Change-Id: I6d2373e31f7aa85f5a387ba45cf8ed30a4e62444
+
+2011-03-24  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/openmpi/1.4.3/Makefile, packages/openmpi/1.5.3/Makefile: 
+	Enable threading for latest openmpi releases Change-Id: I41a5013e4e677c2a11c7ffd657955f4243c59530
+
+2011-03-24  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/l_mkl_p/10.2.2.025/Makefile,
+	packages/l_mkl_p/10.2.2.025/README,
+	packages/l_mkl_p/10.2.2.025/files/silent.ini,
+	packages/l_mkl_p/Makefile: Start of MKL Package Need license information, see this http://aur.archlinux.org/packages.php?ID=36909&comments=all Change-Id: I176957350983d52234cbf5e62170cd0dbd948ef1
+
+2011-03-23  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* : Merge "Get haskell-platform to pick the right ghc"
+
+2011-03-23  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* : Merge "Added modeller 9v8"
+
+2011-03-22  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/emacs/23.3/Makefile: added emacs 23.3 Change-Id: I523fdce7cf0731f9236acaa3e42fea889bb059aa
+
+2011-03-22  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/wget/1.12/Makefile: wget 1.12 added seems to be better at
+	understanding css imports Change-Id: I8c8b8cd2799063818d99e67d383552251560de8d
+
+2011-03-18  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* Makefile.in: Testing out zsync Change-Id: I479b34b9af6c3c062c8c1f30cbd2749d76a51ef5
+
+2011-03-18  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* : Merge "added zsync for doing updates of files"
+
+2011-03-18  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/openmpi/1.5.3/Makefile: Update openmpi to 1.5.3 Change-Id: I38cae12eaa0a5cdbdb55ceb1df1590d088143b02
+
+2011-03-14  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/dar/2.3.11/Makefile, packages/dar/Makefile: Added dar for
+	doing backups of home directories Change-Id: I83a1450b932e83280c34e216bc1f1d2c49dc437b
+
+2011-03-11  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* : commit f62237da441e2660934eff81565db1737981602c Author: Jimmy
+	Tang <jtang@tchpc.tcd.ie> Date:   Fri Mar 11 12:57:53 2011 +0000
+
+2011-03-07  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* : commit 76f07c6c62e3b77377a861ebbab37689efdc33ae Author: Jimmy
+	Tang <jtang@tchpc.tcd.ie> Date:   Wed Mar 2 10:42:08 2011 +0000
+
+2011-02-28  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/R/2.12.2/Makefile: R 2.12.2 added, now depends on pcre
+	8.12 Change-Id: I4d29095bb64887ad236af6637517851ec85afa62
+
+2011-02-28  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/pcre/8.12/Makefile: pcre updated -- two bugfix releases
+	since 8.10 Change-Id: Ibc8f9d3e061c99fc04c78c5f5af3d1215f32e685
+
+2011-03-07  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* : Merge "Update OpenSSH with SSH-HPN patch"
+
+2011-02-28  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/R/2.12.2/Makefile: R 2.12.2 added, now depends on pcre
+	8.12 Change-Id: I4d29095bb64887ad236af6637517851ec85afa62
+
+2011-02-28  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/pcre/8.12/Makefile: pcre updated -- two bugfix releases
+	since 8.10 Change-Id: Ibc8f9d3e061c99fc04c78c5f5af3d1215f32e685
+
+2011-01-22  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/wireshark/1.4.3/Makefile, packages/wireshark/Makefile: 
+	Wireshark and libpcap added Change-Id: I087e1ddc7dfb0a96925aab999bf6e62251d45238
+
+2011-01-22  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/nmap/5.21/Makefile, packages/nmap/Makefile: nmap added Change-Id: Ideeb590035152a0d3dc4e7a5172f9da9726781dc
+
+2011-01-22  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/lua/5.1.4/Makefile: Add -fPIC flag only way I know how --
+	some apps need liblua.a to be so compiled Change-Id: I1f2e424434cfd3668be85bdfa582558c9d246b31
+
+2011-02-28  jtang <jtang@tchpc.tcd.ie>
+
+	* : Merge "R 2.12.2 added, now depends on pcre 8.12"
+
+2011-02-28  jtang <jtang@tchpc.tcd.ie>
+
+	* : Merge "pcre updated -- two bugfix releases since 8.10"
+
+2011-01-22  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/wireshark/1.4.3/Makefile, packages/wireshark/Makefile: 
+	Wireshark and libpcap added Change-Id: I087e1ddc7dfb0a96925aab999bf6e62251d45238
+
+2011-02-28  jtang <jtang@tchpc.tcd.ie>
+
+	* : Merge "Add -fPIC flag only way I know how -- some apps need
+	liblua.a to be so compiled"
+
+2011-01-22  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/lua/5.1.4/Makefile: Add -fPIC flag only way I know how --
+	some apps need liblua.a to be so compiled Change-Id: I1f2e424434cfd3668be85bdfa582558c9d246b31
+
+2011-02-28  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/pcre/8.12/Makefile: pcre updated -- two bugfix releases
+	since 8.10 Change-Id: Ibc8f9d3e061c99fc04c78c5f5af3d1215f32e685
+
+2011-02-16  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/BclConverter/1.7.1/Makefile,
+	packages/BclConverter/Makefile,
+	packages/boost/1_42_0_openmpi_1.4.2/Makefile: Added boost 1.42 and
+	bclconverter Change-Id: I350ecc233e0acfc1534870dfff8a4bad63acaeab
+
+2011-02-09  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/Python/2.5.5/Makefile: Add dependancies and checks to
+	python 2.5.5 Change-Id: I9daca881d81477526d50e752573d546bd41e774f
+
+2011-02-09  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* : Merge "Renamed testlog to something a bit more sensible"
+
+2011-02-09  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* : Merge "Don't need atlas for zfec, testing build on
+	sgenomics.org"
+
+2011-02-09  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* : Merge "Prefer git protocol over https, don't assume curl support
+	exists"
+
+2011-02-09  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* : commit 3a0e2ff30a199b4b15cb4a098e4a776e8c1c80c6 Author: Jimmy
+	Tang <jtang@tchpc.tcd.ie> Date:   Wed Feb 9 11:56:39 2011 +0000
+
+2011-02-08  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/bup/git/Makefile: Added 'git' version of bup, this will
+	do a git clone before a build Change-Id: I876a60ef792053a4606608a531823fb355648139
+
+2011-02-01  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/bup/0.22-0-g1eb67d0/Makefile: Update bup to v0.22, now
+	has dumb server mode Change-Id: I6154365e703d5a57bc760fc5ea871a536792f2d2
+
+2011-02-09  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* : Merge "Added 'git' version of bup, this will do a git clone
+	before a build"
+
+2011-02-09  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/xz/5.0.1/Makefile: xz has gone stable with 5.0.1 Change-Id: Ib283618b327882b44c94003ba4add9479a5ed8d3
+
+2011-02-02  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/zfec/1.4.17_Python_2.6.5/Makefile: Don't need atlas for
+	zfec, testing build on sgenomics.org Change-Id: Iaca053fb4ae495763486baf7f40e8edee483ffce
+
+2011-02-09  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/Python/2.6.6/Makefile, packages/Python/2.7.1/Makefile,
+	packages/Python/2.7/Makefile, packages/Python/3.0.1/Makefile,
+	packages/Python/3.1.3/Makefile: Enabled testing on existing Python
+	packages and updated stable builds Change-Id: I46d1d7cf09f607bd61dfbf5de43038444e28cecd
+
+2011-02-08  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/bup/git/Makefile: Added 'git' version of bup, this will
+	do a git clone before a build Change-Id: I876a60ef792053a4606608a531823fb355648139
+
+2011-02-08  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* mk/gnu.post.mk: Renamed testlog to something a bit more sensible Change-Id: I3c2698e8b62565c65f7981e5bfb09a7a252a1c86
+
+2011-02-03  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/git/1.7.4/Makefile: Update git to 1.7.4 Change-Id: Ib738ebcedbf4f2894d2edd0d9b601ea587fd1232
+
+2011-02-02  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/atlas/3.8.3/lapackconfig.intel10.1.sh,
+	packages/atlas/3.8.3/lapackconfig.intel11.0.sh,
+	packages/atlas/3.8.3/lapackconfig.sh: Unpack the stable version of
+	lapack for building ATLAS Change-Id: I04c23b17247fd2b2b0dca9c251114e4bb1cac2a2
+
+2011-02-01  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/bup/0.22-0-g1eb67d0/Makefile: Update bup to v0.22, now
+	has dumb server mode Change-Id: I6154365e703d5a57bc760fc5ea871a536792f2d2
+
+2011-02-01  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/zfec/1.4.17_Python_2.6.5/Makefile,
+	packages/zfec/Makefile: Added zfec for making sure data is safe Change-Id: I7474382c3d53c78c1463ce19001fa79f8ea5764d
+
+2011-02-01  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/allmydata-tahoe/1.8.2-SUMO/Makefile: Update tahoe-lafs to
+	latest stable 1.8.2 Change-Id: I0e3f3769c0f051fb9fae42e98eff3dde66cfb4c9
+
+2011-01-31  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/hwloc/1.1.1/Makefile: Update hwloc to latest stable Change-Id: I61c51c00a80d2c2c1df48f8ee2ef3bea6f45293d
+
+2011-01-31  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/libpcap/1.1.1/Makefile, packages/libpcap/Makefile: Added
+	libpcap Change-Id: I54861218dd7f474b51a52b21715154ee17f550e7
+
+2011-01-31  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/nifticlib/2.0.0/Makefile, packages/nifticlib/Makefile: 
+	added nifticlib for testing data from scanners Change-Id: Iec86be7817df8ff8ad83888b0a7e2d97130d3f35
+
+2011-01-30  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* .milli/cports-devel.1284814121.P14080M269372.milli,
+	.milli/cports-devel.1284823346.P18512M773670.milli,
+	.milli/cports-devel.1285679018.P17307M960926.milli,
+	.milli/cranog.1287353695.P32333M681892.milli, .milli/hook,
+	.milli/lonsdale01.1280411203.P8627M538072.milli,
+	.milli/lonsdale01.1280411733.P10254M10493.milli,
+	.milli/lonsdale01.1280411886.P10790M814436.milli,
+	.milli/lonsdale01.1280411906.P10859M379784.milli,
+	.milli/lonsdale01.1280412028.P11190M983301.milli,
+	.milli/lonsdale01.1280418860.P31419M737463.milli,
+	.milli/lonsdale01.1280499158.P14667M254234.milli,
+	.milli/lonsdale01.1282119631.P11157M315156.milli,
+	.milli/lonsdale01.1282572954.P10412M831805.milli,
+	.milli/sgenomics.org.1287514640.P27561M728930.milli,
+	.milli/sgenomics.org.1288518279.P10384M725068.milli,
+	.milli/termite.tchpc.tcd.ie.1285237341.P12718M234196.milli,
+	.milli/x00.tchpc.tcd.ie.1280416542.P24286M833546.milli,
+	.milli/x00.tchpc.tcd.ie.1280419607.P24690M383749.milli,
+	.milli/x00.tchpc.tcd.ie.1283783693.P58135M866190.milli,
+	.milli/x00.tchpc.tcd.ie.1285581638.P74038M507502.milli,
+	.milli/x00.tchpc.tcd.ie.1289487224.P42762M650601.milli,
+	.milli/x00.tchpc.tcd.ie.1291483672.P53416M693375.milli,
+	.milli/x00.tchpc.tcd.ie.1291483713.P53426M84179.milli,
+	.milli/x00.tchpc.tcd.ie.1291484342.P53543M60628.milli,
+	.milli/x00.tchpc.tcd.ie.1291485667.P53720M692458.milli,
+	.milli/x00.tchpc.tcd.ie.1291485765.P53731M510267.milli: stop using
+	milli, move to either org-mode or a real issue tracker Change-Id: I8372696a8c4be8ea6a5af4b440c1e67ba71f51d5
+
+2011-01-28  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* : commit 8cb969eae7ef1514d0da8139fee4d157ce4999ec Author: Jimmy
+	Tang <jtang@tchpc.tcd.ie> Date:   Fri Jan 28 14:16:04 2011 +0000
+
+2011-01-28  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/RDKit/2010_12_1/Makefile,
+	packages/RDKit/Q32010_1beta1/Makefile: Remove beta version of RDkit
+	and update to a release version Change-Id: If7e6843019865a7b568c7b6a289ed402cb725b31
+
+2011-01-28  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/RDKit/2010_12_1/Makefile,
+	packages/RDKit/Q32010_1beta1/Makefile: Remove beta version of RDkit
+	and update to a release version Change-Id: If7e6843019865a7b568c7b6a289ed402cb725b31
+
+2011-01-27  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* Documentation/Readme.org, Documentation/Todo.org: update
+	documentation and remove petsc from todo list Change-Id: I737c281450b89efad68ceecbca5aca16d334155b
+
+2011-01-26  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* Makefile.in: added very some reconfig target to make life easier
+
+2011-01-26  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* configure.inc, local.inc: output fcflags and cxxflag to somewhere
+	useful
+
+2011-01-26  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* configure.inc: added CXX vars and fixed fflags to be fcflags
+
+2011-01-26  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* configure.inc: get config.cmd to have the FC variables, should
+	probably do this for CXX as well
+
+2011-01-21  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/pgplot/5.2/Makefile: try and fix a shared lib problem
+	with pgplot
+
+2011-01-19  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/oases/0.1.18/Makefile: updated oases
+
+2011-01-19  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/velvet/1.0.18/Makefile: update velvet
+
+2011-01-19  Darach Golden <darach@tchpc.tcd.ie>
+
+	* mk/templates.mk, packages/hello/2.6/Makefile: new templates file
+	with example macro this is _not_ included in any part of cports as
+	yet also messing around in hello makefile
+
+2011-01-19  Darach Golden <darach@tchpc.tcd.ie>
+
+	* mk/gnu.local.mk: error checking added to gnu.local.mk
+
+2011-01-19  Darach Golden <darach@cports-devel.tchpc.tcd.ie>
+
+	* Documentation/Readme.org: addition to docs re compiler checks
+
+2011-01-19  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/m4/1.4.15/Makefile: this may break other stuff but: gawk/bison/m4 in cports have circular dependencies on sl5.x
+	compiling this seems to be fine on ubuntu 10.10 compileing them
+	leads to infinite make recursion this change attempts to cut the circle by requiring the m4 install
+	to find the system awk (even macs have awk).  After m4 is installed,
+	other packages should be able to use gawk if they want system awk on some systems may be to old...
+
+2011-01-19  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* Documentation/installmodules.org, Makefile.in: the commenting and
+	trailing slashes confuses make
+
+2011-01-19  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* Makefile.in: mroe formatting
+
+2011-01-19  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* Makefile.in: tweak template
+
+2011-01-19  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* Documentation/Readme.org: update notes on OSX
+
+2011-01-18  Darach Golden <darach@tchpc.tcd.ie>
+
+	* : commit 15d8499f269b391553bdaa121ddb5726c708a2fa Author: Jimmy
+	Tang <jtang@x00.tchpc.tcd.ie> Date:   Tue Jan 18 16:21:51 2011 +0000
+
+2011-01-18  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/fastx_toolkit/0.0.13/Makefile: depend on gnuplot at run
+	time
+
+2011-01-18  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/fastx_toolkit/0.0.13/Makefile,
+	packages/fastx_toolkit/Makefile,
+	packages/libgtextutils/0.6/Makefile,
+	packages/libgtextutils/Makefile: added fastx_toolkit
+
+2011-01-18  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/cutadapt/0.9/Makefile, packages/cutadapt/Makefile: added
+	cutadapt
+
+2011-01-18  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/cufflinks/0.9.2/Makefile,
+	packages/cufflinks/0.9.3/Makefile, packages/cufflinks/Makefile: 
+	added cufflinks
+
+2011-01-18  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/tophat/1.1.0/Makefile, packages/tophat/1.1.4/Makefile,
+	packages/tophat/Makefile: added tophat
+
+2011-01-18  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/samtools/0.1.6/Makefile,
+	packages/samtools/0.1.8/Makefile: butcher the installs abit more so
+	that the headers are in the right place for other apps
+
+2011-01-18  Neil Brookes <neil@cports-devel.tchpc.tcd.ie>
+
+	* packages/dindel/1.01/Makefile: SOme updates to dindel
+
+2011-01-18  Neil Brookes <neil@cports-devel.tchpc.tcd.ie>
+
+	* packages/stampy/1.0.11/Makefile: Force linking
+
+2011-01-18  Neil Brookes <neil@cports-devel.tchpc.tcd.ie>
+
+	* packages/stampy/1.0.11/Makefile: Changed STAMPY to depend on BWA
+	rc1
+
+2011-01-18  Neil Brookes <neil@cports-devel.tchpc.tcd.ie>
+
+	* packages/stampy/1.0.11/Makefile: Added samtools and maq to
+	dependancies of STAMPY
+
+2011-01-18  Neil Brookes <neil@cports-devel.tchpc.tcd.ie>
+
+	* packages/stampy/1.0.11/Makefile: Added BWA as runtime dependancy
+	of STAMPY
+
+2011-01-18  Neil Brookes <neil@cports-devel.tchpc.tcd.ie>
+
+	* packages/stampy/1.0.11/Makefile, packages/stampy/Makefile: Added
+	STAMPY
+
+2011-01-18  Darach Golden <darach@cports-devel.tchpc.tcd.ie>
+
+	* : commit cad0a30c6e63eb6a8ed104c68db3fc5543f21655 Author: Darach
+	Golden <darach@cports-devel.tchpc.tcd.ie> Date:   Tue Jan 18
+	12:24:58 2011 +0000
+
+2011-01-18  Neil Brookes <neil@cports-devel.tchpc.tcd.ie>
+
+	* : commit 952d5ac04f509ba03ef908dca3ace5defc125276 Author: Neil
+	Brookes <neil@cports-devel.tchpc.tcd.ie> Date:   Tue Jan 18 12:24:24
+	2011 +0000
+
+2011-01-18  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/HTSeq/0.4.7_Python_2.6.5/Makefile,
+	packages/HTSeq/Makefile, packages/numpy/1.4.1_Python_2.6.5/Makefile: 
+	added HTSeq, the module loads, need to figure out how to run the
+	unit tests
+
+2011-01-18  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* mk/gnu.post.mk: fix toplevel index mdwn file
+
+2011-01-18  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/blatSrc/34/Makefile, packages/blatSrc/Makefile: added
+	blatSrc34, does not install devel headers and libs
+
+2011-01-17  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* Documentation/Readme.org: try and update the documentation
+
+2011-01-17  Darach Golden <darach@tchpc.tcd.ie>
+
+	* : commit e53af330c210874f5f6779ce58b5c8589c6ce98c Author: Jimmy
+	Tang <jtang@cports-devel.tchpc.tcd.ie> Date:   Mon Jan 17 21:52:46
+	2011 +0000
+
+2011-01-17  Jimmy Tang <jtang@sgenomics.org>
+
+	* Documentation/.gitignore: ignore more tmp files
+
+2011-01-17  Jimmy Tang <jtang@sgenomics.org>
+
+	* .gitignore: ignore some files
+
+2011-01-17  Jimmy Tang <jtang@sgenomics.org>
+
+	* Documentation/.gitignore: ignore some files
+
+2011-01-17  Darach Golden <darach@tchpc.tcd.ie>
+
+	* : commit 99eb5ccecc33bdea1e8419896019975783d9be0c Author: Jimmy
+	Tang <jtang@sgenomics.org> Date:   Mon Jan 17 22:33:02 2011 +0100
+
+2011-01-17  Jimmy Tang <jtang@sgenomics.org>
+
+	* Documentation/Makefile, Makefile.in: copy some stuff from bup
+	makefiles, good examples for other usage
+
+2011-01-17  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* Documentation/Makefile, Documentation/Packages.org,
+	Documentation/Readme.org, Documentation/Todo.org,
+	Documentation/cports-doc/cports-0.117/FAQ,
+	Documentation/cports-doc/cports-0.117/README,
+	Documentation/cports-doc/cports-tree-0.124/README,
+	Documentation/examples/dot.mpkg.mk,
+	Documentation/examples/markdown.setup,
+	Documentation/examples/privatemodules.cports,
+	Documentation/installmodules.org,
+	Documentation/mpkg-html/developer.html,
+	Documentation/mpkg-html/download.html,
+	Documentation/mpkg-html/index.html,
+	Documentation/mpkg-html/links.html,
+	Documentation/mpkg-html/mpkg.css, Packages.org, Readme.org,
+	Todo.org, doc/cports-doc/cports-0.117/FAQ,
+	doc/cports-doc/cports-0.117/README,
+	doc/cports-doc/cports-tree-0.124/README, doc/examples/dot.mpkg.mk,
+	doc/examples/markdown.setup, doc/examples/privatemodules.cports,
+	doc/installmodules.org, doc/mpkg-html/developer.html,
+	doc/mpkg-html/download.html, doc/mpkg-html/index.html,
+	doc/mpkg-html/links.html, doc/mpkg-html/mpkg.css: shuffle
+	documentation into its own directory and makefile
+
+2011-01-17  Darach Golden <darach@tchpc.tcd.ie>
+
+	* mk/gnu.local.mk: added $(error ...) into compiler detection in
+	gnu.local.mk
+
+2011-01-17  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/atlas/3.8.3/lapackconfig.sh: don't just pull lapack HEAD;
+	fix a version
+
+2011-01-17  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/atlas/3.8.3_new/Makefile: update description of config
+
+2011-01-17  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/R/2.12.1/Makefile: (maybe) compile R with threaded version of atlas
+
+2011-01-17  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/atlas-unstable/3.9.32/Makefile,
+	packages/atlas-unstable/3.9.32/README,
+	packages/atlas/3.8.3_new/Makefile, packages/atlas/3.8.3_new/README: 
+	change threading defaults in atlas Makefiles
+
+2011-01-17  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/R/2.12.1/Makefile: minor change to EXTRAVERSION in
+	makefile
+
+2011-01-17  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/atlas-unstable/3.9.32/Makefile,
+	packages/atlas/3.8.3_new/Makefile: initial attempt to setup a
+	threading option for atlas
+
+2011-01-17  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/atlas-unstable/3.9.32/README,
+	packages/atlas/3.8.3_new/README: readme files added to atlas dirs
+	detailing threading options
+
+2011-01-16  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/R/2.12.1_acml/Makefile: change acml R to run with new
+	smp/nosmp module structure
+
+2011-01-16  Darach Golden <darach@tchpc.tcd.ie>
+
+	* mk/gnu.post.mk, packages/acml-nosmp/4-4-0/Makefile,
+	packages/acml-nosmp/Makefile, packages/acml-smp/4-4-0/Makefile,
+	packages/acml-smp/Makefile, packages/acml/4-4-0/Makefile,
+	packages/acml/4-4-0/README, packages/acml/Makefile,
+	packages/atlas-unstable/3.9.32/Makefile,
+	packages/atlas-unstable/Makefile,
+	packages/atlas/3.8.3_new/Makefile, packages/atlas/3.9.32/Makefile: 
+	split acml into acml smp and acml without smp split atlas into
+	stable (atlas) and unstable (atlas-unstable) fixed (?) minor glitch
+	in module file output
+
+2011-01-15  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/atlas/3.8.3_new/Makefile: renamed CPRT_COMPILER_CLASS to
+	CPRT_ATLAS_COMPILER_CLASS because of name clash the atlas Makefile
+	should be improved
+
+2011-01-15  Darach Golden <darach@tchpc.tcd.ie>
+
+	* mk/gnu.local.mk: gnu.local.mk edited to be more general
+
+2011-01-17  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* : commit 59c7d34075174395105b347fd7d47258cba1982d Author: Jimmy
+	Tang <jtang@cports-devel.tchpc.tcd.ie> Date:   Mon Jan 17 16:11:21
+	2011 +0000
+
+2011-01-17  Neil Brookes <neil@cports-devel.tchpc.tcd.ie>
+
+	* packages/ImageMagick/6.6.7/Makefile: Update Perl dep in
+	Imagemagick
+
+2011-01-17  Neil Brookes <neil@cports-devel.tchpc.tcd.ie>
+
+	* : commit 54d5f2ecf878278589871096de836c60caee9a03 Author: Neil
+	Brookes <neil@cports-devel.tchpc.tcd.ie> Date:   Mon Jan 17 15:49:38
+	2011 +0000
+
+2011-01-17  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* : commit b7da51601e6583df304c71db46930ba8494b0401 Author: Jimmy
+	Tang <jtang@cports-devel.tchpc.tcd.ie> Date:   Mon Jan 17 15:40:22
+	2011 +0000
+
+2011-01-17  Neil Brookes <neil@cports-devel.tchpc.tcd.ie>
+
+	* : commit 8f00faac74b159b6c493acfaa5b829fdd7042570 Author: Neil
+	Brookes <neil@cports-devel.tchpc.tcd.ie> Date:   Mon Jan 17 15:29:38
+	2011 +0000
+
+2011-01-17  Neil Brookes <neil@cports-devel.tchpc.tcd.ie>
+
+	* packages/ImageMagick/6.6.7/Makefile,
+	packages/ImageMagick/Makefile, packages/cppunit/1.12.1/Makefile,
+	packages/cppunit/Makefile, packages/ghostscript/9.00/Makefile,
+	packages/mira/3.2.1/Makefile, packages/olb/1.6.0/Makefile,
+	packages/olb/Makefile: Added OLB and dependancies
+
+2011-01-17  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/samtools/0.1.6/Makefile,
+	packages/samtools/0.1.8/Makefile: generate dynamic libs for other
+	programs
+
+2011-01-17  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/samtools/0.1.6/Makefile: add old version of samtools
+
+2011-01-17  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/samtools/0.1.8/Makefile: enable headers and libs
+
+2011-01-17  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/mpiBLAST/1.5.0-pio/Makefile,
+	packages/mpiBLAST/1.6.0-beta2/Makefile,
+	packages/mpiBLAST/1.6.0/Makefile,
+	packages/ncbi-blast/2.2.24+/Makefile: put things in right categories
+
+2011-01-17  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/bedtools/2.10.1/Makefile, packages/bedtools/Makefile: add
+	bedtools
+
+2011-01-17  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/abyss/1.2.5/README: note about abyss
+
+2011-01-17  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/vcftools/0.1.3.2/Makefile, packages/vcftools/Makefile: 
+	added vcftools, needs more testing on this one, the install
+	procedure doesn't work as one would expect
+
+2011-01-17  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/bfast/0.6.4e/Makefile: update category
+
+2011-01-17  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/bfast/0.6.4e/Makefile, packages/bfast/Makefile: added
+	bfast
+
+2011-01-17  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/bamtools/0.7.47/Makefile, packages/bamtools/Makefile: 
+	added bamtools
+
+2011-01-17  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* : commit 9e1502fdfd0c79b58f79f7f51dd673acf82e2eb9 Author: Jimmy
+	Tang <jtang@cports-devel.tchpc.tcd.ie> Date:   Mon Jan 17 11:44:07
+	2011 +0000
+
+2011-01-17  root <root@shiva.tchpc.tcd.ie>
+
+	* packages/plink/1.06/Makefile, packages/plink/1.07/Makefile: fix
+	link line for plink
+
+2011-01-17  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/atlas/3.8.3/lapackconfig.intel10.1.sh,
+	packages/atlas/3.8.3/lapackconfig.intel11.0.sh,
+	packages/atlas/3.8.3/lapackconfig.sh: use stable version of lapack
+
+2011-01-17  root <root@shiva.tchpc.tcd.ie>
+
+	* packages/bwa/0.5.9rc1/Makefile: added bwa 0.5.9rc1
+
+2011-01-17  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/plink/1.06/Makefile: add older version of plink
+
+2011-01-17  root <root@shiva.tchpc.tcd.ie>
+
+	* packages/ncbi-blast/2.2.24+/Makefile: fix url for blast
+
+2011-01-14  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* scripts/distro.guess: add darwin check, need to get stuff working
+	on OSX
+
+2011-01-14  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/R/2.10.1/Makefile, packages/R/2.11.1/Makefile,
+	packages/R/modules/rlecuyer/0.3-1/Makefile: update earlier R
+	versions  to openmpi 1.4.3 done becuase have previously updated the
+	modules to 1.4.3
+
+2011-01-14  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/CASAVA/1.7.0/Makefile: Note about CASAVA
+
+2011-01-14  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/CASAVA/1.7.0/Makefile, packages/CASAVA/Makefile: add
+	CASAVA
+
+2011-01-14  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* mk/gnu.local.mk: added gcc 4.5.2 as a COMPILERS option
+
+2011-01-13  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* t/t3010-gnutbootstrap.sh: update bootstrap test, don't do 2.0
+	tests since it requires some things to be installed.
+
+2011-01-13  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/acml/4-4-0/Makefile: acml install was broken for open64;
+	intel still needs testing
+
+2011-01-13  Darach Golden <darach@tchpc.tcd.ie>
+
+	* mk/gnu.information.mk: remove  ; after REFERENCE_MARDKWON (sic) in
+	PACKAGE_MARKDOWN
+
+2011-01-13  Darach Golden <darach@tchpc.tcd.ie>
+
+	* mk/gnu.information.mk: this was causing a make failure do  we need
+	'\' after the last echo of e.g. PACKAGE_MARKDOWN?
+
+2011-01-13  Darach Golden <darach@tchpc.tcd.ie>
+
+	* : commit 2bd83f0adb80fc0ebadb8dd9beacd00cd80da9b1 Author: Jimmy
+	Tang <jtang@cports-devel.tchpc.tcd.ie> Date:   Thu Jan 13 10:51:19
+	2011 +0000
+
+2011-01-13  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/lapack/3.3.0/Makefile, packages/lapack/Makefile: First
+	attempt at cmake version of lapack, it currently generates shared
+	and static libraries
+
+2011-01-13  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/acml/Makefile: fix up current version of acml
+
+2011-01-13  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/R/2.12.1_acml/Makefile: first attempt at R compiled with
+	cports acml
+
+2011-01-13  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/acml/4-4-0/Makefile: dodgy hack to make R pick up acml
+	symbolic link of acml_root/gfortran64/lib to acml_root/lib same with
+	include There must be a better way
+
+2011-01-13  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/R/modules/Rmpi/0.5-8/Makefile,
+	packages/R/modules/snow/0.3-3/Makefile,
+	packages/R/modules/snowfall/1.84/Makefile: update Rmpi version
+	(previous version failed to download) change dependency on openmpi
+	1.4.2 to 1.4.3
+
+2011-01-12  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/acml/4-4-0/Makefile, packages/acml/4-4-0/README,
+	packages/acml/Makefile: initial commit of acml blas/lapack
+
+2011-01-12  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/gcc/4.5.2/readme.org: notes
+
+2011-01-12  Darach Golden <darach@tchpc.tcd.ie>
+
+	* : commit 44cfc5402bcdcdc544cc2c76df56fd4ccf99ca5e Author: Darach
+	Golden <darach@tchpc.tcd.ie> Date:   Wed Jan 12 11:00:42 2011 +0000
+
+2011-01-12  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/atlas/3.8.3_new/Makefile,
+	packages/atlas/3.8.3_new/possibleatlaserrata.patch,
+	packages/atlas/3.9.32/Makefile: added two new atlas directories - 3.9.32 (unstable) - 3.8.3_new: attempt to clean up atlas install makefile
+
+2011-01-11  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/gcc/4.5.2/Makefile: update gcc 4.5.2
+
+2011-01-11  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* : commit a8df07d2850e79cbc3ab314b479835116e0fcd1e Author: Jimmy
+	Tang <jtang@cports-devel.tchpc.tcd.ie> Date:   Tue Jan 11 11:16:56
+	2011 +0000
+
+2011-01-10  Neil Brookes <neil@cports-devel.tchpc.tcd.ie>
+
+	* scripts/wvtest.sh: Added boost 1.41
+
+2011-01-10  Neil Brookes <neil@cports-devel.tchpc.tcd.ie>
+
+	* packages/boost/1_41_0_openmpi_1.4.2/Makefile: Added boost 1.41
+
+2011-01-07  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/pgplot/5.2/Makefile, packages/pgplot/Makefile: first
+	attempt at pgplot
+
+2011-01-06  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/tmux/1.4/Makefile: update tmux
+
+2011-01-04  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/hwloc/1.1/Makefile, packages/openmpi/1.5.1/Makefile: 
+	update hwloc and openmpi to latest stable
+
+2010-12-23  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* packages/keepassx/0.4.3/Makefile: need qt for runtime
+
+2010-12-16  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/R/2.10.1/Makefile, packages/R/2.11.1/Makefile,
+	packages/R/2.12.0/Makefile, packages/R/2.12.1/Makefile: added R
+	2.12.1 added MAINTAINER variable to Makefiles
+
+2010-12-13  Darach Golden <darach@tchpc.tcd.ie>
+
+	* : commit 34577ae64e2032388e3e2faf81d1148143922d63 Author: Darach
+	Golden <darach@tchpc.tcd.ie> Date:   Mon Dec 13 16:43:49 2010 +0000
+
+2010-12-13  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/ruby/1.9.2-p0/Makefile: update ruby
+
+2010-12-05  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* packages/haskell-platform/2010.2.0.0/Makefile: added a few more
+	run time dependancies for haskell platform
+
+2010-12-05  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* packages/ghc/6.12.3-i386/Makefile,
+	packages/ghc/6.12.3-x86_64/Makefile,
+	packages/haskell-platform/2010.2.0.0/Makefile,
+	packages/mercurial/1.7.1/Makefile: added zlib dependancies
+	everywhere
+
+2010-12-05  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* Readme.org: more dependancies for building x11 apps
+
+2010-12-05  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* packages/libpng/1.2.42/Makefile: latest 1.2.x stable of libpng
+
+2010-12-05  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* packages/Python/2.6.5/Makefile: depend on zlib in python
+
+2010-12-04  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* packages/R/2.10.1/Makefile, packages/R/2.11.1/Makefile,
+	packages/R/2.12.0/Makefile, packages/cairo/1.8.10/Makefile,
+	packages/emacs/23.2/Makefile, packages/ghostscript/8.71/Makefile,
+	packages/grace/5.1.22/Makefile, packages/gtk+/2.20.1/Makefile,
+	packages/netpbm/10.35.77/Makefile,
+	packages/openmotif/2.3.2/Makefile,
+	packages/openmotif/2.3.3/Makefile, packages/pango/1.28.1/Makefile,
+	packages/paraview/3.6.2/Makefile,
+	packages/paraview/3.8.1-RC1/Makefile,
+	packages/poppler/0.14.1/Makefile, packages/qt/4.3.5/Makefile,
+	packages/qt/4.6.3/Makefile, packages/qt/4.7.0/Makefile,
+	packages/qtoctave/0.9.1/Makefile: make everything depend on older
+	stable version of libpng
+
+2010-12-04  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* packages/libXaw/1.0.7/Makefile: fix typo
+
+2010-12-04  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* Readme.org: another dependancy
+
+2010-12-04  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* .milli/x00.tchpc.tcd.ie.1291484342.P53543M60628.milli,
+	packages/libXaw/1.0.7/Makefile: close N:0024 [  open] libxaw needs
+	groff
+
+2010-12-04  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* packages/cairo/1.8.10/Makefile: cairo needs zlib to build a
+	recommended feature
+
+2010-12-04  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* .milli/x00.tchpc.tcd.ie.1291485667.P53720M692458.milli,
+	.milli/x00.tchpc.tcd.ie.1291485765.P53731M510267.milli,
+	packages/aria2/1.10.4/Makefile, packages/glib/2.24.1/Makefile,
+	packages/glib/2.24.2/Makefile: close N:0025 and N:0026
+
+2010-12-04  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* .milli/x00.tchpc.tcd.ie.1291483672.P53416M693375.milli,
+	.milli/x00.tchpc.tcd.ie.1291483713.P53426M84179.milli,
+	.milli/x00.tchpc.tcd.ie.1291484342.P53543M60628.milli,
+	.milli/x00.tchpc.tcd.ie.1291485667.P53720M692458.milli,
+	.milli/x00.tchpc.tcd.ie.1291485765.P53731M510267.milli, Readme.org: 
+	new issues from building on debian 5.x clean system
+
+2010-12-02  Darach Golden <darach@tchpc.tcd.ie>
+
+	* : commit e1bb200cfa42d193839c0f5268f2f9c6d39c3c0d Author: Jimmy
+	Tang <jtang@cports-devel.tchpc.tcd.ie> Date:   Thu Dec 2 13:26:22
+	2010 +0000
+
+2010-12-02  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/mpigraph/1.4/Makefile, packages/mpigraph/Makefile: added
+	mpigraph for stress testing network, need to make the install
+	component better
+
+2010-12-01  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/a2ps/4.14/Makefile, packages/autoconf/2.66/Makefile,
+	packages/autoconf/2.67/Makefile, packages/automake/1.11/Makefile,
+	packages/automake/1.8.5/Makefile, packages/automake/1.9.6/Makefile,
+	packages/bison/2.4.2/Makefile, packages/bison/2.4.3/Makefile,
+	packages/bootstrap/1.0/Makefile, packages/bootstrap/2.0/Makefile,
+	packages/libtool/2.2.10/Makefile, packages/m4/Makefile: change
+	version of m4: 1.4.14 --> 1.4.15
+
+2010-11-30  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/allmydata-tahoe/1.8.1-SUMO/Makefile: update tahoe
+
+2010-11-30  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* .gitignore: typo in gitignore
+
+2010-11-30  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/fossil/20101117133825/Makefile: update fossil to get
+	fast-import/export functionality
+
+2010-11-30  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* .gitignore: fix gitignore
+
+2010-11-30  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* configure.sh: don't just echo the chmods, really do them
+
+2010-11-30  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* Makefile.in, configure.sh: make sure things are executable
+
+2010-11-29  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* Makefile: remove makefile from repo, its not needed anymore as it
+	is generated by the configure script
+
+2010-11-29  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* .gitignore, Makefile.in, Readme.org, configure.inc, configure.sh,
+	cports.modulefile.in, local.inc, mk-conf/config.mk.in,
+	mk/gnu.pre.mk: Merge in t/configure.sh branch (flattened it all
+	out).  Please check the mk-conf/config.mk file for settings after running
+	configure.sh and also you will most likely need to remove
+	$(HOME)/.mpkg.mk
+
+2010-11-26  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/R/2.11.1/Makefile: small change to R makefile
+
+2010-11-29  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/gotoblas2/1.13/Makefile, packages/gotoblas2/Makefile: 
+	gotoblas2 added (new bsd style license)
+
+2010-11-29  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/mercurial/1.7.1/Makefile: no-op for mercurial build to
+	not build documentation
+
+2010-11-29  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/mercurial/1.7.1/Makefile: fails for now, due to docutils
+	not being present -- need to fix this
+
+2010-11-29  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* scripts/Makefile, t/Makefile: make sure scripts are executable
+
+2010-11-25  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* Readme.org: docs update
+
+2010-11-25  Jimmy Tang <jtang@sgenomics.org>
+
+	* packages/ghc-binary/6.12.3-i386/Makefile,
+	packages/ghc-binary/6.12.3-x86_64/Makefile,
+	packages/ghc-binary/Makefile, packages/ghc/6.12.3-i386/Makefile,
+	packages/ghc/6.12.3-x86_64/Makefile, packages/ghc/Makefile: rename
+	ghc-binary directory because haskell-platform doesnt expect the
+	binary part
+
+2010-11-25  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/haskell-platform/2010.2.0.0/Makefile: need gmp at runtime
+	just in case, probably don't need ncurses for now
+
+2010-11-25  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/ghc-binary/6.12.3-i386/Makefile,
+	packages/ghc-binary/6.12.3-x86_64/Makefile,
+	packages/ghc-binary/Makefile,
+	packages/haskell-platform/2010.2.0.0/Makefile,
+	packages/haskell-platform/Makefile: added haskell platform
+
+2010-11-25  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	*
+	packages/darcs-binary/2.5.0-linux-amd64-ghc6.12.3-CURL-static/Makef
+	ile,
+	packages/darcs-binary/2.5.0-linux-i386-ghc6.12.3-CURL-static/Makefi
+	le, packages/darcs-binary/Makefile: added darcs binary packages,
+	could be a simple example with dealing with binary packages
+
+2010-11-23  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/perl/5.12.1/Makefile: added the new perl modules to perl
+	package itself
+
+2010-11-23  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/perl/modules/IO-Interface/0.98/Makefile,
+	packages/perl/modules/Net-ARP/1.0.6/Makefile,
+	packages/perl/modules/Unix-Syslog/1.1/Makefile: added a few new
+	dependancies for perl, need to test the build more rigoursly in a
+	clean environment
+
+2010-11-23  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* mk/gnu.post.mk: DONT_CREATE_METAINFO for markdown output
+
+2010-11-23  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/nasm/2.09.04/Makefile, packages/nasm/Makefile: added nasm
+
+2010-11-23  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* mk/gnu.information.mk: dump out similar module information for the
+	markdown output
+
+2010-11-23  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* mk/gnu.post.mk: really generate markdown output as packages are
+	installed
+
+2010-11-23  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/nginx/0.8.53/Makefile, packages/nginx/Makefile: added
+	nginx for serving out mirrors etc... lighttpd might be better?
+
+2010-11-23  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/libatomic_ops/1.1/Makefile,
+	packages/libatomic_ops/Makefile: added another atomic library for
+	doing locking
+
+2010-11-23  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/atomic/1.0.0/Makefile, packages/atomic/Makefile: added
+	atomic package
+
+2010-11-22  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/conceptual/1.2/Makefile: added python path to conceptual
+	package
+
+2010-11-22  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/conceptual/1.2/Makefile: fix up dependancies so all of
+	conceptual now builds
+
+2010-11-22  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/conceptual/Makefile: update conceptual package
+
+2010-11-22  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/discount/2.0.2/Makefile: updated discount
+
+2010-11-11  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* : commit 63608cd7cd27b56fcffa63cc09730e3e06a7ba88 Author: Jimmy
+	Tang <jtang@cports-devel.tchpc.tcd.ie> Date:   Thu Nov 11 17:16:32
+	2010 +0000
+
+2010-11-11  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* .milli/lonsdale01.1280411733.P10254M10493.milli: close of ticket
+	that wasnt really an issue
+
+2010-11-11  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* .milli/x00.tchpc.tcd.ie.1289487224.P42762M650601.milli: note about
+	nmag
+
+2010-11-11  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* t/tbuild.sh, t/test.sh, t/tgnu.sh, t/tgnubootstrap.sh,
+	t/tintel.sh: remove old files
+
+2010-11-11  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* t/Makefile, t/t1000-test.sh, t/t2000-gnu.sh, t/t2000-intel.sh,
+	t/t3000-build.sh, t/t3010-gnutbootstrap.sh: move tests around so we
+	have an order/level
+
+2010-11-11  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* t/tgnubootstrap.sh: test the bootstrap
+
+2010-11-11  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* scripts/wvtestrun: increased the alarm time, test builds of some
+	of the packages take a while
+
+2010-11-10  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* t/Makefile: spew out useful messages
+
+2010-11-10  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* t/Makefile, t/tbuild.sh: do a test build of hello package
+
+2010-11-10  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* t/Makefile, t/tintel.sh: break up the tests so we can have some
+	more control over what we add later on.
+
+2010-11-10  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* t/Makefile, t/test.sh, t/tgnu.sh: updated the simple tests
+
+2010-11-10  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* Makefile.test, t/Makefile, t/test.sh: make the tests a bit more
+	sensible in terms of layout
+
+2010-11-10  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* Makefile.test, scripts/wvtest.sh, scripts/wvtestrun, t/test.sh: 
+	small set of tests for clusters, should probably do more testing
+
+2010-11-09  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/bup/0.20-0-g318b866/Makefile: fix typo
+
+2010-11-09  Jimmy Tang <jtang@sgenomics.org>
+
+	* packages/bup/0.20-0-g318b866/Makefile: update bup to 0.20
+
+2010-11-06  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/allmydata-tahoe/1.8.0-SUMO/Makefile,
+	packages/allmydata-tahoe/Makefile: simple tahoe-lafs build, the
+	upstream install target is currently borked but at least it pulls in
+	dependancies automatically
+
+2010-11-04  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/qtoctave/0.9.1/Makefile: work around a build bug in
+	qtoctave not setting the correct share locations for icons
+
+2010-11-04  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/qtoctave/0.9.1/Makefile, packages/qtoctave/Makefile: 
+	first attempt to add qtoctave, it compiles, but have not tested if
+	it runs or not
+
+2010-11-04  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* mk/gnu.post.mk: fixup directory that doesn't get generated
+
+2010-11-03  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* mk/gnu.post.mk: change dependancys of markdown target
+
+2010-11-03  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* mk/gnu.post.mk: exclude markdown.mk
+
+2010-11-03  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* doc/examples/markdown.setup: added sample ikiwiki setup file to
+	convert markdown output to a tree of html files, taken from ikiwiki
+	docwiki.setup
+
+2010-11-03  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* mk/gnu.information.mk, mk/gnu.post.mk, mk/gnu.subdir.mk: basic
+	markdown output is working, its geared towards using ikiwiki to
+	process the information
+
+2010-11-02  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* Readme.org: note about packages to install
+
+2010-11-02  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* packages/openmotif/2.3.2/Makefile: depend on older png
+
+2010-11-02  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* : commit 2738ed453c5accd8be90f3cef9c0e8be99ee73c4 Author: Jimmy
+	Tang <jtang@sgenomics.org> Date:   Mon Nov 1 22:45:17 2010 +0000
+
+2010-11-02  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* .gitignore: ignore the generated html files
+
+2010-11-02  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* Makefile: clean the docs
+
+2010-11-02  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* Makefile, scripts/org2html.sh: added simple conversion system for
+	org to html
+
+2010-11-02  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* Packages.org, Readme.org, Todo.org: update docs
+
+2010-11-01  Jimmy Tang <jtang@sgenomics.org>
+
+	* packages/fossil/20101101142335/Makefile: update fossil
+
+2010-11-01  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* : commit 211f21c5852fb6efef1cdd59944de5197db91494 Author: Jimmy
+	Tang <jtang@cports-devel.tchpc.tcd.ie> Date:   Mon Nov 1 12:53:38
+	2010 +0000
+
+2010-11-01  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/gcc/4.4.5/Makefile: added latest stable of gcc 4.4
+
+2010-10-31  Jimmy Tang <jtang@sgenomics.org>
+
+	* packages/open64/4.2.3-0/Makefile: build everything, but still has
+	linking problems with gettext on debian
+
+2010-10-31  Jimmy Tang <jtang@sgenomics.org>
+
+	* Readme.org: start new table of information in docs
+
+2010-10-31  Jimmy Tang <jtang@sgenomics.org>
+
+	* .milli/sgenomics.org.1288518279.P10384M725068.milli: note about
+	open64
+
+2010-10-31  Jimmy Tang <jtang@sgenomics.org>
+
+	* packages/open64/4.2.3-0/Makefile: depend on libiconv
+
+2010-10-30  Jimmy Tang <jtang@sgenomics.org>
+
+	* packages/open64/4.2.3-0/Makefile: allow possibility of building
+	32bit build of compiler
+
+2010-10-30  Jimmy Tang <jtang@sgenomics.org>
+
+	* packages/git/1.7.3.2/Makefile: updated git to latest stable
+
+2010-10-30  Jimmy Tang <jtang@sgenomics.org>
+
+	* packages/mercurial/1.6.2/Makefile,
+	packages/mercurial/1.6.4/Makefile: formatted description
+
+2010-10-30  Jimmy Tang <jtang@sgenomics.org>
+
+	* packages/mercurial/1.6.4/Makefile: updated mercurial
+
+2010-10-29  Jimmy Tang <jtang@sgenomics.org>
+
+	* packages/monotone/0.99/Makefile: updated monotone to latest
+	stable?
+
+2010-10-29  Jimmy Tang <jtang@sgenomics.org>
+
+	* packages/thttpd/2.25b/Makefile, packages/thttpd/Makefile: initial
+	add of thttpd
+
+2010-10-29  Jimmy Tang <jtang@sgenomics.org>
+
+	* packages/annotations/1.0.4.2/Makefile,
+	packages/annotations/Makefile, packages/discount/2.0.1/Makefile,
+	packages/discount/Makefile: added discount for parsing markdown
+	files, and started adding the annotations package
+
+2010-10-19  Jimmy Tang <jtang@sgenomics.org>
+
+	* .milli/sgenomics.org.1287514640.P27561M728930.milli: note about
+	open64
+
+2010-10-19  Jimmy Tang <jtang@sgenomics.org>
+
+	* packages/glusterfs/3.0.5/Makefile,
+	packages/glusterfs/3.1/Makefile: update with new release of gluster
+
+2010-10-18  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/boost/1_44_0_openmpi_1.4.2/Makefile: moved changes to
+	boost 1_43 to 1_44
+
+2010-10-18  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/boost/1_43_0_openmpi_1.4.2/Makefile: added zlib to
+	dependencies
+
+2010-10-17  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/petsc-basic/3.1-p3/generate_make_commands.sh: added
+	CPRT_PETSC_BLAS...  to  makefile command generator
+
+2010-10-17  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/boost/1_43_0_openmpi_1.4.2/Makefile: added bzip2 as
+	dependency of boost 1_43
+
+2010-10-17  Darach Golden <darach@cranog.(none)>
+
+	* packages/petsc-directsolve/3.1-p3/Makefile: ported changes to
+	petsc-directsolve makefile
+
+2010-10-17  Darach Golden <darach@cranog.(none)>
+
+	* packages/bzip2/1.0.6/Makefile: add bzip2 1.0.6
+
+2010-10-17  Darach Golden <darach@cranog.(none)>
+
+	* .milli/cranog.1287353695.P32333M681892.milli: notes
+
+2010-10-16  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* : commit 5ade4aacc905acf72f08e9b52314f934bf5832e1 Merge: 35016e0
+	56c943a Author: Darach Golden <darach@tchpc.tcd.ie> Date:   Fri Oct
+	15 10:57:46 2010 +0100
+
+2010-10-15  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/R/2.12.0/Makefile: R 2.12.0 added
+
+2010-10-15  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/swig/2.0.1/Makefile: correct group
+
+2010-10-15  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/swig/2.0.1/Makefile, packages/swig/Makefile: added latest
+	version of swig for generating wrappers
+
+2010-10-13  Darach Golden <darach@cranog.(none)>
+
+	* : commit 19f8143597af844a90878ad20653869b70602140 Author: Darach
+	Golden <darach@cranog.(none)> Date:   Tue Oct 12 23:50:08 2010 +0100
+
+2010-10-12  Darach Golden <darach@tchpc.tcd.ie>
+
+	* : commit 5575365ce07e675796d3545509fdc8d09c888885 Author: Darach
+	Golden <darach@tchpc.tcd.ie> Date:   Tue Oct 12 19:17:48 2010 +0100
+
+2010-10-12  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* Readme.org, packages/openmpi/1.4.3/README.romio: fix up
+	documenation
+
+2010-10-12  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* packages/aria2/1.10.4/Makefile: updated aria2
+
+2010-10-12  Darach Golden <darach@tchpc.tcd.ie>
+
+	* mk/gnu.post.mk: module help generator: add 'X' to conditional check add build/run/link/module depends
+
+2010-10-12  Darach Golden <darach@tchpc.tcd.ie>
+
+	* : commit 0294c9580300f33085fad89652ad36e9e998af63 Author: Jimmy
+	Tang <jtang@cports-devel.tchpc.tcd.ie> Date:   Mon Oct 11 13:00:02
+	2010 +0100
+
+2010-10-10  Darach Golden <darach@tchpc.tcd.ie>
+
+	* mk/gnu.post.mk: tcl doesn't like square brackets in Module Help
+	(even when they are quoted -- aparently it attempts to interpret the
+	contents between square brackets as tcl) So changed the quotes in
+	the line that includes CONFIGURE_SCRIPT to have braces ({,}) instead
+	of double quotes petsc caused the problem (modules help <> didn't work).  Petsc
+	modules help seems to work no.  don't know what else is broken...
+
+2010-10-10  Darach Golden <darach@tchpc.tcd.ie>
+
+	* mk/gnu.post.mk: Changed MODULEFILE_CMD_HELP in gnu.post.mk to
+	include information its configure args if either GNU_CONFIGURE or
+	HAS_CONFIGURE exist this seems to work but the conditionals implementing are not pretty
+
+2010-10-09  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* packages/openmpi/1.4.3/Makefile: new release of openmpi
+
+2010-10-09  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* : commit ae9fa1473ac4ca627f9121c9efd2e3ee87bdbe68 Author: Jimmy
+	Tang <jtang@sgenomics.org> Date:   Sat Oct 9 11:12:08 2010 +0100
+
+2010-10-08  Darach Golden <darach@tchpc.tcd.ie>
+
+	* : commit fa17c9a9c202ba91e0fc74ff5e89d27800f7ca2f Author: Darach
+	Golden <darach@tchpc.tcd.ie> Date:   Fri Oct 8 12:15:04 2010 +0100
+
+2010-10-08  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/md5deep/3.6/Makefile, packages/md5deep/Makefile: 
+	checksumming program
+
+2010-10-07  Darach Golden <darach@tchpc.tcd.ie>
+
+	* : commit d5bee5052be94d9aea5defb26f7ad8e9dc180016 Author: Darach
+	Golden <darach@tchpc.tcd.ie> Date:   Thu Oct 7 12:46:29 2010 +0100
+
+2010-10-07  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/gmime/2.4.19/Makefile, packages/gmime/Makefile,
+	packages/mu/0.7/Makefile, packages/mu/Makefile,
+	packages/xapian/1.2.3/Makefile, packages/xapian/Makefile: added
+	gmime and xapian so that I could add mu (mailder fulltext searcher)
+	obviously, mu added too
+
+2010-10-06  Root at demeter <root@demeter.tchpc.tcd.ie>
+
+	* packages/petsc-basic/3.1-p3/Makefile: new do-configure for petsc
+
+2010-10-06  Root at demeter <root@demeter.tchpc.tcd.ie>
+
+	* packages/petsc-basic/3.1-p3/Makefile: undo some changes
+
+2010-10-06  Root at demeter <root@demeter.tchpc.tcd.ie>
+
+	* packages/petsc-basic/3.1-p3/Makefile: changes to get intel
+	compiler to configure petsc
+
+2010-10-06  Root at demeter <root@demeter.tchpc.tcd.ie>
+
+	* packages/openmpi/1.4.2/Makefile,
+	packages/petsc-basic/3.1-p3/Makefile: get intel compilers to do
+	-shared-intel in openmpi
+
+2010-10-06  Root at demeter <root@demeter.tchpc.tcd.ie>
+
+	* packages/petsc-basic/3.1-p3/Makefile: merge some depend lines
+
+2010-10-06  Root at demeter <root@demeter.tchpc.tcd.ie>
+
+	* packages/atlas/3.8.3/Makefile,
+	packages/atlas/3.8.3/lapackconfig.intel10.1.sh,
+	packages/atlas/3.8.3/preconfig.intel10.1.sh: added intel 10.1
+	target, this is just a copy and paste of the 11.0 one for atlas
+
+2010-09-30  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* : commit e5ec392e61ffb027901de861a88226bcd193d5fa Author: Jimmy
+	Tang <jtang@tchpc.tcd.ie> Date:   Wed Sep 29 18:51:06 2010 +0100
+
+2010-09-29  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/paraview/3.8.1-RC1/Makefile, packages/qt/4.6.3/Makefile: 
+	revert to older libpng
+
+2010-09-29  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* Readme.org, Todo.org: update documentation
+
+2010-09-28  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/paraview/3.8.1-RC1/Makefile: make paraview 3.8.1-rc1 the
+	same as 3.6.2 in terms of behaviour
+
+2010-09-28  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/paraview/3.6.2/Makefile: set the right ld library paths
+
+2010-09-28  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/openssl/0.9.8o/Makefile: older version of openssl for qt
+	4.3.x
+
+2010-09-28  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* : commit 0d40ff6a6aba9dee297f46d0d0626d8b4170852d Author: Jimmy
+	Tang <jtang@cports-devel.tchpc.tcd.ie> Date:   Tue Sep 28 22:11:04
+	2010 +0100
+
+2010-09-28  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* Readme.org: note about distro.guess
+
+2010-09-28  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* scripts/distro.guess: echo an unknown distro name if distro isn't
+	detected
+
+2010-09-28  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/qt/4.3.5/Makefile: qt4.3.5 wants and older version of
+	openssl
+
+2010-09-28  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/qt/4.3.5/Makefile: depend on older version of libpng
+
+2010-09-28  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/qt/4.3.5/Makefile, packages/qt/4.6.3/Makefile,
+	packages/qt/4.7.0/Makefile, packages/qt/Makefile,
+	packages/qt4/4.3.5/Makefile, packages/qt4/4.6.3/Makefile,
+	packages/qt4/4.7.0/Makefile, packages/qt4/Makefile: renamed the qt4
+	directory correctly
+
+2010-09-28  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* : commit a386a31794215dbab0baddaca33c337bac05b76e Author: Jimmy
+	Tang <jtang@cports-devel.tchpc.tcd.ie> Date:   Tue Sep 28 17:48:35
+	2010 +0100
+
+2010-09-28  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/paraview/3.6.2/Makefile,
+	packages/paraview/3.8.1-RC1/Makefile: fix up paraview to depend on
+	supported versions of QT
+
+2010-09-28  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/qt4/4.6.3/Makefile: added qt4.6.3
+
+2010-09-28  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* .milli/cports-devel.1285679018.P17307M960926.milli,
+	packages/qt4/4.7.0/Makefile, packages/qt4/Makefile: first attempt at
+	building qt4
+
+2010-09-28  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/vtk/5.6.0/Makefile, packages/vtk/Makefile: start of vtk
+	build
+
+2010-09-28  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/paraview/3.6.2/Makefile, packages/paraview/Makefile: 
+	start of paraview, need to build qt4 first before this works
+
+2010-09-28  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/Python/2.6.5/Makefile: Build shared python libs instead
+	of static ones
+
+2010-09-28  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/gtar/1.23/Makefile: added xz support to gtar to get
+	better compression ratios, the physics people are generating lots of
+	data
+
+2010-09-28  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* : commit bad10004a833cd3edd6242060c23c26a370767de Author: Jimmy
+	Tang <jtang@x00.tchpc.tcd.ie> Date:   Tue Sep 28 10:02:53 2010 +0100
+
+2010-09-27  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* Readme.org: started notes on applications that require newer or
+	different compilers
+
+2010-09-27  Jimmy Tang <jtang@sgenomics.org>
+
+	* packages/RDKit/Q32010_1beta1/Makefile: note about rdkit
+
+2010-09-28  Neil Brookes <neil@cports-devel.tchpc.tcd.ie>
+
+	* packages/R/modules/RWeka/0.4-2/Makefile: Added / Fixed the RWeka
+	module  for R
+
+2010-09-27  Neil Brookes <neil@cports-devel.tchpc.tcd.ie>
+
+	* packages/R/modules/RWekajars/3.7.1-1/Makefile: Added RWeka and
+	RWekajors to the R modules
+
+2010-09-27  Neil Brookes <neil@cports-devel.tchpc.tcd.ie>
+
+	* packages/R/modules/rJava/0.8-6/Makefile: Added rJava to the R
+	modules
+
+2010-09-27  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/xz/4.999.9beta-180-ge23e/Makefile, packages/xz/Makefile: 
+	added xz utils
+
+2010-09-27  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* : commit 86792c5d084dd1945cbcebb2fa83adf217a1527a Author: Jimmy
+	Tang <jtang@sgenomics.org> Date:   Mon Sep 27 15:48:40 2010 +0100
+
+2010-09-27  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/RDKit/Q32010_1beta1/Makefile: added a install target
+
+2010-09-27  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/RDKit/Makefile, packages/RDKit/Q32010_1beta1/Makefile: 
+	added rdkit as proposed by niall
+
+2010-09-27  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/cmake/2.8.2/Makefile, packages/cmake/Makefile: added
+	cmake
+
+2010-09-27  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/fftw/3.2/Makefile: remove old version of fftw
+
+2010-09-27  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* .milli/x00.tchpc.tcd.ie.1285581638.P74038M507502.milli: note about
+	NAMD
+
+2010-09-23  Darach Golden <darach@tchpc.tcd.ie>
+
+	* .milli/lonsdale01.1280411886.P10790M814436.milli,
+	.milli/termite.tchpc.tcd.ie.1285237341.P12718M234196.milli: some bug
+	reports closed others edited
+
+2010-09-23  Darach Golden <darach@tchpc.tcd.ie>
+
+	* .milli/termite.tchpc.tcd.ie.1285237341.P12718M234196.milli: new
+	bug report on bootstrap 2.0
+
+2010-09-22  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/hello/2.6/Makefile: do-blah target shows $(if...)
+	conditional that might be worth using for all the compiler
+	conditionals in atlas 3.8.3
+
+2010-09-22  Darach Golden <darach@tchpc.tcd.ie>
+
+	* Readme.org: note on https proxy
+
+2010-09-22  Jimmy Tang <jtang@sgenomics.org>
+
+	* packages/udt-gnu/4.2-fix4/patches/patch-gcc43.patch: added patch
+	for gcc43
+
+2010-09-22  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/udtgate/1.5-fix6/Makefile, packages/udtgate/Makefile: 
+	added udtgate for wrapping tcp traffic over udp
+
+2010-09-22  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/udt-gnu/4.2-fix4/Makefile, packages/udt-gnu/Makefile: add
+	autotool'd version of udt
+
+2010-09-22  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/udt/4.7a/Makefile, packages/udt/Makefile: added udt
+	library
+
+2010-09-21  Jimmy Tang <jtang@iap-dev.tchpc.tcd.ie>
+
+	* Readme.org: notes about systems tested on
+
+2010-09-21  jtang <jtang@iap-dev.(none)>
+
+	* Readme.org: added a new test system
+
+2010-09-21  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* : fix bootstrap cleaning
+
+2010-09-21  Darach Golden <darach@tchpc.tcd.ie>
+
+	* : commit 5a84201f818ca7f8f24829ef2e313214c6fdc9be Author: Darach
+	Golden <darach@tchpc.tcd.ie> Date:   Tue Sep 21 14:39:16 2010 +0100
+
+2010-09-21  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* Readme.org, packages/maqview/0.2.5/Makefile,
+	packages/maqview/Makefile: added maqview
+
+2010-09-21  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/git/1.7.2.2/Makefile: need tk to run gitk
+
+2010-09-21  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* Readme.org, packages/maqview/0.2.5/Makefile,
+	packages/maqview/Makefile: added maqview
+
+2010-09-21  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* Readme.org: update documentation with some more notes
+
+2010-09-21  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/git/1.7.2.2/Makefile: need tk to run gitk
+
+2010-09-21  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/netpbm/10.35.77/Makefile, packages/netpbm/Makefile: added
+	netpbm for processing images
+
+2010-09-21  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/libpng/1.2.39/Makefile, packages/libpng/1.4.0/Makefile: 
+	added different versions of libpng and the older stable version for
+	testing
+
+2010-09-20  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/tetex/3.0/Makefile, packages/tetex/Makefile: we don't
+	need tetex.  it's texlive these days
+
+2010-09-20  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/bootstrap/1.0/Makefile: make clean for ncurses
+
+2010-09-20  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/atlas/3.8.3/Makefile: too much, too fast; leave it the
+	way it was Revert "lapack.tgz downloads to sources dir -- not every time make
+	is run" This reverts commit aefb919192bcf5ff5c2ffb2f35a1011b41357550.
+
+2010-09-20  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/atlas/3.8.3/Makefile: lapack.tgz downloads to sources dir
+	-- not every time make is run also contents of lapackconfig.sh moved
+	to makefile _for gnu target only_ if it works can move it to the
+	others
+
+2010-09-20  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/atlas/3.8.3/Makefile: tests don't seem to be running --
+	this may fix it
+
+2010-09-20  Darach Golden <darach@tchpc.tcd.ie>
+
+	* mk/gnu.def.mk: make ftp://ftp.heanet.ie/mirrors/ftp.gnu.org/gnu/
+	the first gnu master site instead of
+	ftp://ftp.stacken.kth.se/pub/gnu/
+
+2010-09-20  Darach Golden <darach@tchpc.tcd.ie>
+
+	* mk/gnu.post.mk, packages/fftw/3.2.2/Makefile,
+	packages/petsc-basic/3.1-p3/Makefile,
+	packages/petsc-directsolve/3.1-p3/Makefile: added conflicts to
+	module files using MODULEFILE_CONFLICTS and
+	INSERT_MODULEFILE_CONFLICTS;  allows individual packages to exclude
+	themselves as usual may be broken
+
+2010-09-20  Darach Golden <darach@tchpc.tcd.ie>
+
+	* mk/gnu.def.mk: gnu.def.mk: exit when there is no module support
+
+2010-09-20  Darach Golden <darach@tchpc.tcd.ie>
+
+	* mk/gnu.def.mk: blow up when cports thinks there is no module
+	support
+
+2010-09-20  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/superlu_dist/2.4/Makefile: should really check that it
+	works...
+
+2010-09-20  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/SuperLU_DIST/2.4/Makefile,
+	packages/SuperLU_DIST/Makefile, packages/superlu_dist/2.4/Makefile,
+	packages/superlu_dist/Makefile: renamed SuperLU_DIST to just
+	superlu_dist and let PKGFILENAME and PKGSUBDIR take care of things
+
+2010-09-20  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/MUMPS/4.9.2/Makefile: removed original mumps dir
+
+2010-09-20  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/MUMPS/4.9.2_parmetis_3.1.1/Makefile,
+	packages/MUMPS/4.9.2_pord/Makefile,
+	packages/MUMPS/4.9.2_scotch_5.1.9/Makefile,
+	packages/SuperLU_DIST/2.4/Makefile,
+	packages/petsc-basic/3.1-p3/Makefile,
+	packages/petsc-basic/3.1-p3/README,
+	packages/petsc-basic/3.1-p3/clean_script,
+	packages/petsc-basic/3.1-p3/generate_make_commands.sh,
+	packages/petsc-basic/3.1-p3/inst_script,
+	packages/petsc-basic/Makefile,
+	packages/petsc-directsolve/3.1-p3/Makefile,
+	packages/petsc-directsolve/3.1-p3/README,
+	packages/petsc-directsolve/3.1-p3/clean_script,
+	packages/petsc-directsolve/3.1-p3/generate_make_commands.sh,
+	packages/petsc-directsolve/3.1-p3/inst_script,
+	packages/petsc-directsolve/Makefile,
+	packages/petsc/3.1-p3/Makefile, packages/petsc/3.1-p3/README,
+	packages/petsc/3.1-p3/clean_script,
+	packages/petsc/3.1-p3/generate_make_commands.sh,
+	packages/petsc/3.1-p3/inst_script, packages/petsc/Makefile: in no
+	particular order: removed petsc; created petsc-basic, petsc-directsolve -- i.e.,
+	various hopefully useful compiles of petsc, with petsc-basic being
+	pretty much out of the box split mumps into compiles against various ordering tools: scotch,
+	parmetis, pord (the default) this happened because petsc claims
+	scotch doesn't support complex numbers, so need to use parmetis for
+	complex number petsc compiles minor changes to superlu dist file
+
+2010-09-20  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* packages/bup/0.19-0-gbab7b16/Makefile: fixup download link, silly
+	github has all sorts of redirects
+
+2010-09-19  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/par2cmdline/0.4/patches/patch-par2cmdline-0.4-gcc4.patch: 
+	remove redundant patch
+
+2010-09-19  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/automake/1.8.5/Makefile,
+	packages/automake/1.9.6/Makefile, packages/par2cmdline/0.4/Makefile: 
+	tweaked par2 build and tested automake 1.8
+
+2010-09-19  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/par2cmdline/0.4/patches/patch-000_unidentified.diff,
+	packages/par2cmdline/0.4/patches/patch-001_hardlinks.patch,
+	packages/par2cmdline/0.4/patches/patch-002-gcc_40_fixes.patch,
+	packages/par2cmdline/0.4/patches/patch-003_fix_crash_in_quiet_mode.
+	patch, packages/par2cmdline/0.4/patches/patch-004_kfreebsd.diff: 
+	added patches from debian to make par2 work with gcc 4.x
+
+2010-09-19  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/bup/0.19-0-gbab7b16/Makefile,
+	packages/par2cmdline/0.4/Makefile,
+	packages/par2cmdline/0.4/patches/patch-par2cmdline-0.4-gcc4.patch,
+	packages/par2cmdline/Makefile: added par2 for bup
+
+2010-09-19  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/bup/0.19-0-gbab7b16/Makefile: update bup - now has
+	restore features
+
+2010-09-19  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/SuiteSparse/3.4.0/Makefile: fix typo
+
+2010-09-16  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* mk/gnu.def.mk: resolve some local changes
+
+2010-09-15  Darach Golden <darach@tchpc.tcd.ie>
+
+	* mk/gnu.def.mk: unfucking change local fucking system changes
+	aaaaaaaaaaaah
+
+2010-09-15  Root at demeter <root@demeter.tchpc.tcd.ie>
+
+	* packages/SuiteSparse/3.4.0/Makefile: fix up suitesparse, its
+	missing a header file
+
+2010-07-30  Root at demeter <root@demeter.tchpc.tcd.ie>
+
+	* mk/gnu.def.mk:  local system changes
+
+2010-09-15  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/SuiteSparse/3.4.0/Makefile: mixup between old install
+	commands and new ones -- UFconfig.h looks to have been missing.
+	Added explicit install  lines for ufconfig headers might compile
+	now...
+
+2010-09-19  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* : commit dde8f9483eae65105b6b49787f20c12f6b98c658 Author: Jimmy
+	Tang <jtang@cports-devel.tchpc.tcd.ie> Date:   Sun Sep 19 01:10:19
+	2010 +0100
+
+2010-09-19  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/open64/4.2.3-0/Makefile: fix up open64 build process
+
+2010-09-19  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/openssh/5.6p1/Makefile: fix up some dependancies for
+	openssh
+
+2010-09-19  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/open64/4.2.3-0/Makefile: open64 needs flex and bison
+
+2010-09-19  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/abyss/1.2.3/README: note about abyss, needs gcc4.4 or
+	newer
+
+2010-09-19  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/open64/4.2.3-0/Makefile: fix up open64 build process
+
+2010-09-19  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/openssh/5.6p1/Makefile: fix up some dependancies for
+	openssh
+
+2010-09-19  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/open64/4.2.3-0/Makefile: open64 needs flex and bison
+
+2010-09-19  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/Botan/1.8.9/Makefile, packages/monotone/0.48/Makefile: 
+	fix up monotone dependancies
+
+2010-09-18  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/Python/2.6.5/Makefile, packages/bzip2/1.0.5/Makefile: fix
+	up bzip2 library and dependancy
+
+2010-09-18  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/octave/3.2.4/Makefile: depend on texinfo for octave for
+	document generation
+
+2010-09-18  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* mk/gnu.post.mk: make cleaning of testlog silent
+
+2010-09-19  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/Botan/1.8.9/Makefile, packages/monotone/0.48/Makefile: 
+	fix up monotone dependancies
+
+2010-09-18  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/Python/2.6.5/Makefile, packages/bzip2/1.0.5/Makefile: fix
+	up bzip2 library and dependancy
+
+2010-09-18  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/octave/3.2.4/Makefile: depend on texinfo for octave for
+	document generation
+
+2010-09-18  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* mk/gnu.post.mk: make cleaning of testlog silent
+
+2010-09-18  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/R/2.10.1/Makefile, packages/R/2.11.1/Makefile: depend
+	more on cports packages for R
+
+2010-09-18  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/readline/6.1/Makefile: fix up header files
+
+2010-09-18  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/SuperLU_DIST/Makefile, packages/scotch/Makefile: fix up
+	junk entries
+
+2010-09-18  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/R/2.10.1/Makefile, packages/R/2.11.1/Makefile: add
+	readline dependancy
+
+2010-09-18  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/petsc/3.1-p3/generate_make_commands.sh: reorder the way
+	the shell script outputs commands
+
+2010-09-18  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/R/2.10.1/Makefile, packages/R/2.11.1/Makefile: depend
+	more on cports packages for R
+
+2010-09-18  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/readline/6.1/Makefile: fix up header files
+
+2010-09-18  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/SuperLU_DIST/Makefile, packages/scotch/Makefile: fix up
+	junk entries
+
+2010-09-18  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/R/2.10.1/Makefile, packages/R/2.11.1/Makefile: add
+	readline dependancy
+
+2010-09-18  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/petsc/3.1-p3/generate_make_commands.sh: reorder the way
+	the shell script outputs commands
+
+2010-09-18  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* : commit 39d0172614c03c49bb2c0ccecba58141bd124be8 Author: Jimmy
+	Tang <jtang@cports-devel.tchpc.tcd.ie> Date:   Sat Sep 18 21:50:43
+	2010 +0100
+
+2010-09-18  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/grace/5.1.22/Makefile, packages/openmotif/2.3.2/Makefile: 
+	fix up grace
+
+2010-09-18  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* Readme.org: notes about x11 programs
+
+2010-09-18  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/fossil/20100805100943/Makefile,
+	packages/fossil/20100805100943/patches/patch-reconstruct_cmd.patch: 
+	remove older version of fossil
+
+2010-09-18  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/emacs/23.2/Makefile: make sure dependancies are used
+
+2010-09-18  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/fossil/20100823222416/Makefile: just have one version of
+	fossil
+
+2010-09-18  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/atk/1.30.0/Makefile, packages/cairo/1.8.10/Makefile,
+	packages/gtk+/2.20.1/Makefile, packages/pango/1.28.1/Makefile: fix
+	up pango/cairo problem again
+
+2010-09-18  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/gcc/4.5.0/Makefile: do the same thing as gcc 4.5.1
+
+2010-09-18  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* .milli/cports-devel.1284823346.P18512M773670.milli: note about
+	dropping some packages
+
+2010-09-18  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/gcc/4.5.1/Makefile: disable multilib
+
+2010-09-18  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/fontconfig/2.8.0/Makefile,
+	packages/libxml2/2.7.7/Makefile: depend on zlib correctly
+
+2010-09-18  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/mpfr/3.0.0/Makefile: depend on gmp otherwise mpfr wont
+	build
+
+2010-09-18  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* .milli/cports-devel.1284814121.P14080M269372.milli: note about
+	xlib
+
+2010-09-18  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/ncurses/5.7/Makefile, packages/tmux/1.3/Makefile: fix up
+	includes for ncurses and tmux
+
+2010-09-18  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/texinfo/4.13/Makefile: fix up libs for texinfo
+
+2010-09-18  Jimmy Tang <jtang@cports-devel.tchpc.tcd.ie>
+
+	* packages/bootstrap/1.0/Makefile, packages/texinfo/4.13/Makefile: 
+	added ncurses to bootstrap
+
+2010-09-17  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/petsc/3.1-p3/Makefile: minor variation on do-test for
+	petsc
+
+2010-09-17  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/SuperLU_DIST/2.4/Makefile: added -fPIC to CFLAGS for
+	SuperLU_DIST
+
+2010-09-17  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/SuperLU_DIST/2.4/Makefile,
+	packages/SuperLU_DIST/Makefile, packages/petsc/3.1-p3/Makefile: 
+	SuperLU_DIST added and compiled with petsc SuperLU_DIST tests seem
+	to run again, the only testing carried out on the superlu/petsc link is
+	that they compile together (!) Finally for SuperLU_DIST, I could imagine that -fPIC could raise
+	it's head at some point
+
+2010-09-17  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/MUMPS/4.9.2/Makefile, packages/petsc/3.1-p3/Makefile: 
+	mumps and petsc updated to (maybe) compile with scotch petsc real
+	debug c compiles and runs tests (none of which involve either mumps
+	or scotch)
+
+2010-09-17  Darach Golden <darach@tchpc.tcd.ie>
+
+	* : commit 18d1c00e758e32a42ed983279b85159cb660bf10 Author: Darach
+	Golden <darach@tchpc.tcd.ie> Date:   Fri Sep 17 18:12:09 2010 +0100
+
+2010-09-17  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/SuiteSparse/3.4.0/Makefile: some tidying up in do-install
+	target -- hopefully have not broken anything
+
+2010-09-17  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/scalapack/1.8.0/Makefile: clean up scalapack makefile
+
+2010-09-17  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/MUMPS/4.9.2/Makefile, packages/MUMPS/Makefile,
+	packages/MUMPS/Makefile.inc, packages/petsc/3.1-p3/Makefile,
+	packages/scotch/5.1.9/Makefile, packages/scotch/Makefile: scotch,
+	mumps tentatively added and linked to petsc scalapack also linked to
+	petsc o with all packages compiled with scalapack the irritation blacs,
+	  Cblacs, F77blacs, bkacs (again) problem arose.  This was done (at
+	  least) for mumps and petsc; so blacs.a is potentially appearing lots
+	  of times.  There could conceivably be side effects, so some playing
+	  around  with petsc at least is necessary o mumps and scotch are _not_ linked.  In particular, although they
+	  are both included in petsc, that does not mean they are linked.
+	  Mumps is compiled with pord, not scotch or parmetis.  Linking mumps
+	and scotch, and then recompileing petsc is necessary here so lots of testing by using the packages is needed before believing
+	them
+
+2010-09-17  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* : commit fed461a6518bf1692c6cab62f84e0c7e8e371337 Author: Jimmy
+	Tang <jtang@tchpc.tcd.ie> Date:   Fri Sep 17 14:24:50 2010 +0100
+
+2010-09-17  root <root@snoopy.tchpc.tcd.ie>
+
+	* packages/psutils/p17/Makefile: added another mastersite for
+	psutils
+
+2010-09-16  Darach Golden <darach@tchpc.tcd.ie>
+
+	* .milli/lonsdale01.1280411203.P8627M538072.milli: milli note
+
+2010-09-16  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/Python/2.6.5/Makefile: DO_RUN_TESTS set to yes in case of
+	Python 2.6.5
+
+2010-09-16  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/Python/2.6.5/Makefile,
+	packages/boost/1_43_0_openmpi_1.4.2/Makefile,
+	packages/octave/3.2.4/Makefile: various make files modified to
+	accomodate automatic do-test target.  Testing still needed here
+
+2010-09-17  root <root@snoopy.tchpc.tcd.ie>
+
+	* packages/psutils/p17/Makefile: added another mastersite for
+	psutils
+
+2010-09-17  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/scotch/5.1.10/Makefile: cleanup
+
+2010-09-17  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/scotch/5.1.10/Makefile: added scotch 5.1.10 (esmumps
+	version) compiles not tested beyond that
+
+2010-09-16  Darach Golden <darach@tchpc.tcd.ie>
+
+	* .milli/lonsdale01.1280411203.P8627M538072.milli: milli note
+
+2010-09-16  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/Python/2.6.5/Makefile: DO_RUN_TESTS set to yes in case of
+	Python 2.6.5
+
+2010-09-16  Darach Golden <darach@tchpc.tcd.ie>
+
+	* : commit 3a1ecb78f5535918f00604ccf7d632dd91ba2f84 Author: Jimmy
+	Tang <jtang@x00.tchpc.tcd.ie> Date:   Thu Sep 16 14:04:31 2010 +0100
+
+2010-09-16  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* mk/gnu.def.mk: gah, this keeps getting changed
+
+2010-09-16  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/Python/2.6.5/Makefile,
+	packages/boost/1_43_0_openmpi_1.4.2/Makefile,
+	packages/octave/3.2.4/Makefile: various make files modified to
+	accomodate automatic do-test target.  Testing still needed here
+
+2010-09-16  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* : commit 305a3de52cca07e8e5a4748294a9d0167814ab69 Author: Darach
+	Golden <darach@tchpc.tcd.ie> Date:   Thu Sep 16 12:54:02 2010 +0100
+
+2010-09-16  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/octave/3.2.4/Makefile: depend on gnuplot
+
+2010-09-16  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* mk/gnu.def.mk: resolve some local changes
+
+2010-09-15  Darach Golden <darach@tchpc.tcd.ie>
+
+	* mk/gnu.post.mk: possible test target added; doesn't run by
+	default; runs make check when DO_RUN_TESTS set to yes may be badly
+	broken...
+
+2010-09-15  Darach Golden <darach@tchpc.tcd.ie>
+
+	* mk/gnu.def.mk, packages/glpk/4.44/Makefile,
+	packages/hello/2.6/Makefile: unfucking change local fucking system
+	changes aaaaaaaaaaaah
+
+2010-09-15  Root at demeter <root@demeter.tchpc.tcd.ie>
+
+	* packages/SuiteSparse/3.4.0/Makefile: revert change
+
+2010-09-15  Root at demeter <root@demeter.tchpc.tcd.ie>
+
+	* packages/SuiteSparse/3.4.0/Makefile,
+	packages/octave/3.2.4/Makefile: fix up suitesparse, its missing a
+	header file
+
+2010-07-30  Root at demeter <root@demeter.tchpc.tcd.ie>
+
+	* mk/gnu.def.mk:  local system changes
+
+2010-09-15  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/SuiteSparse/3.4.0/Makefile: mixup between old install
+	commands and new ones -- UFconfig.h looks to have been missing.
+	Added explicit install  lines for ufconfig headers might compile
+	now...
+
+2010-09-15  Neil Brookes <neil@lonsdale01.cluster>
+
+	* packages/google-sparsehash/1.8.1/Makefile,
+	packages/google-sparsehash/Makefile: Remove files
+
+2010-09-15  Neil Brookes <neil@lonsdale01.cluster>
+
+	* packages/abyss/1.2.3/Makefile, packages/abyss/Makefile,
+	packages/sparsehash/1.8.1/Makefile, packages/sparsehash/Makefile: 
+	Added ABySS and fixed the google-sparsehash to just sparsehash
+
+2010-09-15  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/fftw/3.2.2/Makefile: make sure -fPIC is used
+
+2010-09-16  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/quantlib/1.0.1_boost_1_43_0/Makefile: added boost
+	specific test target -- noop because I don't know how/if boosts has
+	tests
+
+2010-09-16  Darach Golden <darach@tchpc.tcd.ie>
+
+	* : commit b19bb8acba73eb2b58cc12077287152dadb4b3fc Merge: b705058
+	330d854 Author: Jimmy Tang <jtang@x00.tchpc.tcd.ie> Date:   Thu Sep
+	16 09:33:21 2010 +0100
+
+2010-09-15  root <root@snoopy.tchpc.tcd.ie>
+
+	* packages/bootstrap/2.0/Makefile: added openssl to boostrap 2.0
+
+2010-09-16  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/octave/3.2.4/Makefile: depend on gnuplot
+
+2010-09-16  root <root@snoopy.tchpc.tcd.ie>
+
+	* mk/gnu.def.mk: Revert " local system changes" This reverts commit 7828fd4c312ddd64098694db9d9d152e0f9741d3.
+
+2010-09-15  Darach Golden <darach@tchpc.tcd.ie>
+
+	* mk/gnu.post.mk: possible test target added; doesn't run by
+	default; runs make check when DO_RUN_TESTS set to yes may be badly
+	broken...
+
+2010-09-15  Darach Golden <darach@tchpc.tcd.ie>
+
+	* mk/gnu.def.mk, packages/glpk/4.44/Makefile,
+	packages/hello/2.6/Makefile: unfucking change local fucking system
+	changes aaaaaaaaaaaah
+
+2010-09-15  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* : commit 1ef66dda19c24d66adb8d7a884de2e92c1116798 Author: Root at
+	demeter <root@demeter.tchpc.tcd.ie> Date:   Wed Sep 15 16:51:23 2010
+	+0100
+
+2010-09-15  Root at demeter <root@demeter.tchpc.tcd.ie>
+
+	* packages/SuiteSparse/3.4.0/Makefile,
+	packages/octave/3.2.4/Makefile: fix up suitesparse, its missing a
+	header file
+
+2010-07-30  Root at demeter <root@demeter.tchpc.tcd.ie>
+
+	* mk/gnu.def.mk:  local system changes
+
+2010-09-15  Darach Golden <darach@tchpc.tcd.ie>
+
+	* : commit 46c6a77e6de6c13b7bf9b80b9449d764c5eebe46 Author: Darach
+	Golden <darach@tchpc.tcd.ie> Date:   Wed Sep 15 16:33:53 2010 +0100
+
+2010-09-15  Neil Brookes <neil@lonsdale01.cluster>
+
+	* packages/google-sparsehash/1.8.1/Makefile,
+	packages/google-sparsehash/Makefile: Remove files
+
+2010-09-15  Neil Brookes <neil@lonsdale01.cluster>
+
+	* packages/abyss/1.2.3/Makefile, packages/abyss/Makefile,
+	packages/sparsehash/1.8.1/Makefile, packages/sparsehash/Makefile: 
+	Added ABySS and fixed the google-sparsehash to just sparsehash
+
+2010-09-15  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/fftw/3.2.2/Makefile: make sure -fPIC is used
+
+2010-09-15  root <root@snoopy.tchpc.tcd.ie>
+
+	* packages/bootstrap/2.0/Makefile: added openssl to boostrap 2.0
+
+2010-09-15  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* packages/fftw/3.2.2/generate_make_commands.sh,
+	packages/petsc/3.1-p3/generate_make_commands.sh: allow for more args
+	for things like COMPILER=
+
+2010-09-15  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/glpk/4.44/Makefile, packages/glpk/Makefile: added this to
+	work with octave -- but some symbols are not being found; leaving it
+	for the moment
+
+2010-09-15  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/SuiteSparse/3.4.0/Makefile,
+	packages/SuiteSparse/3.4.0/metis-makefile.in,
+	packages/SuiteSparse/3.4.0/patches/patch-01,
+	packages/SuiteSparse/Makefile, packages/octave/3.2.4/Makefile,
+	packages/octave/Makefile: initial compile of SuiteSparse initial
+	compile of octave based on suitesparse Both probably need further work The octave compile worked (with make
+	check) before I added fftw and hdf5 Regarding fftw: configure only
+	uses fftw if you include _both_ fftw and fftw_float (so both modules
+	are included in the DEPENDS var) -- this may have unintended side
+	effects...
+
+2010-09-15  Neil Brookes <neil@lonsdale01.cluster>
+
+	* packages/google-sparsehash/1.8.1/Makefile,
+	packages/google-sparsehash/Makefile: Added google-sparseharsh
+
+2010-09-15  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/fftw/3.2.2/Makefile,
+	packages/fftw/3.2.2/generate_make_commands.sh: get fftw3 to generate
+	the different precisions
+
+2010-09-15  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/openssh/5.6p1/Makefile: added ssh hpn patch
+
+2010-09-15  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/openssh/5.6p1/patches/patch-openssh-5.6p1-hpn13v10.diff: 
+	added ssh hpn patch
+
+2010-09-14  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/bzip2/1.0.5/Makefile, packages/bzip2/Makefile: added
+	bzip2 to get libbz2
+
+2010-09-14  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* mk/gnu.post.mk, packages/bootstrap/2.0/Makefile: fix up bootstrap
+	and autoconf dependancy in macros
+
+2010-09-14  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/bootstrap/1.0/Makefile, packages/bootstrap/2.0/Makefile: 
+	add some cleaning
+
+2010-09-14  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/bootstrap/2.0/README: add readme
+
+2010-09-14  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/bootstrap/2.0/Makefile: create second stage bootstrap
+
+2010-09-14  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/bootstrap/1.0/Makefile: libtool is a bootstrap dependancy
+
+2010-09-14  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/libtool/2.2.10/Makefile: added bootstrap
+
+2010-09-14  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* : commit 10c9fff5ea1d2a850dcc1433fab55c3db5213077 Merge: 9757b2a
+	0ac3760 Author: Jimmy Tang <jtang@tchpc.tcd.ie> Date:   Tue Sep 14
+	10:30:12 2010 +0100
+
+2010-09-14  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* Readme.org: fixup notes
+
+2010-09-14  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/hdf5/1.8.5-patch1/Makefile, packages/hdf5/Makefile,
+	packages/szip/112b/Makefile: added hdf5, needed for hpc europa 2
+	project on irods
+
+2010-09-14  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/szip/2.1/Makefile: added the correct szip library for
+	hdf5
+
+2010-09-13  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/gettext/0.18.1.1/Makefile: ahem, gettext 0.18.1.1 itself
+
+2010-09-13  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/a2ps/4.14/Makefile, packages/bison/2.4.2/Makefile,
+	packages/bison/2.4.3/Makefile, packages/bootstrap/1.0/Makefile,
+	packages/bootstrap/1.0/README, packages/coreutils/8.5/Makefile,
+	packages/gawk/3.1.8/Makefile, packages/gmake/3.81/Makefile,
+	packages/gmake/3.82/Makefile, packages/guile/1.8.7/Makefile,
+	packages/libidn/1.19/Makefile, packages/monotone/0.48/Makefile,
+	packages/texinfo/4.13/Makefile, packages/wget/1.9.1/Makefile: 
+	changed gettext-0.17 to gettext-0.18.1.1
+
+2010-09-13  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/xmlto/0.0.23/Makefile: added proper description, this
+	port is currently broken as it needs docbook-xsl
+
+2010-09-13  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/libxslt/1.1.26/Makefile, packages/xmlto/0.0.23/Makefile: 
+	xmlto requires docbook-xsl installed on host
+
+2010-09-13  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/git-subtree/0.3-0-ge2d0a45/Makefile,
+	packages/git-subtree/0.3-0-ge2d0a45/patches/patch-master,
+	packages/git-subtree/Makefile: added helper utility
+
+2010-09-13  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/xmlto/0.0.23/Makefile, packages/xmlto/Makefile: testing
+	xmlto - needs internet access to build
+
+2010-09-13  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/asciidoc/8.6.1/Makefile, packages/asciidoc/Makefile: 
+	added asciidoc to generate docs from git and bup
+
+2010-09-10  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/libint/1.1.4/Makefile: added libint
+
+2010-09-10  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/libint/Makefile: stub for libint - for quantum chemistry
+	and physics codes
+
+2010-09-10  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/atlas/3.8.3/Makefile, packages/scalapack/1.8.0/Makefile: 
+	added gnu 4.5.0 and 4.5.1 variants as needed for building cp2k
+
+2010-09-09  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/libaio/0.3.109/Makefile, packages/libaio/Makefile,
+	packages/stressapptest/1.0.3/Makefile,
+	packages/stressapptest/Makefile: added google streetestapp, this
+	needs gcc 4.5.1 to build
+
+2010-09-09  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/glusterfs/3.0.5/Makefile, packages/glusterfs/Makefile: 
+	add gluster, so there is a choice over pvfs2
+
+2010-09-09  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/slurm/2.1.13/Makefile: update slurm package
+
+2010-09-08  Neil Brookes <neil@lonsdale01.cluster>
+
+	* packages/gsl/1.14/Makefile: Added GSL 1.14
+
+2010-09-08  Neil Brookes <neil@lonsdale01.cluster>
+
+	* packages/gsl/1.9/Makefile, packages/gsl/Makefile: Added GSL
+
+2010-09-08  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* : commit 9757b2a58012150eec94b49a7a36c70928b0797d Merge: 81d0e18
+	77821d8 Author: Jimmy Tang <jtang@x00.tchpc.tcd.ie> Date:   Wed Sep
+	8 09:45:52 2010 +0100
+
+2010-09-08  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* : commit b4517adf2422b9e749cc2faf8219cdf998202138 Author: Jimmy
+	Tang <jtang@tchpc.tcd.ie> Date:   Wed Sep 8 09:40:40 2010 +0100
+
+2010-09-06  Jimmy Tang <jtang@sgenomics.org>
+
+	* packages/fossil/Makefile: update to latest current version of
+	fossil
+
+2010-09-08  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/espresso/4.2.1/Makefile: disable the experimental option
+
+2010-09-06  Jimmy Tang <jtang@sgenomics.org>
+
+	* packages/fossil/Makefile: update to latest current version of
+	fossil
+
+2010-09-06  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* : commit b20aa88974848278ade75ce794b8256cc69a08d7 Author: Jimmy
+	Tang <jtang@sgenomics.org> Date:   Mon Sep 6 17:51:58 2010 +0100
+
+2010-09-06  Jimmy Tang <jtang@sgenomics.org>
+
+	* scripts/distro.guess: check for debian_version, justuse the major
+	number
+
+2010-09-06  Jimmy Tang <jtang@sgenomics.org>
+
+	* packages/tmux/1.3/Makefile, packages/wget/1.9.1/Makefile: no deps
+	on bootstrap
+
+2010-09-06  Jimmy Tang <jtang@sgenomics.org>
+
+	* : commit 58d4791189aecec3d33b2b10212b705e9cd78c15 Author: Jimmy
+	Tang <jtang@sgenomics.org> Date:   Mon Sep 6 17:51:00 2010 +0100
+
+2010-09-06  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* .milli/x00.tchpc.tcd.ie.1283783693.P58135M866190.milli:  note about boostrap
+
+2010-09-06  cports <cports@durga.tchpc.tcd.ie>
+
+	* packages/automake/1.11/Makefile: add dep on newer version of
+	autoconf
+
+2010-09-06  cports <cports@durga.tchpc.tcd.ie>
+
+	* packages/R/2.11.1/Makefile: Fixed R dependency
+
+2010-09-06  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/atlas/3.8.3/Makefile, packages/scalapack/1.8.0/Makefile: 
+	default to gnu compilers for atlas and scalapack if the COMPILERS
+	variable isnt defined on the commandline, strange things will
+	happen.
+
+2010-09-06  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/libevent/1.4.14b/Makefile, packages/libevent/Makefile,
+	packages/tmux/1.3/Makefile, packages/tmux/Makefile: added tmux,
+	should at dtach as well as a useful systems utility
+
+2010-09-03  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* mk/gnu.subdir.mk: chnage logic of html generation abit
+
+2010-09-03  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/aria2/Makefile: set current version of aria2
+
+2010-09-03  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* mk/gnu.subdir.mk: more testing with generating and index of html
+	files
+
+2010-09-03  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* mk/gnu.information.mk: escape some html
+
+2010-09-03  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* mk/gnu.information.mk, mk/gnu.post.mk, mk/gnu.subdir.mk: start of
+	doing html output for packages
+
+2010-09-03  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* : commit 70cd93d3799ca6fe2ec8d882d9093c4c9d3dc4bb Author: Neil
+	Brookes <neil@lonsdale01.cluster> Date:   Fri Sep 3 14:39:36 2010
+	+0100
+
+2010-09-03  Neil Brookes <neil@lonsdale01.cluster>
+
+	* packages/google-perftools/1.6/Makefile,
+	packages/google-perftools/Makefile: Added google-perftools (MIRA
+	optional dependency)wq
+
+2010-09-02  Neil Brookes <neil@lonsdale01.cluster>
+
+	* packages/mira/3.2.0/Makefile, packages/mira/Makefile: Added MIRA
+
+2010-09-03  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/espresso/4.1.2/Makefile,
+	packages/espresso/4.1.3/Makefile: fixup build to use optimised
+	libraries
+
+2010-09-03  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* mk/gnu.local.mk: fix compiler tag for intel 10 compiler
+
+2010-09-03  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* mk/gnu.local.mk: add intel 10 compiler tag
+
+2010-09-03  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/scalapack/1.8.0/Makefile: fix formatting
+
+2010-09-02  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/scalapack/1.8.0/Makefile: update makefile for intel
+	compiler
+
+2010-09-02  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/scalapack/1.8.0/Makefile: fix scalapack dependancy
+
+2010-09-02  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/atlas/3.8.3/Makefile,
+	packages/atlas/3.8.3/lapackconfig.intel11.0.sh,
+	packages/atlas/3.8.3/preconfig.intel11.0.sh: fix fPIC issues
+
+2010-09-02  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/atlas/3.8.3/Makefile,
+	packages/atlas/3.8.3/lapackconfig.intel11.0.sh,
+	packages/atlas/3.8.3/preconfig.intel11.0.sh: first attempt at
+	getting intel compilers to build atlas
+
+2010-09-02  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* mk/gnu.local.mk: added intel 11.0 compiler tag
+
+2010-09-02  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/szip/112b/Makefile, packages/szip/Makefile: Added szip as
+	irods hdf plugin seems to need this
+
+2010-09-01  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/Python/2.5.5/Makefile: added python 2.5.5 for
+	compatibility
+
+2010-09-02  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/scalapack/1.8.0/Makefile: fix scalapack dependancy
+
+2010-09-02  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/atlas/3.8.3/Makefile,
+	packages/atlas/3.8.3/lapackconfig.intel11.0.sh,
+	packages/atlas/3.8.3/preconfig.intel11.0.sh: fix fPIC issues
+
+2010-09-02  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/atlas/3.8.3/Makefile,
+	packages/atlas/3.8.3/lapackconfig.intel11.0.sh,
+	packages/atlas/3.8.3/preconfig.intel11.0.sh: first attempt at
+	getting intel compilers to build atlas
+
+2010-09-02  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* mk/gnu.local.mk: added intel 11.0 compiler tag
+
+2010-09-02  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/szip/112b/Makefile, packages/szip/Makefile: Added szip as
+	irods hdf plugin seems to need this
+
+2010-09-01  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/Python/2.5.5/Makefile: added python 2.5.5 for
+	compatibility
+
+2010-08-31  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/oases/0.1.15/Makefile, packages/oases/Makefile: added
+	oases plugin for velvet, this should ideally have been configured
+	with the same settings as velvet
+
+2010-08-31  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* Makefile: PHONY target for changelog
+
+2010-08-31  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/grace/5.1.22/Makefile: fix up grace paths
+
+2010-08-31  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/bwa/0.5.8a/Makefile: updated bwa
+
+2010-08-31  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/bwa/0.5.0/Makefile: depend on samtools at runtime
+
+2010-08-31  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/samtools/0.1.8/Makefile, packages/samtools/Makefile: 
+	added samtools
+
+2010-08-31  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/bwa/0.5.0/Makefile, packages/bwa/Makefile: added bwa
+	aligner
+
+2010-08-31  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/maq/0.7.1/Makefile, packages/maq/Makefile: Added maq -
+	Mapping and Assembly with Qualities
+
+2010-08-31  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/velvet/1.0.12/Makefile, packages/velvet/Makefile: added
+	velvet assembler
+
+2010-08-30  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/openmotif/Makefile: set older version of openmotif to be
+	stable
+
+2010-08-30  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/wgs/6.1/Makefile: added some runtime dependancies for
+	wgs, would need to fix some of this as it needs testing
+
+2010-08-30  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/perl/5.12.1/Makefile,
+	packages/perl/modules/Statistics-Descriptive/3.0200/Makefile: added
+	Statistics-Descriptive perl module for wgs
+
+2010-08-30  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/AMOS/2.0.8/Makefile, packages/AMOS/Makefile: added AMOS
+
+2010-08-30  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/lucy/1.19p/Makefile, packages/lucy/Makefile: added lucy,
+	needed for wgs
+
+2010-08-30  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/wgs/6.1/Makefile: fix up description
+
+2010-08-30  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/wgs/6.1/Makefile, packages/wgs/Makefile: added wgs
+	assembler, also known as the celera assembler
+
+2010-08-30  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/grace/5.1.22/Makefile, packages/grace/Makefile: added
+	grace, so we're not too dependant on the system providing it
+
+2010-08-30  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/openmotif/2.3.2/Makefile,
+	packages/openmotif/2.3.3/Makefile, packages/openmotif/Makefile: 
+	added openmotif, 2.3.3 is buggy and doesnt always compile
+
+2010-08-30  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/xbitmaps/1.1.0/Makefile, packages/xbitmaps/Makefile: add
+	xbitmaps to satisfy openmotif
+
+2010-08-30  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/lesstif/0.95.2/Makefile: fix up homepage for lesstif
+
+2010-08-30  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* packages/aria2/1.10.0/Makefile, packages/aria2/1.10.1/Makefile: 
+	prefer openssl over gnutls
+
+2010-08-30  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* Makefile: redirect output
+
+2010-08-30  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* Changelog.org, Readme.org: remove the old changelog
+
+2010-08-30  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* Makefile, scripts/git2cl: Added git2cl to get changelogs
+
+2010-08-29  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/aria2/1.10.0/Makefile, packages/aria2/1.10.1/Makefile: 
+	updated aria2
+
+2010-08-27  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/bup/Makefile: added holder makefile
+
+2010-08-27  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/bup/0.17-0-gbaa473b/Makefile: testing out bup for doing
+	incremental backups
+
+2010-08-27  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/openssh/5.6p1/Makefile: update openssh
+
+2010-08-26  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* packages/fossil/20100823222416/Makefile: update fossil
+
+2010-08-26  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/mpiBLAST/1.6.0/Makefile,
+	packages/mpiBLAST/1.6.0/patches.disabled/patch-mpiBLAST-1.6.0-patch
+	-100813, packages/mpiBLAST/1.6.0/patches/patch-linux.ncbi.mk: update
+	mpiblast
+
+2010-08-25  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/lesstif/0.95.2/Makefile, packages/lesstif/Makefile: added
+	a motif library, could do with depending more on internal packages
+
+2010-08-24  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/plink/1.07/Makefile, packages/plink/Makefile: initial add
+	of plink
+
+2010-08-24  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* packages/aria2/1.9.5/Makefile: fix up aria to depend on openssl
+
+2010-08-23  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/ncbi-blast/2.2.24+/Makefile: better way of configuring
+	and building blast
+
+2010-08-23  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/git/1.7.2.2/Makefile, packages/git/Makefile,
+	packages/topgit/0.8/Makefile: update git - testing out dependancies
+	and seeing how things might break
+
+2010-08-23  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* .milli/lonsdale01.1282572954.P10412M831805.milli: note about list
+	of packages to try and install
+
+2010-08-23  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/emboss/6.3.1/Makefile: fix up makefile
+
+2010-08-23  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/emboss/6.3.1/Makefile, packages/emboss/Makefile: initial
+	add of emboss
+
+2010-08-23  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/ncbi-blast/2.2.24+/Makefile: fixup build to look for
+	configure and makefiles in the right place
+
+2010-08-23  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* .milli/lonsdale01.1282572954.P10412M831805.milli: list of
+	biopackages to add
+
+2010-08-23  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/blast+/2.2.24+/Makefile, packages/blast+/Makefile,
+	packages/ncbi-blast/2.2.24+/Makefile, packages/ncbi-blast/Makefile: 
+	renamed directory
+
+2010-08-23  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/blast+/2.2.24+/Makefile, packages/blast+/Makefile: 
+	initial of blast+
+
+2010-08-23  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/espresso/4.2.1/Makefile: set some dflags
+
+2010-08-23  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* mk/gnu.post.mk: some multili problem on rhel 32bit based machines
+
+2010-08-22  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/monotone/0.48/Makefile, packages/monotone/Makefile: added
+	monotone, needed to build a few more apps before this worked
+
+2010-08-21  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/libidn/1.19/Makefile, packages/libidn/Makefile: add
+	libidn
+
+2010-08-21  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/lua/5.1.4/Makefile, packages/lua/Makefile: added lua
+
+2010-08-21  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/pcre/8.10/Makefile, packages/pcre/Makefile: add pcre libs
+
+2010-08-21  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/Botan/1.8.9/Makefile, packages/Botan/Makefile: added
+	botan crypto library
+
+2010-08-20  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/espresso/4.1.2/Makefile: add older version of espresso
+	for testing
+
+2010-08-20  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/espresso/4.1.3/Makefile,
+	packages/espresso/4.2.1/Makefile, packages/espresso/Makefile,
+	packages/fftw/3.2.2/Makefile: added quantum espresso, it currently
+	doesn't install documentation for the us, just the binaries for
+	production runs
+
+2010-08-20  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* mk/gnu.local.mk: added gcc 4.5.1 COMPILER tag
+
+2010-08-20  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/gmake/3.82/Makefile: fix up make package
+
+2010-08-20  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* packages/gmake/3.82/Makefile: update make
+
+2010-08-19  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/9base/6/Makefile: make 9base work!
+
+2010-08-19  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* packages/9base/6/Makefile, packages/9base/Makefile: initial add of
+	9base
+
+2010-08-18  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* Makefile: fixup the dist file creation
+
+2010-08-18  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* Makefile: checksum releases
+
+2010-08-18  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/slurm/2.1.11/Makefile: update slurm
+
+2010-08-18  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* .milli/lonsdale01.1282119631.P11157M315156.milli: log issue with
+	python
+
+2010-08-18  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/bison/2.4.3/Makefile: update bison
+
+2010-08-17  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/gcc/4.5.1/Makefile: fix typo
+
+2010-08-17  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* : commit 56361ab7df873d98b987a1514dc6c0a7b200aa44 Author: Jimmy
+	Tang <jtang@x00.tchpc.tcd.ie> Date:   Tue Aug 17 23:54:24 2010 +0100
+
+2010-08-17  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/boost/1_44_0_openmpi_1.4.2/Makefile: boost 1.44 Seems to
+	compile Not well checked Install process was pretty good: o didn't
+	need to go to website o just cp -r on existing cports boost dir o
+	change 1_43 to 1_44 in Makefile o make install o wow (unless the
+	install is, in fact, broken)
+
+2010-08-17  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/mercurial/1.6.2/Makefile, packages/mercurial/Makefile: 
+	added mercurial
+
+2010-08-11  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/par4all/1.0.1-d524829/Makefile,
+	packages/par4all/Makefile: place holder for par4all, it doesn't
+	build correctly for now, its missing some deps
+
+2010-08-11  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/fossil/20100805100943/Makefile,
+	packages/fossil/20100805100943/patches/patch-reconstruct_cmd.patch,
+	packages/fossil/Makefile: added fossil-scm, was testing trunk
+	version of sqlite, and ended up installing this.
+
+2010-08-09  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/emacs/23.2/Makefile: added the rest of the needed deps to
+	compile emacs with gtk
+
+2010-08-09  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* .milli/lonsdale01.1280499158.P14667M254234.milli,
+	packages/cairo/1.8.10/Makefile, packages/emacs/23.2/Makefile,
+	packages/fontconfig/2.8.0/Makefile,
+	packages/freetype/2.4.2/Makefile, packages/freetype/Makefile,
+	packages/pango/1.28.1/Makefile, packages/poppler/0.14.1/Makefile,
+	packages/poppler/Makefile: fixup gtk build, some dependancies
+	weren't included causing it to fail on lonsdale
+
+2010-08-09  Darach Golden <darach@tchpc.tcd.ie>
+
+	* : commit 6dbf25d05ad7975423466c771c739b1ed50e3f58 Author: Jimmy
+	Tang <jtang@tchpc.tcd.ie> Date:   Mon Aug 9 14:43:24 2010 +0100
+
+2010-08-09  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/perl/modules/Authen-SASL/2.15/Makefile,
+	packages/perl/modules/Digest-HMAC/1.02/Makefile,
+	packages/perl/modules/Digest-SHA1/2.13/Makefile,
+	packages/perl/modules/File-Sync/0.09/Makefile,
+	packages/perl/modules/IO-Socket-SSL/1.33/Makefile,
+	packages/perl/modules/MIME-tools/5.428/Makefile,
+	packages/perl/modules/Mail-IMAPClient/3.25/Makefile,
+	packages/perl/modules/Mail-POP3Client/2.18/Makefile,
+	packages/perl/modules/MailFolder/0.07/Makefile,
+	packages/perl/modules/MailTools/2.06/Makefile,
+	packages/perl/modules/NTLM/1.05/Makefile,
+	packages/perl/modules/Net-IDN-Encode/1.100/Makefile,
+	packages/perl/modules/Net-IDN-Nameprep/1.100/Makefile,
+	packages/perl/modules/Net-SSLeay/1.36/Makefile,
+	packages/perl/modules/Parse-RecDescent/1.965001/Makefile,
+	packages/perl/modules/Proc-Simple/1.26/Makefile,
+	packages/perl/modules/Proc-SyncExec/1.01/Makefile,
+	packages/perl/modules/TermReadKey/2.30/Makefile,
+	packages/perl/modules/Test-NoWarnings/1.01/Makefile,
+	packages/perl/modules/Test-Pod/1.44/Makefile,
+	packages/perl/modules/Time-Date/1.20/Makefile,
+	packages/perl/modules/Time-modules/2006.0814/Makefile,
+	packages/perl/modules/Unicode-Stringprep/1.103/Makefile,
+	packages/perl/modules/flail/0.2.6/Makefile: Added flail and all its
+	dependancies
+
+2010-08-05  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/emacs/23.2/Makefile: use gtk for emacs compilation may or
+	may not be a good idea
+
+2010-08-05  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/emacs/README: INFOPATH for emacs
+
+2010-08-04  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/petsc/3.1-p3/Makefile: added some more support for c++
+	petsc version also tried (briefly) and failed to get some more packages to work
+	with petsc (scotch/blacs/scalapack) so the relevant bits are
+	commented out
+
+2010-08-04  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/emacs/23.2/Makefile: made fontconfig dependency explicit
+	for emacs
+
+2010-08-04  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/libjpeg/6b/Makefile: removed gcc dependency (for some
+	reason it was pulling gcc 4.5 for me)
+
+2010-08-04  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/flex/2.5.35/Makefile: added texinfo dependency
+
+2010-08-04  Darach Golden <darach@tchpc.tcd.ie>
+
+	* : Merge remote branch 'origin/next' into next
+
+2010-08-04  Darach Golden <darach@tchpc.tcd.ie>
+
+	* mk/gnu.post.mk: removed space after backslash in do-install-info
+	target which may have been messing up shell command
+
+2010-08-03  Darach Golden <darach@tchpc.tcd.ie>
+
+	* : Merge remote branch 'origin/next' into next
+
+2010-08-03  Darach Golden <darach@tchpc.tcd.ie>
+
+	* mk/gnu.post.mk, packages/bootstrap/1.0/Makefile,
+	packages/gmake/3.81/Makefile, packages/wget/1.9.1/Makefile: 
+	tentative commit of bootstrapping changes -- not sure how much
+	difference these make -- may undo
+
+2010-08-03  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/cairo/1.8.10/Makefile: make fontconfig a dependency of
+	cairo
+
+2010-08-03  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/pango/1.28.1/Makefile: not sure about these --lib things,
+	but put them back anyway
+
+2010-08-03  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/cairo/1.8.10/Makefile: make fontconfig a dependency of
+	cairo.
+
+2010-07-30  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* .milli/lonsdale01.1280499158.P14667M254234.milli: note about pango
+	and cairo in relation to gtk
+
+2010-07-30  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/gtk+/2.20.1/Makefile, packages/pango/1.28.1/Makefile: 
+	pango wont build with cairo so gtk fails
+
+2010-07-30  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/a2ps/4.14/Makefile, packages/autogen/5.11/Makefile,
+	packages/cairo/1.8.10/Makefile, packages/gtk+/2.20.1/Makefile,
+	packages/pango/1.28.1/Makefile: use --libs, is it necessary?
+
+2010-07-30  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/petsc/3.1-p3/Makefile: fix up petsc build file with --lib
+
+2010-07-30  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/glib/2.24.1/Makefile, packages/guile/1.8.7/Makefile: fix
+	up versioning and --libs for guile and glib
+
+2010-07-30  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/cyrus-sasl/2.1.23/Makefile: fix up cyrus-sasl to use
+	--libs
+
+2010-07-30  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* .milli/lonsdale01.1280411733.P10254M10493.milli: note about libs
+
+2010-07-30  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/openldap/2.4.23/Makefile: use --libs for openldap
+
+2010-07-30  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/R/2.10.1/Makefile, packages/R/2.11.1/Makefile: use --libs
+	for R
+
+2010-07-30  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/slurm/2.1.10/Makefile: use --libs for slurm
+
+2010-07-30  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/aria2/1.9.5/Makefile, packages/gt/5.0.2/Makefile,
+	packages/mpich2/1.2.1p1/Makefile, packages/sqlite/3.6.23.1/Makefile: 
+	use --libs for mpich2, gt5 sqlite and aria2
+
+2010-07-30  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/tcl/8.5.8/Makefile, packages/tk/8.5.8/Makefile: link tcl
+	and tk with libs
+
+2010-07-30  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* : commit 39c0552b9b78b62accc2f05f5c7f1afef9bc37e9 Author: Jimmy
+	Tang <jtang@tchpc.tcd.ie> Date:   Fri Jul 30 12:50:06 2010 +0100
+
+2010-07-30  Darach Golden <darach@tchpc.tcd.ie>
+
+	* : commit d7d19b50aa65fa58eed6f700703b97c58eb5c9a8 Author: Jimmy
+	Tang <jtang@tchpc.tcd.ie> Date:   Fri Jul 30 11:15:42 2010 +0100
+
+2010-07-30  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/autoconf/2.66/Makefile, packages/automake/1.11/Makefile,
+	packages/automake/1.9.6/Makefile, packages/git/Makefile,
+	packages/psutils/p17/Makefile, packages/wget/1.9.1/Makefile: remove
+	perl dep for now
+
+2010-07-30  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/curl/7.21.0/Makefile, packages/curl/Makefile,
+	packages/git/1.7.2.1/Makefile: rpaths and the such for git
+
+2010-07-30  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/pango/1.28.1/Makefile: desciption of pango
+
+2010-07-30  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/curl/7.21.0/Makefile, packages/curl/Makefile,
+	packages/git/1.7.2.1/Makefile, packages/git/Makefile,
+	packages/topgit/0.8/Makefile: added git and just enough dependancies
+	for it to be useful
+
+2010-07-30  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/ruby/1.9.1-p429/Makefile, packages/ruby/Makefile: added
+	ruby
+
+2010-07-30  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/topgit/0.8/Makefile, packages/topgit/Makefile: added git
+	patch management tool
+
+2010-07-29  Darach Golden <darach@tchpc.tcd.ie>
+
+	* : commit 8f1173c087d6f3d213511d4edace63e35d6471af Author: Darach
+	Golden <darach@tchpc.tcd.ie> Date:   Thu Jul 29 20:08:53 2010 +0100
+
+2010-07-29  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/R/modules/snow/0.3-3/Makefile: make snow module depend on
+	Rmpi
+
+2010-07-29  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* .milli/x00.tchpc.tcd.ie.1280419607.P24690M383749.milli: note about
+	testing on more systems
+
+2010-07-29  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* : commit 6019f38ea70a824385449ec250c696278f09c068 Author: Jimmy
+	Tang <jtang@x00.tchpc.tcd.ie> Date:   Thu Jul 29 17:05:13 2010 +0100
+
+2010-07-29  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* .milli/lonsdale01.1280418860.P31419M737463.milli: note about slurm
+	and munge
+
+2010-07-29  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/slurm/2.1.10/Makefile: added some dependancys, should
+	provide openssl as we haven't added munged yet
+
+2010-07-29  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* packages/slurm/2.1.10/Makefile, packages/slurm/Makefile: add slurm
+	resource manager for testing purposes
+
+2010-07-29  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* .milli/x00.tchpc.tcd.ie.1280416542.P24286M833546.milli: log issue
+	with petsc
+
+2010-07-29  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* packages/R/2.10.1/Makefile: fix whitespace
+
+2010-07-29  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* Readme.org: updated notes
+
+2010-07-29  Darach Golden <darach@tchpc.tcd.ie>
+
+	* : commit dabd530c4bf4cd0db230d3750f7f1566a37e3416 Author: Darach
+	Golden <darach@tchpc.tcd.ie> Date:   Thu Jul 29 15:01:41 2010 +0100
+
+2010-07-29  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* .milli/lonsdale01.1280411886.P10790M814436.milli,
+	.milli/lonsdale01.1280411906.P10859M379784.milli,
+	.milli/lonsdale01.1280412028.P11190M983301.milli: migrated all the
+	bugs and issues to milli
+
+2010-07-29  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* .milli/hook, .milli/lonsdale01.1280411733.P10254M10493.milli: log
+	some more issues
+
+2010-07-29  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* .milli/hook, .milli/lonsdale01.1280411203.P8627M538072.milli: 
+	testing milli for tracking issues
+
+2010-07-29  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/R/2.11.1/Makefile: add snowfall to R 2.11
+
+2010-07-29  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/R/modules/snowfall/1.84/Makefile: couldn't resist it:
+	snowfall added loads as library no idea how to run it Also: how to do dependencies between R modules?
+
+2010-07-29  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/milli/0.4/Makefile, packages/milli/Makefile: added dcvs
+	bug tracker, would this be better than using orgmode for tracking
+	issues/bugs
+
+2010-07-29  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* mk/prg.Rmod.mk, packages/R/modules/snow/0.3-3/Makefile: fix up
+	snow, spaces issue in makefile causing problems
+
+2010-07-29  Darach Golden <darach@tchpc.tcd.ie>
+
+	* : commit 5696aeba889dce4165fc0df0399099b19d01876b Author: Darach
+	Golden <darach@tchpc.tcd.ie> Date:   Thu Jul 29 12:35:03 2010 +0100
+
+2010-07-29  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/R/modules/snow/0.3-3/Makefile: added snow
+
+2010-07-29  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* packages/hello/Makefile: fix up version for test package
+
+2010-07-29  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* Readme.org: more notes on readme
+
+2010-07-29  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* : commit 322fbf57dc8c6d17cc755d74b31c86a9097fe529 Author: Jimmy
+	Tang <jtang@tchpc.tcd.ie> Date:   Thu Jul 29 11:45:21 2010 +0100
+
+2010-07-29  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/autoconf/2.66/Makefile, packages/automake/1.11/Makefile,
+	packages/automake/1.9.6/Makefile, packages/perl/Makefile,
+	packages/psutils/p17/Makefile: depend on the latest stable of perl
+
+2010-07-29  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* : commit ec115455f8019bd8e70218ff06d2a7756443bf92 Author: Darach
+	Golden <darach@tchpc.tcd.ie> Date:   Thu Jul 29 11:12:33 2010 +0100
+
+2010-07-29  Darach Golden <darach@tchpc.tcd.ie>
+
+	* mk/prg.Rmod.mk, packages/R/2.11.1/Makefile,
+	packages/R/MOD_README, packages/R/modules/Rmpi/0.5-8/Makefile: Rmpi
+	added note: took the dependency on mpi _out_ of the R Makefile, so
+	it now only exists in the Rmpi makefile
+
+2010-07-29  Darach Golden <darach@tchpc.tcd.ie>
+
+	* : commit f8352077d2bb028c4e7c2cb3a970c798d0d52faa Author: Jimmy
+	Tang <jtang@x00.tchpc.tcd.ie> Date:   Thu Jul 29 10:30:01 2010 +0100
+
+2010-07-29  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* : commit 661fd09a512b7a67c99e4fed27010313841c0277 Author: Jimmy
+	Tang <jtang@tchpc.tcd.ie> Date:   Thu Jul 29 10:14:10 2010 +0100
+
+2010-07-29  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* Readme.org: note about bootstrapping
+
+2010-07-29  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/gettext/0.17/Makefile, packages/libiconv/1.13/Makefile: 
+	resolve some circular dependancies by adding BOOTSTRAP variable and
+	package
+
+2010-07-29  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/bootstrap/1.0/Makefile, packages/bootstrap/1.0/README,
+	packages/bootstrap/Makefile: resolve some circular dependancies by
+	adding BOOTSTRAP variable and package
+
+2010-07-28  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* mk/gnu.post.mk: make sure autoconf 2.66-COMPILER_TAG is used
+	during a reconfigure
+
+2010-07-28  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/libtool/2.2.10/Makefile: updated libtool
+
+2010-07-28  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/automake/Makefile: set current version of automake to
+	1.11
+
+2010-07-28  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/automake/1.11/Makefile: update automake to 1.11
+
+2010-07-28  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* Makefile: more fixes to the bootstrap
+
+2010-07-28  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* : commit 5c4850f3d85b996a50261d175f001f7af131943b Author: Jimmy
+	Tang <jtang@tchpc.tcd.ie> Date:   Wed Jul 28 22:21:51 2010 +0100
+
+2010-07-28  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* mk/gnu.post.mk: re-enable libtool usage
+
+2010-07-28  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* packages/libtool/2.2.10/Makefile: minor change in libtool build to
+	reconfigure itself
+
+2010-07-28  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* packages/petsc/3.1-p3/Makefile,
+	packages/petsc/3.1-p3/generate_make_commands.sh: fix up
+	extraversions tag
+
+2010-07-28  Darach Golden <darach@tchpc.tcd.ie>
+
+	* : commit 353b6c20355fd4a02ee4471d8e1f43c40b60d781 Merge: 834018c
+	d7e84e0 Author: Jimmy Tang <jtang@x00.tchpc.tcd.ie> Date:   Wed Jul
+	28 19:59:34 2010 +0100
+
+2010-07-28  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* packages/petsc/3.1-p3/README: added note about generating the make
+	commandline options
+
+2010-07-28  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* packages/petsc/3.1-p3/generate_make_commands.sh: added simple
+	script to generate the make cases
+
+2010-07-28  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/hello/2.6/Makefile, packages/hello/Makefile: this is a
+	test package -- useful for messing around with
+
+2010-07-28  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/petsc/3.1-p3/Makefile: don't need quotes on debug flag
+
+2010-07-28  Darach Golden <darach@tchpc.tcd.ie>
+
+	* : commit 3d96ee9551f5f7e27ce64177ca3c8c7f3a9d880f Author: Darach
+	Golden <darach@tchpc.tcd.ie> Date:   Wed Jul 28 19:19:35 2010 +0100
+
+2010-07-28  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* Makefile: simple changelog dump of last tag till HEAD
+
+2010-07-28  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* : commit a36f4af9645ce58245fe64997e031a9dbbbf7e28 Merge: 420d54e
+	db6d535 Author: Jimmy Tang <jtang@x00.tchpc.tcd.ie> Date:   Wed Jul
+	28 16:28:36 2010 +0100
+
+2010-07-28  Darach Golden <darach@tchpc.tcd.ie>
+
+	* : commit 22b9339b5f8be26b0706d5f6e62ad96a0e3557be Author: Darach
+	Golden <darach@tchpc.tcd.ie> Date:   Wed Jul 28 16:26:27 2010 +0100
+
+2010-07-28  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/ParMetis/3.1.1/Makefile: got an error with petsc relating
+	to PIC, so put a -fPIC into ParMetis compile also started using
+	$(MAKE) and other variables in parmetisc makefile
+
+2010-07-28  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* Packages.org: update packages list of notes
+
+2010-07-28  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/glib/2.24.1/Makefile, packages/glib/Makefile: add updated
+	glib, this will enable users to build more modern apps on slightly
+	older systems e.g. rhel4 and rhel5
+
+2010-07-28  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* Todo.org: update todos with packages
+
+2010-07-28  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/petsc/3.1-p3/Makefile: output log files of compile
+	process
+
+2010-07-28  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* Readme.org: note about who funded the changes made by TCHPC
+
+2010-07-28  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/tk/8.5.8/Makefile, packages/tk/Makefile: added tk
+
+2010-07-28  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/ParMetis/3.1.1/Makefile, packages/ParMetis/Makefile,
+	packages/parmetis/3.1.1/Makefile, packages/parmetis/Makefile: rename
+	parmetis to ParMetis
+
+2010-07-28  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* : commit f7e8a564e45a1ead68951ba1c212359a277db59a Author: Jimmy
+	Tang <jtang@tchpc.tcd.ie> Date:   Wed Jul 28 13:33:55 2010 +0100
+
+2010-07-28  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/gt/5.0.2/Makefile, packages/gt/5.0.2/README.txt: working
+	basic install of globustoolkit
+
+2010-07-28  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/petsc/3.1-p3/Makefile: use $(MAKE) variable
+
+2010-07-28  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/petsc/3.1-p3/Makefile, packages/petsc/Makefile: added
+	petsc (basic compile -- more to be done)
+
+2010-07-28  Darach Golden <darach@tchpc.tcd.ie>
+
+	* : commit 949461b4cbab00ec426ca3bb52a1c1c0ef134910 Author: Jimmy
+	Tang <jtang@tchpc.tcd.ie> Date:   Wed Jul 28 10:53:03 2010 +0100
+
+2010-07-28  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/sed/4.2.1/Makefile, packages/sed/Makefile: added gnu sed
+	for globus
+
+2010-07-27  Darach Golden <darach@tchpc.tcd.ie>
+
+	* Readme.org, packages/openmpi/1.4.2/README.romio: minor
+	documentation changes
+
+2010-07-27  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/openldap/2.4.23/Makefile, packages/openldap/Makefile: 
+	added openldap, can now be use for hpce2 related services
+
+2010-07-27  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/cyrus-sasl/2.1.23/Makefile, packages/cyrus-sasl/Makefile: 
+	added sasl
+
+2010-07-27  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/db/4.8.26/Makefile, packages/db/5.0.26/Makefile,
+	packages/db/Makefile: add berkeley db in preparation of building
+	openldap needed for grid setups and IAP
+
+2010-07-27  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* : commit 604b2c653975c861bf7c983ea471da2a2e9c9ba8 Author: Jimmy
+	Tang <jtang@x00.tchpc.tcd.ie> Date:   Tue Jul 27 15:20:42 2010 +0100
+
+2010-07-27  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* Readme.org, Todo.org: Notes on how to use cports
+
+2010-07-27  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* mk/prg.R.mk, mk/prg.Rmod.mk, packages/R/2.10.1/Makefile,
+	packages/R/2.11.1/Makefile: added R 2.10.1 to test that the modules
+	work
+
+2010-07-27  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* mk/prg.R.mk, mk/prg.Rmod.mk, mk/prg.r.mk, mk/prg.rmod.mk,
+	packages/R/modules/outliers/0.13-2/Makefile,
+	packages/R/modules/rbugs/0.4-4/Makefile: rename the prg files
+
+2010-07-27  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* mk/prg.r.mk, mk/prg.rmod.mk: hack up prg.perl.mk to become
+	prg.r.mk
+
+2010-07-27  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* mk/prg.rmod.mk, packages/R/modules/outliers/0.13-2/Makefile,
+	packages/R/modules/rbugs/0.4-4/Makefile: hacked up prg.perlmod.mk to
+	be come prg.rmod.mk, basics now work
+
+2010-07-26  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* : commit 76bb2da69d82794472a23b27b262594df810e8c7 Author: Jimmy
+	Tang <jtang@tchpc.tcd.ie> Date:   Mon Jul 26 19:56:05 2010 +0100
+
+2010-07-26  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/autogen/5.11/Makefile, packages/autogen/Makefile: added
+	autogen
+
+2010-07-26  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/libxml2/2.7.7/Makefile: added zlib dep for libxml2
+
+2010-07-26  Darach Golden <darach@tchpc.tcd.ie>
+
+	* : commit 64537eeb65eda951f807e763b3fc6be59481102c Author: Jimmy
+	Tang <jtang@tchpc.tcd.ie> Date:   Mon Jul 26 19:14:15 2010 +0100
+
+2010-07-26  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/quantlib/1.0.1_boost_1_43_0/Makefile: make test --> make
+	check bleedin backslashes
+
+2010-07-26  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* mk/gnu.post.mk: revert a fix, it broke something else
+
+2010-07-26  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/readline/Makefile: fix typo
+
+2010-07-26  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* mk/gnu.def.mk: try getting rid of awk warnings
+
+2010-07-26  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/readline/6.1/Makefile, packages/readline/Makefile: added
+	readline
+
+2010-07-26  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* mk/gnu.post.mk: fix what i think is a bug with the path generation
+	for the PREFIX_package variable
+
+2010-07-26  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* Todo.org, mk/gnu.def.mk: noted uninstall item is done
+
+2010-07-26  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* : commit bf01e776dc1fa2d676414300015b0fc995503803 Author: Jimmy
+	Tang <jtang@tchpc.tcd.ie> Date:   Mon Jul 26 16:55:12 2010 +0100
+
+2010-07-26  Darach Golden <darach@tchpc.tcd.ie>
+
+	* : commit 4aeb11c13f065789764070ebd00abf2e41dc4b0c Author: Darach
+	Golden <darach@tchpc.tcd.ie> Date:   Mon Jul 26 16:53:52 2010 +0100
+
+2010-07-26  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* mk/gnu.post.mk: simple uninstall target to help with cleaning
+	things
+
+2010-07-26  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/pyMPI/2.5b0/Makefile: updated pyMPI
+
+2010-07-26  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* : commit cf2cc24df15a4afa357c80cbe1b444de10bfab7d Author: Jimmy
+	Tang <jtang@tchpc.tcd.ie> Date:   Mon Jul 26 16:15:43 2010 +0100
+
+2010-07-26  Jimmy Tang <jtang@x00.tchpc.tcd.ie>
+
+	* Readme.org: notes about upstream
+
+2010-07-26  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* Todo.org, todo.org: update todo
+
+2010-07-26  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* todo.org: up to date now with less trashed up history
+
+2010-07-26  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* Makefile, packages/emacs/23.2/Makefile,
+	packages/gmake/3.81/Makefile, packages/gmake/Makefile,
+	packages/gtar/1.23/Makefile, packages/gtar/Makefile,
+	packages/ispell/Makefile, packages/mksh/Makefile,
+	packages/mksh/R39c/Makefile, packages/modules/3.2.7/Makefile,
+	packages/modules/Makefile, packages/openssl/1.0.0a/Makefile,
+	packages/openssl/Makefile, packages/patch/2.6.1/Makefile,
+	packages/patch/Makefile, packages/tcl/8.5.8/Makefile,
+	packages/tcl/8.6b1/Makefile, packages/tcl/Makefile,
+	packages/wget/1.9.1/Makefile, packages/wget/Makefile: re-import of
+	v0.4
+
+2010-07-26  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* Packages.org, Readme.org, mk/prg.emacs.mk, mk/prg.emacsmod.mk,
+	mk/prg.perl.mk, mk/prg.perlmod.mk, packages/R/2.11.1/Makefile,
+	packages/R/Makefile, packages/a2ps/4.14/Makefile,
+	packages/a2ps/Makefile, packages/aspell-en/6.0/Makefile,
+	packages/aspell-en/Makefile, packages/aspell/Makefile,
+	packages/autoconf/2.66/Makefile, packages/autoconf/Makefile,
+	packages/automake/1.9.6/Makefile, packages/automake/Makefile,
+	packages/binutils/2.20/Makefile, packages/binutils/Makefile,
+	packages/bison/2.4.2/Makefile, packages/bison/Makefile,
+	packages/boost/1_43_0_openmpi_1.4.2/Makefile,
+	packages/boost/Makefile, packages/coreutils/8.5/Makefile,
+	packages/coreutils/Makefile, packages/emacs/23.2/Makefile,
+	packages/emacs/Makefile, packages/file/5.04/Makefile,
+	packages/file/Makefile, packages/flex/2.5.35/Makefile,
+	packages/flex/Makefile, packages/gawk/3.1.8/Makefile,
+	packages/gawk/Makefile, packages/gettext/0.17/Makefile,
+	packages/gettext/Makefile, packages/ghostscript/8.71/Makefile,
+	packages/ghostscript/Makefile, packages/gperf/3.0.4/Makefile,
+	packages/gperf/Makefile, packages/groff/1.20/Makefile,
+	packages/groff/Makefile, packages/gzip/1.2.4a/Makefile,
+	packages/gzip/1.4/Makefile, packages/gzip/Makefile,
+	packages/jdk/1.6.0_21/Makefile, packages/jdk/Makefile,
+	packages/libXaw/1.0.7/Makefile, packages/libXaw/Makefile,
+	packages/libXpm/3.5.8/Makefile, packages/libXpm/Makefile,
+	packages/libiconv/1.13/Makefile, packages/libiconv/Makefile,
+	packages/libjpeg/6b/Makefile,
+	packages/libjpeg/6b/patches/patch-alpha,
+	packages/libjpeg/8b/Makefile, packages/libjpeg/Makefile,
+	packages/libpng/1.4.1/Makefile, packages/libpng/1.4.3/Makefile,
+	packages/libpng/Makefile, packages/libtiff/3.9.4/Makefile,
+	packages/libtiff/Makefile, packages/libtool/2.2.10/Makefile,
+	packages/libungif/4.1.4/Makefile, packages/libungif/Makefile,
+	packages/m4/1.4.14/Makefile, packages/m4/Makefile,
+	packages/ncurses/5.7/Makefile, packages/ncurses/Makefile,
+	packages/parmetis/3.1.1/Makefile, packages/perl/5.12.1/Makefile,
+	packages/perl/5.8.9/Makefile, packages/perl/Makefile,
+	packages/perl/modules/AcePerl/1.92/Makefile,
+	packages/perl/modules/Algorithm-Munkres/0.08/Makefile,
+	packages/perl/modules/Archive-Tar/1.64/Makefile,
+	packages/perl/modules/Array-Compare/2.01/Makefile,
+	packages/perl/modules/Bio-ASN1-EntrezGene/1.10/Makefile,
+	packages/perl/modules/BioPerl/1.6.1/Makefile,
+	packages/perl/modules/Bundle-BioPerl/2.1.8/Makefile,
+	packages/perl/modules/Clone/0.31/Makefile,
+	packages/perl/modules/Convert-Binary-C/0.74/Makefile,
+	packages/perl/modules/DBD-Pg/2.17.1/Makefile,
+	packages/perl/modules/DBD-SQLite/1.29/Makefile,
+	packages/perl/modules/DBD-mysql/4.016/Makefile,
+	packages/perl/modules/DBI/1.612/Makefile,
+	packages/perl/modules/Data-Stag/0.11/Makefile,
+	packages/perl/modules/ExtUtils-CBuilder/0.2703/Makefile,
+	packages/perl/modules/ExtUtils-Install/1.54/Makefile,
+	packages/perl/modules/ExtUtils-ParseXS/2.2206/Makefile,
+	packages/perl/modules/Graph/0.94/Makefile,
+	packages/perl/modules/GraphViz/2.04/Makefile,
+	packages/perl/modules/HTML-Parser/3.66/Makefile,
+	packages/perl/modules/IO-String/1.08/Makefile,
+	packages/perl/modules/IO-stringy/2.110/Makefile,
+	packages/perl/modules/List-MoreUtils/0.22/Makefile,
+	packages/perl/modules/Math-Random/0.71/Makefile,
+	packages/perl/modules/Module-Build/0.2808/Makefile,
+	packages/perl/modules/Module-Build/0.3607/Makefile,
+	packages/perl/modules/PostScript/0.06/Makefile,
+	packages/perl/modules/SOAP-Lite/0.712/Makefile,
+	packages/perl/modules/SVG-Graph/0.02/Makefile,
+	packages/perl/modules/SVG/2.50/Makefile,
+	packages/perl/modules/Set-Scalar/1.25/Makefile,
+	packages/perl/modules/Software-License/0.101620/Makefile,
+	packages/perl/modules/Spreadsheet-ParseExcel/0.57/Makefile,
+	packages/perl/modules/Spreadsheet-WriteExcel/2.37/Makefile,
+	packages/perl/modules/Test-Harness/3.21/Makefile,
+	packages/perl/modules/URI/1.54/Makefile,
+	packages/perl/modules/XML-DOM-XPath/0.14/Makefile,
+	packages/perl/modules/XML-NamespaceSupport/1.11/Makefile,
+	packages/perl/modules/XML-Parser/2.36/Makefile,
+	packages/perl/modules/XML-SAX-Writer/0.53/Makefile,
+	packages/perl/modules/XML-SAX/0.96/Makefile,
+	packages/perl/modules/XML-Simple/2.18/Makefile,
+	packages/perl/modules/XML-Twig/3.35/Makefile,
+	packages/perl/modules/XML-Writer/0.611/Makefile,
+	packages/perl/modules/YAML-Tiny/1.43/Makefile,
+	packages/perl/modules/YAML/0.71/Makefile,
+	packages/perl/modules/libwww-perl/5.836/Makefile,
+	packages/perl/modules/libxml-enno/1.02/Makefile,
+	packages/perl/modules/libxml-perl/0.08/Makefile,
+	packages/perl/modules/modgen.sh, packages/psutils/Makefile,
+	packages/psutils/p17/Makefile,
+	packages/psutils/p17/patches/patch-aa,
+	packages/quantlib/1.0.1_boost_1_43_0/Makefile,
+	packages/quantlib/Makefile, packages/texinfo/4.13/Makefile,
+	packages/texinfo/Makefile, packages/zlib/1.2.5/Makefile,
+	packages/zlib/Makefile: cports 0.2
+
+2010-07-26  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* initial re-import of cports
+
