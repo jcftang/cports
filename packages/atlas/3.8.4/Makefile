@@ -110,15 +110,15 @@ do-build:
 
 do-test:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
-        echo "------- Running (some) LAPACK tests (DOTA LIBS) -------"; \
+	echo "------- Running (some) LAPACK tests (DOTA LIBS) -------"; \
 	mkdir $(WORKDIR)/lapack_test_results; \
 	mkdir $(WORKDIR)/lapack_test_results/dota; \
 	mkdir $(WORKDIR)/lapack_test_results/dotso; \
-        cd $(WORKDIR)/lapack-$(CPRT_NETLIB_LAPACK_VERSION); \
-       cat make.inc | sed -e "s@^BLASLIB[ \t]*=.*@BLASLIB = $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/libcblas.a $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/libf77blas.a $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/libatlas.a@" | sed -e "s@^LAPACKLIB[ \t]*=.*@LAPACKLIB=../ATLAS-build-$(SYSTEM_TYPE)/lib/liblapack.a@" > make.inc.tmp; \
-        rm make.inc; mv make.inc.tmp make.inc; \
-        cd TESTING; \
-        make 2>&1 | tee $(WORKDIR)/lapack_test_results/lapack_staticlib_test_output; \
+	cd $(WORKDIR)/lapack-$(CPRT_NETLIB_LAPACK_VERSION); \
+	cat make.inc | sed -e "s@^BLASLIB[ \t]*=.*@BLASLIB = $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/libcblas.a $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/libf77blas.a $(WORKDIR)/ATLAS-build-$(SYSTEM_TYPE)/lib/libatlas.a@" | sed -e "s@^LAPACKLIB[ \t]*=.*@LAPACKLIB=../ATLAS-build-$(SYSTEM_TYPE)/lib/liblapack.a@" > make.inc.tmp; \
+	rm make.inc; mv make.inc.tmp make.inc; \
+	cd TESTING; \
+	make 2>&1 | tee $(WORKDIR)/lapack_test_results/lapack_staticlib_test_output; \
 	cp *.out $(WORKDIR)/lapack_test_results/dota; \
 	cd ../; make clean;
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
