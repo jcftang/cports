@@ -20,7 +20,7 @@ DEPENDS += "mpc/0.8.2 --build-env --lib"
 DEPENDS += "libelf/0.8.13 --build-env --lib"
 DEPENDS += "polylib/5.22.5 --build-env --lib"
 DEPENDS += "cloog-ppl/0.15.9 --build-env --lib"
-DEPENDS += "ppl/0.11.2 --build-env --lib"
+DEPENDS += "ppl/0.10.2 --build-env --lib"
 
 CONFIGURE_ARGS += --enable-shared --enable-threads=posix --with-system-zlib
 CONFIGURE_ARGS += --enable-__cxa_atexit --disable-libunwind-exceptions
