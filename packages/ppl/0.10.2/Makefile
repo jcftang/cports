@@ -5,8 +5,8 @@ include ../../../mk/gnu.pre.mk
 DISTNAME=	ppl
 VERSION=	0.10.2
 CATEGORIES=	system
-HOMEPAGE=	http://www.cs.unipr.it/ppl/
-MASTER_SITES=	http://www.cs.unipr.it/ppl/Download/ftp/releases/$(VERSION)
+HOMEPAGE=	http://bugseng.com/products/ppl
+MASTER_SITES=	http://bugseng.com/products/ppl/download/ftp/releases/$(VERSION)
 MAINTAINER=	jtang@tchpc.tcd.ie
 GNU_CONFIGURE=	yes
 DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
