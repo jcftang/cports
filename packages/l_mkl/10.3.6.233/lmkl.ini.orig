@@ -1,0 +1,7 @@
+PSET_LICENSE_FILE=28518@lic.tchpc.tcd.ie
+ACTIVATION=license_server
+CONTINUE_WITH_INSTALLDIR_OVERWRITE=yes
+CONTINUE_WITH_OPTIONAL_ERROR=yes
+PSET_INSTALL_DIR=/mnt/bigdisk/home/darach/install_home/CPORTS/cports-1/rhel-6.x86_64/gnu/l_mkl/10.3.6.233/composer_xe_2011_sp1.6.233
+INSTALL_MODE=NONRPM
+ACCEPT_EULA=accept
