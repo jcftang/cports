@@ -17,7 +17,9 @@ CPRT_R_BLAS?=$(CPRT_BLAS)
 ## some R tests fail with acml 4-4-0
 ifeq ("$(CPRT_R_BLAS)","acml")
 $(info install with acml BLAS)
+$(error  the R reg-BLAS test fails for both acmls)
 DEPENDS+="acml-smp/4-4-0 --lib --build-env --run-env"
+#DEPENDS+="acml-smp/5-1-0 --lib --build-env --run-env"
 CONFIGURE_ARGS +=  --with-blas="-L$(PREFIX_acml-smp)/lib -lacml_mp"
 CONFIGURE_ARGS +=  --with-lapack="-L$(PREFIX_acml-smp)/lib -lacml_mp"
 endif

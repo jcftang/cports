@@ -1,0 +1,7 @@
+when compiling this with e.g., gnu 4.6.0 I found it necessary to put
+
+LDFLAGS="-L/mnt/bigdisk/home/darach/install_home/CPORTS/cports-1/rhel-6.x86_64/gnu/gcc/4.6.0/lib64"
+
+in order for the  configure  command to work (otherwise failed with libquadmath error)
+
+There is probably a much better (automated) way of doing this, but can't think of it right now
