@@ -78,6 +78,8 @@ X*) 	ac_error=1
 	exit 1
 	;;
 esac
+TLOG "using compiler suite $AC_COMPILER "  
+
 
 if [ -z "$AC_BLAS" ]; then
 	AC_COMPILER="atlas"
@@ -99,6 +101,7 @@ X*) 	ac_error=1
 	exit 1
 	;;
 esac
+TLOG "using BLAS $AC_BLAS" 
 
 # check that we have a C compiler"
 if ! AC_PROG_CC; then
