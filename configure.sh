@@ -3,7 +3,8 @@
 TARGET=cports
 
 ac_help='
---compiler		use gnu, open64 or intel toolchain (default is gnu)'
+--compiler		use gnu, open64 or intel toolchain (default is gnu)
+--blas			use atlas, mkl or acml (default is atlas)'
 
 LOCAL_AC_OPTIONS='
 case X"$1" in
@@ -15,11 +16,19 @@ X--compiler)
 	AC_COMPILER=$2
 	shift 2
 	;;
-*)	
+X--blas=*)
+        AC_BLAS=`echo "$1" | sed -e "s/^[^=]*=//"`
+        shift 1
+        ;;
+X--blas)
+        AC_BLAS=$2
+        shift 2
+        ;;
+*) 
 	ac_error=1
 	;;
 esac'
-
+ 
 . ./configure.inc
 . ./local.inc
 
@@ -70,6 +79,26 @@ X*) 	ac_error=1
 	;;
 esac
 
+if [ -z "$AC_BLAS" ]; then
+	AC_COMPILER="atlas"
+fi
+
+case X"$AC_BLAS" in
+Xatlas)	
+	AC_SUB BLAS atlas
+	;;
+Xmkl)
+	AC_SUB BLAS mkl
+	;;
+Xacml)
+	AC_SUB BLAS acml
+	;;
+
+X*) 	ac_error=1
+	LOG "not a valid BLAS, plese select atlas, mkl or acml (default is atlas)"
+	exit 1
+	;;
+esac
 
 # check that we have a C compiler"
 if ! AC_PROG_CC; then
