@@ -82,7 +82,7 @@ TLOG "using compiler suite $AC_COMPILER "
 
 
 if [ -z "$AC_BLAS" ]; then
-	AC_COMPILER="atlas"
+	AC_BLAS="atlas"
 fi
 
 case X"$AC_BLAS" in
