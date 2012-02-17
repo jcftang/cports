@@ -15,6 +15,7 @@ DEPENDS+="Python/2.6.5 --build-env Python/2.6.5 --run-env "
 DEPENDS+="bzip2/1.0.6 --build-env --lib "
 DEPENDS+="zlib/1.2.5 --build-env --lib "
 
+MODULELINES+=  "setenv BOOST_ROOT $(PROGRAM_PREFIX)"
 
 DESCRIPTION=	"Boost provides free peer-reviewed portable C++ source libraries."
 
