@@ -6,7 +6,7 @@ DISTNAME=       gcc
 VERSION=        4.6.1
 CATEGORIES=     system
 HOMEPAGE=       http://www.gnu.org/software/gcc/gcc.html
-MASTER_SITES=   ftp://ftp.gnu.org/pub/gnu/gcc/gcc-4.6.1
+MASTER_SITES=   ftp://ftp.gnu.org/pub/gnu/gcc/gcc-$(VERSION)
 MAINTAINER=     jtang@tchpc.tcd.ie
 GNU_CONFIGURE=  yes
 DISTFILES = $(DISTNAME)-$(VERSION).tar.bz2
@@ -38,7 +38,7 @@ CONFIGURE_ARGS += --disable-multilib
 ALL_TARGET= bootstrap
 
 
-DESCRIPTION=    "gcc 4.6.1 enviornment"
+DESCRIPTION=    "gcc $(VERSION) environment"
 
 include ../../../mk/gnu.post.mk
 

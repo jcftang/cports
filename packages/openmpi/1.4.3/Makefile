@@ -13,10 +13,8 @@ EXTRAVERSION=
 
 CONFIGURE_ARGS+= CFLAGS="-O2" CXXFLAGS="-O2" --with-threads
 
-ifeq ($(COMPILERS),intel10.1)
-CONFIGURE_ARGS+=--with-wrapper-cflags=-shared-intel
-CONFIGURE_ARGS+=--with-wrapper-cxxflags=-shared-intel
-endif
+CONFIGURE_ARGS+=$(if $(findstring intel,$(COMPILERS)),--with-wrapper-cflags=-shared-intel, )
+CONFIGURE_ARGS+=$(if $(findstring intel,$(COMPILERS)),--with-wrapper-cxxflags=-shared-intel, )
 
 ifdef ROMIO
 DEPENDS += "pvfs2/2.6.3 --build-env"
