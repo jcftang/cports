@@ -1,0 +1,71 @@
+Changes between cports-0.20120131..cports-0.20120131-26-g4b294a9
+
+Darach Golden (10):
+      continuing addition of l_mkl 10.3
+      changes to mkl part of R 2.14.0 Makefile
+      rlecuyer has gone up another version so download link broke
+      removing 0.3-1 version of rlecuyer -- our "module" system only uses
+      added 3.9.58, 3.9.63 atlas-unstable
+      use VERSION make variable in compiler makefile
+      added tmux 1.6
+      added BOOST_ROOT env to boost 1_44_0_openmpi_1.4.3
+      Merge branch 'develop' of ssh://marduk.tchpc.tcd.ie:29418/tools/cports into develop
+      changed the test for intel compiler (was only testing for intel10.1)
+
+Jimmy Tang (10):
+      tweak bump-version script to log correct message
+      alternate changelog generator, should really generate change logs after tagging
+      Bumped version number to cports-0.20120131
+      Generate a changelog on a bump version
+      Bumped version number to cports-0.20120131
+      update of mercurial
+      list more systems that are in test
+      update stressapptest
+      add a force push for the html branch
+      Bumped version number to cports-0.20120223
+
+Neil Brookes (6):
+      quantlib/1.1_boost_1_48_0, db/5.1.29, boost/1_48_0_openmpi_1.4.4
+      Added zlib 1.2.6
+      Samtools 0.1.8 depends on zlib1.2.6 now
+      Added TopHat 1.4.1
+      Added cufflinks 1.3.0
+      Updated all the 1.4.* and 1.5.* openMPI packages to recognise *all* intel compiler versions
+
+ ChangeLog                                    | 5304 ++++++++++++++++++++++++++
+ Makefile.in                                  |    2 +-
+ VERSION                                      |    2 +-
+ bump-version                                 |    6 +-
+ doc/tested_systems.mdwn                      |    3 +
+ packages/Python/2.7.2/Makefile               |    2 +-
+ packages/R/2.14.0/Makefile                   |    7 +-
+ packages/R/modules/rlecuyer/0.3-1/Makefile   |   10 -
+ packages/R/modules/rlecuyer/0.3-2/Makefile   |   10 +
+ packages/atlas-unstable/3.9.58/Makefile      |   74 +
+ packages/atlas-unstable/3.9.58/README        |   13 +
+ packages/atlas-unstable/3.9.63/Makefile      |   74 +
+ packages/atlas-unstable/3.9.63/README        |   13 +
+ packages/boost/1_44_0_openmpi_1.4.3/Makefile |    1 +
+ packages/boost/1_48_0_openmpi_1.4.4/Makefile |   38 +
+ packages/cufflinks/1.3.0/Makefile            |   26 +
+ packages/db/5.1.29/Makefile                  |   27 +
+ packages/gcc/4.6.1/Makefile                  |    4 +-
+ packages/l_mkl/10.3.6.233/Makefile           |   48 +-
+ packages/l_mkl/10.3.6.233/files/silent.ini   |    5 +-
+ packages/l_mkl/10.3.6.233/lmkl.ini.orig      |    7 +
+ packages/mercurial/2.1/Makefile              |   35 +
+ packages/openmpi/1.4.2/Makefile              |   12 +-
+ packages/openmpi/1.4.3/Makefile              |    6 +-
+ packages/openmpi/1.4.4/Makefile              |   23 +-
+ packages/openmpi/1.5.1/Makefile              |   11 +-
+ packages/openmpi/1.5.2/Makefile              |   11 +-
+ packages/openmpi/1.5.3/Makefile              |   11 +-
+ packages/openmpi/1.5/Makefile                |   11 +-
+ packages/quantlib/1.1_boost_1_48_0/Makefile  |   33 +
+ packages/samtools/0.1.8/Makefile             |    2 +-
+ packages/stressapptest/1.0.4/Makefile        |   25 +
+ packages/tmux/1.6/Makefile                   |   35 +
+ packages/tophat/1.4.1/Makefile               |   24 +
+ packages/zlib/1.2.6/Makefile                 |   25 +
+ scripts/gitlog2changelog.py                  |  124 +
+ 36 files changed, 5989 insertions(+), 75 deletions(-)

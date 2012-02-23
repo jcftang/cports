@@ -32,9 +32,10 @@ endif
 
 ifeq ("$(CPRT_R_BLAS)","mkl")
 $(info install with mkl BLAS)
-DEPENDS+="l_mkl_p/10.2.2.025 --lib --build-env"
-CONFIGURE_ARGS +=  --with-blas=$(PREFIX_l_mkl_p)
-CONFIGURE_ARGS +=  --with-lapack=$(PREFIX_l_mkl_p)
+#DEPENDS+="l_mkl_p/10.2.2.025 --lib --build-env"
+DEPENDS+="l_mkl/10.3.6.233 --lib --build-env --run-env"
+CONFIGURE_ARGS +=  LDFLAGS="-L$(PREFIX_l_mkl)/mkl/lib/intel64"  --with-blas="-L$(PREFIX_l_mkl)/mkl/lib/intel64 -lmkl_gf_lp64 -lmkl_sequential -lmkl_lapack95_lp64 -lmkl_core"
+CONFIGURE_ARGS +=  --with-lapack
 endif
 
 DEPENDS+="openmpi/1.4.3 --build-env openmpi/1.4.3 --run-env"

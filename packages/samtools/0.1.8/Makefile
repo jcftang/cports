@@ -10,7 +10,7 @@ MAINTAINER=	jtang@tchpc.tcd.ie
 HAS_CONFIGURE=	no
 DISTFILES = $(DISTNAME)-$(VERSION).tar.bz2
 
-DEPENDS=	"zlib/1.2.5 --lib --build-env"
+DEPENDS=	"zlib/1.2.6 --lib --build-env"
 DEPENDS+=	"ncurses/5.7 --lib --build-env"
 
 DESCRIPTION=	"SAM (Sequence Alignment/Map) is a flexible generic format for storing nucleotide sequence alignment. SAM tools provide efficient utilities on manipulating alignments in the SAM format."

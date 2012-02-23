@@ -1,3 +1,120 @@
+2012-02-23  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* ChangeLog, VERSION: Bumped version number to cports-0.20120223
+
+2012-02-23  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* Makefile.in: add a force push for the html branch
+
+2012-02-23  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/stressapptest/1.0.4/Makefile: update stressapptest
+
+2012-02-23  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* doc/tested_systems.mdwn: list more systems that are in test
+
+2012-02-23  Neil Brookes <neil@tchpc.tcd.ie>
+
+	* packages/openmpi/1.4.2/Makefile, packages/openmpi/1.4.3/Makefile,
+	packages/openmpi/1.5.1/Makefile, packages/openmpi/1.5.2/Makefile,
+	packages/openmpi/1.5.3/Makefile, packages/openmpi/1.5/Makefile: 
+	Updated all the 1.4.* and 1.5.* openMPI packages to recognise *all*
+	intel compiler versions
+
+2012-02-21  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/openmpi/1.4.4/Makefile: changed the test for intel
+	compiler (was only testing for intel10.1) romio was being disabled;
+	commented out code that did that Change-Id: If1b90e3bbcc01d81a3271782e14ee3d20dc380d3
+
+2012-02-19  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* packages/mercurial/2.1/Makefile: update of mercurial Change-Id: Ice7700a5d10608282693cae53afeecdf592398f0
+
+2012-02-17  Darach Golden <darach@tchpc.tcd.ie>
+
+	* : commit b3aae2c977da24a7a8af5377f11bee5384d52488 Author: Darach
+	Golden <darach@tchpc.tcd.ie> Date:   Fri Feb 17 11:57:38 2012 +0000
+
+2012-02-10  Neil Brookes <neil@tchpc.tcd.ie>
+
+	* packages/cufflinks/1.3.0/Makefile: Added cufflinks 1.3.0
+
+2012-02-10  Neil Brookes <neil@tchpc.tcd.ie>
+
+	* packages/tophat/1.4.1/Makefile: Added TopHat 1.4.1
+
+2012-02-10  Neil Brookes <neil@tchpc.tcd.ie>
+
+	* packages/samtools/0.1.8/Makefile: Samtools 0.1.8 depends on
+	zlib1.2.6 now
+
+2012-02-10  Neil Brookes <neil@tchpc.tcd.ie>
+
+	* packages/zlib/1.2.6/Makefile: Added zlib 1.2.6
+
+2012-02-08  Neil Brookes <neil@tchpc.tcd.ie>
+
+	* packages/Python/2.7.2/Makefile,
+	packages/boost/1_48_0_openmpi_1.4.4/Makefile,
+	packages/db/5.1.29/Makefile,
+	packages/quantlib/1.1_boost_1_48_0/Makefile: 
+	quantlib/1.1_boost_1_48_0, db/5.1.29, boost/1_48_0_openmpi_1.4.4
+
+2012-02-06  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/tmux/1.6/Makefile: added tmux 1.6 Change-Id: Iebff9dc1add1b4069c91ddb4dec3398e2992714c
+
+2012-02-06  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/gcc/4.6.1/Makefile: use VERSION make variable in compiler
+	makefile Change-Id: I9b30600a98e8a9070fe99a078e19f2e921da237b
+
+2012-02-05  Darach Golden <darach@lonsdale01.cluster>
+
+	* packages/atlas-unstable/3.9.58/Makefile,
+	packages/atlas-unstable/3.9.58/README,
+	packages/atlas-unstable/3.9.63/Makefile,
+	packages/atlas-unstable/3.9.63/README: added 3.9.58, 3.9.63
+	atlas-unstable atlas 3.9.58 compiles on certain arches (e.g., Quad-Core AMD Opteron(tm) Processor 2350)running sl5.4) Fails
+	on Core(TM)2 Duo CPU     E4500 atlas 3.9.63 fails in configure on both of above Change-Id: I0de0b47c7204da2e20bed271dfa11a4731ee7f00
+
+2012-02-02  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/R/modules/rlecuyer/0.3-1/Makefile: removing 0.3-1 version
+	of rlecuyer -- our "module" system only uses one (preferably latest)
+	version of each automatically installed R package Change-Id: I9ca3237728c93de38b1f67bce2af05c013e85e9f
+
+2012-02-01  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/R/modules/rlecuyer/0.3-2/Makefile: rlecuyer has gone up
+	another version so download link broke
+
+2012-02-01  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/R/2.14.0/Makefile: changes to mkl part of R 2.14.0
+	Makefile Change-Id: If269b8ebf52991126669dcabbfc1f15710e95b6b
+
+2012-02-01  Darach Golden <darach@tchpc.tcd.ie>
+
+	* packages/l_mkl/10.3.6.233/Makefile,
+	packages/l_mkl/10.3.6.233/files/silent.ini,
+	packages/l_mkl/10.3.6.233/lmkl.ini.orig: continuing addition of
+	l_mkl 10.3 Change-Id: Ib0a3302b4479187e1661ee9b15045b573c622c33
+
+2012-01-31  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* ChangeLog: Bumped version number to cports-0.20120131 Change-Id: I54c6b0e454973124b7aeec05155d3095610f6108
+
+2012-01-31  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* bump-version: Generate a changelog on a bump version Change-Id: I6ea6ae608af4d1631a346e9e5ff7da5b5c9f22cc
+
+2012-01-31  Jimmy Tang <jtang@tchpc.tcd.ie>
+
+	* ChangeLog: Bumped version number to cports-0.20120131 Change-Id: I614be24f4540f86ce9c8dd50d7a2a58b649ca4c5
+
 2012-01-31  Jimmy Tang <jtang@tchpc.tcd.ie>
 
 	* scripts/gitlog2changelog.py: alternate changelog generator, should
