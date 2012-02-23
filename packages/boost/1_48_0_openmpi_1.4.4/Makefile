@@ -1,21 +1,19 @@
 include ../../../mk/gnu.pre.mk
 
 DISTNAME=	boost
-VERSION=	1_44_0
+VERSION=	1_48_0
 CATEGORIES=	library
 HOMEPAGE=	http://www.boost.org/
-MASTER_SITES=	http://heanet.dl.sourceforge.net/project/boost/boost/1.44.0
+MASTER_SITES=	http://heanet.dl.sourceforge.net/project/boost/boost/$(strip $(shell echo $(VERSION) | sed -e 's/_/./g'))
 HAS_CONFIGURE = no
 DISTFILES = $(DISTNAME)_$(VERSION).tar.bz2
 
-EXTRAVERSION=_openmpi_1.4.3
+EXTRAVERSION=_openmpi_1.4.4
 
-DEPENDS+="openmpi/1.4.3 --build-env openmpi/1.4.3 --run-env"
-DEPENDS+="Python/2.6.5 --build-env Python/2.6.5 --run-env "
+DEPENDS+="openmpi/1.4.4 --build-env openmpi/1.4.4 --run-env"
+DEPENDS+="Python/2.7.2 --build-env Python/2.7.2 --run-env "
 DEPENDS+="bzip2/1.0.6 --build-env --lib "
 DEPENDS+="zlib/1.2.5 --build-env --lib "
-
-MODULELINES+=  "setenv BOOST_ROOT $(PROGRAM_PREFIX)"
 
 DESCRIPTION=	"Boost provides free peer-reviewed portable C++ source libraries."
 
