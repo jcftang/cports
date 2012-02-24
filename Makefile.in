@@ -73,7 +73,7 @@ export-docs: docs
 # push the pregenerated doc files to origin/man and origin/html
 push-docs: export-docs
 	#git push origin man html
-	git push origin html
+	git push origin +html:html
 
 # import pregenerated doc files from origin/man and origin/html, in case you
 # don't have ikiwiki but still want to be able to install the docs.

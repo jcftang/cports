@@ -16,4 +16,8 @@ git add VERSION
 ./scripts/git2cl > ChangeLog
 git add ChangeLog
 
+# very naive release notes, it just diffs against the last tag in the list to the current head
+./scripts/infolog.sh > RELEASE_NOTES
+git add RELEASE_NOTES
+
 git commit -m "Bumped version number to $(cat VERSION)"
