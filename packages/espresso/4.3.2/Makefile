@@ -11,20 +11,9 @@ GNU_CONFIGURE=  yes
 CPRT_ESPRESSO_BLAS?=$(CPRT_BLAS)
 
 vnum=$(shell num=$$(echo "$(1)" | sed -e 's/^[A-Za-z]\+\([0-9]\+\..*\)/\1/'); echo $$num)
-#vnumt=$(shell num=$$(echo "$(1)" | sed -e 's/^[A-Za-z]\+\([0-9]\+\..*\)/\1/' -e 's/\.//g'); echo $$num)
 vnumt=$(shell num=$$(echo "$(1)" | sed -e 's/^[A-Za-z]\+\([0-9]\+\)..*/\1/'); echo $$num)
-
-#WW=$(call vnum,"gnu4.6.21")
-#$(info vnum: $(WW))
-#
-#YY=$(call vnumt,"gnu4.6.21")
-#$(info vnumt: $(YY))
-#
-#vbigger=$(strip $(shell num=$$(echo "$(1)" | sed -e 's/^[A-Za-z]\+\([0-9]\+\..*\)/\1/' -e 's/\.//g'); if [ "$$num" -gt "$(2)" ]; then echo "Y"; else echo "N";fi))
 vbigger=$(strip $(shell if [ "$(1)" -ge "$(2)" ]; then echo "Y"; else echo "N";fi))
 
-#OO=$(call vbigger,"1231","110")
-#$(info OO: $(OO))
 
 # - If we are using the INTEL compilers try and figure out the version number (10,11,12).
 INTEL_MKL_INCLUDED_AFTER_VERSION:=12
@@ -56,34 +45,23 @@ $(info INTEL_COMPILER_VERSION : $(INTEL_COMPILER_VERSION))
 #$(info vb: $(strip $(call vbigger,$(INTEL_COMPILER_VERSION),"12")))
 ifeq ("$(strip $(call vbigger,$(INTEL_COMPILER_VERSION),$(INTEL_MKL_INCLUDED_AFTER_VERSION)))","Y")
 $(info NO MKL DEPENDS)
+MKL_LIB_DIR=$(MKLROOT)/lib/intel64
 else ifeq ("$(strip $(call vbigger,$(INTEL_COMPILER_VERSION),$(INTEL_MKL_INCLUDED_AFTER_VERSION)))","N")
 $(info DEPENDS ON STANDALONE MKL)
 DEPENDS+="l_mkl_p/10.2.2.025 --run-env --build-env --lib"
+MKL_LIB_DIR=$(MKLROOT)/lib/em64t
 endif
-MKL="-L$(MKLROOT)/lib/intel64 -lmkl_scalapack_lp64 -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lmkl_blacs_openmpi_lp64 -lpthread -lm"
+MKL="-L$(MKL_LIB_DIR) -lmkl_scalapack_lp64 -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lmkl_blacs_openmpi_lp64 -lpthread -lm"
 CONFIGURE_ARGS += BLAS_LIBS=$(MKL)
 CONFIGURE_ARGS += LAPACK_LIBS=$(MKL)
 CONFIGURE_ARGS += SCALAPACK_LIBS=$(MKL)
+MAKE_FLAGS += DFLAGS="-D__INTEL -D__FFTW3 -D__MPI -D__PARA -DEXX"
 endif
 
 $(info CONFIG : $(CONFIGURE_ARGS))
 
 # - Dependancies
 DEPENDS+=       "openmpi/1.4.4 --run-env --build-env"
-
-
-#ifeq ("n","p")
-#$(info np)
-#else ifeq ("n","s")
-#$(info nw)
-#else ifeq ("n","z")
-#$(info nn)
-#else
-#$(info ffs)
-#endif
-#$(info hello : $(call vbigger,$(COMPILERS),"1212"))
-
-
 
 clean:
 	echo cleaning
@@ -109,9 +87,6 @@ do-configure:
 	$(MODULE_ADD) $(BUILD_DEPENDS); \
 	cd $(WRKSRC); \
 	./configure --prefix=$(PROGRAM_PREFIX) $(CONFIGURE_ARGS);
-	$(SED) -e "s,FFTW,FFTW3," $(WORKDIR)/$(PKGSUBDIR)/make.sys > $(WORKDIR)/$(PKGSUBDIR)/make.sys.tmp;
-	$(CP) $(WORKDIR)/$(PKGSUBDIR)/make.sys.tmp $(WORKDIR)/$(PKGSUBDIR)/make.sys
-
 
 do-install:
 	$(INSTALL) -d $(PROGRAM_PREFIX)/bin
