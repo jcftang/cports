@@ -58,7 +58,7 @@ ifeq ("$(strip $(call vbigger,$(INTEL_COMPILER_VERSION),$(INTEL_MKL_INCLUDED_AFT
 $(info NO MKL DEPENDS)
 else ifeq ("$(strip $(call vbigger,$(INTEL_COMPILER_VERSION),$(INTEL_MKL_INCLUDED_AFTER_VERSION)))","N")
 $(info DEPENDS ON STANDALONE MKL)
-DEPENDS+=	"l_mkl/10.3.9.293-gnu --run-env --build-env --lib"
+DEPENDS+="l_mkl_p/10.2.2.025 --run-env --build-env --lib"
 endif
 MKL="-L$(MKLROOT)/lib/intel64 -lmkl_scalapack_lp64 -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lmkl_blacs_openmpi_lp64 -lpthread -lm"
 CONFIGURE_ARGS += BLAS_LIBS=$(MKL)
