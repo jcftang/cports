@@ -1,0 +1,20 @@
+diff -ru work/l_mkl_p_10.2.2.025/pset/check.awk work-patch/l_mkl_p_10.2.2.025/pset/check.awk
+--- work/l_mkl_p_10.2.2.025/pset/check.awk	2009-07-27 11:07:48.000000000 +0100
++++ work-patch/l_mkl_p_10.2.2.025/pset/check.awk	2012-03-21 12:56:42.000000000 +0000
+@@ -13,6 +13,7 @@
+     filepat = "^/[a-zA-Z0-9._/-]+$";
+     # we don't use --posix for compotibility reasons
+     snpat = "^[a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9]-[a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9]$" ;
++     lspat = "^[0-9]+@[a-zA-Z0-9._-]+$";
+ 
+     # it would not be very hard to read the data from a file rather than
+     # hardwire it as here.
+@@ -35,7 +36,7 @@
+     sections["silent"] = sections["silent"] ";";
+     sections["silent"] = sections["silent"] "PSET_SERIAL_NUMBER:^$:"snpat;
+     sections["silent"] = sections["silent"] ";";
+-    sections["silent"] = sections["silent"] "PSET_LICENSE_FILE:^$:"filepat;
++    sections["silent"] = sections["silent"] "PSET_LICENSE_FILE:^$:"filepat":"lspat;
+     sections["silent"] = sections["silent"] ";";
+     sections["silent"] = sections["silent"] "INSTALL_MODE:^RPM$:^NONRPM$";
+     sections["silent"] = sections["silent"] ";";

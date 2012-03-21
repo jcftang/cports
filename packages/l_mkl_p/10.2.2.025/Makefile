@@ -10,7 +10,11 @@ HAVE_SOFTWARE=	yes
 MAINTAINER=	jtang@tchpc.tcd.ie
 DISTFILES = 	$(DISTNAME)_$(VERSION).tar.gz
 
-LICENSEFILE=/home/support/licenses/intel/
+PATCH_STRIP= -p2
+
+#LICENSEFILE=/home/support/licenses/intel/
+LICENSEFILE=28518@lic.tchpc.tcd.ie
+ACTIVATION_METHOD=license_server
 
 CPRT_MKL_MAN_LANG=en_US
 
@@ -46,12 +50,23 @@ MODULEFILE_CMD_LIBPATH= \
 MODULEFILE_CMD_MANPATH+= \
 	 $(ECHO) "prepend-path MANPATH $(PROGRAM_PREFIX)/man/$(CPRT_MKL_MAN_LANG)";
 
+do-configure:
+	if [ -d $(HOME)/intel ]; then \
+            echo "Error: remove intel dir in home dir"; exit 1; fi; 
+	$(SED) -e "s,@license@,$(LICENSEFILE)," $(CURDIR)/files/silent.ini | \
+        $(SED) -e "s,@activation@,$(ACTIVATION_METHOD)," | \
+        $(SED) -e "s,@install_dir@,$(PROGRAM_PREFIX)," > $(WORKDIR)/silent.ini.tmp; 
+	mv $(WORKDIR)/silent.ini.tmp $(WORKDIR)/silent.ini;
+	${MKDIR} ${SRCDIR}/tmp;
+
 do-build:
-	${SED} -e "s|PSET_INSTALL_DIR=.*|PSET_INSTALL_DIR=${PROGRAM_PREFIX}|g" ${CURDIR}/files/silent.ini > ${SRCDIR}/silent.ini
-	${MKDIR} ${SRCDIR}/tmp
-	
+	@	
+
 do-install:
 	cd ${WRKSRC} ;\
-	./install.sh -t ${SRCDIR}/tmp -s silent.ini -l default
+	./install.sh --tmp-dir ${SRCDIR}/tmp --silent $(WORKDIR)/silent.ini  
+
+# not sure why -l default is in original version ??
+#	./install.sh -t ${SRCDIR}/tmp -s $(WORKDIR)/silent.ini -l default
 
 include ../../../mk/gnu.post.mk
