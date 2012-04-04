@@ -13,7 +13,7 @@ MAINTAINER=	jtang@tchpc.tcd.ie
 GNU_CONFIGURE=	yes
 DISTFILES = $(DISTNAME)_installer.tgz $(DISTNAME)-$(VERSION).tgz 
 
-EXTRAVERSION=_openmpi_1.4.3-$(CPRT_SCLPK_BLAS)
+EXTRAVERSION=_openmpi_1.4.5-$(CPRT_SCLPK_BLAS)
 
 ## this should be (so far): acml-nosmp, acml-smp, atlas; anything else will
 ## probably cause confusion
@@ -38,7 +38,7 @@ endif
 #ifeq ("$(CPRT_PETSC_BLAS)","mkl")
 #endif
 
-DEPENDS+="openmpi/1.4.3 --build-env --run-env"
+DEPENDS+="openmpi/1.4.5 --build-env --run-env"
 
 CPRT_SCLPK_CONFIG_ARGS+= --fcflags="-O3 -fPIC" --ccflags="-O3 -fPIC" \
                  --prefix=$(PROGRAM_PREFIX)
