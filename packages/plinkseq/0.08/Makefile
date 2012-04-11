@@ -1,10 +1,10 @@
 include ../../../mk/gnu.pre.mk
 
 DISTNAME=       plinkseq
-VERSION=        0.07
+VERSION=        0.08
 CATEGORIES=     utilities
 HOMEPAGE=	http://atgu.mgh.harvard.edu/plinkseq/
-MASTER_SITES=   http://atgu.mgh.harvard.edu/plinkseq/dist/archive
+MASTER_SITES=   http://atgu.mgh.harvard.edu/plinkseq/dist/version-0.08/
 MAINTAINER=     jtang@tchpc.tcd.ie
 HAS_CONFIGURE=  no
 DISTFILES = $(DISTNAME)-$(VERSION)-x86_64.tar.gz
