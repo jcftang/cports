@@ -15,6 +15,7 @@ DESCRIPTION=	"BamTools provides a fast, flexible C++ API & toolkit for reading, 
 
 #PKGSUBDIR=	BamTools-v$(VERSION)
 DEPENDS+=	"cmake/2.8.3 --lib --build-env --run-env"
+DEPENDS+=	"zlib/1.2.6 --lib --build-env --run-env"
 
 do-build:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
