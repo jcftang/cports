@@ -11,7 +11,7 @@ DISTFILES = $(DISTNAME)-$(VERSION)-src.zip
 
 PKGSUBDIR=$(DISTNAME)-$(VERSION)-src
 
-DEPENDS=	"atlas/3.8.3 --lib --build-env"
+DEPENDS=	"atlas/3.8.4 --lib --build-env"
 
 EXTRAVERSION=
 
