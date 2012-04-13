@@ -12,8 +12,8 @@ EXTRAVERSION=
 
 DESCRIPTION=	"Bowtie, an ultrafast, memory-efficient short read aligner for short DNA sequences (reads) from next-gen sequencers. Please cite: Langmead B, et al. Ultrafast and memory-efficient alignment of short DNA sequences to the human genome. Genome Biol 10:R25."
 
-DEPENDS+=	"samtools/0.1.8 --lib --build-env --run-env"
-DEPENDS+=	"zlib/1.2.5 --lib --build-env"
+DEPENDS+=	"samtools/0.1.18 --lib --build-env --run-env"
+DEPENDS+=	"zlib/1.2.6 --lib --build-env"
 
 do-build:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
