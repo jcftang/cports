@@ -16,7 +16,7 @@ DEPENDS+=	"samtools/0.1.18 --lib --build-env --run-env"
 DEPENDS+=	"zlib/1.2.6 --lib --build-env --run-env"
 DEPENDS+=	"bowtie/0.12.7 --lib --build-env --run-env"
 DEPENDS+=	"Python/2.7.2 --build-env --run-env --lib"
-DEPENDS+=	"boost/1_49_0_openmpi_1.4.4 --build-env --run-env --lib"
+DEPENDS+=	"boost/1_49_0_openmpi_1.4.5 --build-env --run-env --lib"
 DEPENDS+=	"bowtie2/2.0.0-beta5 --build-env --run-env --lib"
 
 CONFIGURE_ARGS += --with-bam=$(PREFIX_samtools)
