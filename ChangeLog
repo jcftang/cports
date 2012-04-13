@@ -46,3 +46,1048 @@ cports-0.20120413 / 2012-04-13
   * update cctools to get latest version of parrot and chirp for testing
   * Merge branch 'master' into develop
   * Merge branch 'release/cports-0.20120223' into develop
+
+cports-0.20120223 / 2012-02-23
+==============================
+
+  * Merge branch 'release/cports-0.20120223'
+  * Bumped version number to cports-0.20120223
+  * add a force push for the html branch
+  * update stressapptest
+  * list more systems that are in test
+  * Updated all the 1.4.* and 1.5.* openMPI packages to recognise *all* intel compiler versions
+  * changed the test for intel compiler (was only testing for intel10.1) romio was being disabled; commented out code that did that
+  * update of mercurial
+  * Merge branch 'develop' of ssh://marduk.tchpc.tcd.ie:29418/tools/cports into develop
+  * added BOOST_ROOT env to boost 1_44_0_openmpi_1.4.3
+  * Added cufflinks 1.3.0
+  * Added TopHat 1.4.1
+  * Samtools 0.1.8 depends on zlib1.2.6 now
+  * Added zlib 1.2.6
+  * quantlib/1.1_boost_1_48_0, db/5.1.29, boost/1_48_0_openmpi_1.4.4
+  * added tmux 1.6
+  * use VERSION make variable in compiler makefile
+  * added 3.9.58, 3.9.63 atlas-unstable atlas 3.9.58 compiles on certain arches (e.g., Quad-Core AMD Opteron(tm) Processor 2350)running sl5.4) Fails on Core(TM)2 Duo CPU     E4500
+  * removing 0.3-1 version of rlecuyer -- our "module" system only uses one (preferably latest) version of each automatically installed R package
+  * rlecuyer has gone up another version so download link broke
+  * changes to mkl part of R 2.14.0 Makefile
+  * continuing addition of l_mkl 10.3
+  * Bumped version number to cports-0.20120131
+  * Generate a changelog on a bump version
+  * Bumped version number to cports-0.20120131
+  * alternate changelog generator, should really generate change logs after tagging
+  * tweak bump-version script to log correct message
+  * Bumped version number to
+  * continue reversion of ppl 0.10.2 -> 0.11.2 change
+  * revert ppl 0.10.2 -> 0.11.2 due to configure breakage
+  * Merge branch 'master' of ssh://marduk.tchpc.tcd.ie:29418/tools/cports
+  * added CPRT_R_BLAS variable to R 2.14.0 this is because acml 4-4-0 fails some R tests
+  * added new mkl dir -- name has changed somewhat so it is more convenient to name it l_mkl instead of l_mkl_p
+  * Update mercurial to latest 2.x releases
+  * update R 2.14.0 with latest stable of atlas
+  * update to ppl-0.11.2
+  * Merge branch 'master' of ssh://marduk.tchpc.tcd.ie:29418/tools/cports
+  * updated Parma Polyhedral Library (ppl) download links
+  * snag latest version of git 1.7.9
+  * formatting and removal of trailing space causing make to fail
+  * fix tabbing in makefile which breaks silently on some machines
+  * updated R 2.14.0 to use acml (added options for more than one blas)
+  * Choice of blas set to CPRT_BLAS by default set options for acml blas in particular cleaned up makefile a little
+  * acml 4-4-0 makefile changed
+  * add all html files
+  * Merge commit 'refs/changes/91/191/1' of ssh://marduk.tchpc.tcd.ie:29418/tools/cports
+  * Merge commit 'refs/changes/34/134/1' of ssh://marduk.tchpc.tcd.ie:29418/tools/cports
+  * Merge "acml 5-1.0 added; smp/nosmp versions 64 bit int versions not tested at all"
+  * let zsync fail, maybe get rid of it
+  * Merge branch 'master' of ssh://marduk.tchpc.tcd.ie:29418/tools/cports
+  * automate parts of the versioning of tarballs that are generated
+  * check for .so libraries before running .so tests
+  * acml 5-1.0 added; smp/nosmp versions 64 bit int versions not tested at all
+  * Merge "check for .so libraries before running .so tests"
+  * note about it being broken on westmere
+  * check for .so libraries before running .so tests
+  * minor change to docs
+  * make html dir before importing docs
+  * added distdir target to configure for specifying common path to cports sources
+  * removed test for libatlas.so from atlas 3.8.4
+  * comment out checks for shared libraries in atlas 3.8.4 apart from check for libatlas.so
+  * making further attempt to fix checks for shared libraries in atlas 3.8.4 Makefile
+  *    copy tmglib to install directory
+  * added setuptools
+  * added do-test target which attempts to run the lapack tests in the netlib lapack TESTING dir
+  * initial attempt at scalapack 2.0.1  - need to check lapack -- is it  being picked up  properly?  - even if so, some lapack test functions not present (atlas build?)
+  * made R 2.12.2 depend on atlas 3.8.4
+  * added a dummy target for do-test in atlas 3.8.4 the test targets are run as part of the build
+  * 'b' in 23.3b messed things up in emacs compile; use PKGSUBDIR
+  * trying to get netpbm to work...
+  * switch R 2.14.0 to using atlas 3.8.4
+  * added variable to indicate which BLAS is being used; no usage of this variable as yet
+  * revert openmpi 1.4.4 dependency properly
+  * revert openmpi dependency for R 2.14.0 back to 1.4.3 1.4.4 was causing confusion with modules etc
+  * added corei patch from atlas errata to 3.8.4 (see: http://math-atlas.sourceforge.net/errata.html#i2i1)
+  * removed haplo_stats from cports R module list
+  * updated R modules to latest versions
+  * Atlas 3.8.4 (latest stable):  - patch added (adds -lgcc when gnu compilers are involved)  - Makefile changed
+  * Update tahoe-lafs to 1.9.1 which fixes a security problem.
+  * update download paths for pcre
+  * added python 2.4.4 for testing
+  * scalapack installer defaults to 2.0.0 now, mpiblacs is now apart of scalapack
+  * get netpbm to install pnmtops
+  * updated tahoe-lafs to 1.9.0
+  * cd into correct scalapack installer directory
+  * update to emacs 23.3b
+  * update download site to SF.net
+  * add trailing slash
+  * make http site the primary one
+  * fix up releases path for hdf5
+  * fix up depends variable for groff
+  * update octave download site
+  * update dependancy
+  * added netpbm as dependency of groff
+  * added mpfr 3.1.0
+  * changed download url for mpfr-3.0.0
+  * added libLBFGS: a library of Limited-memory Broyden-Fletcher-Goldfarb-Shanno (L-BFGS)
+  * configure changed to find tr (some) hard coded paths to tr removed
+  * Added google perftools 1.8.3
+  * added libunwind 1.0.1
+  * first attempt at orangefs for testing
+  * update zfec
+  * Added plinkseq 0.07
+  * Added Bfast+Bwa
+  * Added bfast 0.7.0a
+  * Added cairo as a depend  in R 2.14.0
+  * Added R 2.14.0
+  * LibPNG 1.5.6 added
+  * pcre 8.20 added
+  * Added ncurses 5.9
+  * Added latest stable openmpi (1.4.4)
+  * Added pvfs2 README file etc.
+  * Added pvfs2 2.8.1 and added db as dependency to all pvfs versions
+  * Added forgotten top-level timbl and dimbl Makefiles
+  * Added timbl and dimbl
+  * trying a makefile for CASAVA 1.8.1 - copied from 1.7.0
+  * a2ps changed to avoid downloading sheets.tar.gz from broken url
+  * Start of cross compiling options for bgp
+  * Added checks for SLES, tested only on pp64 - power5+ machine
+  * Slight docmentation change
+  * remove unsupported configure option
+  * Added BeautifulSoup for Python 2.7.2
+  * Added cutadpt 0.9.5 built for Python 2.7.2
+  * Fix the the HTSeq naming convention. Changed EXTRAVERSION variable
+  * HTseq 0.5.3 built with Python 2.7.2 and varion nose and numpy dependancies
+  * Added BioPython 1.58 built with Python 2.7.2
+  * Added Biopythion and the its option reportlab dependancy. Both for Python 2.7.2
+  * Added new nose and numpy, built with Python 2.7.2
+  * Added Python 2.7.2
+  * rename gd package to correct version
+  * Added gdis
+  * Added updated and patched version of gtkglext
+  * Fixed eigen package, users must redownload the source tarball
+  * Added gtkglext for gdis
+  * Updated samtools
+  * Added jemalloc as a comparison for google-perftools
+  * a small build system similar to make - ninja
+  * update xz
+  * remove the older versions of git
+  * no arch dirs
+  * added xrootd for testing
+  * enable mpi work queue for makeflow
+  * added cctools for chirp, parrot and makeflow taskfarming
+  * added FANN 2.1.0 beta
+  * added cports jdk as tau dependency
+  * initial addition of tau
+  * added 'gnu' build directory option to scalasca configuration
+  * extra modules added into scalasca makefile
+  * moved test for papi kernel into mk directory altered perfsuite and scalasca configs to test for papi kernel
+  * added JAVA variable (path to java) to makefile
+  * made some changes to perfsuite Makefile to allow configure to go through with cports jdk when gcj is installed
+  * new jdk added
+  * change db dependency for Python from 4.8.26 to 4.8.30
+  * initial addition of hpctoolkit only tried on x86_64 download (do-fetch) could be improved
+  * binutils 2.21 added
+  * initial addition of perfsuite, scalasca and associated packages glib now uses db 4.8.30
+  * uncomment DESCRIPTION variable for papi
+  * pdt was not installing correctly now installs better testing with scalasca needed
+  * added Program Database Toolkit (pdt)
+  * initial addition of perfsuite
+  *  added --enable-shared to be picked up  by bfd in binutils  purpose: allow libbfd to be dynamically opened
+  * tDOM tcl xml parser added
+  * change glib to use db 4.8.30
+  * debian pool site only seems to store recent versions of db oracle site seems to store some legacy versions _without_ sign-in. However some existing legacy cports db versions (e.g., 4.8.26 and 5.2.26) are not available for download from oracle site BUT e.g 4.8.30 _is_ available for download
+  * added db-5.1.25 Some other versions cannot be downloaded from main dl site
+  * papi 4.1.3 added
+  * Added google-test frameworkf or C++ (should work for C as well)
+  * google-perftools got released in the last few days, update to 1.8
+  * Added google-perftools, updated
+  * Added libgc - for memory checking and collecting
+  * Update installation example
+  * update gcc to latest 4.6.1
+  * update of tmux to 1.5
+  * Creating avogadro editor package
+  * Update git and mercurial
+  * Update of dar to 2.4.0, need to look at lzo2 support
+  * remove typo
+  * minor clean ups
+  * Breaking out documentation more
+  * Added contacts, copyright notices and started walkthrough
+  * Move to using ikiwiki for docs
+  * Update git to latest stable
+  * Added GNU recutils
+  * Added cufflinks 1.0.1
+  * Added latest stable version of bup
+  * Added conceptual 1.3 for prototyping benchmarks
+  * Update OLB to 1.9.0
+  * Update hwloc
+  * Added a bunch of dependancies for gnuplot for various output formats
+  * Added libgd to make gnuplot and friends more portable
+  * netpbm is needed for latest version of emacs
+  * Update documentation
+  * Added vancouvershortr package, this relies on svn working
+  * Added haplo.stats to R modules
+  * Update mercurial to 1.8.3
+  * Added jmol
+  * Initial add of gitflow
+  * fix makefile to include curl and update git to 1.7.5
+  * First attempt at bcrypt
+  * Update sector/sphere to 2.6 stable
+  * Added apache ant binaries
+  * Update nginx to 1.0.0
+  * Updated mercurial to 1.8.2
+  * Added PCC - Portable C Compiler
+  * Added alpha version of OpenBLAS
+  * Fix gotoblas2 build, now it works on cports devel
+  * original scotch dir now for non esmumps compile of scotch
+  * Amendment to the last commit 3ad04563a532be7cbb52ebbdd2eac73ad71dd647
+  * update scotch to openmpi 1.4.3 typo
+  * Update hwloc
+  * update darcs to 2.5.2
+  * quantlib 1.0.1 added compiled with boost 1_44_0
+  * boost 1_44_0: added version which uses openmpi 1.4.3 added boost 1_46_1
+  * module file contains choice of mkl library subdir based on SYSTEM_TYPE_CPU.  em64t is default
+  * Update slurm for devel purposes
+  * format output
+  * Merge commit 'refs/changes/72/72/1' of ssh://marduk.tchpc.tcd.ie:29418/tools/cports
+  * Merge "changes made to mkl install sets some extra variables in module file builds with petsc/smeagol"
+  * changes made to mkl install sets some extra variables in module file builds with petsc/smeagol
+  * Added gcc 4.6.0
+  * renaming (copying) scalapack libraries seemed to help linking
+  * petsc-basic now compiles with intell11/mkl
+  * scalapack makefile significantly altered; now compiles acml more testing needed as usual
+  * changes made to mkl install sets some extra variables in module file builds with petsc/smeagol
+  * Fix typo
+  * Merge changes Ia32398f5,I2d9ff2cb,I15c9c283,I38b1a3ad
+  * Merge changes Iaf470777,I6d2373e3
+  * depend on ParMetis/3.1.1_openmpi_1.4.3
+  * revert to dependence on openmpi 1.4.2 for 3.1.1
+  * make parmetis depend on mpi version/implementation using EXTRAVERSION variable
+  * petsc 3.1p8 added to petsc-basic package Makefile altered significantly changes _not_ ported to older 3.1p3 install
+  * fun with SELinux
+  * make parmetis depend on openmpi 1.4.3
+  * Enable threading for latest openmpi releases
+  * Start of MKL Package
+  * Merge "Get haskell-platform to pick the right ghc"
+  * Get haskell-platform to pick the right ghc
+  * Merge "Added modeller 9v8"
+  * Added modeller 9v8
+  * added emacs 23.3
+  * wget 1.12 added seems to be better at understanding css imports
+  * Testing out zsync
+  * Merge "added zsync for doing updates of files"
+  * added zsync for doing updates of files
+  * Update openmpi to 1.5.3
+  * Added dar for doing backups of home directories
+  * Merge branch 'master' of ssh://marduk.tchpc.tcd.ie:29418/tools/cports
+  * Update OpenMPI to 1.5.2
+  * Merge branch 'master' of ssh://marduk.tchpc.tcd.ie/cports
+  * Update OpenSSH with SSH-HPN patch
+  * R 2.12.2 added, now depends on pcre 8.12
+  * pcre updated -- two bugfix releases since 8.10
+  * Merge "Update OpenSSH with SSH-HPN patch"
+  * Update OpenSSH with SSH-HPN patch
+  * R 2.12.2 added, now depends on pcre 8.12
+  * pcre updated -- two bugfix releases since 8.10
+  * Wireshark and libpcap added
+  * nmap added
+  * Add -fPIC flag only way I know how -- some apps need liblua.a to be so compiled
+  * Merge "R 2.12.2 added, now depends on pcre 8.12"
+  * R 2.12.2 added, now depends on pcre 8.12
+  * Merge "pcre updated -- two bugfix releases since 8.10"
+  * Merge "Wireshark and libpcap added"
+  * Wireshark and libpcap added
+  * Merge "Add -fPIC flag only way I know how -- some apps need liblua.a to be so compiled"
+  * nmap added
+  * Add -fPIC flag only way I know how -- some apps need liblua.a to be so compiled
+  * pcre updated -- two bugfix releases since 8.10
+  * Added boost 1.42 and bclconverter
+  * Add dependancies and checks to python 2.5.5
+  * Merge "Renamed testlog to something a bit more sensible"
+  * Merge "Enabled testing on existing Python packages and updated stable builds"
+  * Merge "Don't need atlas for zfec, testing build on sgenomics.org"
+  * Merge "xz has gone stable with 5.0.1"
+  * Merge "Prefer git protocol over https, don't assume curl support exists"
+  * Merge "Update git to 1.7.4"
+  * Merge branch 'master' of ssh://marduk.tchpc.tcd.ie:29418/tools/cports
+  * Prefer git protocol over https, don't assume curl support exists
+  * Added 'git' version of bup, this will do a git clone before a build
+  * Update bup to v0.22, now has dumb server mode
+  * Merge "Added 'git' version of bup, this will do a git clone before a build"
+  * Merge "Update bup to v0.22, now has dumb server mode"
+  * xz has gone stable with 5.0.1
+  * Don't need atlas for zfec, testing build on sgenomics.org
+  * Enabled testing on existing Python packages and updated stable builds
+  * Added 'git' version of bup, this will do a git clone before a build
+  * Renamed testlog to something a bit more sensible
+  * Update git to 1.7.4
+  * Unpack the stable version of lapack for building ATLAS
+  * Update bup to v0.22, now has dumb server mode
+  * Added zfec for making sure data is safe
+  * Update tahoe-lafs to latest stable 1.8.2
+  * Update hwloc to latest stable
+  * Added libpcap
+  * added nifticlib for testing data from scanners
+  * stop using milli, move to either org-mode or a real issue tracker
+  * Merge branch 'master' of ssh://marduk.tchpc.tcd.ie/cports
+  * RDKit fails to build, due to cmake failing with latest gcc compiler
+  * Remove beta version of RDkit and update to a release version
+  * Remove beta version of RDkit and update to a release version
+  * update documentation and remove petsc from todo list
+  * added very some reconfig target to make life easier
+  * output fcflags and cxxflag to somewhere useful
+  * added CXX vars and fixed fflags to be fcflags
+  * get config.cmd to have the FC variables, should probably do this for CXX as well
+  * try and fix a shared lib problem with pgplot
+  * updated oases
+  * update velvet
+  * new templates file with example macro this is _not_ included in any part of cports as yet
+  * error checking added to gnu.local.mk
+  * addition to docs re compiler checks
+  * this may break other stuff but:
+  * the commenting and trailing slashes confuses make
+  * mroe formatting
+  * tweak template
+  * update notes on OSX
+  * Merge branch 'master' of ssh://marduk.tchpc.tcd.ie/cports
+  * need to get cleverer with detecting compilers in the configure script
+  * depend on gnuplot at run time
+  * added fastx_toolkit
+  * added cutadapt
+  * added cufflinks
+  * added tophat
+  * butcher the installs abit more so that the headers are in the right place for other apps
+  * SOme updates to dindel
+  * Force linking
+  * Changed STAMPY to depend on BWA rc1
+  * Added samtools and maq to dependancies of STAMPY
+  * Added BWA as runtime dependancy of STAMPY
+  * Added STAMPY
+  * Merge branch 'master' of ssh://marduk.tchpc.tcd.ie/cports
+  * change version number in 0.5-8 back  to 0.5-8 create _new_ dir for 0.5-9 like I should have done in the first place
+  * Merge branch 'master' of ssh://marduk.tchpc.tcd.ie/cports
+  * Added dindel
+  * added HTSeq, the module loads, need to figure out how to run the unit tests
+  * fix toplevel index mdwn file
+  * added blatSrc34, does not install devel headers and libs
+  * try and update the documentation
+  * Merge branch 'master' of ssh://marduk.tchpc.tcd.ie/cports
+  * minor tweaks
+  * ignore more tmp files
+  * ignore some files
+  * ignore some files
+  * Merge branch 'master' of ssh://marduk.tchpc.tcd.ie/cports
+  * shamelessly rip stuff from bup (for storing docs in another branch
+  * copy some stuff from bup makefiles, good examples for other usage
+  * shuffle documentation into its own directory and makefile
+  * added $(error ...) into compiler detection in gnu.local.mk
+  * don't just pull lapack HEAD; fix a version
+  * update description of config
+  * (maybe) compile R with threaded version of atlas
+  * change threading defaults in atlas Makefiles
+  * minor change to EXTRAVERSION in makefile
+  * initial attempt to setup a threading option for atlas
+  * readme files added to atlas dirs detailing threading options
+  * change acml R to run with new smp/nosmp module structure
+  * split acml into acml smp and acml without smp split atlas into stable (atlas) and unstable (atlas-unstable) fixed (?) minor glitch in module file output
+  * renamed CPRT_COMPILER_CLASS to CPRT_ATLAS_COMPILER_CLASS because of name clash the atlas Makefile should be improved
+  * gnu.local.mk edited to be more general
+  * Merge branch 'master' of ssh://marduk.tchpc.tcd.ie/cports
+  * added bowtie, install copies everything into target
+  * Update Perl dep in Imagemagick
+  * Merge branch 'master' of ssh://marduk.tchpc.tcd.ie/cports
+  * Added Perl 5.10.1 and changed some dependancies
+  * Merge branch 'master' of ssh://marduk.tchpc.tcd.ie/cports
+  * added breakdancer and fixed samtools to generate shared libraries
+  * Merge branch 'master' of ssh://marduk.tchpc.tcd.ie/cports
+  * Update
+  * Added OLB and dependancies
+  * generate dynamic libs for other programs
+  * add old version of samtools
+  * enable headers and libs
+  * put things in right categories
+  * add bedtools
+  * note about abyss
+  * added vcftools, needs more testing on this one, the install procedure doesn't work as one would expect
+  * update category
+  * added bfast
+  * added bamtools
+  * Merge branch 'master' of ssh://marduk.tchpc.tcd.ie/cports
+  * update abyss
+  * fix link line for plink
+  * use stable version of lapack
+  * added bwa 0.5.9rc1
+  * add older version of plink
+  * fix url for blast
+  * add darwin check, need to get stuff working on OSX
+  * update earlier R versions  to openmpi 1.4.3 done becuase have previously updated the modules to 1.4.3
+  * Note about CASAVA
+  * add CASAVA
+  * added gcc 4.5.2 as a COMPILERS option
+  * update bootstrap test, don't do 2.0 tests since it requires some things to be installed.
+  * acml install was broken for open64;  intel still needs testing
+  * remove  ; after REFERENCE_MARDKWON (sic) in PACKAGE_MARKDOWN
+  * this was causing a make failure do  we need  '\' after the last echo of e.g. PACKAGE_MARKDOWN?
+  * Merge branch 'master' of ssh://marduk.tchpc.tcd.ie/cports
+  * formatting of markdown output
+  * First attempt at cmake version of lapack, it currently generates shared and static libraries
+  * fix up current version of acml
+  * first attempt at R compiled with cports acml
+  * dodgy hack to make R pick up acml symbolic link of acml_root/gfortran64/lib to acml_root/lib same with include There must be a better way
+  * update Rmpi version (previous version failed to download) change dependency on openmpi 1.4.2 to 1.4.3
+  * initial commit of acml blas/lapack
+  * notes
+  * Merge branch 'master' of ssh://marduk.tchpc.tcd.ie/cports
+  * pointless commit of wvtest.sh
+  * added two new atlas directories - 3.9.32 (unstable) - 3.8.3_new: attempt to clean up atlas install makefile
+  * update gcc 4.5.2
+  * Merge branch 'master' of ssh://marduk.tchpc.tcd.ie/cports
+  * update bup to 0.21
+  * Added boost 1.41
+  * Added boost 1.41
+  * first attempt at pgplot
+  * update tmux
+  * update hwloc and openmpi to latest stable
+  * need qt for runtime
+  * added R 2.12.1 added MAINTAINER variable to Makefiles
+  * Merge branch 'master' of ssh://marduk.tchpc.tcd.ie/cports
+  * keepassx added (some glitches with libXtst)
+  * update ruby
+  * added a few more run time dependancies for haskell platform
+  * added zlib dependancies everywhere
+  * more dependancies for building x11 apps
+  * latest 1.2.x stable of libpng
+  * depend on zlib in python
+  * make everything depend on older stable version of libpng
+  * fix typo
+  * another dependancy
+  * close N:0024 [  open] libxaw needs groff
+  * cairo needs zlib to build a recommended feature
+  * close N:0025 and N:0026
+  * new issues from building on debian 5.x clean system
+  * Merge branch 'master' of ssh://marduk.tchpc.tcd.ie/cports
+  * make install component nicer
+  * added mpigraph for stress testing network, need to make the install component better
+  * change version of m4: 1.4.14 --> 1.4.15
+  * update tahoe
+  * typo in gitignore
+  * update fossil to get fast-import/export functionality
+  * fix gitignore
+  * don't just echo the chmods, really do them
+  * make sure things are executable
+  * remove makefile from repo, its not needed anymore as it is generated by the configure script
+  * Merge in t/configure.sh branch (flattened it all out).
+  * small change to R makefile
+  * gotoblas2 added (new bsd style license)
+  * no-op for mercurial build to not build documentation
+  * fails for now, due to docutils not being present -- need to fix this
+  * make sure scripts are executable
+  * docs update
+  * rename ghc-binary directory because haskell-platform doesnt expect the binary part
+  * need gmp at runtime just in case, probably don't need ncurses for now
+  * added haskell platform
+  * added darcs binary packages, could be a simple example with dealing with binary packages
+  * added the new perl modules to perl package itself
+  * added a few new dependancies for perl, need to test the build more rigoursly in a clean environment
+  * DONT_CREATE_METAINFO for markdown output
+  * added nasm
+  * dump out similar module information for the markdown output
+  * really generate markdown output as packages are installed
+  * added nginx for serving out mirrors etc... lighttpd might be better?
+  * added another atomic library for doing locking
+  * added atomic package
+  * added python path to conceptual package
+  * fix up dependancies so all of conceptual now builds
+  * update conceptual package
+  * updated discount
+  * Merge branch 'master' of ssh://marduk.tchpc.tcd.ie/cports
+  * do more cleaning
+  * close of ticket that wasnt really an issue
+  * note about nmag
+  * remove old files
+  * move tests around so we have an order/level
+  * test the bootstrap
+  * increased the alarm time, test builds of some of the packages take a while
+  * spew out useful messages
+  * do a test build of hello package
+  * break up the tests so we can have some more control over what we add later on.
+  * updated the simple tests
+  * make the tests a bit more sensible in terms of layout
+  * small set of tests for clusters, should probably do more testing
+  * fix typo
+  * update bup to 0.20
+  * simple tahoe-lafs build, the upstream install target is currently borked but at least it pulls in dependancies automatically
+  * work around a build bug in qtoctave not setting the correct share locations for icons
+  * first attempt to add qtoctave, it compiles, but have not tested if it runs or not
+  * fixup directory that doesn't get generated
+  * change dependancys of markdown target
+  * exclude markdown.mk
+  * added sample ikiwiki setup file to convert markdown output to a tree of html files, taken from ikiwiki docwiki.setup
+  * basic markdown output is working, its geared towards using ikiwiki to process the information
+  * note about packages to install
+  * depend on older png
+  * Merge branch 'master' of ssh://sgenomics.org/jtang/code/cports
+  * update fossil
+  * ignore the generated html files
+  * clean the docs
+  * added simple conversion system for org to html
+  * update docs
+  * update fossil
+  * Merge branch 'next' of ssh://sgenomics.org/jtang/code/cports into next
+  * disable multi-lib for gcc 4.4.5
+  * added latest stable of gcc 4.4
+  * build everything, but still has linking problems with gettext on debian
+  * start new table of information in docs
+  * note about open64
+  * depend on libiconv
+  * allow possibility of building 32bit build of compiler
+  * updated git to latest stable
+  * formatted description
+  * updated mercurial
+  * updated monotone to latest stable?
+  * initial add of thttpd
+  * added discount for parsing markdown files, and started adding the annotations package
+  * note about open64
+  * update with new release of gluster
+  * moved changes to boost 1_43 to 1_44
+  * added zlib to dependencies
+  * added CPRT_PETSC_BLAS...  to  makefile command generator
+  * added bzip2 as dependency of boost 1_43
+  * ported changes to petsc-directsolve makefile
+  * add bzip2 1.0.6
+  * notes
+  * Merge branch 'next' of ssh://sgenomics.org/jtang/code/cports into next
+  * Merge branch 'next' of ssh://marduk.tchpc.tcd.ie/cports into next
+  * R 2.12.0 added
+  * correct group
+  * added latest version of swig for generating wrappers
+  * Merge branch 'next' of ssh://sgenomics.org/jtang/code/cports into next
+  * some documentation for installing modules in the default way added m4 1.4.15 in because on ubuntu 10.10 had some problems with m4 1.4.14
+  * Merge branch 'next' of ssh://marduk.tchpc.tcd.ie/cports into next
+  * added new variable to the now almost completely impenetrable petsc-basic CPRT_PETSC_BLAS set to atlas by default (adds atlas module to DEPENDS) currently checks for mkl and adds dummy "module" to DEPENDS also WORKDIRSUFFIX now has blas variable added to it and EXTRAVERSION has $(CPRT_PETSC_BLAS) added to it
+  * fix up documenation
+  * updated aria2
+  * module help generator:
+  * Merge branch 'next' of ssh://marduk.tchpc.tcd.ie/cports into next
+  * added openmpi 1.5
+  * tcl doesn't like square brackets in Module Help (even when they are quoted -- aparently it attempts to interpret the contents between square brackets as tcl) So changed the quotes in the line that includes CONFIGURE_SCRIPT to have braces ({,}) instead of double quotes
+  * Changed MODULEFILE_CMD_HELP in gnu.post.mk to include information its configure args if either GNU_CONFIGURE or HAS_CONFIGURE exist
+  * new release of openmpi
+  * Merge branch 'next' of ssh://sgenomics.org/jtang/code/cports into next
+  * first attempt at adding sector/sphere, the install part blows away old installs, since there is no real install target.
+  * Merge branch 'next' of ssh://marduk.tchpc.tcd.ie/cports into next
+  * intel compile seems to have failed because PETSC_ARCH not set have changed the location and syntax of the makefile if statement that figures this out
+  * checksumming program
+  * Merge branch 'next' of ssh://marduk.tchpc.tcd.ie/cports into next
+  * changed workdir suffix to include compiler name
+  * added gmime and xapian so that I could add mu (mailder fulltext searcher) obviously, mu added too
+  * new do-configure for petsc
+  * undo some changes
+  * changes to get intel compiler to configure petsc
+  * get intel compilers to do -shared-intel in openmpi
+  * merge some depend lines
+  * added intel 10.1 target, this is just a copy and paste of the 11.0 one for atlas
+  * Merge branch 'next' of ssh://sgenomics.org/jtang/code/cports into next
+  * QT linked apps need QT in the run time environment
+  * revert to older libpng
+  * update documentation
+  * make paraview 3.8.1-rc1 the same as 3.6.2 in terms of behaviour
+  * set the right ld library paths
+  * older version of openssl for qt 4.3.x
+  * Merge branch 'next' of ssh://marduk.tchpc.tcd.ie/cports into next
+  * paraview 3.6.2 now works with recommended QT libs
+  * note about distro.guess
+  * echo an unknown distro name if distro isn't detected
+  * qt4.3.5 wants and older version of openssl
+  * depend on older version of libpng
+  * renamed the qt4 directory correctly
+  * Merge branch 'next' of ssh://marduk.tchpc.tcd.ie/cports into next
+  * added qt 4.3.5 for older stable version of paraview and depend on glib for 4.7.0
+  * fix up paraview to depend on supported versions of QT
+  * added qt4.6.3
+  * first attempt at building qt4
+  * start of vtk build
+  * start of paraview, need to build qt4 first before this works
+  * Build shared python libs instead of static ones
+  * added xz support to gtar to get better compression ratios, the physics people are generating lots of data
+  * Merge branch 'next' of ssh://sgenomics.org/jtang/code/cports into next
+  * fix typo
+  * started notes on applications that require newer or different compilers
+  * note about rdkit
+  * Added / Fixed the RWeka module  for R
+  * Added RWeka and RWekajors to the R modules
+  * Added rJava to the R modules
+  * added xz utils
+  * Merge branch 'next' of ssh://sgenomics.org/jtang/code/cports into next
+  * note about rdkit
+  * added a install target
+  * added rdkit as proposed by niall
+  * added cmake
+  * remove old version of fftw
+  * note about NAMD
+  * some bug reports closed others edited
+  * new bug report on bootstrap 2.0
+  * do-blah target shows $(if...) conditional that might be worth using for all the compiler conditionals in atlas 3.8.3
+  * note on https proxy
+  * added patch for gcc43
+  * added udtgate for wrapping tcp traffic over udp
+  * add autotool'd version of udt
+  * added udt library
+  * notes about systems tested on
+  * added a new test system
+  * fix bootstrap cleaning
+  * depend on cports m4, older distros break without the newer version
+  * Merge branch 'next' of ssh://marduk.tchpc.tcd.ie/cports into next
+  * rename scotch 5.1.9 to 5.1.9_esmumps to match module name renamed SuperLU_DIST to lower case counterpart (hopefully)
+  * added maqview
+  * need tk to run gitk
+  * added maqview
+  * update documentation with some more notes
+  * need tk to run gitk
+  * added netpbm for processing images
+  * added different versions of libpng and the older stable version for testing
+  * we don't need tetex.  it's texlive these days
+  * make clean for ncurses
+  * too much, too fast; leave it the way it was
+  * lapack.tgz downloads to sources dir -- not every time make is run also contents of lapackconfig.sh moved to makefile _for gnu target only_ if it works can move it to the others
+  * tests don't seem to be running -- this may fix it
+  * make ftp://ftp.heanet.ie/mirrors/ftp.gnu.org/gnu/ the first gnu master site instead of ftp://ftp.stacken.kth.se/pub/gnu/
+  * added conflicts to module files using MODULEFILE_CONFLICTS and INSERT_MODULEFILE_CONFLICTS;  allows individual packages to exclude themselves
+  * gnu.def.mk: exit when there is no module support
+  * blow up when cports thinks there is no module support
+  * should really check that it works...
+  * renamed SuperLU_DIST to just superlu_dist and let PKGFILENAME and PKGSUBDIR take care of things
+  * removed original mumps dir
+  * in no particular order:
+  * fixup download link, silly github has all sorts of redirects
+  * remove redundant patch
+  * tweaked par2 build and tested automake 1.8
+  * added patches from debian to make par2 work with gcc 4.x
+  * added par2 for bup
+  * update bup - now has restore features
+  * fix typo
+  * resolve some local changes
+  * unfucking change local fucking system changes aaaaaaaaaaaah
+  * fix up suitesparse, its missing a header file
+  *  local system changes
+  * mixup between old install commands and new ones -- UFconfig.h looks to have been missing. Added explicit install  lines for ufconfig headers might compile now...
+  * Merge branch 'master' into next
+  * note about abyss, needs gcc4.4 or newer
+  * fix up open64 build process
+  * fix up some dependancies for openssh
+  * open64 needs flex and bison
+  * note about abyss, needs gcc4.4 or newer
+  * fix up open64 build process
+  * fix up some dependancies for openssh
+  * open64 needs flex and bison
+  * fix up monotone dependancies
+  * fix up bzip2 library and dependancy
+  * depend on texinfo for octave for document generation
+  * make cleaning of testlog silent
+  * fix up monotone dependancies
+  * fix up bzip2 library and dependancy
+  * depend on texinfo for octave for document generation
+  * make cleaning of testlog silent
+  * depend more on cports packages for R
+  * fix up header files
+  * fix up junk entries
+  * add readline dependancy
+  * reorder the way the shell script outputs commands
+  * depend more on cports packages for R
+  * fix up header files
+  * fix up junk entries
+  * add readline dependancy
+  * reorder the way the shell script outputs commands
+  * Merge branch 'next'
+  * fix up octave dependancies
+  * fix up grace
+  * notes about x11 programs
+  * remove older version of fossil
+  * make sure dependancies are used
+  * just have one version of fossil
+  * fix up pango/cairo problem again
+  * do the same thing as gcc 4.5.1
+  * note about dropping some packages
+  * disable multilib
+  * depend on zlib correctly
+  * depend on gmp otherwise mpfr wont build
+  * note about xlib
+  * fix up includes for ncurses and tmux
+  * fix up libs for texinfo
+  * added ncurses to bootstrap
+  * minor variation on do-test for petsc
+  * added -fPIC to CFLAGS for SuperLU_DIST
+  * SuperLU_DIST added and compiled with petsc SuperLU_DIST tests seem to run
+  * mumps and petsc updated to (maybe) compile with scotch petsc real debug c compiles and runs tests (none of which involve either mumps or scotch)
+  * Merge branch 'next' of ssh://marduk.tchpc.tcd.ie/cports into next
+  * turn on testing for octave
+  * some tidying up in do-install target -- hopefully have not broken anything
+  * clean up scalapack makefile
+  * scotch, mumps tentatively added and linked to petsc scalapack also linked to petsc
+  * Merge branch 'next' of ssh://marduk.tchpc.tcd.ie/cports into next
+  * added iogen for testing/stressing an io system
+  * added another mastersite for psutils
+  * milli note
+  * DO_RUN_TESTS set to yes in case of Python 2.6.5
+  * various make files modified to accomodate automatic do-test target.  Testing still needed here
+  * added another mastersite for psutils
+  * cleanup
+  * added scotch 5.1.10 (esmumps version) compiles not tested beyond that
+  * milli note
+  * DO_RUN_TESTS set to yes in case of Python 2.6.5
+  * Merge branch 'next' of ssh://marduk.tchpc.tcd.ie/cports into next
+  * gah, this keeps getting changed
+  * gah, this keeps getting changed
+  * various make files modified to accomodate automatic do-test target.  Testing still needed here
+  * Merge branch 'master' of ssh://marduk.tchpc.tcd.ie/cports
+  * added boost specific test target -- noop because I don't know how/if boosts has tests
+  * depend on gnuplot
+  * resolve some local changes
+  * possible test target added; doesn't run by default; runs make check when DO_RUN_TESTS set to yes may be badly broken...
+  * unfucking change local fucking system changes aaaaaaaaaaaah
+  * revert change
+  * fix up suitesparse, its missing a header file
+  *  local system changes
+  * mixup between old install commands and new ones -- UFconfig.h looks to have been missing. Added explicit install  lines for ufconfig headers might compile now...
+  * Remove files
+  * Added ABySS and fixed the google-sparsehash to just sparsehash
+  * make sure -fPIC is used
+  * added boost specific test target -- noop because I don't know how/if boosts has tests
+  * Merge branch 'next' of ssh://marduk.tchpc.tcd.ie/cports into next
+  * Merge branch 'next' of ssh://sgenomics.org/jtang/code/cports into next
+  * added openssl to boostrap 2.0
+  * depend on gnuplot
+  * Revert " local system changes"
+  * possible test target added; doesn't run by default; runs make check when DO_RUN_TESTS set to yes may be badly broken...
+  * unfucking change local fucking system changes aaaaaaaaaaaah
+  * Merge branch 'next' of ssh://marduk.tchpc.tcd.ie/cports into next
+  * revert change
+  * fix up suitesparse, its missing a header file
+  *  local system changes
+  * Merge branch 'next' of ssh://marduk.tchpc.tcd.ie/cports into next
+  * mixup between old install commands and new ones -- UFconfig.h looks to have been missing. Added explicit install  lines for ufconfig headers might compile now...
+  * Remove files
+  * Added ABySS and fixed the google-sparsehash to just sparsehash
+  * make sure -fPIC is used
+  * added openssl to boostrap 2.0
+  * allow for more args for things like COMPILER=
+  * added this to work with octave -- but some symbols are not being found; leaving it for the moment
+  * initial compile of SuiteSparse initial compile of octave based on suitesparse
+  * Added google-sparseharsh
+  * get fftw3 to generate the different precisions
+  * added ssh hpn patch
+  * added ssh hpn patch
+  * added bzip2 to get libbz2
+  * fix up bootstrap and autoconf dependancy in macros
+  * add some cleaning
+  * add readme
+  * create second stage bootstrap
+  * libtool is a bootstrap dependancy
+  * added bootstrap
+  * Merge branch 'master' into next
+  * Merge branch 'next'
+  * fixup notes
+  * added hdf5, needed for hpc europa 2 project on irods
+  * added the correct szip library for hdf5
+  * ahem, gettext 0.18.1.1 itself
+  * changed gettext-0.17 to gettext-0.18.1.1
+  * added proper description, this port is currently broken as it needs docbook-xsl
+  * xmlto requires docbook-xsl installed on host
+  * added helper utility
+  * testing xmlto - needs internet access to build
+  * added asciidoc to generate docs from git and bup
+  * added libint
+  * stub for libint - for quantum chemistry and physics codes
+  * added gnu 4.5.0 and 4.5.1 variants as needed for building cp2k
+  * added google streetestapp, this needs gcc 4.5.1 to build
+  * add gluster, so there is a choice over pvfs2
+  * update slurm package
+  * Added GSL 1.14
+  * Added GSL
+  * Merge branch 'next' of ssh://sgenomics.org/jtang/code/cports into next
+  * Merge branch 'next'
+  * Merge branch 'next' of ssh://marduk.tchpc.tcd.ie/cports into next
+  * disable the experimental option
+  * update to latest current version of fossil
+  * disable the experimental option
+  * update to latest current version of fossil
+  * Merge branch 'next' of ssh://sgenomics.org/jtang/code/cports into next
+  * no deps on bootstrap
+  * check for debian_version, justuse the major number
+  * no deps on bootstrap
+  * Merge branch 'next' of gitolite:jtang/code/cports into next
+  * check for debian_version, justuse the major number
+  *  note about boostrap
+  * add dep on newer version of autoconf
+  * Fixed R dependency
+  * default to gnu compilers for atlas and scalapack if the COMPILERS variable isnt defined on the commandline, strange things will happen.
+  * added tmux, should at dtach as well as a useful systems utility
+  * chnage logic of html generation abit
+  * set current version of aria2
+  * more testing with generating and index of html files
+  * escape some html
+  * start of doing html output for packages
+  * Merge branch 'next'
+  * Added expat and other mira depends
+  * Added google-perftools (MIRA optional dependency)wq
+  * Added MIRA
+  * fixup build to use optimised libraries
+  * fix compiler tag for intel 10 compiler
+  * add intel 10 compiler tag
+  * fix formatting
+  * update makefile for intel compiler
+  * fix scalapack dependancy
+  * fix fPIC issues
+  * first attempt at getting intel compilers to build atlas
+  * added intel 11.0 compiler tag
+  * Added szip as irods hdf plugin seems to need this
+  * added python 2.5.5 for compatibility
+  * fix scalapack dependancy
+  * fix fPIC issues
+  * first attempt at getting intel compilers to build atlas
+  * added intel 11.0 compiler tag
+  * Added szip as irods hdf plugin seems to need this
+  * added python 2.5.5 for compatibility
+  * added oases plugin for velvet, this should ideally have been configured with the same settings as velvet
+  * PHONY target for changelog
+  * fix up grace paths
+  * updated bwa
+  * depend on samtools at runtime
+  * added samtools
+  * added bwa aligner
+  * Added maq - Mapping and Assembly with Qualities
+  * added velvet assembler
+  * set older version of openmotif to be stable
+  * added some runtime dependancies for wgs, would need to fix some of this as it needs testing
+  * added Statistics-Descriptive perl module for wgs
+  * added AMOS
+  * added lucy, needed for wgs
+  * fix up description
+  * added wgs assembler, also known as the celera assembler
+  * added grace, so we're not too dependant on the system providing it
+  * added openmotif, 2.3.3 is buggy and doesnt always compile
+  * add xbitmaps to satisfy openmotif
+  * fix up homepage for lesstif
+  * prefer openssl over gnutls
+  * redirect output
+  * remove the old changelog
+  * Added git2cl to get changelogs
+  * updated aria2
+  * added holder makefile
+  * testing out bup for doing incremental backups
+  * update openssh
+  * update fossil
+  * update mpiblast
+  * added a motif library, could do with depending more on internal packages
+  * initial add of plink
+  * fix up aria to depend on openssl
+  * better way of configuring and building blast
+  * update git - testing out dependancies and seeing how things might break
+  * note about list of packages to try and install
+  * fix up makefile
+  * initial add of emboss
+  * fixup build to look for configure and makefiles in the right place
+  * list of biopackages to add
+  * renamed directory
+  * initial of blast+
+  * set some dflags
+  * some multili problem on rhel 32bit based machines
+  * added monotone, needed to build a few more apps before this worked
+  * add libidn
+  * added lua
+  * add pcre libs
+  * added botan crypto library
+  * add older version of espresso for testing
+  * added quantum espresso, it currently doesn't install documentation for the us, just the binaries for production runs
+  * added gcc 4.5.1 COMPILER tag
+  * fix up make package
+  * update make
+  * make 9base work!
+  * initial add of 9base
+  * fixup the dist file creation
+  * checksum releases
+  * update slurm
+  * log issue with python
+  * update bison
+  * fix typo
+  * Merge branch 'next' of ssh://marduk.tchpc.tcd.ie/cports into next
+  * update gcc and autoconf
+  * boost 1.44 Seems to compile Not well checked Install process was pretty good: o didn't need to go to website o just cp -r on existing cports boost dir o change 1_43 to 1_44 in Makefile o make install o wow (unless the install is, in fact, broken)
+  * added mercurial
+  * place holder for par4all, it doesn't build correctly for now, its missing some deps
+  * added fossil-scm, was testing trunk version of sqlite, and ended up installing this.
+  * added the rest of the needed deps to compile emacs with gtk
+  * fixup gtk build, some dependancies weren't included causing it to fail on lonsdale
+  * Merge branch 'next' of ssh://marduk.tchpc.tcd.ie/cports into next
+  * try and automate the dependancies a bit
+  * Added flail and all its dependancies
+  * use gtk for emacs compilation may or may not be a good idea
+  * INFOPATH for emacs
+  * added some more support for c++ petsc version
+  * made fontconfig dependency explicit for emacs
+  * removed gcc dependency (for some reason it was pulling gcc 4.5 for me)
+  * added texinfo dependency
+  * Merge remote branch 'origin/next' into next
+  * added dep on texinfo
+  * removed space after backslash in do-install-info target which may have been messing up shell command
+  * Merge remote branch 'origin/next' into next
+  * use system perl?
+  * tentative commit of bootstrapping changes -- not sure how much difference these make -- may undo
+  * make fontconfig a dependency of cairo
+  * not sure about these --lib things, but put them back anyway
+  * make fontconfig a dependency of cairo.
+  * note about pango and cairo in relation to gtk
+  * pango wont build with cairo so gtk fails
+  * use --libs, is it necessary?
+  * fix up petsc build file with --lib
+  * fix up versioning and --libs for guile and glib
+  * fix up cyrus-sasl to use --libs
+  * note about libs
+  * use --libs for openldap
+  * use --libs for R
+  * use --libs for slurm
+  * use --libs for mpich2, gt5 sqlite and aria2
+  * link tcl and tk with libs
+  * Merge branch 'next' of ssh://marduk.tchpc.tcd.ie/cports into next
+  * Revert "fix up dependancies"
+  * Merge branch 'next' of ssh://marduk.tchpc.tcd.ie/cports into next
+  * fix up dependancies
+  * remove perl dep for now
+  * rpaths and the such for git
+  * desciption of pango
+  * added git and just enough dependancies for it to be useful
+  * added ruby
+  * added git patch management tool
+  * Merge branch 'next' of ssh://marduk.tchpc.tcd.ie/cports into next
+  * added gtk+ and (some) dependencies added gnutls and some dependencies
+  * make snow module depend on Rmpi
+  * note about testing on more systems
+  * Merge branch 'next' of ssh://marduk.tchpc.tcd.ie/cports into next
+  * stick in some contact details
+  * note about slurm and munge
+  * added some dependancys, should provide openssl as we haven't added munged yet
+  * add slurm resource manager for testing purposes
+  * log issue with petsc
+  * fix whitespace
+  * updated notes
+  * Merge branch 'next' of ssh://marduk.tchpc.tcd.ie/cports into next
+  * add rlecuyer
+  * migrated all the bugs and issues to milli
+  * log some more issues
+  * testing milli for tracking issues
+  * add snowfall to R 2.11
+  * couldn't resist it: snowfall added loads as library no idea how to run it
+  * added dcvs bug tracker, would this be better than using orgmode for tracking issues/bugs
+  * fix up snow, spaces issue in makefile causing problems
+  * Merge branch 'next' of ssh://marduk.tchpc.tcd.ie/cports into next
+  * added snow into R_MODULES
+  * added snow
+  * fix up version for test package
+  * more notes on readme
+  * Merge branch 'next' of ssh://marduk.tchpc.tcd.ie/cports into next
+  * fixup generation script, there is no default target in cports, it must be fetch, build, install or clean from a user perspective
+  * depend on the latest stable of perl
+  * Merge branch 'next' of ssh://marduk.tchpc.tcd.ie/cports into next
+  * Little bit of documentation on R modules (removed the comment from the R 2.11.1 makefile)
+  * Rmpi added note: took the dependency on mpi _out_ of the R Makefile, so it now only exists in the Rmpi makefile
+  * Merge branch 'next' of ssh://marduk.tchpc.tcd.ie/cports into next
+  * remove notes
+  * Merge branch 'next' of ssh://marduk.tchpc.tcd.ie/cports into next
+  * Make life easier and just have no dependancies at all on the base packages for bootstrapping
+  * note about bootstrapping
+  * resolve some circular dependancies by adding BOOTSTRAP variable and package
+  * resolve some circular dependancies by adding BOOTSTRAP variable and package
+  * make sure autoconf 2.66-COMPILER_TAG is used during a reconfigure
+  * updated libtool
+  * set current version of automake to 1.11
+  * update automake to 1.11
+  * more fixes to the bootstrap
+  * Merge branch 'next' of ssh://marduk.tchpc.tcd.ie/cports into next
+  * updated bootstrap target
+  * re-enable libtool usage
+  * minor change in libtool build to reconfigure itself
+  * fix up extraversions tag
+  * Merge branch 'next' of ssh://marduk.tchpc.tcd.ie/cports into next
+  * Merge branch 'next' of ssh://marduk.tchpc.tcd.ie/cports into next
+  * added note about generating the make commandline options
+  * added simple script to generate the make cases
+  * this is a test package -- useful for messing around with
+  * don't need quotes on debug flag
+  * Merge branch 'next' of ssh://marduk.tchpc.tcd.ie/cports into next
+  * first attempt to "auto" generate multiple compiles of petsc parametrized by a few basic flags: debug/no debug real/complex with c/ with c++
+  * simple changelog dump of last tag till HEAD
+  * Merge branch 'next' of ssh://marduk.tchpc.tcd.ie/cports into next
+  * Merge branch 'master' into next
+  * Merge branch 'next' of ssh://marduk.tchpc.tcd.ie/cports into next
+  * remove run-env from petsc makefile and see what happens
+  * got an error with petsc relating to PIC, so put a -fPIC into ParMetis compile also started using $(MAKE) and other variables in parmetisc makefile
+  * update packages list of notes
+  * add updated glib, this will enable users to build more modern apps on slightly older systems e.g. rhel4 and rhel5
+  * update todos with packages
+  * output log files of compile process
+  * note about who funded the changes made by TCHPC
+  * added tk
+  * rename parmetis to ParMetis
+  * Merge branch 'next' of ssh://marduk.tchpc.tcd.ie/cports into next
+  * default to build everything in globus
+  * working basic install of globustoolkit
+  * use $(MAKE) variable
+  * added petsc (basic compile -- more to be done)
+  * Merge branch 'next' of ssh://marduk.tchpc.tcd.ie/cports into next
+  * start of globustoolkit build, this includes the kitchensink
+  * added gnu sed for globus
+  * minor documentation changes
+  * added openldap, can now be use for hpce2 related services
+  * added sasl
+  * add berkeley db in preparation of building openldap needed for grid setups and IAP
+  * Merge branch 'master' into next
+  * update changelog
+  * Notes on how to use cports
+  * added R 2.10.1 to test that the modules work
+  * rename the prg files
+  * hack up prg.perl.mk to become prg.r.mk
+  * hacked up prg.perlmod.mk to be come prg.rmod.mk, basics now work
+  * Merge branch 'master' of ssh://marduk.tchpc.tcd.ie/cports
+  * comment out current symlinks
+  * added autogen
+  * added zlib dep for libxml2
+  * Merge branch 'master' of ssh://marduk.tchpc.tcd.ie/cports
+  * added guile, probably should ship with glib
+  * make test --> make check bleedin backslashes
+  * revert a fix, it broke something else
+  * fix typo
+  * try getting rid of awk warnings
+  * added readline
+  * fix what i think is a bug with the path generation for the PREFIX_package variable
+  * noted uninstall item is done
+  * Merge branch 'master' of ssh://marduk.tchpc.tcd.ie/cports
+  * fix up typo to spit out correct message
+  * Merge branch 'master' of ssh://marduk.tchpc.tcd.ie/cports
+  * more entries in todo file
+  * simple uninstall target to help with cleaning things
+  * updated pyMPI
+  * Merge branch 'master' of ssh://marduk.tchpc.tcd.ie/cports
+  * fix up gettext
+  * notes about upstream
+  * update todo
+  * up to date now with less trashed up history
+  * re-import of v0.4
+  * cports 0.2
+  * initial re-import of cports
