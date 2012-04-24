@@ -14,6 +14,7 @@ EXTRAVERSION=
 DEPENDS+=	"poppler/0.14.1 --build-env --lib"
 DEPENDS+=	"libjpeg/8b --build-env --lib"
 DEPENDS+=       "libpng/1.2.42 --build-env --lib"
+DEPENDS+=       "zlib/1.2.6 --build-env --lib"
 
 CONFIGURE_ARGS+= CFLAGS="-O2" CXXFLAGS="-O2"
 
