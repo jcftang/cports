@@ -5,8 +5,10 @@ VERSION=	8.71
 FONTVERSION=	6.0
 CATEGORIES=	printing graphics lib
 HOMEPAGE=	http://www.cs.wisc.edu/~ghost/
-MASTER_SITES=	$(MASTER_SITE_SOURCEFORGE:=$(DISTNAME)/)
-MASTER_SITES+=	ftp://ftp.uu.net/graphics/jpeg/
+#MASTER_SITES=	$(MASTER_SITE_SOURCEFORGE:=$(DISTNAME)/)
+#MASTER_SITES+=	ftp://ftp.uu.net/graphics/jpeg/
+MASTER_SITES= 	http://downloads.ghostscript.com/public/
+MASTER_SITES+=	http://mirror.cs.wisc.edu/pub/mirrors/ghost/AFPL/fonts/
 MAINTAINER=	jtang@tchpc.tcd.ie
 
 HAS_CONFIGURE=	yes

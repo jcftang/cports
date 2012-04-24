@@ -1,7 +1,7 @@
 include ../../../mk/gnu.pre.mk
 
 DISTNAME=	gnuplot
-VERSION=	4.4.0
+VERSION=	4.6.0
 CATEGORIES=	utilities
 HOMEPAGE=	http://www.gnuplot.info/
 MASTER_SITES=	http://heanet.dl.sourceforge.net/project/gnuplot/gnuplot/$(VERSION)

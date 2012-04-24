@@ -5,8 +5,10 @@ VERSION=	9.00
 FONTVERSION=	6.0
 CATEGORIES=	printing graphics lib
 HOMEPAGE=	http://www.cs.wisc.edu/~ghost/
-MASTER_SITES=	$(MASTER_SITE_SOURCEFORGE:=$(DISTNAME)/)
-MASTER_SITES+=	ftp://ftp.uu.net/graphics/jpeg/
+#MASTER_SITES=	$(MASTER_SITE_SOURCEFORGE:=$(DISTNAME)/)
+#MASTER_SITES+=	ftp://ftp.uu.net/graphics/jpeg/
+MASTER_SITES=   http://downloads.ghostscript.com/public/
+MASTER_SITES+=  http://mirror.cs.wisc.edu/pub/mirrors/ghost/AFPL/fonts/
 MAINTAINER=	jtang@tchpc.tcd.ie
 
 HAS_CONFIGURE=	yes
@@ -14,10 +16,10 @@ GNU_CONFIGURE=	yes
 
 DISTFILES=	ghostscript-$(VERSION).tar.gz
 DISTFILES+=	ghostscript-fonts-std-$(FONTVERSION).tar.gz
-DISTFILES+=	ghostscript-fonts-other-$(FONTVERSION).tar.gz
+#DISTFILES+=	ghostscript-fonts-other-$(FONTVERSION).tar.gz
 EXTRACT_ONLY=	ghostscript-$(VERSION).tar.gz
 INSTALL_FILES=	ghostscript-fonts-std-$(FONTVERSION).tar.gz
-INSTALL_FILES+=	ghostscript-fonts-other-$(FONTVERSION).tar.gz
+#INSTALL_FILES+=	ghostscript-fonts-other-$(FONTVERSION).tar.gz
 
 #DEPENDS=	"gtk --lib --build-env"
 #DEPENDS+=	"glib --lib --build-env"
