@@ -19,6 +19,7 @@ DEPENDS+="freetype/2.4.2 --build-env --lib"
 DEPENDS+="libpng/1.2.42 --build-env --lib"
 DEPENDS+="libtiff/3.9.4 --build-env --lib"
 DEPENDS+="libjpeg/8b --build-env --lib"
+DEPENDS+="zlib/1.2.6 --build-env --lib"
 
 DESCRIPTION=	"gtk+"
 
