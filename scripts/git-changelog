@@ -7,7 +7,7 @@ VERSION=$(cat VERSION)
 HEAD="\n$VERSION / $DATE \n==============================\n"
 
 if test "$1" = "--list"; then
-  version=`git for-each-ref refs/tags --sort="-*authordate" --format='%(refname)' \
+  version=`git for-each-ref refs/tags --sort=-authordate --format='%(refname)' \
     --count=1 | sed 's/^refs\/tags\///'`
   if test -z "$version"; then
     git log --pretty="format:  * %s"
