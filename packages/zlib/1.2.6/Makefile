@@ -4,7 +4,7 @@ DISTNAME=	zlib
 VERSION=	1.2.6
 CATEGORIES=	lib
 HOMEPAGE=	http://www.info-zip.org/pub/infozip/zlib/
-MASTER_SITES=   http://zlib.net/
+MASTER_SITES=   http://heanet.dl.sourceforge.net/project/libpng/zlib/$(VERSION)/
 MAINTAINER=	neil@tchpc.tcd.ie
 GNU_CONFIGURE=	yes
 
