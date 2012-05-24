@@ -1,0 +1,4 @@
+43d42
+< static char const rcsid[] = "$Id: fuzzyFind.c,v 1.17 2006/05/09 01:05:55 markd Exp $";
+1027a1027
+> proto.score = 0;

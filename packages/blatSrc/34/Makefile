@@ -14,6 +14,10 @@ DESCRIPTION=	"blatSrc"
 
 PKGSUBDIR=	$(DISTNAME)
 
+do-configure:
+	$(MODULE_ADD) $(BUILD_DEPENDS);   \
+	patch $(WRKSRC)/jkOwnLib/fuzzyFind.c fuzzyFind.patch;
+
 do-build:
 	$(MODULE_ADD) $(BUILD_DEPENDS);   \
 	cd $(WRKSRC); \
