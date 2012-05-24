@@ -18,10 +18,8 @@ DESCRIPTION+=	"the uncompressed data. This version of the library supports"
 DESCRIPTION+=	"only one compression method (deflation) but other algorithms"
 DESCRIPTION+=	"will be added later and will have the same stream interface."
 
-CONFIGURE_ARGS+= CFLAGS="-O3 -fPIC"
-
 do-configure:
 	cd $(WRKSRC); \
-	$(CONFIGURE_SCRIPT) --prefix=$(PROGRAM_PREFIX) $(CPRT_CONFIGURE_ARGS)
+	CFLAGS="-O3 -fPIC" $(CONFIGURE_SCRIPT) --prefix=$(PROGRAM_PREFIX) $(CPRT_CONFIGURE_ARGS)
 
 include ../../../mk/gnu.post.mk
