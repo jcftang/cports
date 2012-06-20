@@ -15,7 +15,7 @@ DEPENDS+=	"atlas/3.8.3 --build-env"
 DEPENDS+=	"Python/2.7.2 --build-env --run-env"
 DEPENDS+=	"nose/0.11.3_Python_2.7.2 --build-env --run-env" 
 DEPENDS+=	"numpy/1.6.1_Python_2.7.2 --build-env --run-env"
-DEPENDS+=	"pysam/0.6_Python_2.7.2 --build-env --run-env"
+#DEPENDS+=	"pysam/0.6_Python_2.7.2 --build-env --run-env"
 
 DESCRIPTION=	"A framework to process and analyze data from high-throughput sequencing (HTS) assays"
 
