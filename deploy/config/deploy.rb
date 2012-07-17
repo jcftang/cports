@@ -20,8 +20,29 @@ require 'bundler/capistrano'
 role :app, domain, :primary => true
 
 namespace :deploy do
+  task :default do
+    deploy.configure
+    deploy.bootstrap1
+    deploy.bootstrap2
+  end
+
+  desc "Configure an installation of cports"
   task :configure do
     run "git clone #{shared_path}/cached-copy/ #{release_path}" 
     run "cd #{release_path}; ./configure.sh --prefix=$(pwd)"
   end
+
+  desc "Bootstrap stage 1"
+  task :bootstrap1 do
+    run "echo Run boostrap 1"
+  end
+
+  desc "Bootstrap stage 2"
+  task :bootstrap2 do
+    run "echo Run boostrap 2"
+  end 
+
 end
+
+after "deploy:configure", "deploy:bootstrap1"
+after "deploy:bootstrap1", "deploy:bootstrap2"
