@@ -37,6 +37,21 @@ steps.
 $ vagrant up
 ```
 
+1. Get the ssh-config from vagrant (this should hopefully not change)
+
+```bash
+$ vagrant ssh-config
+Host cports_test
+  HostName 127.0.0.1
+  User vagrant
+  Port 2200
+  UserKnownHostsFile /dev/null
+  StrictHostKeyChecking no
+  PasswordAuthentication no
+  IdentityFile /Users/jtang/.vagrant.d/insecure_private_key
+  IdentitiesOnly yes
+```
+
 1. Login to the virtual machine
 
 ```bash
