@@ -13,11 +13,11 @@ Vagrant::Config.run do |global_config|
     #config.vm.network :hostonly, "33.33.33.10"
     config.vm.host_name = "cports.localhost"
 
-#    config.vm.provision :puppet do |puppet|
-#      puppet.manifest_file = "nodes/cports.pp"
-#      puppet.manifests_path = 'puppet/manifests'
-#      puppet.module_path = ['puppet/modules', 'puppet/services']
-#    end
+    config.vm.provision :puppet do |puppet|
+      puppet.manifest_file = "site.pp"
+      puppet.manifests_path = 'puppet/manifests'
+      puppet.module_path = ['puppet/modules', 'puppet/services']
+    end
 
     config.vm.customize [
       "modifyvm", :id,
