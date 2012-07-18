@@ -17,6 +17,6 @@ node 'cports.localhost' {
 	}
 
 	Package { ensure => "installed" }
-	$enhancers = [ "screen", "strace", "sudo", "git" ]
+	$enhancers = [ "screen", "strace", "sudo", "git", "gcc-gfortran" ]
 	package { $enhancers: }
 }
