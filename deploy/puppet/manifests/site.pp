@@ -7,5 +7,5 @@ import 'nodes/*.pp'
 
 # Apply s_basenode to clients that lack more specific configuration
 node "default" {
-#  include s_basenode
+
 }
