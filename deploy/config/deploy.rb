@@ -20,11 +20,11 @@ require 'bundler/capistrano'
 role :app, domain, :primary => true
 
 namespace :deploy do
-  task :default do
-    deploy.configure
-    deploy.bootstrap1
-    deploy.bootstrap2
-  end
+#  task :default do
+#    deploy.configure
+#    deploy.bootstrap1
+#    deploy.bootstrap2
+#  end
 
   desc "Configure an installation of cports"
   task :configure do
