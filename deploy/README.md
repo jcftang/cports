@@ -1,4 +1,4 @@
-== Installation (of VirtualBox VM)
+## Installation (of VirtualBox VM)
 
 Prerequisites:
 
