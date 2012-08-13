@@ -1,0 +1,8 @@
+### Installation on SL6
+
+	yum install gcc-gfortran environment-modules texinfo
+	export PATH=/sbin:/usr/sbin:$PATH
+	./configure.sh --prefix=$HOME/build
+	mkdir -p ${HOME}/privatemodules ${HOME}/build/rhel-6.x86_64/modulefiles
+	cp cports.modulefile ${HOME}/privatemodules/cports
+	module load use.own cports
