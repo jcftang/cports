@@ -4,8 +4,8 @@ DISTNAME=	libpng
 VERSION=	1.5.10
 CATEGORIES=	graphics lib
 HOMEPAGE=	http://www.libpng.org/pub/png/libpng.html
-MASTER_SITES=   http://heanet.dl.sourceforge.net/project/libpng/libpng15/$(VERSION)/
-MAINTAINER=	jtang@tchpc.tcd.ie
+MASTER_SITES=   http://heanet.dl.sourceforge.net/libpng
+MAINTAINER=	darach@tchpc.tcd.ie
 GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes
 
