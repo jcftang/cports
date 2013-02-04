@@ -9,6 +9,8 @@ GNU_CONFIGURE = yes
 MAINTAINER=	darach@tchpc.tcd.ie
 DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
 
+$(error Are you sure you want to be installing this old a version of R)
+
 EXTRAVERSION=
 
 DEPENDS+="atlas/3.8.3 --lib"

@@ -11,6 +11,8 @@ DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
 
 EXTRAVERSION?=
 
+$(error Are you sure you want to be installing this old a version of R)
+
 DEPENDS+="atlas/3.8.3 --lib"
 DEPENDS+="openmpi/1.4.3 --build-env openmpi/1.4.3 --run-env" 
 DEPENDS+="ncurses/5.7 --lib --build-env"
