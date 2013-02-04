@@ -11,8 +11,21 @@ DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
 
 EXTRAVERSION?=
 
+CPRT_R_BLAS?=noblas
+
+ifeq ("$(CPRT_R_BLAS)","noblas")
+$(info install with no BLAS)
+CONFIGURE_ARGS +=  
+endif
+
+ifeq ("$(CPRT_R_BLAS)","atlas")
+$(info install with no BLAS)
 DEPENDS+="atlas/3.8.4 --lib"
-DEPENDS+="openmpi/1.4.3 --build-env openmpi/1.4.3 --run-env"
+$(error this version of R is not setup for atlas)
+CONFIGURE_ARGS +=  
+endif
+
+DEPENDS+="openmpi/1.4.3 --build-env --run-env"
 DEPENDS+="ncurses/5.7 --lib --build-env"
 DEPENDS+="readline/6.1 --lib --build-env"
 DEPENDS+="pcre/8.12 --lib --build-env"
