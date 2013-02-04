@@ -12,8 +12,6 @@ DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
 EXTRAVERSION?=
 
 CPRT_R_BLAS?=noblas
-#CPRT_R_BLAS?=atlas
-
 
 ifeq ("$(CPRT_R_BLAS)","noblas")
 $(info install with no BLAS)
