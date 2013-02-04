@@ -11,8 +11,14 @@ DISTFILES = $(DISTNAME)-$(VERSION).tar.gz
 
 EXTRAVERSION?=
 
-CPRT_R_BLAS?=$(CPRT_BLAS)
+CPRT_R_BLAS?=noblas
 #CPRT_R_BLAS?=atlas
+
+
+ifeq ("$(CPRT_R_BLAS)","noblas")
+$(info install with no BLAS)
+CONFIGURE_ARGS +=  
+endif
 
 ## some R tests fail with acml 4-4-0
 ifeq ("$(CPRT_R_BLAS)","acml")
