@@ -2,11 +2,9 @@ include ../../../mk/gnu.pre.mk
 
 # download distfile from debian mirrors as its more convenient than to
 # figure out how to get it from oracle
-#
-$(warning this tarball is listed as no longer available for download on oracle site)
 
 DISTNAME=       db
-VERSION=        5.0.26
+VERSION=        5.3.21
 CATEGORIES=     database
 HOMEPAGE=       http://www.oracle.com/technology/software/products/berkeley-db/index.html
 MASTER_SITES=   http://download.oracle.com/berkeley-db
