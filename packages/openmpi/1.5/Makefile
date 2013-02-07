@@ -17,9 +17,9 @@ CONFIGURE_ARGS+=$(if $(findstring intel,$(COMPILERS)),--with-wrapper-cflags=-sha
 CONFIGURE_ARGS+=$(if $(findstring intel,$(COMPILERS)),--with-wrapper-cxxflags=-shared-intel, )
 
 #'ifeq ($(COMPILERS),intel10.1)
-C#ONFIGURE_ARGS+=--with-wrapper-cflags=-shared-intel
-C#ONFIGURE_ARGS+=--with-wrapper-cxxflags=-shared-intel
-e#ndif
+#CONFIGURE_ARGS+=--with-wrapper-cflags=-shared-intel
+#CONFIGURE_ARGS+=--with-wrapper-cxxflags=-shared-intel
+#endif
 
 ifdef ROMIO
 DEPENDS += "pvfs2/2.6.3 --build-env"
