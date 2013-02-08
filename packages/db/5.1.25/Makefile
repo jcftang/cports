@@ -7,10 +7,11 @@ DISTNAME=       db
 VERSION=        5.1.25
 CATEGORIES=     database
 HOMEPAGE=       http://www.oracle.com/technology/software/products/berkeley-db/index.html
-MASTER_SITES=   http://ftp.debian.org/debian/pool/main/d/db
+
+MASTER_SITES=   http://download.oracle.com/berkeley-db
 MAINTAINER=     jtang@tchpc.tcd.ie
 GNU_CONFIGURE=  yes
-DISTFILES=	$(DISTNAME)_$(VERSION).orig.tar.gz
+DISTFILES=	$(DISTNAME)-$(VERSION).tar.gz
 
 CONFIGURE_SCRIPT=../dist/configure
 
@@ -24,4 +25,3 @@ DESCRIPTION+=   "reliable, scalable, and mission-critical database support"
 DESCRIPTION+=   "to software developers."
 
 include ../../../mk/gnu.post.mk
-
