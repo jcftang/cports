@@ -31,7 +31,6 @@ DESCRIPTION=    "The GNU Hello program produces a familiar, friendly greeting."
 #$(info compv is $(COMPV))
 #
 
-$(error deliberate error)
 
 include ../../../mk/gnu.post.mk
 
