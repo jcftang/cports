@@ -31,12 +31,6 @@ DESCRIPTION=    "The GNU Hello program produces a familiar, friendly greeting."
 #$(info compv is $(COMPV))
 #
 
-do-blah:
-	$(if $(findstring gnu, $(COMPILERS)), \
-	@echo "gnu compiler",)
-	$(if $(findstring intel, $(COMPILERS)), \
-	@echo " intel compiler",)
-
 
 include ../../../mk/gnu.post.mk
 

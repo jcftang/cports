@@ -3,7 +3,7 @@
 include ../../../mk/gnu.pre.mk
 
 DISTNAME=       gcc
-VERSION=        4.5.0
+VERSION=        4.5.4
 CATEGORIES=     system
 HOMEPAGE=       http://www.gnu.org/software/gcc/gcc.html
 MASTER_SITES=   ftp://ftp.gnu.org/pub/gnu/gcc/gcc-$(VERSION)/
@@ -36,7 +36,7 @@ CONFIGURE_ARGS += --disable-multilib
 ALL_TARGET= bootstrap
 
 
-DESCRIPTION=    "gcc 4.5.0 enviornment"
+DESCRIPTION=    "gcc $(VERSION) enviornment"
 
 include ../../../mk/gnu.post.mk
 
