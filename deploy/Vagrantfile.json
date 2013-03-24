@@ -1,0 +1,17 @@
+{
+    "instances": {
+        "cports-devel": [
+            {
+                "N": 1,
+                "box_name": "sl63-x86_64",
+                "forward_ports": [],
+                "internal_ip": "192.168.179.254",
+                "n": 0,
+                "name": "cports-devel",
+                "ram": 1024,
+                "vagrant_name": "cports_devel0"
+            }
+        ]
+    },
+    "num_inst": 1
+}

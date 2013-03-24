@@ -1,28 +1,10 @@
-# -*- mode: ruby -*-
-# vi: set ft=ruby :
+Vagrant::Config.run do |config|
 
-Vagrant::Config.run do |global_config|
-  # All Vagrant configuration is done here. The most common configuration
-  # options are documented and commented below. For a complete reference,
-  # please see the online documentation at vagrantup.com.
-
-  global_config.vm.define(:cports_test) do |config|
-  # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "sl62-x86_64"
-
-    #config.vm.network :hostonly, "33.33.33.10"
-    config.vm.host_name = "cports.localhost"
-
-    config.vm.provision :puppet do |puppet|
-      puppet.manifest_file = "site.pp"
-      puppet.manifests_path = 'puppet/manifests'
-      puppet.module_path = ['puppet/modules', 'puppet/services']
-    end
-
-    config.vm.customize [
-      "modifyvm", :id,
-      "--name", "CPORTS VM",
-      "--memory", "2048"
-    ]
+  config.vm.define :cports_devel0 do |cports_devel0_config|
+    cports_devel0_config.vm.network :hostonly, "192.168.179.254"
+    cports_devel0_config.vm.box = "sl63-x86_64"
+    cports_devel0_config.vm.customize ["modifyvm", :id, "--memory", 1024]
+    cports_devel0_config.vm.host_name = "cports-devel0"
   end
+
 end

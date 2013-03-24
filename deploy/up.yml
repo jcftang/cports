@@ -1,0 +1,7 @@
+---
+- hosts: 127.0.0.1
+  gather_facts: False
+
+  tasks:
+    - name: Initialise vagrant vm for cports testing/development
+      local_action: vagrant cmd=up box_name=sl63-x86_64 vm_name=cports-devel
