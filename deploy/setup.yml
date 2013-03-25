@@ -1,0 +1,14 @@
+---
+- hosts: 192.168.179.254
+  gather_facts: False
+  sudo: True
+
+  tasks:
+    - name: cports requirements
+      yum: pkg=$item state=present
+      with_items:
+        - environment-modules
+        - gcc-gfortran
+        - texinfo
+        - patch
+        - libXt-devel
