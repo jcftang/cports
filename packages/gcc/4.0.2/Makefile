@@ -14,7 +14,7 @@ WRKSRC=$(WORKDIR)/$(PKGSUBDIR)-tmp/
 
 EXTRAVERSION=
 
-DEPENDS += "gnu/gmp/4.1.4 --build-env"
+DEPENDS += "gmp/4.1.4 --build-env"
 
 CONFIGURE_ARGS += --enable-shared --enable-threads=posix --with-system-zlib
 CONFIGURE_ARGS += --enable-__cxa_atexit --disable-libunwind-exceptions
