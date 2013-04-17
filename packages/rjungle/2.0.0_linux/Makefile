@@ -23,7 +23,7 @@ endif
 
 DISTFILES = $(PKGSUBDIR).tar_.gz
 
-DEPENDS+=	"gsl/1.9 --run-env"
+DEPENDS+=	"gsl/1.14 --run-env"
 
 DESCRIPTION=	"The novel software package RJ implements all features of the reference implementation randomForest such as various tuning parameters, prediction of new datasets using previously grown forests, sample proximities and imputation. Commonly used measures are implemented, such as Gini importance, permutation importance and conditional importance measures. RJ additionally implements the variable backward elimination. When multiple CPU are available, RJ is able to perform RF on multiple CPUs simultaneously using multithreading and Message Passing Interface (MPI) parallelization"
 
